@@ -1,0 +1,30 @@
+﻿<Window x:Class="Test.Controls.CompactExpanderPrewiew"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:Lib"
+        mc:Ignorable="d"
+        Title="CompactExpanderPrewiew" Height="300" Width="300">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary Source="/Lib;component/Controls/CompactExpanderStyle.xaml"/>
+        </Grid.Resources>
+        <StackPanel>
+            <Expander ExpandDirection="Up" HorizontalAlignment="Right" Style="{StaticResource CompactExpanderStyle}" >
+                <TextBox HorizontalAlignment="Stretch" Text="Some text"/>
+            </Expander>
+            <Expander ExpandDirection="Left" HorizontalAlignment="Right" Style="{StaticResource CompactExpanderStyle}">
+                <TextBox HorizontalAlignment="Stretch" Text="Some text"/>
+            </Expander>
+
+            <Expander ExpandDirection="Right" HorizontalAlignment="Right" Style="{StaticResource CompactExpanderStyle}">
+                <TextBox HorizontalAlignment="Stretch" Text="Some text"/>
+            </Expander>
+            <Expander ExpandDirection="Down" HorizontalAlignment="Right" Style="{StaticResource CompactExpanderStyle}">
+                <TextBox HorizontalAlignment="Stretch" Text="Some text"/>
+            </Expander>
+        </StackPanel>
+
+    </Grid>
+</Window>

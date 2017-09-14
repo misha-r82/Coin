@@ -1,0 +1,22 @@
+﻿<Window x:Class="Btr.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Btr"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="txtResult"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" >
+            <Button Name="btnRun" Content="start" Click="btnRun_Click"/>  
+            <Button Name="EditMarkets" Content="Add" Click="EditMarkets_OnClick"/>
+            <Button Name="btnFindLeap" Content="findleap" Click="BtnFindLeap_OnClick"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

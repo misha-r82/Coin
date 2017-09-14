@@ -1,0 +1,50 @@
+﻿<Window x:Class="YAK_DB_Config.FrmSatatus2x"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FrmSatatus2x" Height="Auto" Width="750" SizeToContent="WidthAndHeight" ShowActivated="True">
+    <StackPanel>
+        <Grid Name="mainGrid1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding UserText}" Grid.Row="0" Margin="3,7"></TextBlock>
+            <DockPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal" Margin="8,3">
+                    <TextBlock Text="{Binding CurrentName}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="8,3">
+                    <TextBlock Text="{Binding Current}"></TextBlock>
+                    <TextBlock Text=" из "></TextBlock>
+                    <TextBlock Text="{Binding CountAll}"></TextBlock>
+                </StackPanel>
+            </DockPanel>
+            <ProgressBar Grid.Row="2" Maximum="{Binding CountAll}" Value="{Binding Current}" Margin="3,7"></ProgressBar>
+            <Button Name="btnCansel1" Content="Отмена" Grid.Row="3" Width="60" Height="23" Margin="341,0" VerticalAlignment="Bottom" Click="btnCansel1_Click" Visibility="Collapsed"></Button>
+        </Grid>
+        <Grid Name="mainGrid2">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding UserText}" Grid.Row="0" Margin="3,7"></TextBlock>
+            <DockPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal" Margin="8,3">
+                    <TextBlock Text="{Binding CurrentName}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="8,3">
+                    <TextBlock Text="{Binding Current}"></TextBlock>
+                    <TextBlock Text=" из "></TextBlock>
+                    <TextBlock Text="{Binding CountAll}"></TextBlock>
+                </StackPanel>
+            </DockPanel>
+            <ProgressBar Grid.Row="2" Maximum="{Binding CountAll}" Value="{Binding Current}" Margin="3,7"></ProgressBar>
+            <Button Name="btnCansel2" Content="Отмена" Grid.Row="3" Width="60" Height="23" Margin="316,0" VerticalAlignment="Top" Click="btnCansel2_Click" ></Button>
+        </Grid>
+    </StackPanel>
+
+</Window>
