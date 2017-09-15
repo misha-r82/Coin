@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Btr
 {
+    public enum TradeMode { Wait, Buy, Sell }
     class Treader
     {
         CourseTracker _tracker;
@@ -15,7 +16,7 @@ namespace Btr
         }
         public double BoutCourse { get; private set; }
         public TradeMode Mode { get; private set; }
-        public enum TradeMode { Wait, Buy, Sell }
+
 
         public void Trade(DateTime start)
         {

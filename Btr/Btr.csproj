@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LeapInfo.cs" />
     <Compile Include="Trader.cs" />
     <Page Include="FrmAddMarket.xaml">
       <SubType>Designer</SubType>

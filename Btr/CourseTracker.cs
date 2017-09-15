@@ -8,17 +8,18 @@ using System.Threading.Tasks;
 
 namespace Btr
 {
+
     class CourseTracker
     {
         private Market _market;
         private BaseSettings _sett;
-        public TrackMode Mode { get; set; }
         public CourseTracker(Market market, BaseSettings sett)
         {
             _market = market;
-            Mode = TrackMode.Neutral;
+            Leap = new LeapInfo();
         }
-        public enum TrackMode { Neutral, Down, Up}
+
+        public LeapInfo Leap { get; }
 
         public PlnCouse.CouseItem[] GetData(DatePeriod period)
         {
@@ -42,11 +43,14 @@ namespace Btr
         public void Track(DateTime tStart)
         {
             var T = _sett.T;
+            double course = _market.Getourse(tStart);
             var period = new DatePeriod(tStart - T, tStart);
             double g = GetGradient(period);
             if (Math.Abs(g) < _sett.Delta)
-                Mode = TrackMode.Neutral;
-            else Mode = g > 0 ? TrackMode.Up : TrackMode.Down;
+                Leap.SetNeutral(tStart, course);
+            else
+                if (g > 0) Leap.SetUp(tStart, course);
+                else Leap.SetDown(tStart, course);
         }
     }
 }
