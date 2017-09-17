@@ -1,19 +1,16 @@
 ﻿using System;
+using System.Resources;
 
 namespace Btr
 {
     public enum TrackMode { Neutral, Down, Up, Error }
+    public enum EndPoint { None, Down, Up}
     public class LeapInfo
     {
-
-        public double UpBegin { get; private set; }
-        public double UpEnd { get; private set; }
-        public double DownBegin { get; private set; }
-        public double DownEnd { get; private set; }
-        public DateTime UpBeginTime { get; private set; }
-        public DateTime UpEndTime { get; private set; }
-        public DateTime DownBeginTime { get; private set; }
-        public DateTime DownEndTime { get; private set; }
+        public CoursePoint UpBegin { get; private set; }
+        public CoursePoint UpEnd { get; private set; }
+        public CoursePoint DownBegin { get; private set; }
+        public CoursePoint DownEnd { get; private set; }
 
         public TrackMode Mode { get; private set; }
 
@@ -21,42 +18,44 @@ namespace Btr
         {
             Mode = TrackMode.Error;
         }
-        public void SetUp(DateTime time, double course)
+        public EndPoint SetUp(DateTime time, double course)
         {
-            if (Mode == TrackMode.Up) return;
-            UpBegin = course;
-            UpBeginTime = time;
+            if (Mode == TrackMode.Up) return EndPoint.None;
+            UpBegin = new CoursePoint(course, time);
+            EndPoint result = EndPoint.None;
             if (Mode == TrackMode.Down)
             {
-                DownEnd = course;
-                DownEndTime = time;
+                DownEnd = new CoursePoint(course, time);
+                result = EndPoint.Down;
             }
             Mode = TrackMode.Up;
+            return result;
         }
 
-        public void SetDown(DateTime time, double course)
+        public EndPoint SetDown(DateTime date, double course)
         {
-            if (Mode == TrackMode.Down) return;
-            DownBegin = course;
-            DownBeginTime = time;
+            if (Mode == TrackMode.Down) return EndPoint.None;
+            DownBegin = new CoursePoint(course, date);
+            EndPoint result = EndPoint.None;
             if (Mode == TrackMode.Up)
             {
-                UpEnd = course;
-                UpEndTime = time;                
+                UpEnd = new CoursePoint(course, date);
+                result = EndPoint.Up;                
             }
             Mode = TrackMode.Down;
+            return result;
         }
 
-        public void SetNeutral(DateTime time, double course)
+        public EndPoint SetNeutral(DateTime date, double course)
         {
             switch (Mode)
             {
-                    case TrackMode.Neutral: return;
-                    case TrackMode.Up: UpEnd = course;
-                       UpEndTime = time; break;
-                    case TrackMode.Down: DownEnd = course;
-                        DownEndTime = time; break;
+                    case TrackMode.Up: UpEnd = new CoursePoint(course, date);
+                       return EndPoint.Up;
+                    case TrackMode.Down: DownEnd = new CoursePoint(course, date);
+                        return EndPoint.Down;
             }
+            return EndPoint.None;
         }
     }
 }

@@ -21,6 +21,16 @@ namespace Btr
 
         public LeapInfo Leap { get; }
 
+        public BaseSettings Sett
+        {
+            get { return _sett; }
+        }
+
+        public Market Market
+        {
+            get { return _market; }
+        }
+
         public PlnCouse.CouseItem[] GetData(DatePeriod period)
         {
             return _market.CourseData.Where(x => period.IsConteins(x.date)).ToArray();
@@ -40,17 +50,16 @@ namespace Btr
             double kT = period.Dlit.TotalMilliseconds / _sett.T.TotalMilliseconds;
             return g / kT;
         }
-        public void Track(DateTime tStart)
+        public EndPoint Track(DateTime tStart)
         {
             var T = _sett.T;
             double course = _market.Getourse(tStart);
             var period = new DatePeriod(tStart - T, tStart);
             double g = GetGradient(period);
             if (Math.Abs(g) < _sett.Delta)
-                Leap.SetNeutral(tStart, course);
-            else
-                if (g > 0) Leap.SetUp(tStart, course);
-                else Leap.SetDown(tStart, course);
+                return Leap.SetNeutral(tStart, course);
+            if (g > 0) return Leap.SetUp(tStart, course);
+            return Leap.SetDown(tStart, course);
         }
     }
 }
