@@ -11,7 +11,7 @@ namespace Btr.History
 {
     public class PlnCouse
     {
-        public TimeSpan MaxPeriod = new TimeSpan(1, 0, 0, 0);
+        public TimeSpan LoadSize = new TimeSpan(1, 0, 0, 0);
         public struct CouseItem
         {
             public CouseItem(DateTime date, double course, double delta)
@@ -28,25 +28,27 @@ namespace Btr.History
             string market, DatePeriod period, TimeSpan dlit)
         {
             DateTime first = period.From;
-            DateTime end = period.From + dlit;
+            var chunkEnd = period.From + LoadSize > period.To ?
+                period.From + dlit : period.From;
+            var loadPeriod = new DatePeriod(period.From, chunkEnd);
+            var chunkPeriod = new DatePeriod(period.From, period.From + dlit);
             var chunk = new List<PlnHistoryItem>();
             do
             {
-                if (end > period.To) yield break;
-                PlnHistoryItem[] data = BtrHistory.GetHitoryPln(market, first, end)
+                PlnHistoryItem[] data = BtrHistory.GetHitoryPln(market, chunkPeriod)
                     .OrderBy(d => d.date).ToArray();
                 if (data.Length == 0) yield break;
                 foreach (var item in data)
                 {
-                    if (item.date > end)
+                    if (item.date > chunkPeriod.To)
                     {
                         yield return new KVPair<DateTime, PlnHistoryItem[]>(first, chunk.ToArray());
                         chunk.Clear();
                     }
                     chunk.Add(item);
                 }
-                first += dlit;
-                end += dlit;
+                chunkPeriod.From += dlit;
+                chunkPeriod.To = chunkPeriod.From + dlit;
             } while (end < period.To);// неполные не возвращаем
         }
         public IEnumerable<CouseItem> GetCouse(string market, DatePeriod period, TimeSpan dlit)

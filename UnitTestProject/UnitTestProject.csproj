@@ -58,6 +58,10 @@
       <Project>{be6b6492-51c6-4b24-b891-3e6f82c09fb8}</Project>
       <Name>Btr</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lib\Lib.csproj">
+      <Project>{7B5FDDDD-33C1-4211-B321-F3E588BEB6FA}</Project>
+      <Name>Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
