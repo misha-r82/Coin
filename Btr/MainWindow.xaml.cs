@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Bittrex;
 using Btr.History;
+using Lib;
 
 namespace Btr
 {
@@ -33,10 +34,11 @@ namespace Btr
             //var t = Ex.GetMarketHistory("BTC-BCC");
             var from = new DateTime(2017,8,1);
             var to = new DateTime(2017, 8, 2);
+            var period = new DatePeriod(from, to);
             //var t0 = BtrHistory.GetHitoryBtr("BTC-ETH", from);
             //var t = BtrHistory.GetHitoryPln("BTC_ETH", from, to);
             var course = new PlnCouse();
-            PlnCouse.CouseItem[] c = course.GetCouse("BTC_ETH", from, to, new TimeSpan(0,1,0)).ToArray();
+            PlnCouse.CouseItem[] c = course.GetCouse("BTC_ETH", period, new TimeSpan(0,1,0)).ToArray();
 
         }
 
@@ -60,12 +62,12 @@ namespace Btr
         private void BtnFindLeap_OnClick(object sender, RoutedEventArgs e)
         {
             DateTime start = new DateTime(2017,09,10,10,0,0);
-            var lf = new LeapFounder();
+            /*var lf = new LeapFounder();
             lf.Market = Markets.MarketList["BTC_ETH"];
             lf.GRatio = 1.3;
             lf.TRatio = 3;
             lf.MaxPeriod = new TimeSpan(5,0,0,0);
-            var leap = lf.FindLeap(start, new TimeSpan(1, 0, 0));
+            var leap = lf.FindLeap(start, new TimeSpan(1, 0, 0));*/
         }
     }
 }

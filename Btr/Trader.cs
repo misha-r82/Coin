@@ -15,26 +15,41 @@ namespace Btr
         {
             _tracker = tracker;
             Complited = new List<Seller>();
+            Sellers = new List<Seller>();
         }
         public CoursePoint BoutPt { get; private set; }
 
-        public Seller Seller { get; private set; }
+        public List<Seller> Sellers { get; private set; }
         public List<Seller> Complited;
 
         public void Trade(DateTime start)
         {
-            if (Seller.Selled)
+            var enumerator = Sellers.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                Complited.Add(Seller);
-                Seller = null;
+                var seller = enumerator.Current;
+                {
+                    Complited.Add(seller);
+                    Sellers.Remove(seller);
+                }
             }
 
 
             switch (_tracker.Track(start))
             {
-                case EndPoint.Up: Seller.TrySell(_tracker.Leap.UpEnd); break;
+                case EndPoint.Up:
+                    foreach(var seller in Sellers)
+                        seller.TrySell(_tracker.Leap.UpEnd);
+                    break;
                 case EndPoint.Down: Buy(_tracker.Leap.DownEnd); break;
-                case EndPoint.None: if (Seller != null) Seller.TrySell();
+                case EndPoint.None: 
+                    foreach (var seller in Sellers)
+                    {
+                        var course = _tracker.Market.Getourse(start);
+                        seller.TrySell(new CoursePoint(course, start));
+
+                    }
+                    break;
             }
         }
 

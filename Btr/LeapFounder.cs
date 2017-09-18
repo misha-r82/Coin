@@ -10,7 +10,7 @@ namespace Btr
 {
     class LeapFounder
     {
-        public LeapFounder(BaseSettings sett)
+       /* public LeapFounder(BaseSettings sett)
         {
             BaseSett = sett;
         }
@@ -36,7 +36,7 @@ namespace Btr
                 
             double kT = period.Dlit.TotalMilliseconds / BaseSett.T.TotalMilliseconds;
             return g / kT;
-        }
+        }*/
         /*public double SumDelta(DatePeriod period)
         {
             var data = GetData(period);
@@ -45,7 +45,7 @@ namespace Btr
                 s += data[i + 1].course - data[i].course;
             return s;
         }*/
-        public Leap FindLeap(DateTime start)
+        /*public Leap FindLeap(DateTime start)
         {
             var T = BaseSett.T;
             var period = new DatePeriod(start - T, start);
@@ -57,6 +57,6 @@ namespace Btr
                 if (allTime > MaxPeriod) return null;
             } while (true);
 
-        }
+        }*/
     }
 }
