@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Bittrex;
 using Btr.Data;
+using Lib;
 
 namespace Btr
 {
@@ -41,11 +42,11 @@ namespace Btr
             return ApiCall.CallWithJsonResponse<BtrHistoryItem[]>(uri, false);
 
         }
-        public static PlnHistoryItem[] GetHitoryPln(string market, DateTime from, DateTime to)
+        public static PlnHistoryItem[] GetHitoryPln(string market, DatePeriod period)
         {
 
-            ulong fromStamp = DateTimeToUnixTimeStamp(from);
-            ulong toStamp = DateTimeToUnixTimeStamp(to);
+            ulong fromStamp = DateTimeToUnixTimeStamp(period.From);
+            ulong toStamp = DateTimeToUnixTimeStamp(period.To);
             var uri = string.Format(URI_PLN_PATT, market, fromStamp, toStamp);
             return ApiCall.CallWithJsonResponse<PlnHistoryItem[]>(uri);
 

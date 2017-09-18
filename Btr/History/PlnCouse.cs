@@ -24,32 +24,42 @@ namespace Btr.History
             public double course;
             public double delta;
         }
+
+        private void ShiftPeriod(DatePeriod period, TimeSpan delta)
+        {
+            period.From += delta;
+            period.To += delta;
+        }
         private IEnumerable<KVPair<DateTime, PlnHistoryItem[]>> GetData(
             string market, DatePeriod period, TimeSpan dlit)
         {
-            DateTime first = period.From;
             var chunkEnd = period.From + LoadSize > period.To ?
-                period.From + dlit : period.From;
+                period.To : period.From + LoadSize;
             var loadPeriod = new DatePeriod(period.From, chunkEnd);
             var chunkPeriod = new DatePeriod(period.From, period.From + dlit);
             var chunk = new List<PlnHistoryItem>();
             do
             {
-                PlnHistoryItem[] data = BtrHistory.GetHitoryPln(market, chunkPeriod)
+                PlnHistoryItem[] data = BtrHistory.GetHitoryPln(market, loadPeriod)
                     .OrderBy(d => d.date).ToArray();
                 if (data.Length == 0) yield break;
                 foreach (var item in data)
                 {
+                    while (chunk.Count == 0 && !chunkPeriod.IsConteins(item.date)) // не было торгов - - вернуть пустые
+                    {
+                        yield return new KVPair<DateTime, PlnHistoryItem[]>(chunkPeriod.From, new PlnHistoryItem[0]);
+                        ShiftPeriod(chunkPeriod, dlit);
+                    }                       
                     if (item.date > chunkPeriod.To)
                     {
-                        yield return new KVPair<DateTime, PlnHistoryItem[]>(first, chunk.ToArray());
+                        yield return new KVPair<DateTime, PlnHistoryItem[]>(chunkPeriod.From, chunk.ToArray());
                         chunk.Clear();
+                        ShiftPeriod(chunkPeriod, dlit);
                     }
                     chunk.Add(item);
                 }
-                chunkPeriod.From += dlit;
-                chunkPeriod.To = chunkPeriod.From + dlit;
-            } while (end < period.To);// неполные не возвращаем
+                ShiftPeriod(loadPeriod, LoadSize);
+            } while (chunkPeriod.To < period.To);// неполные не возвращаем
         }
         public IEnumerable<CouseItem> GetCouse(string market, DatePeriod period, TimeSpan dlit)
         {
