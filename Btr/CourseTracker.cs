@@ -2,6 +2,7 @@
 using Lib;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,18 +54,20 @@ namespace Btr
                 sred += data[i + 1].course / countEff;
             }
 
-            double kT = period.Dlit.TotalMilliseconds / _sett.T.TotalMilliseconds;
+            double kT = period.Dlit.TotalMilliseconds / _sett.Tbase.TotalMilliseconds;
             return g / kT;
         }
         public EndPoint Track(CoursePoint course)
         {
-            var T = _sett.T;
+            var T = _sett.Tbase;
             if (course.Course == 0) return EndPoint.None;
             var period = new DatePeriod(course.Date - T, course.Date);
             double g = GetGradient(period);
+            Debug.WriteLine("{0} {1} {2}", course.Date, course.Course,  g);
             if (Math.Abs(g) < _sett.Delta)
                 return Leap.SetNeutral(course);
-            if (g > 0) return Leap.SetUp(course);
+            if (g > 0)
+                return Leap.SetUp(course);
             return Leap.SetDown(course);
         }
     }

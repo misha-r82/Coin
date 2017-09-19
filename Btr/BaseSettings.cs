@@ -9,6 +9,8 @@ namespace Btr
     public class BaseSettings
     {
         public double Delta { get; set;}
-        public TimeSpan T { get; set; } 
+        public double GGap { get; set; } // 
+        public TimeSpan Tbase { get; set; } 
+        public TimeSpan T { get; set; }
     }
 }

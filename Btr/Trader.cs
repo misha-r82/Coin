@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Navigation;
 
 namespace Btr
 {
@@ -17,44 +18,49 @@ namespace Btr
             Complited = new List<Seller>();
             Sellers = new List<Seller>();
         }
-        public CoursePoint BoutPt { get; private set; }
 
         public List<Seller> Sellers { get; private set; }
         public List<Seller> Complited;
 
-        public void Trade(CoursePoint curCourse)
+        private void DeleteComplitedSellers()
         {
-            var enumerator = Sellers.GetEnumerator();
-            while (enumerator.MoveNext())
+            var deleted = new List<Seller>();
+            foreach (Seller seller in Sellers)
             {
-                var seller = enumerator.Current;
+                if (seller.Selled)
                 {
                     Complited.Add(seller);
-                    Sellers.Remove(seller);
+                    deleted.Add(seller);                    
                 }
             }
+            foreach (Seller seller in deleted)
+                Sellers.Remove(seller);            
+        }
 
+        private void TrySell(CoursePoint pt)
+        {
+            foreach(var seller in Sellers)
+                seller.TrySell(pt);            
+        }
+        public void Trade(CoursePoint curCourse)
+        {
+
+            DeleteComplitedSellers();
 
             switch (_tracker.Track(curCourse))
             {
                 case EndPoint.Up:
-                    foreach(var seller in Sellers)
-                        seller.TrySell(_tracker.Leap.UpEnd);
-                    break;
-                case EndPoint.Down: Buy(_tracker.Leap.DownEnd); break;
+                    TrySell(curCourse); break;
+                case EndPoint.Down:
+                    Buy(_tracker.Leap.DownEnd); break;
                 case EndPoint.None: 
-                    foreach (var seller in Sellers)
-                    {
-                        seller.TrySell(curCourse);
-
-                    }
-                    break;
+                    TrySell(curCourse); break;
             }
         }
 
         private void Buy(CoursePoint buyPoint)
         {
-            BoutPt = buyPoint;
+            Sellers.Add(new Seller(_tracker.Market, buyPoint, _tracker.Sett));
         }
 
     }
