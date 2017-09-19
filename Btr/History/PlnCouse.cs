@@ -67,7 +67,11 @@ namespace Btr.History
             {
                 var chunk = pair.Val;
                 var time = pair.Key;
-                if (chunk.Length == 0) yield return new CouseItem();
+                if (chunk.Length == 0)
+                {
+                    yield return new CouseItem(time, 0, 0);
+                    continue;
+                }
                 double sumAmount = 0;
                 double sumValue = 0;
                 for (int i = 0; i < chunk.Length; i++)
