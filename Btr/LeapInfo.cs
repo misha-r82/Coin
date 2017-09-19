@@ -18,41 +18,41 @@ namespace Btr
         {
             Mode = TrackMode.Error;
         }
-        public EndPoint SetUp(DateTime time, double course)
+        public EndPoint SetUp(CoursePoint course)
         {
             if (Mode == TrackMode.Up) return EndPoint.None;
-            UpBegin = new CoursePoint(course, time);
+            UpBegin = course;
             EndPoint result = EndPoint.None;
             if (Mode == TrackMode.Down)
             {
-                DownEnd = new CoursePoint(course, time);
+                DownEnd = course;
                 result = EndPoint.Down;
             }
             Mode = TrackMode.Up;
             return result;
         }
 
-        public EndPoint SetDown(DateTime date, double course)
+        public EndPoint SetDown(CoursePoint course)
         {
             if (Mode == TrackMode.Down) return EndPoint.None;
-            DownBegin = new CoursePoint(course, date);
+            DownBegin = course;
             EndPoint result = EndPoint.None;
             if (Mode == TrackMode.Up)
             {
-                UpEnd = new CoursePoint(course, date);
+                UpEnd = course;
                 result = EndPoint.Up;                
             }
             Mode = TrackMode.Down;
             return result;
         }
 
-        public EndPoint SetNeutral(DateTime date, double course)
+        public EndPoint SetNeutral(CoursePoint course)
         {
             switch (Mode)
             {
-                    case TrackMode.Up: UpEnd = new CoursePoint(course, date);
+                    case TrackMode.Up: UpEnd = course;
                        return EndPoint.Up;
-                    case TrackMode.Down: DownEnd = new CoursePoint(course, date);
+                    case TrackMode.Down: DownEnd = course;
                         return EndPoint.Down;
             }
             return EndPoint.None;

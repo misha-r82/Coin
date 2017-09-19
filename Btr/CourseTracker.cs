@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 namespace Btr
 {
 
-    class CourseTracker
+    public class CourseTracker
     {
         private Market _market;
         private BaseSettings _sett;
         public CourseTracker(Market market, BaseSettings sett)
         {
             _market = market;
+            _sett = sett;
             Leap = new LeapInfo();
         }
 
@@ -40,26 +41,31 @@ namespace Btr
             var data = GetData(period);
             int count = data.Length;
             double g = 0;
-            double sred = data[0].course / count;
+            int nullCount = data.Count(d => d.course == 0);
+            int countEff = count - nullCount;
+            double sred = data[0].course / countEff;
+            double lastNotNull = 0;
             for (int i = 0; i < count - 1; i++)
             {
-                g += data[i + 1].course - data[i].course;
-                sred += data[i + 1].course / count;
+                if (data[i].course != 0) lastNotNull = data[i].course;
+                if (lastNotNull > 0 && data[i+1].course > 0)
+                    g += data[i + 1].course - data[i].course;
+                sred += data[i + 1].course / countEff;
             }
 
             double kT = period.Dlit.TotalMilliseconds / _sett.T.TotalMilliseconds;
             return g / kT;
         }
-        public EndPoint Track(DateTime tStart)
+        public EndPoint Track(CoursePoint course)
         {
             var T = _sett.T;
-            double course = _market.Getourse(tStart);
-            var period = new DatePeriod(tStart - T, tStart);
+            if (course.Course == 0) return EndPoint.None;
+            var period = new DatePeriod(course.Date - T, course.Date);
             double g = GetGradient(period);
             if (Math.Abs(g) < _sett.Delta)
-                return Leap.SetNeutral(tStart, course);
-            if (g > 0) return Leap.SetUp(tStart, course);
-            return Leap.SetDown(tStart, course);
+                return Leap.SetNeutral(course);
+            if (g > 0) return Leap.SetUp(course);
+            return Leap.SetDown(course);
         }
     }
 }

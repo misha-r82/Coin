@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Btr
 {
     public enum TradeMode { Wait, Buy, Sell }
-    class Treader
+    public class Treader
     {
         CourseTracker _tracker;
         public CoursePoint BuyPoint { get; private set; }
@@ -22,7 +22,7 @@ namespace Btr
         public List<Seller> Sellers { get; private set; }
         public List<Seller> Complited;
 
-        public void Trade(DateTime start)
+        public void Trade(CoursePoint curCourse)
         {
             var enumerator = Sellers.GetEnumerator();
             while (enumerator.MoveNext())
@@ -35,7 +35,7 @@ namespace Btr
             }
 
 
-            switch (_tracker.Track(start))
+            switch (_tracker.Track(curCourse))
             {
                 case EndPoint.Up:
                     foreach(var seller in Sellers)
@@ -45,8 +45,7 @@ namespace Btr
                 case EndPoint.None: 
                     foreach (var seller in Sellers)
                     {
-                        var course = _tracker.Market.Getourse(start);
-                        seller.TrySell(new CoursePoint(course, start));
+                        seller.TrySell(curCourse);
 
                     }
                     break;
