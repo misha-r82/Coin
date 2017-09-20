@@ -22,37 +22,40 @@ namespace Btr
         {
             if (Mode == TrackMode.Up) return EndPoint.None;
             UpBegin = course;
-            EndPoint result = EndPoint.None;
-            if (Mode == TrackMode.Down)
+            var prevMode = Mode;
+            Mode = TrackMode.Up;
+            if (prevMode == TrackMode.Down)
             {
                 DownEnd = course;
-                result = EndPoint.Down;
+                return EndPoint.Down;
             }
-            Mode = TrackMode.Up;
-            return result;
+            return EndPoint.None;
         }
 
         public EndPoint SetDown(CoursePoint course)
         {
             if (Mode == TrackMode.Down) return EndPoint.None;
             DownBegin = course;
-            EndPoint result = EndPoint.None;
-            if (Mode == TrackMode.Up)
+            var prevMode = Mode;
+            Mode = TrackMode.Down;
+            if (prevMode == TrackMode.Up)
             {
                 UpEnd = course;
-                result = EndPoint.Up;                
+                return EndPoint.Up;                
             }
-            Mode = TrackMode.Down;
-            return result;
+            return EndPoint.None;
         }
 
         public EndPoint SetNeutral(CoursePoint course)
         {
-            switch (Mode)
+            var prevMode = Mode;
+            Mode = TrackMode.Neutral;
+            switch (prevMode)
             {
                     case TrackMode.Up: UpEnd = course;
                        return EndPoint.Up;
-                    case TrackMode.Down: DownEnd = course;
+                    case TrackMode.Down:
+                        DownEnd = course;
                         return EndPoint.Down;
             }
             return EndPoint.None;
