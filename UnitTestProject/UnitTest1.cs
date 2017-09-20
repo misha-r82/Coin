@@ -25,14 +25,16 @@ namespace UnitTestProject
             Markets.SaveMarkets();
         }
 
-        private void TradeTest(double T, double gap)
+        private void TradeTest(double T, double delta ,double gap)
         {
             var m = Markets.MarketList.First();
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = 0.01, Tbase = TimeSpan.FromHours(T), T = new TimeSpan(0,0,20), GGap = gap});
+            { Delta = delta* T / 6, Tbase = TimeSpan.FromHours(T), T = new TimeSpan(0,0,20), GGap = gap});
             var treader = new Treader(tacker);
             foreach (PlnCouse.CouseItem item in m.Value.CourseData)
             {
+                /*if (item.date == new DateTime(2017,07,19,19,50,0))
+                { }*/
                 var coursePoint = new CoursePoint(item.course, item.date);
                 treader.Trade(coursePoint);
             }
@@ -40,24 +42,40 @@ namespace UnitTestProject
             var sred = m.Value.CourseData.Sum(p => p.course / ptCount);
             var invest = treader.Complited.Count + treader.Sellers.Count;
             var investBtc = invest * sred;
-            var marhin = treader.Complited.Sum(c => 
+            var margin = treader.Complited.Sum(c => 
             c.SellPoint.Course - c.BoughtPt.Course - 0.05 * c.SellPoint.Course);
-            var percent = marhin / investBtc;
-            Debug.WriteLine("T ={0} gap ={1} %= {2}", T, gap, percent);
+            var percent = margin / investBtc;
+            //if (percent > 0.1)
+                Debug.WriteLine("T ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
+            Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);
+
+        }
+        [TestMethod]
+        public void TradeTestCase()
+        {
+            TradeTest(6, 0.01, 0.3);
         }
         [TestMethod]
         public void TestMethod1()
         {
-            for (int g = 1; g < 8; g++)
+            double delta = 0.003;
+            while (delta < 0.025)
             {
-                double gap = 0.1 * g;
-                double t = 6;
-                while (t < 130)
+                double gap = 0.1;
+                while (gap < 0.9)
                 {
-                    TradeTest(t, gap);
-                    t *= 1.5;
+                    double t = 1;
+                    while (t < 130)
+                    {
+                        TradeTest(t, delta, gap);
+                        t *= 2;
+                    }
+                    gap += 0.2;
                 }
+                delta *= 2;
             }
+
         }
+
     }
 }

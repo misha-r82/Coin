@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,12 @@ namespace Btr
         public List<Seller> Sellers { get; private set; }
         public List<Seller> Complited;
 
+        public bool AllowBuy(CoursePoint pt)
+        {
+            if (!Sellers.Any()) return true;
+            var lastSeller = Sellers[0];
+            return lastSeller.BoughtPt.Course > pt.Course + _tracker.Sett.Delta;
+        }
         private void DeleteComplitedSellers()
         {
             var deleted = new List<Seller>();
@@ -49,16 +56,18 @@ namespace Btr
 
             switch (_tracker.Track(curCourse))
             {
-                case EndPoint.None: 
+                case EndPoint.None: break;
                 case EndPoint.Up:
                     TrySell(curCourse); break;
                 case EndPoint.Down:
-                    Buy(curCourse); break;
+                    if (AllowBuy(curCourse))
+                        Buy(curCourse); break;
             }
         }
 
         private void Buy(CoursePoint buyPoint)
         {
+            //Debug.WriteLine("Buy=" + buyPoint.Course);
             Sellers.Add(new Seller(_tracker.Market, buyPoint, _tracker.Sett));
         }
 
@@ -73,32 +82,6 @@ namespace Btr
         {
             Course = course;
             Date = date;
-        }
-
-    }
-    
-    public class Seller
-    {
-        public Market Market { get; }
-        public CoursePoint BoughtPt { get; }
-        public CoursePoint SellPoint { get; private set; }
-        public bool Selled { get; private set; }
-        private BaseSettings _sett;
-        
-        public Seller(Market market, CoursePoint boughtPt, BaseSettings sett)
-        {
-            Market = market;
-            BoughtPt = boughtPt;
-            _sett = sett;            
-        }
-
-        public void TrySell(CoursePoint point)
-        {
-            if (point.Course > BoughtPt.Course + _sett.Delta)
-            {
-                SellPoint = point;
-                Selled = true;
-            }
         }
 
     }
