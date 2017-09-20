@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using Btr;
 using Btr.Files;
@@ -24,17 +25,38 @@ namespace UnitTestProject
             Markets.SaveMarkets();
         }
 
-        [TestMethod]
-        public void TestMethod1()
+        private void TradeTest(double T, double gap)
         {
             var m = Markets.MarketList.First();
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = 0.01, Tbase = new TimeSpan(0, 12, 0, 0), T = new TimeSpan(0,0,20), GGap = 1.3});
+            { Delta = 0.01, Tbase = TimeSpan.FromHours(T), T = new TimeSpan(0,0,20), GGap = gap});
             var treader = new Treader(tacker);
             foreach (PlnCouse.CouseItem item in m.Value.CourseData)
             {
                 var coursePoint = new CoursePoint(item.course, item.date);
                 treader.Trade(coursePoint);
+            }
+            int ptCount = m.Value.CourseData.Length;
+            var sred = m.Value.CourseData.Sum(p => p.course / ptCount);
+            var invest = treader.Complited.Count + treader.Sellers.Count;
+            var investBtc = invest * sred;
+            var marhin = treader.Complited.Sum(c => 
+            c.SellPoint.Course - c.BoughtPt.Course - 0.05 * c.SellPoint.Course);
+            var percent = marhin / investBtc;
+            Debug.WriteLine("T ={0} gap ={1} %= {2}", T, gap, percent);
+        }
+        [TestMethod]
+        public void TestMethod1()
+        {
+            for (int g = 1; g < 8; g++)
+            {
+                double gap = 0.1 * g;
+                double t = 6;
+                while (t < 130)
+                {
+                    TradeTest(t, gap);
+                    t *= 1.5;
+                }
             }
         }
     }
