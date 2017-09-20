@@ -14,10 +14,12 @@ namespace Btr
     {
         private Market _market;
         private BaseSettings _sett;
+        private double _lastGrad;
         public CourseTracker(Market market, BaseSettings sett)
         {
             _market = market;
             _sett = sett;
+            _lastGrad = 0;
             Leap = new LeapInfo();
         }
 
@@ -63,9 +65,10 @@ namespace Btr
             if (course.Course == 0) return EndPoint.None;
             var period = new DatePeriod(course.Date - T, course.Date);
             double g = GetGradient(period);
-            Debug.WriteLine("{0} {1} {2}", course.Date, course.Course,  g);
-            if (Math.Abs(g) < _sett.Delta)
+            //Debug.WriteLine("{0} {1} {2}", course.Date, course.Course,  g);
+            if (Math.Abs(g) < _sett.Delta || Math.Abs(g - _lastGrad) < _sett.Delta * _sett.GGap)
                 return Leap.SetNeutral(course);
+            _lastGrad = g;
             if (g > 0)
                 return Leap.SetUp(course);
             return Leap.SetDown(course);

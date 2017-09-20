@@ -49,12 +49,11 @@ namespace Btr
 
             switch (_tracker.Track(curCourse))
             {
+                case EndPoint.None: 
                 case EndPoint.Up:
                     TrySell(curCourse); break;
                 case EndPoint.Down:
-                    Buy(_tracker.Leap.DownEnd); break;
-                case EndPoint.None: 
-                    TrySell(curCourse); break;
+                    Buy(curCourse); break;
             }
         }
 
