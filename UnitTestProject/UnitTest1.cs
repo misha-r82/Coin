@@ -29,7 +29,7 @@ namespace UnitTestProject
         {
             var m = Markets.MarketList.First();
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta* T / 6, Tbase = TimeSpan.FromHours(T), T = new TimeSpan(0,0,20), GGap = gap});
+            { Delta = delta* T / 6, T = new TimeSpan(0,0,20), Tbase = TimeSpan.FromHours(T), GGap = gap});
             var treader = new Treader(tacker);
             foreach (PlnCouse.CouseItem item in m.Value.CourseData)
             {
