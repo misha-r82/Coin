@@ -65,7 +65,8 @@ namespace Btr
             if (course.Course == 0) return EndPoint.None;
             var period = new DatePeriod(course.Date - T, course.Date);
             double g = GetGradient(period);
-            //Debug.WriteLine("{0} {1} {2}", course.Date, course.Course,  g);
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
+                Debug.WriteLine("{0} {1} {2}", course.Date, course.Course,  g);
             if (Math.Abs(g) < _sett.Delta || Math.Abs(g - _lastGrad) < _sett.Delta * _sett.GGap)
                 return Leap.SetNeutral(course);
             _lastGrad = g;

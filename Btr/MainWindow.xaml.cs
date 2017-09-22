@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,7 +53,56 @@ namespace Btr
             
 
         }
+        private void TradeTest(double T, double delta, double gap)
+        {
+            var m = Markets.MarketList.First();
+            var tacker = new CourseTracker(m.Value, new BaseSettings()
+            { Delta = delta * T / 6, T = new TimeSpan(0, 0, 20), Tbase = TimeSpan.FromHours(T), GGap = gap });
+            var treader = new Treader(tacker);
+            foreach (PlnCouse.CouseItem item in m.Value.CourseData)
+            {
+                /*if (item.date == new DateTime(2017,07,19,19,50,0))
+                { }*/
+                var coursePoint = new CoursePoint(item.course, item.date);
+                treader.Trade(coursePoint);
+            }
+            int ptCount = m.Value.CourseData.Length;
+            var sred = m.Value.CourseData.Sum(p => p.course / ptCount);
+            var invest = treader.Complited.Count + treader.Sellers.Count;
+            var investBtc = invest * sred;
+            var margin = treader.Complited.Sum(c =>
+            c.SellPoint.Course - c.BoughtPt.Course - 0.05 * c.SellPoint.Course);
+            var percent = margin / investBtc;
+            //if (percent > 0.1)
+            Debug.WriteLine("T ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
+            Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);
 
+        }
+        public void TradeTestCase()
+        {
+            TradeTest(0.02, 0.01, 0.3);
+        }
+
+        public void TestMethod1()
+        {
+            double delta = 0.0005;
+            while (delta < 0.025)
+            {
+                double gap = 0.1;
+                while (gap < 0.9)
+                {
+                    double t = 1;
+                    while (t < 130)
+                    {
+                        TradeTest(t, delta, gap);
+                        t *= 2;
+                    }
+                    gap += 0.2;
+                }
+                delta *= 2;
+            }
+
+        }
         private void EditMarkets_OnClick(object sender, RoutedEventArgs e)
         {
             var f = new FrmAddMarket();
@@ -62,6 +112,7 @@ namespace Btr
         private void BtnFindLeap_OnClick(object sender, RoutedEventArgs e)
         {
             DateTime start = new DateTime(2017,09,10,10,0,0);
+            TestMethod1();
             /*var lf = new LeapFounder();
             lf.Market = Markets.MarketList["BTC_ETH"];
             lf.GRatio = 1.3;

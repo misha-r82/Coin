@@ -67,7 +67,9 @@ namespace Btr
 
         private void Buy(CoursePoint buyPoint)
         {
-            //Debug.WriteLine("Buy=" + buyPoint.Course);
+
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowBuy))
+                Debug.WriteLine("Buy=" + buyPoint.Course);
             Sellers.Add(new Seller(_tracker.Market, buyPoint, _tracker.Sett));
         }
 

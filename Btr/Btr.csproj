@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DbgSett.cs" />
     <Compile Include="LeapInfo.cs" />
     <Compile Include="Seller.cs" />
     <Compile Include="Trader.cs" />

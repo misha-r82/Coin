@@ -53,12 +53,12 @@ namespace UnitTestProject
         [TestMethod]
         public void TradeTestCase()
         {
-            TradeTest(6, 0.01, 0.3);
+            TradeTest(0.02, 0.01, 0.3);
         }
         [TestMethod]
         public void TestMethod1()
         {
-            double delta = 0.003;
+            double delta = 0.0005;
             while (delta < 0.025)
             {
                 double gap = 0.1;
