@@ -10,8 +10,7 @@ namespace Btr
     {
         static DbgSett()
         {
-            var course = new[] {DbgOption.ShowBuy, DbgOption.ShowSell, DbgOption.ShowCourse};
-            Options= new SortedSet<DbgOption>(course);
+            Options= new SortedSet<DbgOption>();
             
         }
         public static SortedSet<DbgOption> Options;

@@ -17,7 +17,15 @@ namespace Btr
         public string Name { get; set; }
         public PlnCouse.CouseItem[] CourseData;
         public double Qmax { get; private set; }
-
+        public IEnumerable<PlnCouse.CouseItem> GetData(DatePeriod period)
+        {
+            int pos = Array.BinarySearch(CourseData, new PlnCouse.CouseItem(period.From, 0, 0),
+                new PlnCouse.DateComparer());
+            if (pos < 0) pos = ~pos - 1;
+            if (pos < 0) yield break; 
+            while (pos < CourseData.Length && period.IsConteins(CourseData[pos].date))
+                yield return CourseData[pos++];
+        }
         public double Getourse(DateTime date)
         {
             if (CourseData.Length < 2) throw new Exception("Данные не загружены");

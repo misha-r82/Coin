@@ -29,7 +29,7 @@ namespace UnitTestProject
         {
             var m = Markets.MarketList.First();
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta* T / 6, T = new TimeSpan(0,0,20), Tbase = TimeSpan.FromHours(T), GGap = gap});
+            { Delta = delta/** T / 6*/, T = new TimeSpan(0,0,20), Tbase = TimeSpan.FromHours(T), GGap = gap});
             var treader = new Treader(tacker);
             foreach (PlnCouse.CouseItem item in m.Value.CourseData)
             {
@@ -45,23 +45,29 @@ namespace UnitTestProject
             var margin = treader.Complited.Sum(c => 
             c.SellPoint.Course - c.BoughtPt.Course - 0.05 * c.SellPoint.Course);
             var percent = margin / investBtc;
-            //if (percent > 0.1)
+            if (treader.Complited.Count >2 && percent > 0.08)
+            {
                 Debug.WriteLine("T ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
-            Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);
+                Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);                
+            }
+
 
         }
         [TestMethod]
         public void TradeTestCase()
         {
-            TradeTest(0.02, 0.01, 0.3);
+            DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
+            DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
+            //DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
+            TradeTest(12, 0.01, 0.01);
         }
         [TestMethod]
         public void TestMethod1()
         {
-            double delta = 0.0005;
-            while (delta < 0.025)
+            double delta = 0.005;
+            while (delta < 0.2)
             {
-                double gap = 0.1;
+                double gap = 0.001;
                 while (gap < 0.9)
                 {
                     double t = 1;
@@ -70,7 +76,7 @@ namespace UnitTestProject
                         TradeTest(t, delta, gap);
                         t *= 2;
                     }
-                    gap += 0.2;
+                    gap += 0.1;
                 }
                 delta *= 2;
             }

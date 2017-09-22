@@ -69,7 +69,7 @@ namespace Btr
         {
 
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowBuy))
-                Debug.WriteLine("Buy=" + buyPoint.Course);
+                Debug.WriteLine(string.Format("Buy={0} {1}", buyPoint.Course, _tracker.Leap.Mode));
             Sellers.Add(new Seller(_tracker.Market, buyPoint, _tracker.Sett));
         }
 

@@ -90,39 +90,15 @@ namespace Btr.History
                 double delta = sumValue / sumAmount;
                 yield return new CouseItem(time, sred, delta);
             }
-            /*
-            DateTime first = from;
-            do
-            {
-                DateTime end = to - first > MaxPeriod ? first + MaxPeriod : to;
-                PlnHistoryItem[] data = BtrHistory.GetHitoryPln(market, first, end)
-                    .OrderBy(d=>d.date).ToArray();
-                if (data.Length == 0) yield break;        
-                double sumAmount = 0;
-                double sumCourse = 0;
-                int pos = 0;
-                first = data[0].date;
-                foreach (var item in data)
-                {
-                    if (pos++ == data.Length -1) break;
-                    if (item.date > first + dlit)
-                    {
-                        Debug.WriteLine(first);
-                        if (sumAmount > 0) yield return new CouseItem(first, sumCourse / sumAmount);
-                        sumCourse = 0;
-                        sumAmount = 0;
-                        first = first + dlit;
-                    }
-                    else
-                    {
-                        sumCourse += item.rate * item.amount;
-                        sumAmount += item.amount;                        
-                    }           
 
-                }                
-            } while (first + dlit < to);
-            
-        }*/
+
+        }
+        public class DateComparer : IComparer<CouseItem>
+        {
+            public int Compare(CouseItem x, CouseItem y)
+            {
+                return x.date.CompareTo(y.date);
+            }
         }
     }
 }

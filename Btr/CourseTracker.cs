@@ -35,14 +35,12 @@ namespace Btr
             get { return _market; }
         }
 
-        public PlnCouse.CouseItem[] GetData(DatePeriod period)
-        {
-            return _market.CourseData.Where(x => period.IsConteins(x.date)).ToArray();
-        }
+
         public double GetGradient(DatePeriod period)
         {
-            var data = GetData(period);
+            var data = _market.GetData(period).ToArray();
             int count = data.Length;
+            if (count == 0) return double.NaN;
             double g = 0;
             int nullCount = data.Count(d => d.course == 0);
             int countEff = count - nullCount;
@@ -61,15 +59,23 @@ namespace Btr
         }
         public EndPoint Track(CoursePoint course)
         {
+            if (course.Date == new DateTime(2017, 7, 16, 15, 0, 0))
+            {
+                
+            }
             var T = _sett.Tbase;
             if (course.Course == 0) return EndPoint.None;
             var period = new DatePeriod(course.Date - T, course.Date);
             double g = GetGradient(period);
+            if (g == double.NaN) return EndPoint.None;
+
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
-                Debug.WriteLine("{0} {1} {2}", course.Date, course.Course,  g);
-            if (Math.Abs(g) < _sett.Delta || Math.Abs(g - _lastGrad) < _sett.Delta * _sett.GGap)
-                return Leap.SetNeutral(course);
+                Debug.WriteLine("{0} {1} {2} {3}", course.Date, course.Course,  g, Leap.Mode);
+            if (Math.Abs(g - _lastGrad) < _sett.Delta * _sett.GGap)
+                return EndPoint.None;
             _lastGrad = g;
+            if (Math.Abs(g) < _sett.Delta)
+                return Leap.SetNeutral(course);
             if (g > 0)
                 return Leap.SetUp(course);
             return Leap.SetDown(course);
