@@ -57,6 +57,27 @@ namespace Btr
             double kT = period.Dlit.TotalMilliseconds / _sett.Tbase.TotalMilliseconds;
             return g / kT;
         }
+        public double WndGrad(DatePeriod period)
+        {
+            double wSlope = 0.6;
+            var data = _market.GetData(period).ToArray();
+            int count = data.Length;
+            if (count == 0) return double.NaN;
+            double g = 0;
+            double lastNotNull = 0;
+            double w = 1 - wSlope;
+            double dw = w / count;
+            for (int i = 0; i < count - 1; i++)
+            {
+                if (data[i].course != 0) lastNotNull = data[i].course;
+                if (lastNotNull > 0 && data[i + 1].course > 0)
+                    g += w * (data[i + 1].course - data[i].course);
+                w += dw;
+            }
+
+            double kT = period.Dlit.TotalMilliseconds / _sett.Tbase.TotalMilliseconds;
+            return g / kT / (1 - 0.5 * wSlope);
+        }
         public EndPoint Track(CoursePoint course)
         {
             if (course.Date == new DateTime(2017, 7, 16, 15, 0, 0))
@@ -66,7 +87,7 @@ namespace Btr
             var T = _sett.Tbase;
             if (course.Course == 0) return EndPoint.None;
             var period = new DatePeriod(course.Date - T, course.Date);
-            double g = GetGradient(period);
+            double g = WndGrad(period);
             if (g == double.NaN) return EndPoint.None;
 
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))

@@ -43,7 +43,7 @@ namespace UnitTestProject
             var invest = treader.Complited.Count + treader.Sellers.Count;
             var investBtc = invest * sred;
             var margin = treader.Complited.Sum(c => 
-            c.SellPoint.Course - c.BoughtPt.Course - 0.05 * c.SellPoint.Course);
+            c.SellPoint.Course - c.BoughtPt.Course - 0.005 * c.SellPoint.Course);
             var percent = margin / investBtc;
             if (treader.Complited.Count >2 && percent > 0.08)
             {
@@ -59,26 +59,26 @@ namespace UnitTestProject
             DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
             DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
             //DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
-            TradeTest(12, 0.01, 0.01);
+            TradeTest(12, 0.01, 0);
         }
         [TestMethod]
         public void TestMethod1()
         {
             double delta = 0.005;
-            while (delta < 0.2)
+            while (delta < 0.3)
             {
-                double gap = 0.001;
-                while (gap < 0.9)
-                {
-                    double t = 1;
+                double gap = 0;
+                //while (gap < 1.1)
+               // {
+                    double t = 2;
                     while (t < 130)
                     {
                         TradeTest(t, delta, gap);
                         t *= 2;
                     }
-                    gap += 0.1;
-                }
-                delta *= 2;
+                  //  gap *= 1.5;
+                //}
+                delta += 0.005;
             }
 
         }

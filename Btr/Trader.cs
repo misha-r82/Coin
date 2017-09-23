@@ -56,7 +56,9 @@ namespace Btr
 
             switch (_tracker.Track(curCourse))
             {
-                case EndPoint.None: break;
+                case EndPoint.None:
+                    if (_tracker.Leap.Mode == TrackMode.Neutral) TrySell(curCourse);
+                    break;
                 case EndPoint.Up:
                     TrySell(curCourse); break;
                 case EndPoint.Down:
