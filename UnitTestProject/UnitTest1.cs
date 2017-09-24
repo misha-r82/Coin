@@ -28,8 +28,10 @@ namespace UnitTestProject
         private void TradeTest(double T, double delta ,double gap)
         {
             var m = Markets.MarketList.First();
+            var tBase = TimeSpan.FromHours(T);
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta/** T / 6*/, T = new TimeSpan(0,0,20), Tbase = TimeSpan.FromHours(T), GGap = gap});
+            
+            { Delta = delta, T1 = new TimeSpan(tBase.Ticks * 2), Tbase = tBase, GGap = gap});
             var treader = new Treader(tacker);
             foreach (PlnCouse.CouseItem item in m.Value.CourseData)
             {
@@ -47,7 +49,7 @@ namespace UnitTestProject
             var percent = margin / investBtc;
             if (treader.Complited.Count >2 && percent > 0.08)
             {
-                Debug.WriteLine("T ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
+                Debug.WriteLine("Tbase ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
                 Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);                
             }
 
