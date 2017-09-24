@@ -34,7 +34,7 @@ namespace Btr
                 sred += data[i + 1].course / count;
             }
                 
-            double kT = period.Dlit.TotalMilliseconds / BaseSett.Tbase.TotalMilliseconds;
+            double kT = period.Dlit.TotalMilliseconds / BaseSett.T0.TotalMilliseconds;
             return g / kT;
         }*/
         /*public double SumDelta(DatePeriod period)
@@ -47,8 +47,8 @@ namespace Btr
         }*/
         /*public Leap FindLeap(DateTime start)
         {
-            var Tbase = BaseSett.Tbase;
-            var period = new DatePeriod(start - Tbase, start);
+            var T0 = BaseSett.T0;
+            var period = new DatePeriod(start - T0, start);
             double s = SumDelta(period);
                 double g2 = GetGradient(period2);
                 if (g1 > GRatio * g2) return new Leap(g1, g2, period1, period2);

@@ -17,8 +17,8 @@ namespace UnitTestProject
         {
             string name = "BTC_ETH";
             var market = new Market(name);
-            var from = new DateTime(2017,7,15);
-            var to = new DateTime(2017, 09, 11);
+            var from = new DateTime(2017,08,01);
+            var to = new DateTime(2017, 09, 23);
             market.LoadHistory(new DatePeriod(from,to));
             if (Markets.MarketList.ContainsKey(name)) Markets.MarketList.Remove(name);
             Markets.MarketList.Add(market.Name, market);
@@ -29,9 +29,11 @@ namespace UnitTestProject
         {
             var m = Markets.MarketList.First();
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta/** T / 6*/, T = new TimeSpan(0,0,20), Tbase = TimeSpan.FromHours(T), GGap = gap});
+            { Delta = delta/** T1 / 6*/, Tbase = new TimeSpan(10,0,0), T0 = TimeSpan.FromHours(T), GGap = gap});
             var treader = new Treader(tacker);
-            foreach (PlnCouse.CouseItem item in m.Value.CourseData)
+            var period = new DatePeriod(new DateTime(2017,09,04), new DateTime(2017,9,8));
+            var courseData = m.Value.GetData(period);
+            foreach (PlnCouse.CouseItem item in courseData)
             {
                 /*if (item.date == new DateTime(2017,07,19,19,50,0))
                 { }*/
@@ -45,9 +47,9 @@ namespace UnitTestProject
             var margin = treader.Complited.Sum(c => 
             c.SellPoint.Course - c.BoughtPt.Course - 0.005 * c.SellPoint.Course);
             var percent = margin / investBtc;
-            if (treader.Complited.Count >2 && percent > 0.08)
+            if (treader.Complited.Count >-1 && percent > -1)
             {
-                Debug.WriteLine("T ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
+                Debug.WriteLine("T1 ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
                 Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);                
             }
 
@@ -59,7 +61,7 @@ namespace UnitTestProject
             DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
             DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
             //DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
-            TradeTest(12, 0.01, 0);
+            TradeTest(0.6, 0.007, 0);
         }
         [TestMethod]
         public void TestMethod1()

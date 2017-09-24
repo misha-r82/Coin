@@ -66,7 +66,7 @@ namespace Btr
             double g = 0;
             double lastNotNull = 0;
             double w = 1 - wSlope;
-            double dw = w / count;
+            double dw = wSlope / count;
             for (int i = 0; i < count - 1; i++)
             {
                 if (data[i].course != 0) lastNotNull = data[i].course;
@@ -80,22 +80,23 @@ namespace Btr
         }
         public EndPoint Track(CoursePoint course)
         {
-            if (course.Date == new DateTime(2017, 7, 16, 15, 0, 0))
+            if (course.Date == new DateTime(2017, 09, 04, 06, 20, 0))
             {
                 
             }
-            var T = _sett.Tbase;
+            var T = _sett.T0;
             if (course.Course == 0) return EndPoint.None;
             var period = new DatePeriod(course.Date - T, course.Date);
             double g = WndGrad(period);
             if (g == double.NaN) return EndPoint.None;
-
+            double delta = _sett.Delta / 2;
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
-                Debug.WriteLine("{0} {1} {2} {3}", course.Date, course.Course,  g, Leap.Mode);
-            if (Math.Abs(g - _lastGrad) < _sett.Delta * _sett.GGap)
+                Debug.WriteLine("{0} {1:#.000000} {2:#.000000}", 
+                    course.Date,  g, Leap.Mode);
+            if (Math.Abs(g - _lastGrad) < delta * _sett.GGap)
                 return EndPoint.None;
             _lastGrad = g;
-            if (Math.Abs(g) < _sett.Delta)
+            if (Math.Abs(g) < delta)
                 return Leap.SetNeutral(course);
             if (g > 0)
                 return Leap.SetUp(course);

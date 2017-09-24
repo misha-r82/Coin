@@ -39,7 +39,7 @@ namespace Btr
             //var t0 = BtrHistory.GetHitoryBtr("BTC-ETH", from);
             //var t = BtrHistory.GetHitoryPln("BTC_ETH", from, to);
             var course = new PlnCouse();
-            PlnCouse.CouseItem[] c = course.GetCouse("BTC_ETH", period, new TimeSpan(0,1,0)).ToArray();
+            PlnCouse.CouseItem[] c = course.GetHistory("BTC_ETH", period, new TimeSpan(0,1,0)).ToArray();
 
         }
 
@@ -57,7 +57,7 @@ namespace Btr
         {
             var m = Markets.MarketList.First();
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta * T / 6, T = new TimeSpan(0, 0, 20), Tbase = TimeSpan.FromHours(T), GGap = gap });
+            { Delta = delta * T / 6, T1 = new TimeSpan(0, 0, 20), T0 = TimeSpan.FromHours(T), GGap = gap });
             var treader = new Treader(tacker);
             foreach (PlnCouse.CouseItem item in m.Value.CourseData)
             {
@@ -74,7 +74,7 @@ namespace Btr
             c.SellPoint.Course - c.BoughtPt.Course - 0.05 * c.SellPoint.Course);
             var percent = margin / investBtc;
             //if (percent > 0.1)
-            Debug.WriteLine("T ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
+            Debug.WriteLine("T1 ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
             Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);
 
         }
