@@ -11,7 +11,7 @@ namespace Btr.History
 {
     public class PlnCouse
     {
-        public TimeSpan LoadSize = new TimeSpan(1, 0, 0, 0);
+        public TimeSpan LoadSize = new TimeSpan(0, 4, 0, 0);
         public struct CouseItem
         {
             public CouseItem(DateTime date, double course, double delta)
@@ -45,23 +45,20 @@ namespace Btr.History
                 if (data.Length == 0) yield break;
                 foreach (var item in data)
                 {
-                    while (chunk.Count == 0 && !chunkPeriod.IsConteins(item.date)) // не было торгов - - вернуть пустые
-                    {
-                        yield return new KVPair<DateTime, PlnHistoryItem[]>(chunkPeriod.From, new PlnHistoryItem[0]);
-                        ShiftPeriod(chunkPeriod, dlit);
-                    }                       
-                    if (item.date > chunkPeriod.To)
+                    if (chunkPeriod.IsConteins(item.date))
+                        chunk.Add(item);
+                    else
                     {
                         yield return new KVPair<DateTime, PlnHistoryItem[]>(chunkPeriod.From, chunk.ToArray());
                         chunk.Clear();
                         ShiftPeriod(chunkPeriod, dlit);
                     }
-                    chunk.Add(item);
+
                 }
                 ShiftPeriod(loadPeriod, LoadSize);
             } while (chunkPeriod.To < period.To);// неполные не возвращаем
         }
-        public IEnumerable<CouseItem> GetCouse(string market, DatePeriod period, TimeSpan dlit)
+        public IEnumerable<CouseItem> GetHistory(string market, DatePeriod period, TimeSpan dlit)
         {
             foreach (var pair in GetData(market, period, dlit))
             {

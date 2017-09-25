@@ -21,7 +21,7 @@ namespace Btr
         {
             int pos = Array.BinarySearch(CourseData, new PlnCouse.CouseItem(period.From, 0, 0),
                 new PlnCouse.DateComparer());
-            if (pos < 0) pos = ~pos - 1;
+            if (pos < 0) pos = ~pos;
             if (pos < 0) yield break; 
             while (pos < CourseData.Length && period.IsConteins(CourseData[pos].date))
                 yield return CourseData[pos++];
@@ -45,7 +45,7 @@ namespace Btr
         public void LoadHistory(DatePeriod period)
         {
             var course = new PlnCouse(); 
-            CourseData = course.GetCouse(Name, period, new TimeSpan(0, 10, 0)).ToArray();
+            CourseData = course.GetHistory(Name, period, new TimeSpan(0, 10, 0)).ToArray();
         }
     }
 }

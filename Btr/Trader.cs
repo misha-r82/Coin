@@ -26,8 +26,8 @@ namespace Btr
         public bool AllowBuy(CoursePoint pt)
         {
             if (!Sellers.Any()) return true;
-            var lastSeller = Sellers[0];
-            return lastSeller.BoughtPt.Course > pt.Course + _tracker.Sett.Delta;
+            var lastSeller = Sellers.Last();
+            return lastSeller.BoughtPt.Course > pt.Course * (1 + _tracker.Sett.Delta);
         }
         private void DeleteComplitedSellers()
         {
@@ -71,7 +71,7 @@ namespace Btr
         {
 
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowBuy))
-                Debug.WriteLine(string.Format("Buy={0} {1}", buyPoint.Course, _tracker.Leap.Mode));
+                Debug.WriteLine(string.Format("Buy={0} {1}", buyPoint, _tracker.Leap.Mode));
             Sellers.Add(new Seller(_tracker.Market, buyPoint, _tracker.Sett));
         }
 
@@ -88,5 +88,9 @@ namespace Btr
             Date = date;
         }
 
+        public override string ToString()
+        {
+            return string.Format("{0:dd.MM HH:mm}|{1:#.000000} ", Date, Course);
+        }
     }
 }

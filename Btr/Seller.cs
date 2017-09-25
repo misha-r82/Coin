@@ -19,11 +19,18 @@ namespace Btr
 
         public void TrySell(CoursePoint point)
         {
-            if (point.Course > BoughtPt.Course + _sett.Delta)
+            if (point.Course > BoughtPt.Course * (1 + _sett.Delta))
             {
                 SellPoint = point;
                 Selled = true;
-                //Debug.WriteLine("Sell=" + point.Course);
+
+                if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowSell))
+                {
+                    var mrg = point.Course - BoughtPt.Course * (1 + _sett.Delta);
+                    Debug.WriteLine(string.Format("sell:{1} buy:{0} d={2:#.000000} mrg={3:#.000000} mrg={4:#.000000}",
+                         point, BoughtPt, point.Course - BoughtPt.Course, mrg, mrg/BoughtPt.Course * 10));
+                }
+
             }
         }
 

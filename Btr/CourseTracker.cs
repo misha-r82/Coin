@@ -37,13 +37,11 @@ namespace Btr
 
         public EndPoint Track(CoursePoint course)
         {
-            if (course.Date == new DateTime(2017, 7, 16, 15, 0, 0))
+            if (course.Date == new DateTime(2017, 09, 04, 06, 20, 0))
             {
                 
             }
-
-            var T = _sett.Tbase;
-            var T1 = _sett.T1;
+            var T = _sett.T0;
             if (course.Course == 0) return EndPoint.None;
             var period = new DatePeriod(course.Date - T, course.Date);
             var period1 = new DatePeriod(period.From - T1, period.From);
@@ -54,9 +52,9 @@ namespace Btr
             if (g == double.NaN) return EndPoint.None;
 
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
-                Debug.WriteLine("{0} {1} {2} {3}", course.Date, course.Course,  g, Leap.Mode);
-            double delta = _sett.Delta;
-            if (Math.Abs(g - _lastGrad) < _sett.Delta * _sett.GGap)
+                Debug.WriteLine("{0} {1:#.000000} {2:#.000000}", 
+                    course.Date,  g, Leap.Mode);
+            if (Math.Abs(g - _lastGrad) < delta * _sett.GGap)
                 return EndPoint.None;
             _lastGrad = g;
             double positiveDelta = delta + 0.6 * g1;

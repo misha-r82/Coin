@@ -39,7 +39,7 @@ namespace Btr
             //var t0 = BtrHistory.GetHitoryBtr("BTC-ETH", from);
             //var t = BtrHistory.GetHitoryPln("BTC_ETH", from, to);
             var course = new PlnCouse();
-            PlnCouse.CouseItem[] c = course.GetCouse("BTC_ETH", period, new TimeSpan(0,1,0)).ToArray();
+            PlnCouse.CouseItem[] c = course.GetHistory("BTC_ETH", period, new TimeSpan(0,1,0)).ToArray();
 
         }
 
@@ -55,7 +55,27 @@ namespace Btr
         }
         private void TradeTest(double T, double delta, double gap)
         {
-
+            var m = Markets.MarketList.First();
+            var tacker = new CourseTracker(m.Value, new BaseSettings()
+            { Delta = delta * T / 6, T1 = new TimeSpan(0, 0, 20), T0 = TimeSpan.FromHours(T), GGap = gap });
+            var treader = new Treader(tacker);
+            foreach (PlnCouse.CouseItem item in m.Value.CourseData)
+            {
+                /*if (item.date == new DateTime(2017,07,19,19,50,0))
+                { }*/
+                var coursePoint = new CoursePoint(item.course, item.date);
+                treader.Trade(coursePoint);
+            }
+            int ptCount = m.Value.CourseData.Length;
+            var sred = m.Value.CourseData.Sum(p => p.course / ptCount);
+            var invest = treader.Complited.Count + treader.Sellers.Count;
+            var investBtc = invest * sred;
+            var margin = treader.Complited.Sum(c =>
+            c.SellPoint.Course - c.BoughtPt.Course - 0.05 * c.SellPoint.Course);
+            var percent = margin / investBtc;
+            //if (percent > 0.1)
+            Debug.WriteLine("T1 ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
+            Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);
 
         }
         public void TradeTestCase()
