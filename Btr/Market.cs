@@ -10,6 +10,7 @@ namespace Btr
 {
     public class Market
     {
+        public TimeSpan Tmin = new TimeSpan(0,0,5);
         public Market(string name)
         {
             Name = name;

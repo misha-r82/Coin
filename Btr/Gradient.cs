@@ -14,6 +14,7 @@ namespace Btr
         {
             int count = data.Length;
             if (count == 0) return double.NaN;
+            if (count == 1) return data[0].delta;
             double g = 0;
             double lastNotNull = 0;
             for (int i = 0; i < count - 1; i++)
@@ -30,6 +31,7 @@ namespace Btr
         {
             int count = data.Length;
             if (count == 0) return double.NaN;
+            if (count == 1) return data[0].delta;
             double g = 0;
             double lastNotNull = 0;
             double w = 1 - wSlope;

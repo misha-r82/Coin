@@ -42,17 +42,18 @@ namespace Btr
                 
             }
             var T0 = _sett.T0;
+            if (T0 < _market.Tmin) T0 = _market.Tmin;
             var T1 = new TimeSpan((long)(_sett.KT1 * T0.Ticks));
             if (course.Course == 0) return EndPoint.None;
             var period = new DatePeriod(course.Date - T0, course.Date);
-            var period1 = new DatePeriod(period.From - T1, period.From);
             var data = _market.GetData(period).ToArray();
-            var data1 = _market.GetData(period1).ToArray();
             double g = Gradient.WndGrad(data, period, _sett.Tbase, 0.7);
             var T01 = new TimeSpan((long)(T0.Ticks / (1 + Math.Abs(g)/_sett.Delta + 0.2)));
             period = new DatePeriod(course.Date - T01, course.Date);
-            g = Gradient.WndGrad(data, period, _sett.Tbase, 0.7);
+            g = Gradient.WndGrad(data, period, _sett.Tbase, 0.7); var period1 = new DatePeriod(period.From - T1, period.From);
+            var data1 = _market.GetData(period1).ToArray();
             var g1 = Gradient.GetGradient(data1, period1, _sett.Tbase);
+
             if (g == double.NaN) return EndPoint.None;
             double delta = _sett.Delta / 2;
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
@@ -61,8 +62,8 @@ namespace Btr
             if (Math.Abs(g - _lastGrad) < delta * _sett.GGap)
                 return EndPoint.None;
             _lastGrad = g;
-            double positiveDelta = delta + 0.0 * g1;
-            double negativeDelta = delta - 0.0 * g1;
+            double positiveDelta = delta + 0.9 * g1;
+            double negativeDelta = delta - 0.9 * g1;
             if (g > positiveDelta)
                 return Leap.SetUp(course);
             if (g < 0 && -g > negativeDelta)

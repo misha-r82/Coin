@@ -30,7 +30,7 @@ namespace UnitTestProject
             var m = Markets.MarketList.First();
             var t0 = TimeSpan.FromHours(T);
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta/** T1 / 6*/, Tbase = new TimeSpan(10,0,0), T0 = t0, KT1 = 3, GGap = gap});
+            { Delta = delta/** T1 / 6*/, Tbase = new TimeSpan(10,0,0), T0 = t0, KT1 = 10, GGap = gap});
             var treader = new Treader(tacker);
             var period = new DatePeriod(new DateTime(2017,09,4), new DateTime(2017,9,5));
             var courseData = m.Value.GetData(period);
@@ -42,12 +42,11 @@ namespace UnitTestProject
                 treader.Trade(coursePoint);
             }
             int ptCount = m.Value.CourseData.Length;
-            var sred = m.Value.CourseData.Sum(p => p.course / ptCount);
-            var invest = treader.Complited.Count + treader.Sellers.Count;
-            var investBtc = invest * sred;
+            //var sred = m.Value.CourseData.Sum(p => p.course / ptCount);
+            var invest = treader.Complited.Sum(o=>o.BoughtPt.Course)/* + treader.Sellers.Count*/;
             var margin = treader.Complited.Sum(c => 
             c.SellPoint.Course - c.BoughtPt.Course - 0.005 * c.SellPoint.Course);
-            var percent = margin / investBtc;
+            var percent = margin / invest;
             if (treader.Complited.Count >-1 && percent > -1)
             {
                 Debug.WriteLine("T1 ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);

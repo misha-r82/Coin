@@ -57,7 +57,7 @@ namespace Btr
         {
             var m = Markets.MarketList.First();
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta * T / 6, T1 = new TimeSpan(0, 0, 20), T0 = TimeSpan.FromHours(T), GGap = gap });
+            { Delta = delta * T / 6, KT1 = 4, T0 = TimeSpan.FromHours(T), GGap = gap });
             var treader = new Treader(tacker);
             foreach (PlnCouse.CouseItem item in m.Value.CourseData)
             {
