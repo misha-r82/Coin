@@ -11,7 +11,7 @@ namespace Btr
         public double Delta { get; set;}
         public double GGap { get; set; } // 
         public TimeSpan T0 { get; set; } 
-        public TimeSpan T1 { get; set; }
+        public double KT1 { get; set; }
         public TimeSpan Tbase { get; set; }
     }
 }

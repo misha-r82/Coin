@@ -30,7 +30,7 @@ namespace UnitTestProject
             var m = Markets.MarketList.First();
             var t0 = TimeSpan.FromHours(T);
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta/** T1 / 6*/, Tbase = new TimeSpan(10,0,0), T0 = t0, T1 = new TimeSpan(t0.Ticks * 2), GGap = gap});
+            { Delta = delta/** T1 / 6*/, Tbase = new TimeSpan(10,0,0), T0 = t0, KT1 = 3, GGap = gap});
             var treader = new Treader(tacker);
             var period = new DatePeriod(new DateTime(2017,09,4), new DateTime(2017,9,5));
             var courseData = m.Value.GetData(period);
