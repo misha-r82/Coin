@@ -10,22 +10,37 @@ namespace Btr
 {
     public class Gradient
     {
-        public static double GetGradient(PlnCouse.CouseItem[] data, DatePeriod period, TimeSpan tBase)
+        public struct Grad
+        {
+            public Grad(double gpos, double gneg)
+            {
+                GPos = gpos;
+                GNeg = gneg;
+            }
+            public double GPos {get;}
+            public double GNeg { get; }
+            public double G { get { return GNeg + GPos; } }
+        }
+        public static Grad GetGradient(PlnCouse.CouseItem[] data, DatePeriod period, TimeSpan tBase)
         {
             int count = data.Length;
-            if (count == 0) return double.NaN;
-            if (count == 1) return data[0].delta;
-            double g = 0;
+            if (count == 0) return new Grad(0,0);
+            double kT = period.Dlit.TotalMilliseconds / tBase.TotalMilliseconds;
+            if (count == 1) return data[0].delta < 0 ? new Grad(0, data[0].delta/kT) : new Grad(data[0].delta/kT, 0);
+            double gpos = 0;
+            double gneg = 0;
             double lastNotNull = 0;
             for (int i = 0; i < count - 1; i++)
             {
                 if (data[i].course != 0) lastNotNull = data[i].course;
                 if (lastNotNull > 0 && data[i + 1].course > 0)
-                    g += data[i + 1].course - data[i].course;                
+                {
+                    var g = data[i + 1].course - data[i].course;
+                    if (g < 0) gneg += g;
+                    else gpos += g;
+                }                                
             }
-
-            double kT = period.Dlit.TotalMilliseconds / tBase.TotalMilliseconds;
-            return g / kT;
+            return new Grad(gpos/kT, gneg/kT);
         }
         public static double WndGrad(PlnCouse.CouseItem[] data, DatePeriod period, TimeSpan tBase, double wSlope = 0.6)
         {

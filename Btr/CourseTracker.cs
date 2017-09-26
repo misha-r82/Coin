@@ -52,7 +52,7 @@ namespace Btr
             period = new DatePeriod(course.Date - T01, course.Date);
             g = Gradient.WndGrad(data, period, _sett.Tbase, 0.7); var period1 = new DatePeriod(period.From - T1, period.From);
             var data1 = _market.GetData(period1).ToArray();
-            var g1 = Gradient.GetGradient(data1, period1, _sett.Tbase);
+            Gradient.Grad g1 = Gradient.GetGradient(data1, period1, _sett.Tbase);
 
             if (g == double.NaN) return EndPoint.None;
             double delta = _sett.Delta / 2;
@@ -62,8 +62,9 @@ namespace Btr
             if (Math.Abs(g - _lastGrad) < delta * _sett.GGap)
                 return EndPoint.None;
             _lastGrad = g;
-            double positiveDelta = delta + 0.9 * g1;
-            double negativeDelta = delta - 0.9 * g1;
+            double kStationary = g1.G / (g1.GPos - g1.GNeg);
+            double positiveDelta = delta + 0.9 * kStationary;
+            double negativeDelta = delta - 0.9 * kStationary;
             if (g > positiveDelta)
                 return Leap.SetUp(course);
             if (g < 0 && -g > negativeDelta)
