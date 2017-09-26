@@ -11,7 +11,7 @@ namespace Btr.History
 {
     public class PlnCouse
     {
-        public TimeSpan LoadSize = new TimeSpan(0, 4, 0, 0);
+        public TimeSpan LoadSize = new TimeSpan(0, 2, 0, 0);
         public struct CouseItem
         {
             public CouseItem(DateTime date, double course, double delta)

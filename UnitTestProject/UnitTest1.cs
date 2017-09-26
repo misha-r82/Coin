@@ -28,10 +28,11 @@ namespace UnitTestProject
         private void TradeTest(double T, double delta ,double gap)
         {
             var m = Markets.MarketList.First();
+            var t0 = TimeSpan.FromHours(T);
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta/** T1 / 6*/, Tbase = new TimeSpan(10,0,0), T0 = TimeSpan.FromHours(T), GGap = gap});
+            { Delta = delta/** T1 / 6*/, Tbase = new TimeSpan(10,0,0), T0 = t0, T1 = new TimeSpan(t0.Ticks * 2), GGap = gap});
             var treader = new Treader(tacker);
-            var period = new DatePeriod(new DateTime(2017,09,04), new DateTime(2017,9,8));
+            var period = new DatePeriod(new DateTime(2017,09,4), new DateTime(2017,9,5));
             var courseData = m.Value.GetData(period);
             foreach (PlnCouse.CouseItem item in courseData)
             {
@@ -58,10 +59,11 @@ namespace UnitTestProject
         [TestMethod]
         public void TradeTestCase()
         {
+            DbgSett.Options.Clear();
             DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
             DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
             //DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
-            TradeTest(0.6, 0.007, 0);
+            TradeTest(0.2, 0.007, 0);
         }
         [TestMethod]
         public void TestMethod1()
@@ -70,16 +72,16 @@ namespace UnitTestProject
             while (delta < 0.3)
             {
                 double gap = 0;
-                //while (gap < 1.1)
-               // {
+                while (gap < 1.1)
+                {
                     double t = 2;
                     while (t < 130)
                     {
                         TradeTest(t, delta, gap);
                         t *= 2;
                     }
-                  //  gap *= 1.5;
-                //}
+                    gap *= 1.5;
+                }
                 delta += 0.005;
             }
 

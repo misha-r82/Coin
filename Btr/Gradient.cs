@@ -33,7 +33,7 @@ namespace Btr
             double g = 0;
             double lastNotNull = 0;
             double w = 1 - wSlope;
-            double dw = w / count;
+            double dw = 1 - wSlope / count;
             for (int i = 0; i < count - 1; i++)
             {
                 if (data[i].course != 0) lastNotNull = data[i].course;
@@ -45,5 +45,6 @@ namespace Btr
             double kT = period.Dlit.TotalMilliseconds / tBase.TotalMilliseconds;
             return g / kT / (1 - 0.5 * wSlope);
         }
+ 
     }
 }

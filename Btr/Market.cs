@@ -45,7 +45,7 @@ namespace Btr
         public void LoadHistory(DatePeriod period)
         {
             var course = new PlnCouse(); 
-            CourseData = course.GetHistory(Name, period, new TimeSpan(0, 10, 0)).ToArray();
+            CourseData = course.GetHistory(Name, period, new TimeSpan(0, 5, 0)).ToArray();
         }
     }
 }
