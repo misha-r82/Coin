@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test.Annotations;
 
 namespace Btr
 {
@@ -40,34 +41,20 @@ namespace Btr
             if (course.Date > new DateTime(2017, 09, 04, 18, 00, 0))
             {
                 
-            }
-            var T0 = _sett.T0;
-            if (T0 < _market.Tmin) T0 = _market.Tmin;
-            var T1 = new TimeSpan((long)(_sett.KT1 * T0.Ticks));
+            }           
             if (course.Course == 0) return EndPoint.None;
-            var period = new DatePeriod(course.Date - T0, course.Date);
-            var data = _market.GetData(period).ToArray();
-            double g = Gradient.WndGrad(data, period, _sett.Tbase, 0.7);
-            var T01 = new TimeSpan((long)(T0.Ticks / (1 + Math.Abs(g)/_sett.Delta + 0.2)));
-            period = new DatePeriod(course.Date - T01, course.Date);
-            g = Gradient.WndGrad(data, period, _sett.Tbase, 0.7); var period1 = new DatePeriod(period.From - T1, period.From);
-            var data1 = _market.GetData(period1).ToArray();
-            Gradient.Grad g1 = Gradient.GetGradient(data1, period1, _sett.Tbase);
-
-            if (g == double.NaN) return EndPoint.None;
-            double delta = _sett.Delta / 2;
+            var period = new DatePeriod(course.Date - MultiPeriodGrad.Sett.T0, course.Date);
+            var g = Gradient.GetGradient(_market.GetData(period).ToArray(), period, MultiPeriodGrad.Sett.T0);
+            var multiGrad = MultiPeriodGrad.GetGradSkv(_market, course.Date);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
-                Debug.WriteLine("{0} {1:#.000000} {2}", 
-                    course,  g, Leap.Mode);
-            if (Math.Abs(g - _lastGrad) < delta * _sett.GGap)
+                Debug.WriteLine("{0} {1:#.000000} {2} {3}", 
+                    course, g,  multiGrad, Leap.Mode);
+            if (Math.Abs((multiGrad.G - _lastGrad)/ (multiGrad.G + _lastGrad)) < _sett.GGap)
                 return EndPoint.None;
-            _lastGrad = g;
-            double kStationary = g1.G / (g1.GPos - g1.GNeg);
-            double positiveDelta = delta + 0.9 * kStationary;
-            double negativeDelta = delta - 0.9 * kStationary;
-            if (g > positiveDelta)
+            _lastGrad = multiGrad.G;
+            if (g.G > multiGrad.GPos)
                 return Leap.SetUp(course);
-            if (g < 0 && -g > negativeDelta)
+            if (g.G < multiGrad.GNeg)
                 return Leap.SetDown(course);
             return Leap.SetNeutral(course);
         }

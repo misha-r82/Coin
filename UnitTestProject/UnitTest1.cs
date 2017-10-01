@@ -30,7 +30,7 @@ namespace UnitTestProject
             var m = Markets.MarketList.First();
             var t0 = TimeSpan.FromHours(T);
             var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta/** T1 / 6*/, Tbase = new TimeSpan(10,0,0), T0 = t0, KT1 = 10, GGap = gap});
+            { Delta = delta, GGap = gap});
             var treader = new Treader(tacker);
             var period = new DatePeriod(new DateTime(2017,09,4), new DateTime(2017,9,5));
             var courseData = m.Value.GetData(period);
@@ -62,7 +62,7 @@ namespace UnitTestProject
             DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
             DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
             //DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
-            TradeTest(0.2, 0.007, 0);
+            TradeTest(0.2, 0.007, 0.3);
         }
         [TestMethod]
         public void TestMethod1()
