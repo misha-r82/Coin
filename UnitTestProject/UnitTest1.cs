@@ -46,23 +46,24 @@ namespace UnitTestProject
             var invest = treader.Complited.Sum(o=>o.BoughtPt.Course)/* + treader.Sellers.Count*/;
             var margin = treader.Complited.Sum(c => 
             c.SellPoint.Course - c.BoughtPt.Course - 0.005 * c.SellPoint.Course);
-            var percent = margin / invest;
+            var percent = margin;
             if (treader.Complited.Count >-1 && percent > -1)
             {
                 Debug.WriteLine("T1 ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
                 Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);                
             }
-
+            
 
         }
         [TestMethod]
         public void TradeTestCase()
         {
             DbgSett.Options.Clear();
-            DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
+            //DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
             DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
             //DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
             TradeTest(0.2, 0.007, 0.3);
+            
         }
         [TestMethod]
         public void TestMethod1()

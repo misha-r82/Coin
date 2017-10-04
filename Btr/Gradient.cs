@@ -11,42 +11,69 @@ namespace Btr
 {
     public class Gradient
     {
-        public struct Grad
+        public class Grad
         {
+            public double GPos { get; protected set; }
+            public double GNeg { get; protected set; }
+            public double G { get ; protected set; }
+            protected Grad() { }
             public Grad(double gpos, double gneg, double g)
             {
                 GPos = gpos;
                 GNeg = gneg;
                 G = g;
             }
-            public double GPos { get; }
-            public double GNeg { get; }
-            public double G { get ;  }
+            public Grad(PlnCouse.CouseItem[] data)
+            {
+                if (SmallDataConstructor(data)) return;
+                var deltaArr = new DeltaArr(data);
+                GPos = deltaArr.positive.Length == 0 ? 0 : deltaArr.positive.Sum() / deltaArr.positive.Length;
+                GNeg = deltaArr.negative.Length == 0 ? 0 : deltaArr.negative.Sum() / deltaArr.negative.Length;
+                G = GPos + GNeg;
+            }
+
+            protected bool SmallDataConstructor(PlnCouse.CouseItem[] data)
+            {
+                int count = data.Length;
+                if (count == 0)
+                {
+                    G = GNeg = GPos = 0;
+                    return true;
+                }
+                if (count == 1)
+                {
+                    if (data[0].delta < 0)
+                        GNeg = G = data[0].delta;
+                    else
+                        GPos = G = data[0].delta;
+                    return true;
+                }
+                return false;
+            }
+
             public override string ToString()
             {
-                return string.Format("g:{0:#.000000} g+:{1:#.000000} g-:{2:#.000000}", G, GPos, GNeg);
+                return string.Format("g:{0:0.00000} g+:{1:0.00000} g-:{2:0.00000}", G, GPos, GNeg);
             }
         }
 
-        public class DeltasSkv
+        public class GradSkv : Grad
         {
-            public double GPos { get; }
-            public double GNeg { get; }
-            public double G { get; }
-            public DeltasSkv(PlnCouse.CouseItem[] data)
+            public GradSkv(PlnCouse.CouseItem[] data)
             {
+                if (SmallDataConstructor(data)) return;
                 var deltaArr = new DeltaArr(data);
-                GPos = Math.Sqrt(deltaArr.positive.Sum(d => d * d) / deltaArr.positive.Length);
-                GPos = Math.Sqrt(deltaArr.negative.Sum(d => d * d) / deltaArr.negative.Length);
-                G = Math.Sqrt(deltaArr.all.Sum(d => d * d) / deltaArr.all.Length);
+                GPos = deltaArr.positive.Length == 0 ? 0 : 
+                    Math.Sqrt(deltaArr.positive.Sum(d => d * d) / deltaArr.positive.Length);
+                GNeg = deltaArr.negative.Length == 0 ? 0 :
+                    -Math.Sqrt(deltaArr.negative.Sum(d => d * d) / deltaArr.negative.Length);
+                double sumSq = deltaArr.all.Sum(d => d * d * Math.Sign(d)) / deltaArr.all.Length;
+                G = Math.Sign(sumSq) * Math.Sqrt(Math.Abs(sumSq));
             }
         }
 
-        public class Deltas
+        public class Deltas : Gradient.Grad
         {
-            public double GPos { get; }
-            public double GNeg { get; }
-            public double G { get; }
             public Deltas(PlnCouse.CouseItem[] data)
             {
                 var deltaArr = new DeltaArr(data);
@@ -55,20 +82,9 @@ namespace Btr
                 G = GPos + GNeg;
             }
         }
-        public static Grad GetGradient(PlnCouse.CouseItem[] data, DatePeriod period, TimeSpan tBase)
-        {
-            int count = data.Length;
-            if (count == 0) return new Grad(0,0,0);
-            double kT = period.Dlit.TotalMilliseconds / tBase.TotalMilliseconds;
-            if (count == 1) return data[0].delta < 0 ? 
-                new Grad(0, data[0].delta/kT, data[0].delta / kT) : 
-                new Grad(data[0].delta/kT, 0, data[0].delta / kT);
-            var deltas = new Deltas(data);
-            return new Grad(deltas.GPos/kT, deltas.GNeg/kT, deltas.G/kT);
-        }
 
 
-        public static double WndGrad(PlnCouse.CouseItem[] data, DatePeriod period, TimeSpan tBase, double wSlope = 0.6)
+        public static double WndGrad(PlnCouse.CouseItem[] data, double wSlope = 0.6)
         {
             int count = data.Length;
             if (count == 0) return double.NaN;
@@ -84,8 +100,7 @@ namespace Btr
                     g += w * (data[i + 1].course - data[i].course);
                 w += dw;
             }
-            double kT = period.Dlit.TotalMilliseconds / tBase.TotalMilliseconds;
-            return g / kT / (1 - 0.5 * wSlope);
+            return g / (1 - 0.5 * wSlope);
         }
 
         public class DeltaArr

@@ -22,7 +22,7 @@ namespace Btr
         {
             return Market.CourseData.Where(x => period.IsConteins(x.date)).ToArray();
         }
-        public double GetGradient(DatePeriod period)
+        public double GetGrad(DatePeriod period)
         {
             var data = GetData(period);
             int count = data.Length;
@@ -50,7 +50,7 @@ namespace Btr
             var T0 = BaseSett.T0;
             var period = new DatePeriod(start - T0, start);
             double s = SumDelta(period);
-                double g2 = GetGradient(period2);
+                double g2 = GetGrad(period2);
                 if (g1 > GRatio * g2) return new Leap(g1, g2, period1, period2);
                 if (g1 < g2/GRatio) return new Leap(g1, g2, period1, period2);
                 var allTime = period1.Dlit + period2.Dlit;

@@ -25,7 +25,7 @@ namespace Btr
         }
 
         public LeapInfo Leap { get; }
-
+        public Gradient.Grad MulGradient { get; private set; }
         public BaseSettings Sett
         {
             get { return _sett; }
@@ -38,23 +38,25 @@ namespace Btr
 
         public EndPoint Track(CoursePoint course)
         {
-            if (course.Date > new DateTime(2017, 09, 04, 18, 00, 0))
+            if (course.Date > new DateTime(2017, 09, 04, 21, 40, 0))
             {
                 
             }           
             if (course.Course == 0) return EndPoint.None;
             var period = new DatePeriod(course.Date - MultiPeriodGrad.Sett.T0, course.Date);
-            var g = Gradient.GetGradient(_market.GetData(period).ToArray(), period, MultiPeriodGrad.Sett.T0);
-            var multiGrad = MultiPeriodGrad.GetGradSkv(_market, course.Date);
+            var g = new Gradient.Grad(_market.GetData(period).ToArray());
+            MulGradient = MultiPeriodGrad.GetGradSkv(_market, course.Date);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
-                Debug.WriteLine("{0} {1:#.000000} {2} {3}", 
-                    course, g,  multiGrad, Leap.Mode);
-            if (Math.Abs((multiGrad.G - _lastGrad)/ (multiGrad.G + _lastGrad)) < _sett.GGap)
+                Debug.WriteLine("{0} {1:0.000000} {2} {3}", 
+                    course, g, MulGradient, Leap.Mode);
+            //Debug.WriteLine("g={0} m={1} {2}", g, MulGradient, Leap.Mode);
+            //Debug.WriteLine("g+={0} g-={1} {2}", g.GNeg/MulGradient.GNeg, g.GPos/MulGradient.GPos, Leap.Mode);
+            if (Math.Abs((g.G - _lastGrad)/ (g.G + _lastGrad)) < _sett.GGap)
                 return EndPoint.None;
-            _lastGrad = multiGrad.G;
-            if (g.G > multiGrad.GPos)
+            _lastGrad = MulGradient.G;
+            if (g.G > MulGradient.GPos)
                 return Leap.SetUp(course);
-            if (g.G < multiGrad.GNeg)
+            if (g.G < MulGradient.GNeg)
                 return Leap.SetDown(course);
             return Leap.SetNeutral(course);
         }

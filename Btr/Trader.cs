@@ -47,7 +47,7 @@ namespace Btr
         private void TrySell(CoursePoint pt)
         {
             foreach(var seller in Sellers)
-                seller.TrySell(pt);            
+                seller.TrySell(pt, _tracker.MulGradient);            
         }
         public void Trade(CoursePoint curCourse)
         {
@@ -63,15 +63,18 @@ namespace Btr
                     TrySell(curCourse); break;
                 case EndPoint.Down:
                     if (AllowBuy(curCourse))
-                        Buy(curCourse); break;
+                        Buy(curCourse, _tracker.MulGradient, _tracker.Leap); break;
             }
         }
 
-        private void Buy(CoursePoint buyPoint)
+        private void Buy(CoursePoint buyPoint, Gradient.Grad grad, LeapInfo leap)
         {
+            double minDelta = Math.Abs(grad.GPos / grad.GNeg) * _tracker.Sett.Delta;
 
+            if (minDelta < _tracker.Sett.Delta) minDelta = _tracker.Sett.Delta;
+            if (buyPoint.Course > leap.DownBegin.Course * (1 - minDelta)) return;
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowBuy))
-                Debug.WriteLine(string.Format("Buy={0} {1}", buyPoint, _tracker.Leap.Mode));
+                Debug.WriteLine(string.Format("Buy={0} {1} g+/g-={2:0.00000}", buyPoint, _tracker.Leap.Mode, grad.GPos / grad.GNeg));
             Sellers.Add(new Seller(_tracker.Market, buyPoint, _tracker.Sett));
         }
 
@@ -90,7 +93,7 @@ namespace Btr
 
         public override string ToString()
         {
-            return string.Format("{0:dd.MM HH:mm}|{1:#.000000} ", Date, Course);
+            return string.Format("{0:dd.MM HH:mm}|{1:0.00000} ", Date, Course);
         }
     }
 }

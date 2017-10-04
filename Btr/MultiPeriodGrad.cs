@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,7 +50,8 @@ namespace Btr
             for (int i = 0; i < grads.Length; i++)
             {
                 var data = market.GetData(periods[i]).ToArray();
-                grads[i] = Gradient.GetGradient(data, periods[i], Sett.T0);
+                grads[i] = new  Gradient.GradSkv(data);
+                //Debug.WriteLine("[{0}]={1}", i,grads[i]);
             }
             double positive = grads.Sum(g => g.GPos)/grads.Length;
             double negative = grads.Sum(g => g.GNeg) / grads.Length;
