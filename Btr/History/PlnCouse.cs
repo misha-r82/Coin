@@ -23,6 +23,10 @@ namespace Btr.History
             public DateTime date;
             public double course;
             public double delta;
+            public override string ToString()
+            {
+                return string.Format("{0} {1} d={2}", date, course, delta);
+            }
         }
 
         private void ShiftPeriod(DatePeriod period, TimeSpan delta)

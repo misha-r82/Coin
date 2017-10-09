@@ -46,11 +46,15 @@ namespace Btr
         public static Gradient.Grad GetGradSkv(Market market, DateTime date)
         {
             var periods = GetPeriods(date);
-            var grads = new Gradient.Grad[periods.Length];
-            for (int i = 0; i < grads.Length; i++)
+            var grads = new Gradient.Grad[periods.Length +1];
+            var data = market.GetData(periods[0]).ToArray();
+            grads[0] = new Gradient.Grad(new []{data.Last()} );
+            grads[1] = new Gradient.GradSkv(data);
+            Debug.WriteLine(data.Last());
+            for (int i = 1; i < grads.Length - 1; i++)
             {
-                var data = market.GetData(periods[i]).ToArray();
-                grads[i] = new  Gradient.GradSkv(data);
+                data = market.GetData(periods[i]).ToArray();
+                grads[i+1] = new  Gradient.GradSkv(data);
                 //Debug.WriteLine("[{0}]={1}", i,grads[i]);
             }
             double positive = grads.Sum(g => g.GPos)/grads.Length;

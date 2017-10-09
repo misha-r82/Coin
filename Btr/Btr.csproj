@@ -63,6 +63,7 @@
     <Compile Include="Gradient.cs" />
     <Compile Include="LeapInfo.cs" />
     <Compile Include="MultiPeriodGrad.cs" />
+    <Compile Include="PrivApi\ApiBase.cs" />
     <Compile Include="Seller.cs" />
     <Compile Include="Trader.cs" />
     <Page Include="FrmAddMarket.xaml">
@@ -132,6 +133,9 @@
       <Project>{7b5fdddd-33c1-4211-b321-f3e588beb6fa}</Project>
       <Name>Lib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Polon\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
