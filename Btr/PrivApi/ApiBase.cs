@@ -11,34 +11,43 @@ namespace Btr.Polon
 {
     public class ApiBase
     {
-        protected string ApiKey = "PWCPRD75-7Q3MGCZM-RCGOGM6O-KIY3DNNT";
-        protected string ApiSecret = "61f7c40b95cbb73062c00352d40411ee4a44ad23ef3719dcd8ceab7c8c29447bd1ca4c8e66819ac063af7dbffc6466c1cb0a3e7bbfb22bfb765595e89d89a6f8";
+        protected string ApiKey = "JEKJKAP9-R1TMMAPW-U5AYF3DD-X9FU4PMD";
+        protected string ApiSecret = "03e596a58ac67bd06e7fc84d3da69c7665722fd7b94c509b390afb1e792e440c86f281f3e2294b281c120537fe294f567130ffef95fc4bb6a5c72f268cf8f7ed";
         protected string KeyPar = "Key";
         protected string SecretPar = "Sign";
         public async Task<string> MyFunc()
         {
             long nonce = DateTime.Now.Ticks;
             string url = "https://poloniex.com/tradingApi";
-            string myParam = "command=returnOpenOrders&currencyPair=all&nonce=" + nonce;
             var postPars = new Dictionary<string, string>();
+            postPars.Add("command", "returnOpenOrders");
             postPars.Add("currencyPair", "all");
-            string result = await SendPrivateApiRequestAsync(url, myParam, postPars);
+            postPars.Add("nonce", nonce.ToString());
+            string result = await SendPrivateApiRequestAsync(url, postPars);
             return result;
             //deserialize the result string to your liking
         }
-        private async Task<string> SendPrivateApiRequestAsync(string privUrl, string myParam, IDictionary<string, string> postPars)
+
+        private string GetParsStr(IDictionary<string, string> pars)
+        {
+            if (pars.Count == 0) return "";
+            var sb = new StringBuilder();
+            foreach (var par in pars)
+                sb.AppendFormat("{0}={1}&", par.Key, par.Value);
+            sb.Remove(sb.Length - 1, 1);
+            return sb.ToString();
+        }
+        private async Task<string> SendPrivateApiRequestAsync(string privUrl, IDictionary<string, string> postPars)
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(privUrl);
-                var myContent = new StringContent(myParam);
-                var encodedContent = new FormUrlEncodedContent(postPars);
-
-                myContent.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
+                var parsStr = GetParsStr(postPars);
+                var strContent = new StringContent(parsStr);
+                strContent.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
                 client.DefaultRequestHeaders.Add(KeyPar, ApiKey);
-                client.DefaultRequestHeaders.Add(SecretPar, genHMAC(myParam));
-                
-                var result = await client.PostAsync(privUrl, myContent);
+                client.DefaultRequestHeaders.Add(SecretPar, genHMAC(parsStr));
+                var result = await client.PostAsync(privUrl, strContent);
                 return await result.Content.ReadAsStringAsync();
             }
         }
