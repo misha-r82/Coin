@@ -28,6 +28,25 @@ namespace Btr.Polon
             //deserialize the result string to your liking
         }
 
+        public async void Buy(Order order)
+        {
+            
+        }
+
+        public async void Sell(Order order)
+        {
+            
+        }
+
+        public async void CheckComplited(IEnumerable<Order> orders)
+        {
+            
+        }
+
+        public async Task<bool> CheckOrder(Order order)
+        {
+            return true;
+        }
         private string GetParsStr(IDictionary<string, string> pars)
         {
             if (pars.Count == 0) return "";
