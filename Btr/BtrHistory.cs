@@ -25,28 +25,19 @@ namespace Btr
         }
         public static ApiCall ApiCall { get; }
         internal static readonly DateTime DateTimeUnixEpochStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-        internal static DateTime UnixTimeStampToDateTime(ulong unixTimeStamp)
-        {
-            return DateTimeUnixEpochStart.AddSeconds(unixTimeStamp);
-        }
 
-        internal static ulong DateTimeToUnixTimeStamp(DateTime dateTime)
-        {
-            return (ulong)Math.Floor(dateTime.Subtract(DateTimeUnixEpochStart).TotalSeconds);
-        }
         public static BtrHistoryItem[] GetHitoryBtr(string market, DateTime from)
         {
             
-            ulong fromStamp = DateTimeToUnixTimeStamp(from)*1000;
+            ulong fromStamp = Utils.DateTimeToUnixTimeStamp(from)*1000;
             var uri = string.Format(URI_BTR_PATT, market, fromStamp);
             return ApiCall.CallWithJsonResponse<BtrHistoryItem[]>(uri, false);
 
         }
         public static PlnHistoryItem[] GetHitoryPln(string market, DatePeriod period)
         {
-
-            ulong fromStamp = DateTimeToUnixTimeStamp(period.From);
-            ulong toStamp = DateTimeToUnixTimeStamp(period.To);
+            ulong fromStamp = Utils.DateTimeToUnixTimeStamp(period.From);
+            ulong toStamp = Utils.DateTimeToUnixTimeStamp(period.To);
             var uri = string.Format(URI_PLN_PATT, market, fromStamp, toStamp);
             return ApiCall.CallWithJsonResponse<PlnHistoryItem[]>(uri);
 

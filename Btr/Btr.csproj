@@ -66,8 +66,10 @@
     <Compile Include="MultiPeriodGrad.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="PrivApi\ApiBase.cs" />
+    <Compile Include="PrivApi\ApiParser.cs" />
     <Compile Include="Seller.cs" />
     <Compile Include="Trader.cs" />
+    <Compile Include="Utils.cs" />
     <Page Include="FrmAddMarket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

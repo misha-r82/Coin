@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Lib;
 
 namespace Btr.Polon
 {
@@ -55,9 +56,19 @@ namespace Btr.Polon
             return result;
         }
 
-        public async void CheckComplited(IEnumerable<Order> orders)
+        public async Task<string> TradeHistory(string pair, DatePeriod period)
         {
-            
+            ulong fromStamp = Utils.DateTimeToUnixTimeStamp(period.From);
+            ulong toStamp = Utils.DateTimeToUnixTimeStamp(period.To);
+            string url = "https://poloniex.com/tradingApi";
+            var postPars = new Dictionary<string, string>();
+            postPars.Add("command", "returnTradeHistory");
+            postPars.Add("currencyPair", pair);
+            postPars.Add("start", fromStamp.ToString());
+            postPars.Add("end", toStamp.ToString());
+            postPars.Add("nonce", Nonce.ToString());
+            string result = await SendPrivateApiRequestAsync(url, postPars);
+            return result;
         }
 
 

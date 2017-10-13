@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Михаил\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Coin.-1863564205.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Михаил\Source\Repos\Coin" t="IncludeFlat">
+      <e p=".nuget" t="Include">
+        <e p="NuGet.Config" t="Include" />
+        <e p="NuGet.exe" t="Include" />
+        <e p="NuGet.targets" t="Include" />
+      </e>
+      <e p="Bittrex" t="IncludeRecursive">
+        <e p="ApiCall.cs" t="Include" />
+        <e p="ApiCallResponse.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Bittrex.csproj" t="IncludeRecursive" />
+        <e p="Data" t="Include">
+          <e p="AccountBalance.cs" t="Include" />
+          <e p="CompletedOrder.cs" t="Include" />
+          <e p="GetBalancesResponse.cs" t="Include" />
+          <e p="GetMarketHistoryResponse.cs" t="Include" />
+          <e p="GetMarketSummaryResponse.cs" t="Include" />
+          <e p="GetOpenOrdersResponse.cs" t="Include" />
+          <e p="GetOrderBookResponse.cs" t="Include" />
+          <e p="GetOrderHistoryResponse.cs" t="Include" />
+          <e p="MarketTrade.cs" t="Include" />
+          <e p="OpenOrder.cs" t="Include" />
+          <e p="OrderEntry.cs" t="Include" />
+          <e p="OrderResponse.cs" t="Include" />
+        </e>
+        <e p="Enums.cs" t="Include" />
+        <e p="Exchange.cs" t="Include" />
+        <e p="ExchangeContext.cs" t="Include" />
+        <e p="IBittrexExchange.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Btr" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="BaseSettings.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Btr.csproj" t="IncludeRecursive" />
+        <e p="BtrHistory.cs" t="Include" />
+        <e p="CourseTracker.cs" t="Include" />
+        <e p="Data" t="Include">
+          <e p="BtrHistoryItem.cs" t="Include" />
+          <e p="PlnHistoryItem.cs" t="Include" />
+        </e>
+        <e p="DbgSett.cs" t="Include" />
+        <e p="Files" t="Include">
+          <e p="MarketSerializer.cs" t="Include" />
+        </e>
+        <e p="FrmAddMarket.xaml" t="Include" />
+        <e p="FrmAddMarket.xaml.cs" t="Include" />
+        <e p="Gradient.cs" t="Include" />
+        <e p="History" t="Include">
+          <e p="PlnCouse.cs" t="Include" />
+        </e>
+        <e p="Leap.cs" t="Include" />
+        <e p="LeapFounder.cs" t="Include" />
+        <e p="LeapInfo.cs" t="Include" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="Market.cs" t="Include" />
+        <e p="Markets.cs" t="Include" />
+        <e p="MultiPeriodGrad.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Order.cs" t="Include" />
+        <e p="Polon" t="Include" />
+        <e p="PrivApi" t="Include">
+          <e p="ApiBase.cs" t="Include" />
+          <e p="ApiParser.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="Seller.cs" t="Include" />
+        <e p="Trader.cs" t="Include" />
+      </e>
+      <e p="Coin.sln" t="IncludeFlat" />
+      <e p="Lib" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Cloning" t="Include">
+          <e p="CloneHelper.cs" t="Include" />
+        </e>
+        <e p="Compact.xaml" t="Include" />
+        <e p="Controls" t="Include">
+          <e p="CompactExpanderPrewiew.xaml" t="Include" />
+          <e p="CompactExpanderPrewiew.xaml.cs" t="Include" />
+          <e p="CompactExpanderStyle.xaml" t="Include" />
+          <e p="CtrlGridColVis.xaml" t="Include" />
+          <e p="CtrlGridColVis.xaml.cs" t="Include" />
+          <e p="DGColVisibilityManager.cs" t="Include" />
+          <e p="PeriodControl.xaml" t="Include" />
+          <e p="PeriodControl.xaml.cs" t="Include" />
+        </e>
+        <e p="Conv" t="Include">
+          <e p="Conv.cs" t="Include" />
+          <e p="Converters.cs" t="Include" />
+        </e>
+        <e p="DataCache.cs" t="Include" />
+        <e p="DB" t="Include">
+          <e p="DBManager.cs" t="Include" />
+          <e p="StrPatt.cs" t="Include" />
+        </e>
+        <e p="FastFilter" t="Include">
+          <e p="QuickFilter.cs" t="Include" />
+          <e p="SearchControl.xaml" t="Include" />
+          <e p="SearchControl.xaml.cs" t="Include" />
+        </e>
+        <e p="Files" t="Include">
+          <e p="FileIO.cs" t="Include" />
+          <e p="files.cs" t="Include" />
+        </e>
+        <e p="FrmLogin.xaml" t="Include" />
+        <e p="FrmLogin.xaml.cs" t="Include" />
+        <e p="ICloneableEx.cs" t="Include" />
+        <e p="IComparer.cs" t="Include" />
+        <e p="img" t="Include">
+          <e p="search.png" t="Include" />
+        </e>
+        <e p="KVPair.cs" t="Include" />
+        <e p="lib.cs" t="Include" />
+        <e p="Lib.csproj" t="IncludeRecursive" />
+        <e p="Log" t="Include">
+          <e p="ErrLog.cs" t="Include" />
+        </e>
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="NameCreator.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="Annotations.cs" t="Include" />
+          <e p="Annotations1.cs" t="Include" />
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="SortList.cs" t="Include" />
+        <e p="Status" t="Include">
+          <e p="ErrIndicator.cs" t="Include" />
+          <e p="FrmSatatus2x.xaml" t="Include" />
+          <e p="FrmSatatus2x.xaml.cs" t="Include" />
+          <e p="FrmStatus.xaml" t="Include" />
+          <e p="FrmStatus.xaml.cs" t="Include" />
+          <e p="StatusIndicator.cs" t="Include" />
+        </e>
+        <e p="UI" t="Include">
+          <e p="ColorAlternater.cs" t="Include" />
+          <e p="ColorPickerDialog.xaml" t="Include" />
+          <e p="ColorPickerDialog.xaml.cs" t="Include" />
+          <e p="UIHelper.cs" t="Include" />
+        </e>
+        <e p="Utils.cs" t="Include" />
+        <e p="VisualTreeHelper.cs" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="PoloniexApi.Net\PoloniexApi.Net" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="General" t="Include">
+          <e p="ApiWebClient.cs" t="Include" />
+          <e p="Authenticator.cs" t="Include" />
+          <e p="Authenticator.Interface.cs" t="Include" />
+          <e p="CurrencyPair.cs" t="Include" />
+          <e p="EventArgs" t="Include">
+            <e p="TickerChangedEventArgs.cs" t="Include" />
+            <e p="TrollboxMessageEventArgs.cs" t="Include" />
+          </e>
+          <e p="JsonResponse.cs" t="Include" />
+          <e p="ObservableDictionary.cs" t="Include" />
+          <e p="OrderType.cs" t="Include" />
+        </e>
+        <e p="Helper.cs" t="Include" />
+        <e p="LiveTools" t="Include">
+          <e p="Live.cs" t="Include" />
+          <e p="Live.Interface.cs" t="Include" />
+        </e>
+        <e p="MarketTools" t="Include">
+          <e p="MarketChartData.cs" t="Include" />
+          <e p="MarketChartData.Interface.cs" t="Include" />
+          <e p="MarketData.cs" t="Include" />
+          <e p="MarketData.Interface.cs" t="Include" />
+          <e p="MarketPeriod.cs" t="Include" />
+          <e p="Markets.cs" t="Include" />
+          <e p="Markets.Interface.cs" t="Include" />
+          <e p="Order.cs" t="Include" />
+          <e p="Order.Interface.cs" t="Include" />
+          <e p="OrderBook.cs" t="Include" />
+          <e p="OrderBook.Interface.cs" t="Include" />
+          <e p="Trade.cs" t="Include" />
+          <e p="Trade.Interface.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PoloniexApi.Net.csproj" t="IncludeRecursive" />
+        <e p="PoloniexClient.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="TradingTools" t="Include">
+          <e p="Order.cs" t="Include" />
+          <e p="Order.Interface.cs" t="Include" />
+          <e p="Trade.cs" t="Include" />
+          <e p="Trade.Interface.cs" t="Include" />
+          <e p="Trading.cs" t="Include" />
+          <e p="Trading.Interface.cs" t="Include" />
+        </e>
+        <e p="WalletTools" t="Include">
+          <e p="Balance.cs" t="Include" />
+          <e p="Balance.Interface.cs" t="Include" />
+          <e p="Deposit.cs" t="Include" />
+          <e p="Deposit.Interface.cs" t="Include" />
+          <e p="DepositWithdrawalList.cs" t="Include" />
+          <e p="DepositWithdrawalList.Interface.cs" t="Include" />
+          <e p="GeneratedDepositAddress.cs" t="Include" />
+          <e p="GeneratedDepositAddress.Interface.cs" t="Include" />
+          <e p="Wallet.cs" t="Include" />
+          <e p="Wallet.Interface.cs" t="Include" />
+          <e p="Withdrawal.cs" t="Include" />
+          <e p="Withdrawal.Interface.cs" t="Include" />
+        </e>
+      </e>
+      <e p="UnitTestProject" t="IncludeRecursive">
+        <e p="apiTest.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UnitTest1.cs" t="Include" />
+        <e p="UnitTestProject.csproj" t="IncludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
