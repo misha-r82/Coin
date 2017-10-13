@@ -8,9 +8,17 @@ namespace Btr
 {
     public class Order
     {
+        public Order(string pair, double price, double amount)
+        {
+            Pair = pair;
+            Price = price;
+            Amount = amount;
+        }
+
         public long Id { get; set; }
-        public DateTime BuyDate { get; set; }
-        public DateTime SellDate { get; set; }
-        public Market Market { get; set; }
+        public string Pair { get; set; }
+        public Double Price { get; set; }
+        public Double Amount { get; set; }
+        public DateTime ComplitedDate { get; set; }
     }
 }

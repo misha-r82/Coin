@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -15,27 +16,43 @@ namespace Btr.Polon
         protected string ApiSecret = "03e596a58ac67bd06e7fc84d3da69c7665722fd7b94c509b390afb1e792e440c86f281f3e2294b281c120537fe294f567130ffef95fc4bb6a5c72f268cf8f7ed";
         protected string KeyPar = "Key";
         protected string SecretPar = "Sign";
+
+        protected long Nonce {get { return DateTime.Now.Ticks; } }
         public async Task<string> MyFunc()
         {
-            long nonce = DateTime.Now.Ticks;
             string url = "https://poloniex.com/tradingApi";
             var postPars = new Dictionary<string, string>();
             postPars.Add("command", "returnOpenOrders");
             postPars.Add("currencyPair", "all");
-            postPars.Add("nonce", nonce.ToString());
+            postPars.Add("nonce", Nonce.ToString());
             string result = await SendPrivateApiRequestAsync(url, postPars);
             return result;
             //deserialize the result string to your liking
         }
 
-        public async void Buy(Order order)
+        public async Task<string> Buy(Order order)
         {
-            
+            string url = "https://poloniex.com/tradingApi";
+            var postPars = new Dictionary<string, string>();
+            postPars.Add("command", "buy");
+            postPars.Add("currencyPair", order.Pair);
+            postPars.Add("rate", order.Price.ToString(CultureInfo.InvariantCulture));
+            postPars.Add("amount", order.Amount.ToString(CultureInfo.InvariantCulture));
+            postPars.Add("nonce", Nonce.ToString());
+            string result = await SendPrivateApiRequestAsync(url, postPars);
+            return result;
         }
-
-        public async void Sell(Order order)
+        public async Task<string> Sell(Order order)
         {
-            
+            string url = "https://poloniex.com/tradingApi";
+            var postPars = new Dictionary<string, string>();
+            postPars.Add("command", "sell");
+            postPars.Add("currencyPair", order.Pair);
+            postPars.Add("rate", order.Price.ToString(CultureInfo.InvariantCulture));
+            postPars.Add("amount", order.Amount.ToString(CultureInfo.InvariantCulture));
+            postPars.Add("nonce", Nonce.ToString());
+            string result = await SendPrivateApiRequestAsync(url, postPars);
+            return result;
         }
 
         public async void CheckComplited(IEnumerable<Order> orders)
@@ -43,10 +60,7 @@ namespace Btr.Polon
             
         }
 
-        public async Task<bool> CheckOrder(Order order)
-        {
-            return true;
-        }
+
         private string GetParsStr(IDictionary<string, string> pars)
         {
             if (pars.Count == 0) return "";
