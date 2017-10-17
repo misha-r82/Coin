@@ -66,6 +66,8 @@
     <Compile Include="MultiPeriodGrad.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="PrivApi\ApiBase.cs" />
+    <Compile Include="PrivApi\ApiCall.cs" />
+    <Compile Include="PrivApi\ApiCallResponse.cs" />
     <Compile Include="PrivApi\ApiParser.cs" />
     <Compile Include="Seller.cs" />
     <Compile Include="Trader.cs" />
@@ -129,10 +131,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bittrex\Bittrex.csproj">
-      <Project>{aaa8321a-42f8-43db-be5e-544072c9bf58}</Project>
-      <Name>Bittrex</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lib\Lib.csproj">
       <Project>{7b5fdddd-33c1-4211-b321-f3e588beb6fa}</Project>
       <Name>Lib</Name>

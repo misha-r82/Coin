@@ -28,7 +28,7 @@ namespace Btr
         {
             InitializeComponent();
         }
-        public Exchange Ex { get; set; }
+        //public Exchange Ex { get; set; }
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
             //var t = Ex.GetBalances();
