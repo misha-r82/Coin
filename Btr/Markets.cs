@@ -28,7 +28,6 @@ namespace Btr
                     var market = MarketSerializer.DeserializeMarket(file);
                     MarketList.Add(market.Name, market);
                 }
-
             }
             catch (Exception e)
             {
@@ -45,9 +44,7 @@ namespace Btr
             }
             catch (Exception e)
             {
-
                 MessageBox.Show("Не удалось сериализовать рынки");
-                var tmp = MarketList["BTC_ETH"].CourseData.Length;
             }
         }
     }

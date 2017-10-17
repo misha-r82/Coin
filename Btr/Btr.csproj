@@ -70,6 +70,7 @@
     <Compile Include="PrivApi\ApiCallResponse.cs" />
     <Compile Include="PrivApi\ApiParser.cs" />
     <Compile Include="Seller.cs" />
+    <Compile Include="TradeMan.cs" />
     <Compile Include="Trader.cs" />
     <Compile Include="Utils.cs" />
     <Page Include="FrmAddMarket.xaml">
@@ -95,7 +96,6 @@
     </Compile>
     <Compile Include="History\PlnCouse.cs" />
     <Compile Include="Leap.cs" />
-    <Compile Include="LeapFounder.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
