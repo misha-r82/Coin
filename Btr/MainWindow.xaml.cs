@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -119,6 +120,19 @@ namespace Btr
             lf.TRatio = 3;
             lf.MaxPeriod = new TimeSpan(5,0,0,0);
             var leap = lf.FindLeap(start, new TimeSpan(1, 0, 0));*/
+        }
+
+        private Timer _timer;
+        private void BtnStart_OnClick(object sender, RoutedEventArgs e)
+        {
+            _timer = new Timer(new TimeSpan(0,0,3).Ticks);
+            _timer.Elapsed += (s, a) =>
+            {
+                Debug.WriteLine(DateTime.Now);
+                Console.WriteLine(DateTime.Now);                
+            };
+            _timer.Enabled = true;
+            _timer.AutoReset = true;
         }
     }
 }
