@@ -16,7 +16,7 @@
             <Button Name="btnRun" Content="start" Click="btnRun_Click"/>  
             <Button Name="EditMarkets" Content="Add" Click="EditMarkets_OnClick"/>
             <Button Name="btnFindLeap" Content="findleap" Click="BtnFindLeap_OnClick"/>
-            <Button Name="btnStart" Content="findleap" Click="BtnStart_OnClick"/>
+            <Button Name="btnStart" Content="RunTrade" Click="BtnStart_OnClick"/>
         </StackPanel>
         
     </Grid>

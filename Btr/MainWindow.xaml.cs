@@ -125,14 +125,18 @@ namespace Btr
         private Timer _timer;
         private void BtnStart_OnClick(object sender, RoutedEventArgs e)
         {
-            _timer = new Timer(new TimeSpan(0,0,3).Ticks);
-            _timer.Elapsed += (s, a) =>
-            {
-                Debug.WriteLine(DateTime.Now);
-                Console.WriteLine(DateTime.Now);                
-            };
-            _timer.Enabled = true;
+
+            /*_timer = new System.Timers.Timer(2000);
+            // Hook up the Elapsed event for the timer. 
+            _timer.Elapsed += HandleTimer;
             _timer.AutoReset = true;
+            _timer.Enabled = true;*/
+            var tm = new TradeMan();
+            tm.StartTrade();
+        }
+        private void HandleTimer(Object source, ElapsedEventArgs e)
+        {
+            Console.WriteLine("\nHandler not implemented...");
         }
     }
 }

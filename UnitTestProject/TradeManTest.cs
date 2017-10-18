@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Windows;
 using Btr;
 using Btr.PrivApi;
 using Lib;
@@ -15,10 +16,7 @@ namespace UnitTestProject
         {
             var tm = new TradeMan();
             tm.StartTrade();
-            while (true)
-            {
-                Thread.Sleep(200);
-            }
+            MessageBox.Show("123");
         }
 
     }
