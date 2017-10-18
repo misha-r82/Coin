@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
 using Btr.Files;
+using Lib;
 using Newtonsoft.Json;
 
 namespace Btr
@@ -35,6 +36,19 @@ namespace Btr
             }
         }
 
+        public static void LoadMarkets(DatePeriod period)
+        {
+            foreach (var pair in MarketList)
+                pair.Value.LoadHistory(period);
+        }
+        public static void ReloadNew()
+        {
+            var actions = new List<Action>();
+            foreach (var pair in MarketList)
+                actions.Add(pair.Value.ReloadNew);
+            var pOpt = new ParallelOptions() {MaxDegreeOfParallelism = 16};
+            Parallel.Invoke(pOpt, actions.ToArray());
+        }
         public static void SaveMarkets()
         {
             try

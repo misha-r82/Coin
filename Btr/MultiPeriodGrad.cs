@@ -26,6 +26,17 @@ namespace Btr
     {
         public static MultiPeriodSettings Sett;
 
+        public static TimeSpan MaxPeriod
+        {
+            get
+            {
+                var t = Sett.T0;
+                for (int i = 0; i < Sett.PeriodCount; i++)
+                    t = new TimeSpan((long) (t.Ticks * Sett.PeriodMult));
+                return t;
+            }
+        }
+
         static MultiPeriodGrad()
         {
             Sett = new MultiPeriodSettings(new TimeSpan(0,0,12,0), 5, 5);
