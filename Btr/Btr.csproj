@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,6 +66,7 @@
     <Compile Include="PrivApi\ApiCall.cs" />
     <Compile Include="PrivApi\ApiCallResponse.cs" />
     <Compile Include="PrivApi\ApiParser.cs" />
+    <Compile Include="Trade\Buyer.cs" />
     <Compile Include="Trade\CourseTracker.cs" />
     <Compile Include="Trade\Gradient.cs" />
     <Compile Include="Trade\Leap.cs" />

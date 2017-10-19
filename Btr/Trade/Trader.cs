@@ -2,29 +2,33 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
+using Btr.PrivApi;
 
 namespace Btr
 {
     public enum TradeMode { Wait, Buy, Sell }
+    [DataContract]
     public class Treader
     {
-        CourseTracker _tracker;
-        public CoursePoint BuyPoint { get; private set; }
-        public Treader(CourseTracker tracker)
+        [DataMember]public Buyer Buyer { get; }
+        private CourseTracker _tracker;
+        private ApiParser _apiParser { get; }
+        public Treader(CourseTracker tracker, ApiParser apiParser)
         {
             _tracker = tracker;
+            _apiParser = apiParser;
+            Buyer = new Buyer(apiParser);
             Complited = new List<Seller>();
             Sellers = new List<Seller>();
         }
 
-        public List<Seller> Sellers { get; private set; }
-        public List<Seller> Complited;
-        public double Balance { get; set; }
-        public double PartsInvest { get; set; }
-        public bool AllowBuy(CoursePoint pt)
+        [DataMember] public List<Seller> Sellers { get; private set; }
+        [DataMember] public List<Seller> Complited;
+        private bool AllowBuy(CoursePoint pt)
         {
             if (!Sellers.Any()) return true;
             var lastSeller = Sellers.Last();
@@ -64,20 +68,11 @@ namespace Btr
                     TrySell(curCourse); break;
                 case EndPoint.Down:
                     if (AllowBuy(curCourse))
-                        Buy(curCourse, _tracker.MulGradient, _tracker.Leap); break;
+                        Buyer.Buy(curCourse, _tracker); break;
             }
         }
 
-        private void Buy(CoursePoint buyPoint, Gradient.Grad grad, LeapInfo leap)
-        {
-            double minDelta = Math.Abs(grad.GPos / grad.GNeg) * _tracker.Sett.Delta;
 
-            if (minDelta < _tracker.Sett.Delta) minDelta = _tracker.Sett.Delta;
-            if (buyPoint.Course > leap.DownBegin.Course * (1 - minDelta)) return;
-            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowBuy))
-                Debug.WriteLine(string.Format("Buy={0} {1} g+/g-={2:0.00000}", buyPoint, _tracker.Leap.Mode, grad.GPos / grad.GNeg));
-            Sellers.Add(new Seller(_tracker.Market, buyPoint, _tracker.Sett));
-        }
 
     }
 

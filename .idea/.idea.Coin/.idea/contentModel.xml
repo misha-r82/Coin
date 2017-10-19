@@ -49,6 +49,7 @@
           <e p="Settings.settings" t="Include" />
         </e>
         <e p="Trade" t="Include">
+          <e p="Buyer.cs" t="Include" />
           <e p="CourseTracker.cs" t="Include" />
           <e p="Gradient.cs" t="Include" />
           <e p="Leap.cs" t="Include" />
