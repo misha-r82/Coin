@@ -22,7 +22,8 @@ namespace Btr
 
         public List<Seller> Sellers { get; private set; }
         public List<Seller> Complited;
-
+        public double Balance { get; set; }
+        public double PartsInvest { get; set; }
         public bool AllowBuy(CoursePoint pt)
         {
             if (!Sellers.Any()) return true;

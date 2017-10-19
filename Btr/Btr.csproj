@@ -61,17 +61,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DbgSett.cs" />
-    <Compile Include="Gradient.cs" />
-    <Compile Include="LeapInfo.cs" />
-    <Compile Include="MultiPeriodGrad.cs" />
-    <Compile Include="Order.cs" />
     <Compile Include="PrivApi\ApiBase.cs" />
     <Compile Include="PrivApi\ApiCall.cs" />
     <Compile Include="PrivApi\ApiCallResponse.cs" />
     <Compile Include="PrivApi\ApiParser.cs" />
-    <Compile Include="Seller.cs" />
-    <Compile Include="TradeMan.cs" />
-    <Compile Include="Trader.cs" />
+    <Compile Include="Trade\CourseTracker.cs" />
+    <Compile Include="Trade\Gradient.cs" />
+    <Compile Include="Trade\Leap.cs" />
+    <Compile Include="Trade\LeapInfo.cs" />
+    <Compile Include="Trade\MultiPeriodGrad.cs" />
+    <Compile Include="Trade\Order.cs" />
+    <Compile Include="Trade\Seller.cs" />
+    <Compile Include="Trade\TradeMan.cs" />
+    <Compile Include="Trade\Trader.cs" />
     <Compile Include="Utils.cs" />
     <Page Include="FrmAddMarket.xaml">
       <SubType>Designer</SubType>
@@ -87,7 +89,6 @@
     </Compile>
     <Compile Include="BaseSettings.cs" />
     <Compile Include="BtrHistory.cs" />
-    <Compile Include="CourseTracker.cs" />
     <Compile Include="Data\BtrHistoryItem.cs" />
     <Compile Include="Data\PlnHistoryItem.cs" />
     <Compile Include="Files\MarketSerializer.cs" />
@@ -95,7 +96,6 @@
       <DependentUpon>FrmAddMarket.xaml</DependentUpon>
     </Compile>
     <Compile Include="History\PlnCouse.cs" />
-    <Compile Include="Leap.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

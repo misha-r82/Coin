@@ -16,7 +16,6 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Btr.csproj" t="IncludeRecursive" />
         <e p="BtrHistory.cs" t="Include" />
-        <e p="CourseTracker.cs" t="Include" />
         <e p="Data" t="Include">
           <e p="BtrHistoryItem.cs" t="Include" />
           <e p="PlnHistoryItem.cs" t="Include" />
@@ -27,19 +26,14 @@
         </e>
         <e p="FrmAddMarket.xaml" t="Include" />
         <e p="FrmAddMarket.xaml.cs" t="Include" />
-        <e p="Gradient.cs" t="Include" />
         <e p="History" t="Include">
           <e p="PlnCouse.cs" t="Include" />
         </e>
-        <e p="Leap.cs" t="Include" />
-        <e p="LeapInfo.cs" t="Include" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="Market.cs" t="Include" />
         <e p="Markets.cs" t="Include" />
-        <e p="MultiPeriodGrad.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
-        <e p="Order.cs" t="Include" />
         <e p="Polon" t="Include" />
         <e p="PrivApi" t="Include">
           <e p="ApiBase.cs" t="Include" />
@@ -54,9 +48,17 @@
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
         </e>
-        <e p="Seller.cs" t="Include" />
-        <e p="TradeMan.cs" t="Include" />
-        <e p="Trader.cs" t="Include" />
+        <e p="Trade" t="Include">
+          <e p="CourseTracker.cs" t="Include" />
+          <e p="Gradient.cs" t="Include" />
+          <e p="Leap.cs" t="Include" />
+          <e p="LeapInfo.cs" t="Include" />
+          <e p="MultiPeriodGrad.cs" t="Include" />
+          <e p="Order.cs" t="Include" />
+          <e p="Seller.cs" t="Include" />
+          <e p="TradeMan.cs" t="Include" />
+          <e p="Trader.cs" t="Include" />
+        </e>
         <e p="Utils.cs" t="Include" />
       </e>
       <e p="Coin.sln" t="IncludeFlat" />

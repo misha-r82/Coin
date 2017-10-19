@@ -46,12 +46,12 @@ namespace Btr
         public void ReloadNew()
         {
             var course = new PlnCouse();
-            var last = CourseData[CourseData.Length].date;
+            var last = CourseData[CourseData.Length -1].date;
             var period = new DatePeriod(last.AddSeconds(1), DateTime.Now);
             var newData = course.GetHistory(Name, period, TradeMan.Interval).ToArray();
             var joined = new PlnCouse.CouseItem[newData.Length + CourseData.Length];
             Array.Copy(CourseData, joined, CourseData.Length);
-            Array.Copy(newData, joined, 0, CourseData.Length);
+            Array.Copy(newData, 0, joined, CourseData.Length, newData.Length);
         }
         public void LoadHistory(DatePeriod period)
         {
