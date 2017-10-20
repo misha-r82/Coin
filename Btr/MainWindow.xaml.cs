@@ -16,6 +16,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Bittrex;
 using Btr.History;
+using Btr.Polon;
+using Btr.PrivApi;
 using Lib;
 
 namespace Btr
@@ -59,7 +61,7 @@ namespace Btr
             var m = Markets.MarketList.First();
             var tacker = new CourseTracker(m.Value, new BaseSettings()
             { Delta = delta, GGap = gap });
-            var treader = new Treader(tacker);
+            var treader = new Treader(tacker, new ApiParser(new ApiBase()));
             foreach (PlnCouse.CouseItem item in m.Value.CourseData)
             {
                 /*if (item.date == new DateTime(2017,07,19,19,50,0))

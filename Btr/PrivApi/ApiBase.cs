@@ -56,6 +56,16 @@ namespace Btr.Polon
             return result;
         }
 
+        public async Task<string> CanselOrder(Order order)
+        {
+            string url = "https://poloniex.com/tradingApi";
+            var postPars = new Dictionary<string, string>();
+            postPars.Add("command", "cancelOrder");
+            postPars.Add("orderNumber", order.Id.ToString());
+            postPars.Add("nonce", Nonce.ToString());
+            string result = await SendPrivateApiRequestAsync(url, postPars);
+            return result;
+        }
         public async Task<string> TradeHistory(string pair, DatePeriod period)
         {
             ulong fromStamp = Utils.DateTimeToUnixTimeStamp(period.From);

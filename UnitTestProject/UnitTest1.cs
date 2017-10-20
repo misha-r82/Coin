@@ -4,6 +4,8 @@ using System.Linq;
 using Btr;
 using Btr.Files;
 using Btr.History;
+using Btr.Polon;
+using Btr.PrivApi;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Lib;
 
@@ -31,7 +33,7 @@ namespace UnitTestProject
             var t0 = TimeSpan.FromHours(T);
             var tacker = new CourseTracker(m.Value, new BaseSettings()
             { Delta = delta, GGap = gap});
-            var treader = new Treader(tacker);
+            var treader = new Treader(tacker, new ApiParser(new ApiBase()));
             var period = new DatePeriod(new DateTime(2017,09,4), new DateTime(2017,9,5));
             var courseData = m.Value.GetData(period);
             foreach (PlnCouse.CouseItem item in courseData)

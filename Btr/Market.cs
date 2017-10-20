@@ -36,7 +36,6 @@ namespace Btr
                     date, CourseData[0].date, CourseData[lastIndex].date));
             for (int i = CourseData.Length -1; i > 1; i--)
             {
-
                 if (CourseData[i].date == date) return CourseData[i].course;
                 if (date < CourseData[i].date && date > CourseData[i - 1].date)
                     return CourseData[i - 1].course;

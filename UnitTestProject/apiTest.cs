@@ -24,6 +24,8 @@ namespace UnitTestProject
             var parser = new ApiParser(api);
             var t = parser.Sell(order);
             t.Wait();
+            t = parser.CanselOrder(order);
+            t.Wait();
         }
         [TestMethod]
         public void TestHistory()

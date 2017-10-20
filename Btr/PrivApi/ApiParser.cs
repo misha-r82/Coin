@@ -30,7 +30,13 @@ namespace Btr.PrivApi
             var resp = JsonConvert.DeserializeObject<BuyResponce>(res);
             order.Id = resp.orderNumber;
         }
-
+        public async Task CanselOrder(Order order)
+        {
+            string res = await Api.CanselOrder(order);
+            var resp = JsonConvert.DeserializeObject<CanselResponse>(res);
+            if (resp.success != 1) throw new InvalidOperationException( string.Format(
+            "Can't cansel order №{0}", order.Id));
+        }
         public async Task<Order[]> OrderHistory(string pair, DatePeriod period)
         {
             string res = await Api.TradeHistory(pair, period);
@@ -38,11 +44,27 @@ namespace Btr.PrivApi
             return resp.Select(o => o.Order).ToArray();
 
         }
+
+        public async Task<bool> IsComplited(Order order, DateTime fromDate)
+        {
+            if (order == null || order.Id < 1) return false;
+            Order[] res = await OrderHistory(order.Pair, 
+                new DatePeriod(fromDate.AddMinutes(-3), DateTime.Now));
+            var complOrder = res.FirstOrDefault(o => o.Id == order.Id);
+            if (complOrder.ComplitedDate == new DateTime(0)) return false;
+            order.ComplitedDate = complOrder.ComplitedDate;
+            order.Amount = complOrder.Amount;
+            order.Price = complOrder.Price;
+            return true;
+        }
         private class BuyResponce
         {
             public long orderNumber;
         }
-
+        private class CanselResponse
+        {
+            public long success;
+        }
         private class OrderPln
         {
             public Order Order
