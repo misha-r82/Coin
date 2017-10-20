@@ -13,7 +13,7 @@ namespace Btr
     {
         public Buyer(ApiParser apiParser)
         {
-            throw new NotImplementedException();
+            _apiParser = apiParser;
         }
 
         public double Balance { get; set; }
@@ -42,7 +42,7 @@ namespace Btr
             if (_Order == null || _Order.Id < 1) return null;
             var task = _apiParser.OrderHistory(_Order.Pair, new DatePeriod(_buyDate.AddMinutes(-3), DateTime.Now));
             task.Wait();
-            if (!task.Result.Any(o => o.Id == _Order.Id)) return null;
+            if (!task.Result.Any(o => o.Id  == _Order.Id)) return null;
             var res = _Order;
             _Order = null;
             return res;
