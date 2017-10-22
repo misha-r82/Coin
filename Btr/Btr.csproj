@@ -62,6 +62,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DbgSett.cs" />
+    <Compile Include="FrmTreaderEditor.xaml.cs">
+      <DependentUpon>FrmTreaderEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrivApi\ApiBase.cs" />
     <Compile Include="PrivApi\ApiCall.cs" />
     <Compile Include="PrivApi\ApiCallResponse.cs" />
@@ -78,6 +81,10 @@
     <Compile Include="Trade\Trader.cs" />
     <Compile Include="Utils.cs" />
     <Page Include="FrmAddMarket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrmTreaderEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

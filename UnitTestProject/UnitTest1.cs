@@ -45,9 +45,9 @@ namespace UnitTestProject
             }
             int ptCount = m.Value.CourseData.Length;
             //var sred = m.Value.CourseData.Sum(p => p.course / ptCount);
-            var invest = treader.Complited.Sum(o=>o.BoughtPt.Course)/* + treader.Sellers.Count*/;
+            var invest = treader.Complited.Sum(o=>o.BuyOrder.Amount);
             var margin = treader.Complited.Sum(c => 
-            c.SellPoint.Course - c.BoughtPt.Course - 0.005 * c.SellPoint.Course);
+            c.SellOrder.Price - c.BuyOrder.Price - 0.005 * c.SellOrder.Price);
             var percent = margin;
             if (treader.Complited.Count >-1 && percent > -1)
             {

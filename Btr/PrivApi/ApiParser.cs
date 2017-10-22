@@ -12,6 +12,7 @@ namespace Btr.PrivApi
 {
     public class ApiParser
     {
+        private readonly TimeSpan _timeGap = new TimeSpan(0,0,1);
         public ApiParser(ApiBase api)
         {
             Api = api;
@@ -22,13 +23,13 @@ namespace Btr.PrivApi
         {
             string res = await Api.Buy(order);
             var resp = JsonConvert.DeserializeObject<BuyResponce>(res);
-            order.Id = resp.orderNumber;
+            resp.SetOrder(order);
         }
         public async Task Sell(Order order)
         {
             string res = await Api.Sell(order);
             var resp = JsonConvert.DeserializeObject<BuyResponce>(res);
-            order.Id = resp.orderNumber;
+            resp.SetOrder(order);
         }
         public async Task CanselOrder(Order order)
         {
@@ -45,11 +46,11 @@ namespace Btr.PrivApi
 
         }
 
-        public async Task<bool> IsComplited(Order order, DateTime fromDate)
+        public async Task<bool> IsComplited(Order order)
         {
             if (order == null || order.Id < 1) return false;
             Order[] res = await OrderHistory(order.Pair, 
-                new DatePeriod(fromDate.AddMinutes(-3), DateTime.Now));
+                new DatePeriod(order.PlaceDate - _timeGap, DateTime.Now));
             var complOrder = res.FirstOrDefault(o => o.Id == order.Id);
             if (complOrder.ComplitedDate == new DateTime(0)) return false;
             order.ComplitedDate = complOrder.ComplitedDate;
@@ -60,6 +61,23 @@ namespace Btr.PrivApi
         private class BuyResponce
         {
             public long orderNumber;
+            public Trade[] resultingTrades;
+            public DateTime Date { get { return resultingTrades.Max(t => t.date); } }
+            public double Amount { get { return resultingTrades.Sum(t => t.amount); } }
+
+            public void SetOrder(Order order)
+            {
+                order.Id = orderNumber;
+                order.PlaceDate = Date;
+                order.Price = Amount / order.Amount;
+                order.Amount = Amount;
+            }
+        }
+        private class Trade
+        {
+            public DateTime date;
+            public double amount;
+            public double price;
         }
         private class CanselResponse
         {

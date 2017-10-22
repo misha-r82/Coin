@@ -21,7 +21,7 @@ namespace Btr
 
         private ApiParser _apiParser;
         private Order _Order { get; set; }
-        private DateTime _buyDate { get; set; }
+
 
         public void Buy(CoursePoint buyPoint, CourseTracker tracker)
         {
@@ -32,20 +32,21 @@ namespace Btr
             if (minDelta < tracker.Sett.Delta) minDelta = tracker.Sett.Delta;
             if (buyPoint.Course > leap.DownBegin.Course * (1 - minDelta)) return;
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowBuy))
-                Debug.WriteLine(string.Format("Buy={0} {1} g+/g-={2:0.00000}", buyPoint, tracker.Leap.Mode, grad.GPos / grad.GNeg));
+                Debug.WriteLine("Buy={0} {1} g+/g-={2:0.00000}", buyPoint, tracker.Leap.Mode, grad.GPos / grad.GNeg);
             var order = new Order(tracker.Market.Name,  buyPoint.Course, Balance / PartsInvest);
-            _apiParser.Buy(order);            
+            _apiParser.Buy(order);
         }
 
-        public Order GetComplited()
+        public async Task<bool> IsCpmplited()
         {
-            if (_Order == null || _Order.Id < 1) return null;
-            var task = _apiParser.OrderHistory(_Order.Pair, new DatePeriod(_buyDate.AddMinutes(-3), DateTime.Now));
-            task.Wait();
-            if (!task.Result.Any(o => o.Id  == _Order.Id)) return null;
+            return await _apiParser.IsComplited(_Order);
+        }
+        public Order PopComplited()
+        {
+            if (!_Order.IsComplited) return null;
             var res = _Order;
             _Order = null;
-            return res;
+            return res;             
         }
     }
 }

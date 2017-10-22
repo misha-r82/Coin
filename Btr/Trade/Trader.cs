@@ -14,9 +14,12 @@ namespace Btr
     [DataContract]
     public class Treader
     {
-        [DataMember]public Buyer Buyer { get; }
+
         private CourseTracker _tracker;
         private ApiParser _apiParser { get; }
+        [DataMember]public Buyer Buyer { get; }
+        [DataMember] public List<Seller> Sellers { get; private set; }
+        [DataMember] public List<Seller> Complited;
         public Treader(CourseTracker tracker, ApiParser apiParser)
         {
             _tracker = tracker;
@@ -26,20 +29,19 @@ namespace Btr
             Sellers = new List<Seller>();
         }
 
-        [DataMember] public List<Seller> Sellers { get; private set; }
-        [DataMember] public List<Seller> Complited;
+
         private bool AllowBuy(CoursePoint pt)
         {
             if (!Sellers.Any()) return true;
             var lastSeller = Sellers.Last();
-            return lastSeller.BoughtPt.Course > pt.Course * (1 + _tracker.Sett.Delta);
+            return lastSeller.BuyOrder.Price > pt.Course * (1 + _tracker.Sett.Delta);
         }
         private void DeleteComplitedSellers()
         {
             var deleted = new List<Seller>();
             foreach (Seller seller in Sellers)
             {
-                if (seller.Selled)
+                if (seller.SellOrder.IsComplited)
                 {
                     Complited.Add(seller);
                     deleted.Add(seller);                    
@@ -58,7 +60,6 @@ namespace Btr
         {
 
             DeleteComplitedSellers();
-
             switch (_tracker.Track(curCourse))
             {
                 case EndPoint.None:

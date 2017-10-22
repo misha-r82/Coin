@@ -30,7 +30,9 @@ namespace Btr
         public MainWindow()
         {
             InitializeComponent();
+            TM = new TradeMan();
         }
+        public TradeMan TM { get; }
         //public Exchange Ex { get; set; }
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
@@ -56,73 +58,15 @@ namespace Btr
             
 
         }
-        private void TradeTest(double T, double delta, double gap)
-        {
-            var m = Markets.MarketList.First();
-            var tacker = new CourseTracker(m.Value, new BaseSettings()
-            { Delta = delta, GGap = gap });
-            var treader = new Treader(tacker, new ApiParser(new ApiBase()));
-            foreach (PlnCouse.CouseItem item in m.Value.CourseData)
-            {
-                /*if (item.date == new DateTime(2017,07,19,19,50,0))
-                { }*/
-                var coursePoint = new CoursePoint(item.course, item.date);
-                treader.Trade(coursePoint);
-            }
-            int ptCount = m.Value.CourseData.Length;
-            var sred = m.Value.CourseData.Sum(p => p.course / ptCount);
-            var invest = treader.Complited.Count + treader.Sellers.Count;
-            var investBtc = invest * sred;
-            var margin = treader.Complited.Sum(c =>
-            c.SellPoint.Course - c.BoughtPt.Course - 0.05 * c.SellPoint.Course);
-            var percent = margin / investBtc;
-            //if (percent > 0.1)
-            Debug.WriteLine("T1 ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
-            Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);
 
-        }
-        public void TradeTestCase()
-        {
-            TradeTest(0.02, 0.01, 0.3);
-        }
 
-        public void TestMethod1()
-        {
-            double delta = 0.0005;
-            while (delta < 0.025)
-            {
-                double gap = 0.1;
-                while (gap < 0.9)
-                {
-                    double t = 1;
-                    while (t < 130)
-                    {
-                        TradeTest(t, delta, gap);
-                        t *= 2;
-                    }
-                    gap += 0.2;
-                }
-                delta *= 2;
-            }
-
-        }
         private void EditMarkets_OnClick(object sender, RoutedEventArgs e)
         {
             var f = new FrmAddMarket();
             f.ShowDialog();
         }
 
-        private void BtnFindLeap_OnClick(object sender, RoutedEventArgs e)
-        {
-            DateTime start = new DateTime(2017,09,10,10,0,0);
-            TestMethod1();
-            /*var lf = new LeapFounder();
-            lf.Market = Markets.MarketList["BTC_ETH"];
-            lf.GRatio = 1.3;
-            lf.TRatio = 3;
-            lf.MaxPeriod = new TimeSpan(5,0,0,0);
-            var leap = lf.FindLeap(start, new TimeSpan(1, 0, 0));*/
-        }
+
 
         private Timer _timer;
         private void BtnStart_OnClick(object sender, RoutedEventArgs e)
