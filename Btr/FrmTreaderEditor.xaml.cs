@@ -19,9 +19,10 @@ namespace Btr
     /// </summary>
     public partial class FrmTreaderEditor : Window
     {
-        public FrmTreaderEditor()
+        public FrmTreaderEditor(Treader treader)
         {
             InitializeComponent();
+            DataContext = treader;
         }
     }
 }
