@@ -14,15 +14,14 @@ namespace Btr
     [DataContract]
     public class Treader
     {
-
-        private CourseTracker _tracker;
+        public CourseTracker Tracker { get; }
         private ApiParser _apiParser { get; }
         [DataMember]public Buyer Buyer { get; }
         [DataMember] public List<Seller> Sellers { get; private set; }
         [DataMember] public List<Seller> Complited;
         public Treader(CourseTracker tracker, ApiParser apiParser)
         {
-            _tracker = tracker;
+            Tracker = tracker;
             _apiParser = apiParser;
             Buyer = new Buyer(apiParser);
             Complited = new List<Seller>();
@@ -34,7 +33,7 @@ namespace Btr
         {
             if (!Sellers.Any()) return true;
             var lastSeller = Sellers.Last();
-            return lastSeller.BuyOrder.Price > pt.Course * (1 + _tracker.Sett.Delta);
+            return lastSeller.BuyOrder.Price > pt.Course * (1 + Tracker.Sett.Delta);
         }
         private void DeleteComplitedSellers()
         {
@@ -54,22 +53,22 @@ namespace Btr
         private void TrySell(CoursePoint pt)
         {
             foreach(var seller in Sellers)
-                seller.TrySell(pt, _tracker.MulGradient);            
+                seller.TrySell(pt, Tracker.MulGradient);            
         }
         public void Trade(CoursePoint curCourse)
         {
 
             DeleteComplitedSellers();
-            switch (_tracker.Track(curCourse))
+            switch (Tracker.Track(curCourse))
             {
                 case EndPoint.None:
-                    if (_tracker.Leap.Mode == TrackMode.Neutral) TrySell(curCourse);
+                    if (Tracker.Leap.Mode == TrackMode.Neutral) TrySell(curCourse);
                     break;
                 case EndPoint.Up:
                     TrySell(curCourse); break;
                 case EndPoint.Down:
                     if (AllowBuy(curCourse))
-                        Buyer.Buy(curCourse, _tracker); break;
+                        Buyer.Buy(curCourse, Tracker); break;
             }
         }
 

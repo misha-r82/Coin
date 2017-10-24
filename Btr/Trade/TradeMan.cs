@@ -10,7 +10,7 @@ namespace Btr
 {
     public class TradeMan : List<Treader>
     {
-        public TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
+        public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
         private ApiParser _apiParser;
         public TradeMan()
         {

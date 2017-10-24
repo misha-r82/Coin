@@ -4,27 +4,41 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Btr"
-        mc:Ignorable="d">
-<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        mc:Ignorable="d" Title="TreaderEditor"
+        SizeToContent="WidthAndHeight">
+<StackPanel>
+    <StackPanel.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="2"/>
+            </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="MinWidth" Value="40"></Setter>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="2"/>
+        </Style>        
+        </StackPanel.Resources>
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Market"/>
-        <ComboBox Name="cbMarket" DisplayMemberPath="Name"/>
+            <ComboBox Name="cbMarket" DisplayMemberPath="Name"  SelectedValue="Tracker.Market" 
+                      ItemsSource="{Binding Source={x:Static local:Markets.MarketList}, Path=Values}"/>
     </StackPanel>
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Balance"/>
-        <TextBox Text="{Binding Balance}"/>
+        <TextBox Text="{Binding Buyer.Balance}"/>
     </StackPanel>
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Division"/>
-        <TextBox Text="{Binding PartsInvest}"/>
+        <TextBox Text="{Binding Buyer.PartsInvest}"/>
     </StackPanel>
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Delta"/>
-        <TextBox Text="{Binding PartsInvest}"/>
+            <TextBox Text="{Binding Tracker.Sett.Delta}"/>
     </StackPanel>
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Gap"/>
-        <TextBox Text="{Binding GGap}"/>
+            <TextBox Text="{Binding Tracker.Sett.GGap}"/>
     </StackPanel>
     </StackPanel>
 </Window>
