@@ -19,6 +19,7 @@ using Btr.History;
 using Btr.Polon;
 using Btr.PrivApi;
 using Lib;
+using Microsoft.Win32;
 
 namespace Btr
 {
@@ -73,6 +74,20 @@ namespace Btr
         {
             var tm = new TradeMan();
             tm.StartTrade();
+        }
+
+        private void BtnLoadMarkets_OnClick(object sender, RoutedEventArgs e)
+        {
+            var f = new SaveFileDialog();
+            if (f.ShowDialog(this) != true) return;
+            FileIO.serializeDataContract(TM, f.FileName);           
+        }
+
+        private void BtnSaveMarkets_OnClick(object sender, RoutedEventArgs e)
+        {
+            var f = new SaveFileDialog();
+            if (f.ShowDialog(this) != true) return;
+            FileIO.serializeDataContract(TM, f.FileName);
         }
     }
 }

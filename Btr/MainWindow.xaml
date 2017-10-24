@@ -24,6 +24,8 @@
         <StackPanel Orientation="Horizontal" Grid.Row="2" >
             <Button Name="btnRun" Content="start" Click="btnRun_Click"/>  
             <Button Name="EditMarkets" Content="Add" Click="EditMarkets_OnClick"/>
+            <Button Name="btnLoadMarkets" Content="Load" Click="BtnLoadMarkets_OnClick"/>
+            <Button Name="btnSaveMarkets" Content="Save" Click="BtnSaveMarkets_OnClick"/>
             <Button Name="btnStart" Content="RunTrade" Click="BtnStart_OnClick"/>
         </StackPanel>
         

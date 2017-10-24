@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\misha\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Coin.1193401577.00" t="ExcludeRecursive" />
-    <e p="C:\Users\misha\RiderProjects\Coin" t="IncludeFlat">
+    <e p="C:\Users\Михаил\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Coin.-1863564205.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Михаил\Source\Repos\Coin" t="IncludeFlat">
       <e p=".nuget" t="Include">
         <e p="NuGet.Config" t="Include" />
         <e p="NuGet.exe" t="Include" />
@@ -26,6 +26,8 @@
         </e>
         <e p="FrmAddMarket.xaml" t="Include" />
         <e p="FrmAddMarket.xaml.cs" t="Include" />
+        <e p="FrmTreaderEditor.xaml" t="Include" />
+        <e p="FrmTreaderEditor.xaml.cs" t="Include" />
         <e p="History" t="Include">
           <e p="PlnCouse.cs" t="Include" />
         </e>
@@ -148,6 +150,7 @@
       <e p="UnitTestProject" t="IncludeRecursive">
         <e p="apiTest.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="FrmsTest.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
