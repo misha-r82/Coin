@@ -69,6 +69,7 @@
     <Compile Include="PrivApi\ApiCall.cs" />
     <Compile Include="PrivApi\ApiCallResponse.cs" />
     <Compile Include="PrivApi\ApiParser.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Trade\Buyer.cs" />
     <Compile Include="Trade\CourseTracker.cs" />
     <Compile Include="Trade\Gradient.cs" />

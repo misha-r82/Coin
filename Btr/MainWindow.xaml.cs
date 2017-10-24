@@ -63,8 +63,11 @@ namespace Btr
 
         private void EditMarkets_OnClick(object sender, RoutedEventArgs e)
         {
-            var f = new FrmAddMarket();
-            f.ShowDialog();
+            var tracker = new CourseTracker(Markets.MarketList.First().Value, new BaseSettings());
+            var treader = new Treader(tracker, new ApiParser(new ApiBase()));
+            var f = new FrmTreaderEditor(treader);
+            if (f.ShowDialog() != true) return;
+            TM.Add(treader);
         }
 
 
@@ -80,7 +83,7 @@ namespace Btr
         {
             var f = new SaveFileDialog();
             if (f.ShowDialog(this) != true) return;
-            FileIO.serializeDataContract(TM, f.FileName);           
+            var tmp = FileIO.deserializeDataContract<TradeMan>(f.FileName);           
         }
 
         private void BtnSaveMarkets_OnClick(object sender, RoutedEventArgs e)

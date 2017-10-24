@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.Serialization;
 using System.Timers;
 using Btr.Polon;
 using Btr.PrivApi;
@@ -8,6 +9,7 @@ using Lib;
 
 namespace Btr
 {
+    [DataContract]
     public class TradeMan : List<Treader>
     {
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
@@ -18,7 +20,7 @@ namespace Btr
             _timer = new Timer(Interval.TotalMilliseconds);
             _timer.Elapsed += TimerOnElapsed;
             _timer.AutoReset = true;
-            var from = DateTime.Now - MultiPeriodGrad.MaxPeriod;
+            var from = DateTime.Now - new TimeSpan()//MultiPeriodGrad.MaxPeriod;
             var period = new DatePeriod(from, DateTime.Now);
             Markets.LoadMarkets(period);
         }

@@ -40,5 +40,7 @@
         <TextBlock Text="Gap"/>
             <TextBox Text="{Binding Tracker.Sett.GGap}"/>
     </StackPanel>
+    <Button IsDefault="True" Content="OK" Margin="10" Width="80" Click="Button_Click"/>
     </StackPanel>
+
 </Window>

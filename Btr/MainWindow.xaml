@@ -16,9 +16,16 @@
         <TextBlock Name="txtResult"/>
         <DataGrid Name="dgTraders">
             <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Enabled}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Market"/>
                 <DataGridTextColumn Header="Balance"/>
-                <DataGridTextColumn Header="Ndiv"/>
+                
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" Grid.Row="2" >

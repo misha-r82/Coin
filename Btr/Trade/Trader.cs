@@ -1,24 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
+using Btr.Annotations;
 using Btr.PrivApi;
 
 namespace Btr
 {
     public enum TradeMode { Wait, Buy, Sell }
     [DataContract]
-    public class Treader
+    public class Treader : INotifyPropertyChanged
     {
         public CourseTracker Tracker { get; }
         private ApiParser _apiParser { get; }
         [DataMember]public Buyer Buyer { get; }
         [DataMember] public List<Seller> Sellers { get; private set; }
         [DataMember] public List<Seller> Complited;
+        [DataMember] private bool _enabled;
+
+        public bool Enabled
+        {
+            get { return _enabled; }
+            set
+            {
+                if (value == _enabled) return;
+                _enabled = value;
+                OnPropertyChanged();
+            }
+        }
+
         public Treader(CourseTracker tracker, ApiParser apiParser)
         {
             Tracker = tracker;
@@ -73,7 +89,13 @@ namespace Btr
         }
 
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 
     public struct CoursePoint
