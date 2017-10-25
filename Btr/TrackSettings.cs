@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Btr
 {
-    public class BaseSettings
+    public class TrackSettings
     {
         public double Delta { get; set;}
         public double GGap { get; set; } // 

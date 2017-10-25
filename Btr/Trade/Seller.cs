@@ -10,9 +10,9 @@ namespace Btr
     {
         public Order BuyOrder { get;}
         public Order SellOrder { get; private set; }
-        private BaseSettings _sett;
+        private TrackSettings _sett;
         private ApiParser _apiParser;
-        public Seller(Order buyOrder, BaseSettings sett, ApiParser apiParser)
+        public Seller(Order buyOrder, TrackSettings sett, ApiParser apiParser)
         {
             BuyOrder = buyOrder;
             _sett = sett;

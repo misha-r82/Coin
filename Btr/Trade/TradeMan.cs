@@ -9,7 +9,7 @@ using Lib;
 
 namespace Btr
 {
-    [DataContract]
+    
     public class TradeMan : List<Treader>
     {
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
@@ -20,12 +20,12 @@ namespace Btr
             _timer = new Timer(Interval.TotalMilliseconds);
             _timer.Elapsed += TimerOnElapsed;
             _timer.AutoReset = true;
-            var from = DateTime.Now - new TimeSpan()//MultiPeriodGrad.MaxPeriod;
+            var from = DateTime.Now - MultiPeriodGrad.MaxPeriod;
             var period = new DatePeriod(from, DateTime.Now);
-            Markets.LoadMarkets(period);
+            //Markets.LoadMarkets(period);
         }
 
-        public void Add(Market market, BaseSettings sett)
+        public void Add(Market market, TrackSettings sett)
         {
             var tracker = new CourseTracker(market, sett);
             var treader = new Treader(tracker, _apiParser);

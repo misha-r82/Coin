@@ -17,9 +17,10 @@ namespace Btr
     [DataContract]
     public class Treader : INotifyPropertyChanged
     {
-        public CourseTracker Tracker { get; }
+
+        [DataMember]public CourseTracker Tracker { get; private set; }
         private ApiParser _apiParser { get; }
-        [DataMember]public Buyer Buyer { get; }
+        [DataMember]public Buyer Buyer { get; private set; }
         [DataMember] public List<Seller> Sellers { get; private set; }
         [DataMember] public List<Seller> Complited;
         [DataMember] private bool _enabled;

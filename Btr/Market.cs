@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using Btr.History;
@@ -8,6 +9,7 @@ using Lib;
 
 namespace Btr
 {
+    [DataContract]
     public class Market
     {
         public TimeSpan Tmin = new TimeSpan(0,0,5);
@@ -15,9 +17,8 @@ namespace Btr
         {
             Name = name;
         }
-        public string Name { get; set; }
+        [DataMember] public string Name { get; set; }
         public PlnCouse.CouseItem[] CourseData;
-        public double Qmax { get; private set; }
         public IEnumerable<PlnCouse.CouseItem> GetData(DatePeriod period)
         {
             int pos = Array.BinarySearch(CourseData, new PlnCouse.CouseItem(period.From, 0, 0),

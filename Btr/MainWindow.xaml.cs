@@ -32,6 +32,7 @@ namespace Btr
         {
             InitializeComponent();
             TM = new TradeMan();
+            DataContext = this;
         }
         public TradeMan TM { get; }
         //public Exchange Ex { get; set; }
@@ -63,7 +64,7 @@ namespace Btr
 
         private void EditMarkets_OnClick(object sender, RoutedEventArgs e)
         {
-            var tracker = new CourseTracker(Markets.MarketList.First().Value, new BaseSettings());
+            var tracker = new CourseTracker(Markets.MarketList.First().Value, new TrackSettings());
             var treader = new Treader(tracker, new ApiParser(new ApiBase()));
             var f = new FrmTreaderEditor(treader);
             if (f.ShowDialog() != true) return;

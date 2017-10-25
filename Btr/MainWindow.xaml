@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Name="txtResult"/>
-        <DataGrid Name="dgTraders">
+        <DataGrid Name="dgTraders" ItemsSource="{Binding TM}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>

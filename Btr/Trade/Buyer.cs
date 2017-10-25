@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using Btr.PrivApi;
 using Lib;
 
 namespace Btr
 {
+    [DataContract]
     public class Buyer
     {
         public Buyer(ApiParser apiParser)
@@ -16,8 +18,8 @@ namespace Btr
             _apiParser = apiParser;
         }
 
-        public double Balance { get; set; }
-        public double PartsInvest { get; set; }
+        [DataMember] public double Balance { get; set; }
+        [DataMember] public double PartsInvest { get; set; }
 
         private ApiParser _apiParser;
         private Order _Order { get; set; }

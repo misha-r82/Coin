@@ -4,19 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using Test.Annotations;
 
 namespace Btr
 {
-
+    [DataContract]
     public class CourseTracker
     {
         private Market _market;
-        private BaseSettings _sett;
+        [DataMember] private TrackSettings _sett;
         private double _lastGrad;
-        public CourseTracker(Market market, BaseSettings sett)
+        public CourseTracker(Market market, TrackSettings sett)
         {
             _market = market;
             _sett = sett;
@@ -26,7 +27,7 @@ namespace Btr
 
         public LeapInfo Leap { get; }
         public Gradient.Grad MulGradient { get; private set; }
-        public BaseSettings Sett
+        public TrackSettings Sett
         {
             get { return _sett; }
         }

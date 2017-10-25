@@ -13,7 +13,7 @@ namespace UnitTestProject
         [TestMethod]
         public void FrmTreaderEditorTest()
         {
-            var tracker = new CourseTracker(Markets.MarketList.First().Value, new BaseSettings());
+            var tracker = new CourseTracker(Markets.MarketList.First().Value, new TrackSettings());
             var treader = new Treader(tracker, new ApiParser(new ApiBase()));
             var f = new FrmTreaderEditor(treader);
             f.ShowDialog();

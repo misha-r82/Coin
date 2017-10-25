@@ -97,7 +97,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseSettings.cs" />
+    <Compile Include="TrackSettings.cs" />
     <Compile Include="BtrHistory.cs" />
     <Compile Include="Data\BtrHistoryItem.cs" />
     <Compile Include="Data\PlnHistoryItem.cs" />

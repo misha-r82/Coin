@@ -31,7 +31,7 @@ namespace UnitTestProject
         {
             var m = Markets.MarketList.First();
             var t0 = TimeSpan.FromHours(T);
-            var tacker = new CourseTracker(m.Value, new BaseSettings()
+            var tacker = new CourseTracker(m.Value, new TrackSettings()
             { Delta = delta, GGap = gap});
             var treader = new Treader(tacker, new ApiParser(new ApiBase()));
             var period = new DatePeriod(new DateTime(2017,09,4), new DateTime(2017,9,5));
