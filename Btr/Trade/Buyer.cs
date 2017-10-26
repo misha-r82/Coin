@@ -20,9 +20,8 @@ namespace Btr
 
         [DataMember] public double Balance { get; set; }
         [DataMember] public double PartsInvest { get; set; }
-
-        private ApiParser _apiParser;
-        private Order _Order { get; set; }
+        [DataMember] private ApiParser _apiParser;
+        [DataMember] private Order _Order { get; set; }
 
 
         public void Buy(CoursePoint buyPoint, CourseTracker tracker)

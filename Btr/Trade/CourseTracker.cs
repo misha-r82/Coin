@@ -14,7 +14,7 @@ namespace Btr
     [DataContract]
     public class CourseTracker
     {
-        private Market _market;
+        [DataMember] private Market _market;
         [DataMember] private TrackSettings _sett;
         private double _lastGrad;
         public CourseTracker(Market market, TrackSettings sett)

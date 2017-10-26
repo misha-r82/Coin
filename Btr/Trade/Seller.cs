@@ -1,17 +1,19 @@
 using System;
 using System.Diagnostics;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using Btr.PrivApi;
 using Lib.Annotations;
 
 namespace Btr
 {
+    [DataContract]
     public class Seller
     {
-        public Order BuyOrder { get;}
-        public Order SellOrder { get; private set; }
-        private TrackSettings _sett;
-        private ApiParser _apiParser;
+        [DataMember] public Order BuyOrder { get;}
+        [DataMember] public Order SellOrder { get; private set; }
+        [DataMember] private TrackSettings _sett;
+        [DataMember] private ApiParser _apiParser;
         public Seller(Order buyOrder, TrackSettings sett, ApiParser apiParser)
         {
             BuyOrder = buyOrder;

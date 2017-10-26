@@ -19,11 +19,11 @@ namespace Btr
     {
 
         [DataMember]public CourseTracker Tracker { get; private set; }
-        private ApiParser _apiParser { get; }
-        [DataMember]public Buyer Buyer { get; private set; }
+        [DataMember] public Buyer Buyer { get; private set; }
         [DataMember] public List<Seller> Sellers { get; private set; }
-        [DataMember] public List<Seller> Complited;
+        [DataMember] public List<Seller> Complited { get; private set; }
         [DataMember] private bool _enabled;
+        [DataMember] private ApiParser _apiParser;
 
         public bool Enabled
         {
@@ -72,10 +72,10 @@ namespace Btr
             foreach(var seller in Sellers)
                 seller.TrySell(pt, Tracker.MulGradient);            
         }
-        public void Trade(CoursePoint curCourse)
+        public async Task Trade(CoursePoint curCourse)
         {
-
-            DeleteComplitedSellers();
+            if (!Enabled) return;
+            await CheckComplOrders();
             switch (Tracker.Track(curCourse))
             {
                 case EndPoint.None:
@@ -89,6 +89,22 @@ namespace Btr
             }
         }
 
+        public async Task CheckComplOrders()
+        {
+            if (await Buyer.IsCpmplited())
+                Sellers.Add(new Seller(Buyer.PopComplited(), Tracker.Sett, _apiParser));
+            var deleted = new List<Seller>();
+            foreach (Seller seller in Sellers)
+            {
+                if (await seller.IsCpmplited())
+                {
+                    deleted.Add(seller);
+                    Complited.Add(seller);
+                }
+            }
+            foreach (Seller seller in deleted)
+                Sellers.Remove(seller);
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

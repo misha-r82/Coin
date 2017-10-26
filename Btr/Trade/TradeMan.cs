@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.Serialization;
 using System.Timers;
@@ -9,11 +11,11 @@ using Lib;
 
 namespace Btr
 {
-    
-    public class TradeMan : List<Treader>
+    [CollectionDataContract]
+    public class TradeMan : List<Treader>, INotifyCollectionChanged
     {
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
-        private ApiParser _apiParser;
+        [DataMember] private ApiParser _apiParser;
         public TradeMan()
         {
             _apiParser = new ApiParser(new ApiBase());
@@ -24,11 +26,10 @@ namespace Btr
             var period = new DatePeriod(from, DateTime.Now);
             //Markets.LoadMarkets(period);
         }
-
-        public void Add(Market market, TrackSettings sett)
+        public void Add(Treader treader)
         {
-            var tracker = new CourseTracker(market, sett);
-            var treader = new Treader(tracker, _apiParser);
+            base.Add(treader);
+            OnCollectionChanged();
         }
         private void TimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
         {
@@ -41,7 +42,20 @@ namespace Btr
         public void StartTrade()
         {
             _timer.Enabled = true;
-            
         }
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+
+        public void OnCollectionChanged()
+        {
+            if (CollectionChanged != null)
+                CollectionChanged(this,
+                    new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+        }
+        /*[OnDeserializing]
+        private void OnDeserializing(StreamingContext c)
+        {
+            OnCreated();
+        }*/
     }
 }

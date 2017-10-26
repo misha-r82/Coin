@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Name="txtResult"/>
-        <DataGrid Name="dgTraders" ItemsSource="{Binding TM}">
+        <DataGrid Name="dgTraders" ItemsSource="{Binding TM}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -23,11 +23,40 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Market"/>
-                <DataGridTextColumn Header="Balance"/>
+                <DataGridTextColumn Header="Market" Binding="{Binding Tracker.Market.Name}"/>
+                <DataGridTextColumn Header="Balance" Binding="{Binding Buyer.Balance}"/> 
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="*" Click="btnEditTreaderClick"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 
             </DataGrid.Columns>
         </DataGrid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                 <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Name="dgOrders" AutoGenerateColumns="False" ItemsSource="{Binding ElementName=dgTraders, Path=SelectedItem}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding BuyOrder.Id}"/>
+                    <DataGridTextColumn Header="Date" Binding="{Binding BuyOrder.ComplitedDate}"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding BuyOrder.Price}"/>
+                    <DataGridTextColumn Header="Amount" Binding="{Binding BuyOrder.Amount}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid Name="dgComplited" Grid.Column="1" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding SellOrder.Id}"/>
+                    <DataGridTextColumn Header="Date" Binding="{Binding SellOrder.ComplitedDate}"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding SellOrder.Price}"/>
+                    <DataGridTextColumn Header="Amount" Binding="{Binding SellOrder.Amount}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="2" >
             <Button Name="btnRun" Content="start" Click="btnRun_Click"/>  
             <Button Name="EditMarkets" Content="Add" Click="EditMarkets_OnClick"/>

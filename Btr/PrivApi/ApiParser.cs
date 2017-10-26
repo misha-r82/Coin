@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using Btr.Polon;
@@ -10,9 +11,10 @@ using Newtonsoft.Json;
 
 namespace Btr.PrivApi
 {
+    [DataContract]
     public class ApiParser
     {
-        private readonly TimeSpan _timeGap = new TimeSpan(0,0,1);
+        private readonly TimeSpan TIME_GAP = new TimeSpan(0,0,1);
         public ApiParser(ApiBase api)
         {
             Api = api;
@@ -50,7 +52,7 @@ namespace Btr.PrivApi
         {
             if (order == null || order.Id < 1) return false;
             Order[] res = await OrderHistory(order.Pair, 
-                new DatePeriod(order.PlaceDate - _timeGap, DateTime.Now));
+                new DatePeriod(order.PlaceDate - TIME_GAP, DateTime.Now));
             var complOrder = res.FirstOrDefault(o => o.Id == order.Id);
             if (complOrder.ComplitedDate == new DateTime(0)) return false;
             order.ComplitedDate = complOrder.ComplitedDate;
