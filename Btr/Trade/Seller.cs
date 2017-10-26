@@ -24,13 +24,14 @@ namespace Btr
         {
             return await _apiParser.IsComplited(SellOrder);
         }
-        public async void TrySell(CoursePoint point, Gradient.Grad grad)
+        public async Task TrySell(CoursePoint point, Gradient.Grad grad)
         {
+            if (SellOrder != null) return;
             double minDelta = Math.Abs(grad.GPos / grad.GNeg) * _sett.Delta;
             if (minDelta < _sett.Delta) minDelta = _sett.Delta;
             if (point.Course < BuyOrder.Price *(1 + minDelta)) return;
-            var sellOrder = new Order(BuyOrder.Pair, point.Course, BuyOrder.Amount);
-            _apiParser.Sell(sellOrder);
+            SellOrder = new Order(BuyOrder.Pair, point.Course, BuyOrder.Amount);
+            await _apiParser.Sell(SellOrder);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowSell))
             {
                 var mrg = point.Course - BuyOrder.Price * (1 + _sett.Delta);

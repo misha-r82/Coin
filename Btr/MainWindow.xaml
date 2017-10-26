@@ -24,7 +24,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Market" Binding="{Binding Tracker.Market.Name}"/>
-                <DataGridTextColumn Header="Balance" Binding="{Binding Buyer.Balance}"/> 
+                <DataGridTextColumn Header="Balance" Binding="{Binding Buyer.Balance}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -32,15 +32,15 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                
+
             </DataGrid.Columns>
         </DataGrid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" DataContext="{Binding ElementName=dgTraders, Path=SelectedItem}">
             <Grid.ColumnDefinitions>
-                 <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DataGrid Name="dgOrders" AutoGenerateColumns="False" ItemsSource="{Binding ElementName=dgTraders, Path=SelectedItem}">
+            <DataGrid Name="dgOrders" AutoGenerateColumns="False"  ItemsSource="{Binding Sellers}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding BuyOrder.Id}"/>
                     <DataGridTextColumn Header="Date" Binding="{Binding BuyOrder.ComplitedDate}"/>
@@ -48,7 +48,7 @@
                     <DataGridTextColumn Header="Amount" Binding="{Binding BuyOrder.Amount}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <DataGrid Name="dgComplited" Grid.Column="1" AutoGenerateColumns="False">
+            <DataGrid Name="dgComplited" AutoGenerateColumns="True" ItemsSource="{Binding Complited}" Grid.ColumnSpan="2" Margin="259,0,0.282,0.194">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding SellOrder.Id}"/>
                     <DataGridTextColumn Header="Date" Binding="{Binding SellOrder.ComplitedDate}"/>
@@ -58,12 +58,12 @@
             </DataGrid>
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="2" >
-            <Button Name="btnRun" Content="start" Click="btnRun_Click"/>  
+            <Button Name="btnRun" Content="start" Click="btnRun_Click"/>
             <Button Name="EditMarkets" Content="Add" Click="EditMarkets_OnClick"/>
             <Button Name="btnLoadMarkets" Content="Load" Click="BtnLoadMarkets_OnClick"/>
             <Button Name="btnSaveMarkets" Content="Save" Click="BtnSaveMarkets_OnClick"/>
             <Button Name="btnStart" Content="RunTrade" Click="BtnStart_OnClick"/>
         </StackPanel>
-        
+
     </Grid>
 </Window>

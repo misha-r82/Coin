@@ -22,7 +22,9 @@ namespace Btr
         [DataMember] public Buyer Buyer { get; private set; }
         [DataMember] public List<Seller> Sellers { get; private set; }
         [DataMember] public List<Seller> Complited { get; private set; }
+        [DataMember] public double KSellDist { get; set; }
         [DataMember] private bool _enabled;
+
         [DataMember] private ApiParser _apiParser;
 
         public bool Enabled
@@ -49,8 +51,9 @@ namespace Btr
         private bool AllowBuy(CoursePoint pt)
         {
             if (!Sellers.Any()) return true;
-            var lastSeller = Sellers.Last();
-            return lastSeller.BuyOrder.Price > pt.Course * (1 + Tracker.Sett.Delta);
+            double minPrice = Sellers.Min(s=>s.BuyOrder.Price);
+            double gap = KSellDist * Tracker.Sett.Delta * Math.Sqrt(Sellers.Count);
+            return pt.Course < minPrice - gap;
         }
         private void DeleteComplitedSellers()
         {

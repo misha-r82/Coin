@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Btr"
         mc:Ignorable="d" Title="TreaderEditor"
-        SizeToContent="WidthAndHeight">
+        SizeToContent="WidthAndHeight" MinWidth="200">
 <StackPanel>
     <StackPanel.Resources>
         <Style TargetType="TextBlock">
@@ -21,7 +21,7 @@
         </StackPanel.Resources>
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Market"/>
-            <ComboBox Name="cbMarket" DisplayMemberPath="Name"  SelectedValue="Tracker.Market" 
+            <ComboBox Name="cbMarket" SelectedItem="Tracker.Market" 
                       ItemsSource="{Binding Source={x:Static local:Markets.MarketList}, Path=Values}"/>
     </StackPanel>
     <StackPanel Orientation="Horizontal">
