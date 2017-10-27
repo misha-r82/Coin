@@ -52,7 +52,7 @@ namespace Btr
                     course, g, MulGradient, Leap.Mode);
             //Debug.WriteLine("g={0} m={1} {2}", g, MulGradient, Leap.Mode);
             //Debug.WriteLine("g+={0} g-={1} {2}", g.GNeg/MulGradient.GNeg, g.GPos/MulGradient.GPos, Leap.Mode);
-            if (Math.Abs((g.G - _lastGrad)/ (g.G + _lastGrad)) < _sett.GGap)
+            if (Math.Abs((g.G - _lastGrad)/_lastGrad) < _sett.GGap)
                 return EndPoint.None;
             _lastGrad = MulGradient.G;
             if (g.G > MulGradient.GPos)

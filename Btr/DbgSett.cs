@@ -18,7 +18,8 @@ namespace Btr
         {
             ShowCourse,
             ShowBuy,
-            ShowSell
+            ShowSell,
+            ShowMGrad
 
         } 
 

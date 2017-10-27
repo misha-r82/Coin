@@ -62,7 +62,7 @@ namespace UnitTestProject
             DbgSett.Options.Clear();
             //DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
             //DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
-            DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
+            //DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
             TradeTest(0.2, 0.007, 0.3);
             
         }

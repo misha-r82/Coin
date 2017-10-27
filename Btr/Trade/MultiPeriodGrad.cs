@@ -65,7 +65,13 @@ namespace Btr
             {
                 data = market.GetData(periods[i]).ToArray();
                 grads[i+1] = new  Gradient.GradSkv(data);
-                //Debug.WriteLine("[{0}]={1}", i,grads[i]);
+               
+            }
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowMGrad))
+            {
+                for (int i = 0; i < grads.Length; i++)
+                    Debug.Write(string.Format("[{0}]={1}", i, grads[i]));
+                Debug.Write("\r\n");
             }
             double positive = grads.Sum(g => g.GPos)/grads.Length;
             double negative = grads.Sum(g => g.GNeg) / grads.Length;
