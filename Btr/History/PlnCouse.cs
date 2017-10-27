@@ -73,27 +73,36 @@ namespace Btr.History
                     yield return new CouseItem(time, 0, 0);
                     continue;
                 }
-                double sumAmount = 0;
-                double sumValue = 0;
-                for (int i = 0; i < chunk.Length; i++)
+                double delta = 0;
+                double sred = chunk[0].rate;
+                if (chunk.Length > 1)
                 {
-                    var item = chunk[i];
-                    sumValue += item.rate * item.amount;
-                    sumAmount += item.amount;
+                    double sumAmount = 0;
+                    double sumValue = 0;
+                    int half = chunk.Length / 2;
+                    for (int i = 0; i < half; i++)
+                    {
+                        var item = chunk[i];
+                        sumValue += item.rate * item.amount;
+                        sumAmount += item.amount;
+                    }
+                    double sred1 = sumValue / sumAmount;
+                    for (int i = half; i < chunk.Length; i++)
+                    {
+                        var item = chunk[i];
+                        sumValue += item.rate * item.amount;
+                        sumAmount += item.amount;
+                    }
+                    double sred2 = sumValue / sumAmount;
+                    sred = (sred1 + sred2) / 2;
+                    delta = sred2 - sred1;
                 }
-                double sred = sumValue / sumAmount;
-                sumValue = 0;
-                for (int i = 0; i < chunk.Length; i++)
-                {
-                    var item = chunk[i];
-                    sumValue += (item.rate - sred) * item.amount;
-                }
-                double delta = sumValue / sumAmount;
-                yield return new CouseItem(time, sred, delta);
+                yield return new CouseItem(time, sred, delta);   
             }
 
 
         }
+        
         public class DateComparer : IComparer<CouseItem>
         {
             public int Compare(CouseItem x, CouseItem y)
