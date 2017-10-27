@@ -15,20 +15,34 @@ namespace Btr.PrivApi
     public class ApiParser
     {
         private readonly TimeSpan TIME_GAP = new TimeSpan(0,0,1);
-        public ApiParser(ApiBase api)
+        public ApiParser(ApiBase api, bool testMode = false)
         {
             Api = api;
+            _testMode = testMode;
         }
         private ApiBase Api { get; }
-
+        private bool _testMode;
+        private int _testId = 0;
         public async Task Buy(Order order)
         {
+            if (_testMode)
+            {
+                order.ComplitedDate = order.PlaceDate;
+                order.Id = _testId++;
+                return;
+            }
             string res = await Api.Buy(order);
             var resp = JsonConvert.DeserializeObject<BuyResponce>(res);
             resp.SetOrder(order);
         }
         public async Task Sell(Order order)
         {
+            if (_testMode)
+            {
+                order.ComplitedDate = order.PlaceDate;
+                order.Id = _testId++;
+                return;
+            }
             string res = await Api.Sell(order);
             var resp = JsonConvert.DeserializeObject<BuyResponce>(res);
             resp.SetOrder(order);
@@ -47,9 +61,10 @@ namespace Btr.PrivApi
             return resp.Select(o => o.Order).ToArray();
 
         }
-
         public async Task<bool> IsComplited(Order order)
         {
+            if (_testMode) return true;
+
             if (order == null || order.Id < 1) return false;
             Order[] res = await OrderHistory(order.Pair, 
                 new DatePeriod(order.PlaceDate - TIME_GAP, DateTime.Now));
@@ -97,7 +112,6 @@ namespace Btr.PrivApi
                     return order;
                 }
             }
-
             public long orderNumber;
             public DateTime date;
             public double amount;

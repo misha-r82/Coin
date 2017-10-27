@@ -45,6 +45,7 @@ namespace Btr
             Buyer = new Buyer(apiParser);
             Complited = new List<Seller>();
             Sellers = new List<Seller>();
+            Enabled = true;
         }
 
 

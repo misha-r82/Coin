@@ -39,7 +39,7 @@ namespace Btr
 
         static MultiPeriodGrad()
         {
-            Sett = new MultiPeriodSettings(new TimeSpan(0,0,12,0), 5, 5);
+            Sett = new MultiPeriodSettings(new TimeSpan(0,0,12,0), 1, 1);
         }
         private static DatePeriod[] GetPeriods(DateTime t0)
         {
@@ -61,7 +61,6 @@ namespace Btr
             var data = market.GetData(periods[0]).ToArray();
             grads[0] = new Gradient.Grad(new []{data.Last()} );
             grads[1] = new Gradient.GradSkv(data);
-            Debug.WriteLine(data.Last());
             for (int i = 1; i < grads.Length - 1; i++)
             {
                 data = market.GetData(periods[i]).ToArray();

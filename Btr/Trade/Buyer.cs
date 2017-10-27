@@ -40,6 +40,7 @@ namespace Btr
 
         public async Task<bool> IsCpmplited()
         {
+            if (_Order == null) return false;
             return await _apiParser.IsComplited(_Order);
         }
         public Order PopComplited()
