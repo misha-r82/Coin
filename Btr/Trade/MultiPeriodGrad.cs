@@ -54,17 +54,21 @@ namespace Btr
             }
             return periods;
         }
-        public static Gradient.Grad GetGradSkv(Market market, DateTime date)
+        public static Gradient.Grad GetGradSkv(Market market, DateTime date, int n1, int n2)
         {
             var periods = GetPeriods(date);
-            var grads = new Gradient.Grad[periods.Length +1];
+            var grads = new Gradient.Grad[n2-n1+1];
             var data = market.GetData(periods[0]).ToArray();
-            grads[0] = new Gradient.Grad(new []{data.Last()} );
-            grads[1] = new Gradient.GradSkv(data);
-            for (int i = 1; i < grads.Length - 1; i++)
+            int first = n1;
+            if (n1 == 0)
+            {
+                grads[0] = new Gradient.Grad(new[] {data.Last()});
+                first = 1;
+            }                
+            for (int i = first; i < grads.Length; i++)
             {
                 data = market.GetData(periods[i]).ToArray();
-                grads[i+1] = new  Gradient.GradSkv(data);
+                grads[i] = new  Gradient.GradSkv(data);
                 //Debug.WriteLine("[{0}]={1}", i,grads[i]);
             }
             double positive = grads.Sum(g => g.GPos)/grads.Length;
