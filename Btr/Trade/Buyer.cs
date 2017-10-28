@@ -26,7 +26,7 @@ namespace Btr
 
         public void Buy(CoursePoint buyPoint, CourseTracker tracker)
         {
-            Gradient.Grad grad = tracker.MulGradient;
+            Gradient.Grad grad = tracker.GPrew;
             LeapInfo leap = tracker.Leap;
             double minDelta = Math.Abs(grad.GPos / grad.GNeg) * tracker.Sett.Delta;
 

@@ -67,7 +67,7 @@ namespace Btr
             }                
             for (int i = first; i < grads.Length; i++)
             {
-                data = market.GetData(periods[i]).ToArray();
+                data = market.GetData(periods[i -1]).ToArray();
                 grads[i] = new  Gradient.GradSkv(data);
                 //Debug.WriteLine("[{0}]={1}", i,grads[i]);
             }

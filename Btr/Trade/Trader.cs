@@ -74,7 +74,7 @@ namespace Btr
         private void TrySell(CoursePoint pt)
         {
             foreach(var seller in Sellers)
-                seller.TrySell(pt, Tracker.MulGradient);            
+                seller.TrySell(pt, Tracker.GPrew);            
         }
         public async Task Trade(CoursePoint curCourse)
         {

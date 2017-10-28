@@ -27,10 +27,9 @@ namespace UnitTestProject
             Markets.SaveMarkets();
         }
 
-        private void TradeTest(double T, double delta, double gap)
+        private void TradeTest(double delta, double gap)
         {
             var m = Markets.MarketList["USDT_BTC"];
-            var t0 = TimeSpan.FromHours(T);
             var tacker = new CourseTracker(m, new TrackSettings()
             { Delta = delta, GGap = gap });
             var apiParcer = new ApiParser(new ApiBase(), true);
@@ -52,7 +51,7 @@ namespace UnitTestProject
             var percent = margin;
             if (treader.Complited.Count >-1 && percent > -1)
             {
-                Debug.WriteLine("T1 ={0} gap ={1} d ={2} %= {3}", T, gap, delta, percent);
+                Debug.WriteLine("gap ={0} d ={1} %= {2}", gap, delta, percent);
                 Debug.WriteLine("Compl ={0} List ={1}", treader.Complited.Count, treader.Sellers.Count);                
             }
         }
@@ -60,10 +59,10 @@ namespace UnitTestProject
         public void TradeTestCase()
         {
             DbgSett.Options.Clear();
-            //DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
-            //DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
-            //DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
-            TradeTest(0.2, 0.007, 0.3);
+            DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
+            DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
+            DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
+            TradeTest(0.007, 3);
             
         }
         [TestMethod]
@@ -75,12 +74,7 @@ namespace UnitTestProject
                 double gap = 0;
                 while (gap < 1.1)
                 {
-                    double t = 2;
-                    while (t < 130)
-                    {
-                        TradeTest(t, delta, gap);
-                        t *= 2;
-                    }
+                    TradeTest(delta, gap);
                     gap *= 1.5;
                 }
                 delta += 0.005;
