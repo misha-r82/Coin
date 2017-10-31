@@ -19,7 +19,7 @@ namespace UnitTestProject
         {
             string name = "USDT_BTC";
             var market = new Market(name);
-            var from = new DateTime(2017,10,20);
+            var from = new DateTime(2017,10,1);
             var to = new DateTime(2017, 10, 25);
             market.LoadHistory(new DatePeriod(from,to));
             if (Markets.MarketList.ContainsKey(name)) Markets.MarketList.Remove(name);
@@ -42,6 +42,7 @@ namespace UnitTestProject
                 { }*/
                 var coursePoint = new CoursePoint(item.course, item.date);
                 treader.Trade(coursePoint);
+                //Debug.WriteLine("{0}|{1}", coursePoint, item.delta);
             }
             int ptCount = m.CourseData.Length;
             //var sred = m.Value.CourseData.Sum(p => p.course / ptCount);
@@ -62,7 +63,7 @@ namespace UnitTestProject
             DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
             DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
             DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
-            TradeTest(0.007, 3);
+            TradeTest(0.007, 0.7);
             
         }
         [TestMethod]

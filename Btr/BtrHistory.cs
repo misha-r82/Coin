@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Bittrex;
 using Btr.Data;
@@ -39,7 +40,20 @@ namespace Btr
             ulong fromStamp = Utils.DateTimeToUnixTimeStamp(period.From);
             ulong toStamp = Utils.DateTimeToUnixTimeStamp(period.To);
             var uri = string.Format(URI_PLN_PATT, market, fromStamp, toStamp);
-            return ApiCall.CallWithJsonResponse<PlnHistoryItem[]>(uri);
+            PlnHistoryItem[] result;
+            int max_attempt = 20;
+            int attempts = 0;
+            try
+            {
+                result= ApiCall.CallWithJsonResponse<PlnHistoryItem[]>(uri);
+            }
+            catch (Exception e)
+            {
+                Thread.Sleep(500);
+                if (attempts++ > max_attempt) throw new Exception("не удалось получить данные курса", e);
+                return GetHitoryPln(market, period);
+            }
+            return result;
 
         }
     }

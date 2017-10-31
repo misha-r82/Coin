@@ -27,7 +27,6 @@ namespace Btr.PrivApi
         {
             if (_testMode)
             {
-                order.ComplitedDate = order.PlaceDate;
                 order.Id = _testId++;
                 return;
             }
@@ -63,9 +62,12 @@ namespace Btr.PrivApi
         }
         public async Task<bool> IsComplited(Order order)
         {
-            if (_testMode) return true;
-
             if (order == null || order.Id < 1) return false;
+            if (_testMode)
+            {
+                order.ComplitedDate = order.PlaceDate;
+                return true;
+            }
             Order[] res = await OrderHistory(order.Pair, 
                 new DatePeriod(order.PlaceDate - TIME_GAP, DateTime.Now));
             var complOrder = res.FirstOrDefault(o => o.Id == order.Id);

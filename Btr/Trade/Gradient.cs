@@ -64,9 +64,9 @@ namespace Btr
                 if (SmallDataConstructor(data)) return;
                 var deltaArr = new DeltaArr(data);
                 GPos = deltaArr.positive.Length == 0 ? 0 : 
-                    Math.Sqrt(deltaArr.positive.Sum(d => d * d) / deltaArr.positive.Length);
+                    Math.Sqrt(deltaArr.positive.Sum(d => d * d / deltaArr.all.Length));
                 GNeg = deltaArr.negative.Length == 0 ? 0 :
-                    -Math.Sqrt(deltaArr.negative.Sum(d => d * d) / deltaArr.negative.Length);
+                    -Math.Sqrt(deltaArr.negative.Sum(d => d * d / deltaArr.all.Length));
                 double sumSq = deltaArr.all.Sum(d => d * d * Math.Sign(d)) / deltaArr.all.Length;
                 G = Math.Sign(sumSq) * Math.Sqrt(Math.Abs(sumSq));
             }

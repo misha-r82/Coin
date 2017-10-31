@@ -16,6 +16,7 @@ namespace Btr
     {
         [DataMember] private Market _market;
         [DataMember] private TrackSettings _sett;
+        [DataMember] private CoursePoint _prewPt;
         public CourseTracker(Market market, TrackSettings sett)
         {
             _market = market;
@@ -37,13 +38,13 @@ namespace Btr
 
         public EndPoint Track(CoursePoint course)
         {
-            if (course.Date > new DateTime(2017, 09, 04, 21, 40, 0))
-            {
-                
-            }           
+            if (_prewPt.Date == new DateTime()) _prewPt = course;
+            if (course.Date == new DateTime(2017, 10, 24, 1, 20, 0))
+            {}           
             if (course.Course == 0) return EndPoint.None;
-            var gNow = MultiPeriodGrad.GetGradSkv(_market, course.Date, 0, 1);
-            GPrew = MultiPeriodGrad.GetGradSkv(_market, course.Date, 1, MultiPeriodGrad.Sett.PeriodCount);
+            //var gTest = MultiPeriodGrad.GetGradSkv(_market, course.Date, 0, MultiPeriodGrad.Sett.PeriodCount);
+            var gNow = MultiPeriodGrad.GetGradSkv(_market, course.Date, 1, 1);
+            GPrew = MultiPeriodGrad.GetGradSkv(_market, course.Date, 2, MultiPeriodGrad.Sett.PeriodCount);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
                 Debug.WriteLine("{0} {1:0.000000} {2} {3}", 
                     course, gNow, GPrew, Leap.Mode);
@@ -52,10 +53,10 @@ namespace Btr
             /*if (Math.Abs((gNow.G - _lastGrad)/  _lastGrad) < _sett.GGap)
                 return EndPoint.None;*/
             if (gNow.G > GPrew.GPos * _sett.GGap)
-                return Leap.SetUp(course);
+                return Leap.SetUp(_prewPt);
             if (gNow.G < GPrew.GNeg * _sett.GGap)
-                return Leap.SetDown(course);
-            return Leap.SetNeutral(course);
+                return Leap.SetDown(_prewPt);
+            return Leap.SetNeutral(_prewPt);
         }
     }
 }

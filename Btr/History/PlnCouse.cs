@@ -11,7 +11,7 @@ namespace Btr.History
 {
     public class PlnCouse
     {
-        public TimeSpan LoadSize = new TimeSpan(0, 2, 0, 0);
+        public TimeSpan LoadSize = new TimeSpan(0, 1, 0, 0);
         public struct CouseItem
         {
             public CouseItem(DateTime date, double course, double delta)
@@ -97,7 +97,7 @@ namespace Btr.History
                     sred = (sred1 + sred2) / 2;
                     delta = sred2 - sred1;
                 }
-                yield return new CouseItem(time, sred, delta);   
+                yield return new CouseItem(time, sred, delta * 2);   
             }
 
 

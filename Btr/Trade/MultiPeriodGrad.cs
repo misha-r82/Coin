@@ -39,7 +39,7 @@ namespace Btr
 
         static MultiPeriodGrad()
         {
-            Sett = new MultiPeriodSettings(new TimeSpan(0,0,12,0), 1, 1);
+            Sett = new MultiPeriodSettings(new TimeSpan(0,0,5,0,1), 4, 7);
         }
         private static DatePeriod[] GetPeriods(DateTime t0)
         {
@@ -57,23 +57,32 @@ namespace Btr
         public static Gradient.Grad GetGradSkv(Market market, DateTime date, int n1, int n2)
         {
             var periods = GetPeriods(date);
-            var grads = new Gradient.Grad[n2-n1+1];
+            var grads = new List<Gradient.Grad>();
             var data = market.GetData(periods[0]).ToArray();
             int first = n1;
             if (n1 == 0)
             {
-                grads[0] = new Gradient.Grad(new[] {data.Last()});
+                grads.Add(new Gradient.Grad(new[] {data.Last()}));
                 first = 1;
             }                
-            for (int i = first; i < grads.Length; i++)
+            for (int i = first; i < n2 + 1; i++)
             {
                 data = market.GetData(periods[i -1]).ToArray();
-                grads[i] = new  Gradient.GradSkv(data);
+                grads.Add(new  Gradient.GradSkv(data));
                 //Debug.WriteLine("[{0}]={1}", i,grads[i]);
             }
-            double positive = grads.Sum(g => g.GPos)/grads.Length;
-            double negative = grads.Sum(g => g.GNeg) / grads.Length;
-            double neutral = grads.Sum(g => g.G) / grads.Length;
+            try
+            {
+                var p = grads.Sum(g => g.GPos) / grads.Count;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            double positive = grads.Sum(g => g.GPos)/grads.Count;
+            double negative = grads.Sum(g => g.GNeg) / grads.Count;
+            double neutral = grads.Sum(g => g.G) / grads.Count;
             return new Gradient.Grad(positive, negative, neutral);
 
         }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Михаил\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Coin.-1863564205.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Михаил\Source\Repos\Coin" t="IncludeFlat">
+    <e p="C:\Users\misha\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Coin.1193401577.00" t="ExcludeRecursive" />
+    <e p="C:\Users\misha\RiderProjects\Coin" t="IncludeFlat">
       <e p=".nuget" t="Include">
         <e p="NuGet.Config" t="Include" />
         <e p="NuGet.exe" t="Include" />
