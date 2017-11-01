@@ -88,9 +88,9 @@ namespace Btr
                 case EndPoint.None:
                     if (Tracker.Leap.Mode == TrackMode.Neutral) TrySell(curCourse);
                     break;
-                case EndPoint.Up:
+                case EndPoint.UpEnd:
                     TrySell(curCourse); break;
-                case EndPoint.Down:
+                case EndPoint.DownEnd:
                     if (AllowBuy(curCourse))
                         Buyer.Buy(curCourse, Tracker); break;
             }

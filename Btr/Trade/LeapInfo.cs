@@ -4,7 +4,7 @@ using System.Resources;
 namespace Btr
 {
     public enum TrackMode { Neutral, Down, Up, Error }
-    public enum EndPoint { None, Down, Up}
+    public enum EndPoint { None, DownEnd, UpEnd}
     public class LeapInfo
     {
         public CoursePoint UpBegin { get; private set; }
@@ -27,7 +27,7 @@ namespace Btr
             if (prevMode == TrackMode.Down)
             {
                 DownEnd = course;
-                return EndPoint.Down;
+                return EndPoint.DownEnd;
             }
             return EndPoint.None;
         }
@@ -41,7 +41,7 @@ namespace Btr
             if (prevMode == TrackMode.Up)
             {
                 UpEnd = course;
-                return EndPoint.Up;                
+                return EndPoint.UpEnd;                
             }
             return EndPoint.None;
         }
@@ -53,10 +53,10 @@ namespace Btr
             switch (prevMode)
             {
                     case TrackMode.Up: UpEnd = course;
-                       return EndPoint.Up;
+                       return EndPoint.UpEnd;
                     case TrackMode.Down:
                         DownEnd = course;
-                        return EndPoint.Down;
+                        return EndPoint.DownEnd;
             }
             return EndPoint.None;
         }

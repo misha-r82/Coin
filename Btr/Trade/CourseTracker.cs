@@ -39,7 +39,7 @@ namespace Btr
         public EndPoint Track(CoursePoint course)
         {
             if (_prewPt.Date == new DateTime()) _prewPt = course;
-            if (course.Date == new DateTime(2017, 10, 24, 1, 20, 0))
+            if (course.Date == new DateTime(2017, 10, 24, 0, 15, 0))
             {}           
             if (course.Course == 0) return EndPoint.None;
             //var gTest = MultiPeriodGrad.GetGradSkv(_market, course.Date, 0, MultiPeriodGrad.Sett.PeriodCount);
