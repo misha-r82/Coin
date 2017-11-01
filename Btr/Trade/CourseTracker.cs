@@ -46,17 +46,13 @@ namespace Btr
             var gNow = MultiPeriodGrad.GetGradSkv(_market, course.Date, 1, 1);
             GPrew = MultiPeriodGrad.GetGradSkv(_market, course.Date, 2, MultiPeriodGrad.Sett.PeriodCount);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
-                Debug.WriteLine("{0} {1:0.000000} {2} {3}", 
-                    course, gNow, GPrew, Leap.Mode);
-            //Debug.WriteLine("g={0} m={1} {2}", g, MulGradient, Leap.Mode);
-            //Debug.WriteLine("g+={0} g-={1} {2}", g.GNeg/MulGradient.GNeg, g.GPos/MulGradient.GPos, Leap.Mode);
-            /*if (Math.Abs((gNow.G - _lastGrad)/  _lastGrad) < _sett.GGap)
-                return EndPoint.None;*/
+                Debug.Write(string.Format("{0} {1} {2} ", course, gNow, GPrew));
             if (gNow.G > GPrew.GPos * _sett.GGap)
                 return Leap.SetUp(_prewPt);
             if (gNow.G < GPrew.GNeg * _sett.GGap)
                 return Leap.SetDown(_prewPt);
             return Leap.SetNeutral(_prewPt);
+            _prewPt = course;
         }
     }
 }

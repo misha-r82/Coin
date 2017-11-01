@@ -33,7 +33,7 @@ namespace Btr
             if (minDelta < tracker.Sett.Delta) minDelta = tracker.Sett.Delta;
             if (buyPoint.Course > leap.DownBegin.Course * (1 - minDelta)) return;
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowBuy))
-                Debug.WriteLine("Buy={0} {1} g+/g-={2:0.00000}", buyPoint, tracker.Leap.Mode, grad.GPos / grad.GNeg);
+                Debug.WriteLine("Buy={0} {1}", buyPoint, tracker.Leap.Mode);
             _Order = new Order(tracker.Market.Name,  buyPoint.Course, Balance / PartsInvest);
             _Order.PlaceDate = buyPoint.Date; // для отладки по истории, в реальном случае поле затрется
             _apiParser.Buy(_Order);

@@ -80,7 +80,10 @@ namespace Btr
         {
             if (!Enabled) return;
             await CheckComplOrders();
-            switch (Tracker.Track(curCourse))
+            var trackResult = Tracker.Track(curCourse);
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
+                Debug.WriteLine("Mode={0} Pt{1}", Tracker.Leap.Mode, trackResult);
+            switch (trackResult)
             {
                 case EndPoint.None:
                     if (Tracker.Leap.Mode == TrackMode.Neutral) TrySell(curCourse);
