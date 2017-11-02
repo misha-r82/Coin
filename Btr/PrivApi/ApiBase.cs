@@ -28,7 +28,6 @@ namespace Btr.Polon
             postPars.Add("nonce", Nonce.ToString());
             string result = await SendPrivateApiRequestAsync(url, postPars);
             return result;
-            //deserialize the result string to your liking
         }
 
         public async Task<string> Buy(Order order)

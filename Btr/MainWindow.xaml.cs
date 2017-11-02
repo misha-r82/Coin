@@ -39,18 +39,7 @@ namespace Btr
         }
         public TradeMan TM { get; private set; }
         //public Exchange Ex { get; set; }
-        private void btnRun_Click(object sender, RoutedEventArgs e)
-        {
-            //var t = Ex.GetBalances();
-            //var t = Ex.GetMarketHistory("BTC-BCC");
-            var from = new DateTime(2017,8,1);
-            var to = new DateTime(2017, 8, 2);
-            var period = new DatePeriod(from, to);
-            //var t0 = BtrHistory.GetHitoryBtr("BTC-ETH", from);
-            //var t = BtrHistory.GetHitoryPln("BTC_ETH", from, to);
-            var course = new PlnCouse();
-            PlnCouse.CouseItem[] c = course.GetHistory("BTC_ETH", period, new TimeSpan(0,1,0)).ToArray();
-        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             /*Ex = new Exchange();
@@ -61,11 +50,11 @@ namespace Btr
         }
         private void EditMarkets_OnClick(object sender, RoutedEventArgs e)
         {
-            var tracker = new CourseTracker(Markets.MarketList.First().Value, new TrackSettings());
-            var treader = new Treader(tracker, new ApiParser(new ApiBase()));
+            var treader = dgTraders.SelectedItem as Treader;
+            if (treader == null) return;
             var f = new FrmTreaderEditor(treader);
             if (f.ShowDialog() != true) return;
-            TM.Add(treader);
+
         }
         private void btnEditTreaderClick(object sender, RoutedEventArgs e)
         {
@@ -106,5 +95,15 @@ namespace Btr
         }
 
 
+        private void BtnAddTreader_OnClick(object sender, RoutedEventArgs e)
+        {
+            var market = cbMarket.SelectedValue as Market;
+            if (market == null) return;
+            var tracker = new CourseTracker(market, new TrackSettings());
+            var treader = new Treader(tracker, new ApiParser(new ApiBase()));
+            var f = new FrmTreaderEditor(treader);
+            if (f.ShowDialog() != true) return;
+            TM.Add(treader);
+        }
     }
 }

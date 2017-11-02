@@ -56,20 +56,6 @@ namespace Btr
             double gap = KSellDist * Tracker.Sett.Delta * Math.Sqrt(Sellers.Count);
             return pt.Course < minPrice - gap;
         }
-        private void DeleteComplitedSellers()
-        {
-            var deleted = new List<Seller>();
-            foreach (Seller seller in Sellers)
-            {
-                if (seller.SellOrder.IsComplited)
-                {
-                    Complited.Add(seller);
-                    deleted.Add(seller);                    
-                }
-            }
-            foreach (Seller seller in deleted)
-                Sellers.Remove(seller);            
-        }
 
         private void TrySell(CoursePoint pt)
         {
@@ -132,7 +118,6 @@ namespace Btr
             Course = course;
             Date = date;
         }
-
         public override string ToString()
         {
             return string.Format("{0:dd.MM HH:mm}|{1:0.00000} ", Date, Course);

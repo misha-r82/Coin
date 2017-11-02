@@ -26,15 +26,8 @@ namespace Btr
 
         public LeapInfo Leap { get; }
         public Gradient.Grad GPrew { get; private set; }
-        public TrackSettings Sett
-        {
-            get { return _sett; }
-        }
-
-        public Market Market
-        {
-            get { return _market; }
-        }
+        public TrackSettings Sett { get { return _sett; } }
+        public Market Market { get { return _market; } }
 
         public EndPoint Track(CoursePoint course)
         {

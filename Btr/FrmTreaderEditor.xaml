@@ -19,11 +19,11 @@
             <Setter Property="Margin" Value="2"/>
         </Style>        
         </StackPanel.Resources>
+    
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Market"/>
-            <ComboBox Name="cbMarket" SelectedItem="Tracker.Market" 
-                      ItemsSource="{Binding Source={x:Static local:Markets.MarketList}, Path=Values}"/>
     </StackPanel>
+        <TextBlock Text="{Binding Tracker.Market.Name}"></TextBlock>
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Balance"/>
         <TextBox Text="{Binding Buyer.Balance}"/>
