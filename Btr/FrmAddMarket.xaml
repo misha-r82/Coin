@@ -8,13 +8,21 @@
         Title="FrmAddMarket" Height="300" Width="300">
     <Grid>
         <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="FrameworkElement">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+            </StackPanel.Resources>
             <TextBox Name="txtMarketName"/>
-            <Button Name="btnAdd" Content="+" Click="BtnAdd_OnClick"/>
-            <Button Name="btnSave" Content="Сохранить" Click="BtnSave_OnClick"/>
-            <ListView Name="lvMarkets" ItemsSource="{Binding Source={x:Static local:Markets.MarketList}}">
+            <StackPanel Orientation="Horizontal">
+                <Button Name="btnAdd" Content="+" Click="BtnAdd_OnClick" Width="20"/>
+                <Button Name="btnRemove" Content="-" Click="BtnRemove_OnClick" Width="20"/>
+            </StackPanel>
+            
+            <ListView Name="lvMarkets" ItemsSource="{Binding Source={x:Static local:Markets.MarketList}, Path=Values}" DisplayMemberPath="Name">
                 
             </ListView>
-            
+            <Button Name="btnSave" Content="Сохранить" Click="BtnSave_OnClick"/>
         </StackPanel>
         
     </Grid>
