@@ -35,5 +35,13 @@ namespace Btr
         {
             Markets.SaveMarkets();
         }
+
+        private void BtnRemove_OnClick(object sender, RoutedEventArgs e)
+        {
+            var markets = lvMarkets.SelectedItems.OfType<Market>();
+            foreach (var market in markets)
+                Markets.MarketList.Remove(market.Name);
+            lvMarkets.Items.Refresh();
+        }
     }
 }

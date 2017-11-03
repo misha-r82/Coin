@@ -50,10 +50,9 @@ namespace Btr
         }
         private void EditMarkets_OnClick(object sender, RoutedEventArgs e)
         {
-            var treader = dgTraders.SelectedItem as Treader;
-            if (treader == null) return;
-            var f = new FrmTreaderEditor(treader);
-            if (f.ShowDialog() != true) return;
+            var f= new FrmAddMarket();
+            f.ShowDialog();
+
 
         }
         private void btnEditTreaderClick(object sender, RoutedEventArgs e)
