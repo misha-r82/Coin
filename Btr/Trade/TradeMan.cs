@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Timers;
 using Btr.Polon;
@@ -15,11 +16,13 @@ namespace Btr
     public class TradeMan : List<Treader>, INotifyCollectionChanged
     {
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
+        private static TimeSpan _tickInterval { get { return new TimeSpan(0, 0, 10); } }
         [DataMember] private ApiParser _apiParser;
+        private DateTime _lastTreaded;
         public TradeMan()
         {
             _apiParser = new ApiParser(new ApiBase());
-            _timer = new Timer(Interval.TotalMilliseconds);
+            _timer = new Timer(_tickInterval.TotalMilliseconds);
             _timer.Elapsed += TimerOnElapsed;
             _timer.AutoReset = true;
             var from = DateTime.Now - MultiPeriodGrad.MaxPeriod;
@@ -33,9 +36,26 @@ namespace Btr
         }
         private void TimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
         {
+            Debug.WriteLine("Timer {0}", DateTime.Now);
             _timer.Enabled = false;
-            Markets.ReloadNew();
+            DateTime loadedDate = Markets.MarketList.Values.Min(m => m.LastPt.Date);
+            while (loadedDate < DateTime.Now)
+            {
+                Markets.ReloadNew();
+                loadedDate = Markets.MarketList.Values.Min(m => m.LastPt.Date);
+            }
+            
+            
+            Debug.WriteLine("Loaded {0}", loadedDate);
+            if (_lastTreaded < DateTime.Now - Interval)
+            {
+                _lastTreaded = loadedDate;
+                 /*foreach (var treader in this)
+                    treader.Trade(treader.Tracker.Market.LastPt);  */
+                 Debug.WriteLine("Trade {0}", _lastTreaded);
+            }
             _timer.Enabled = true;
+
         }
 
         private Timer _timer;

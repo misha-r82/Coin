@@ -25,8 +25,6 @@ namespace UnitTestProject
             var treader = new Treader(tracker, new ApiParser(new ApiBase()));
             treader.Sellers.Add(new Seller(new Order("test_pair1",2,3), new TrackSettings() , new ApiParser(new ApiBase())));
             var complSeller = new Seller(new Order("test_pair2", 1, 5), new TrackSettings(), new ApiParser(new ApiBase()));
-            complSeller.SellOrder =  new Order("test_pair2", 1, 5);
-
             treader.Complited.Add(complSeller);
             var f = new MainWindow();
             f.TM.Add(treader);

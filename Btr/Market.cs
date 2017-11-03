@@ -17,17 +17,22 @@ namespace Btr
         {
             Name = name;
             var from = (DateTime.Now - MultiPeriodGrad.MaxPeriod).Date;
-            var delta = DateTime.Now - from;
-            delta = new TimeSpan(delta.Ticks / TradeMan.Interval.Ticks);
-            LoadHistory(new DatePeriod(from, from + delta));
+            LoadHistory(new DatePeriod(from, GetTo(from, DateTime.Now)));
         }
 
-        public DateTime MaxDate
+        protected static DateTime GetTo(DateTime from, DateTime to)
+        {
+            var delta = to - from;
+            delta = new TimeSpan(TradeMan.Interval.Ticks * (delta.Ticks / TradeMan.Interval.Ticks));
+            return from + delta;
+        }
+        public CoursePoint LastPt
         {
             get
             {
-                if (CourseData == null || CourseData.Length == 0) return new DateTime();
-                return CourseData[CourseData.Length-1].date;
+                if (CourseData == null || CourseData.Length == 0) return new CoursePoint();
+                var course = CourseData[CourseData.Length - 1];
+                return new CoursePoint(course.course, course.date);
             }
         }
 
@@ -61,7 +66,8 @@ namespace Btr
         {
             var course = new PlnCouse();
             var last = CourseData[CourseData.Length -1].date;
-            var period = new DatePeriod(last.AddSeconds(1), DateTime.Now);
+            DateTime from = last.AddSeconds(1);
+            var period = new DatePeriod(from, GetTo(from, DateTime.Now));
             var newData = course.GetHistory(Name, period, TradeMan.Interval).ToArray();
             var joined = new PlnCouse.CouseItem[newData.Length + CourseData.Length];
             Array.Copy(CourseData, joined, CourseData.Length);
