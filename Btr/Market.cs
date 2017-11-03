@@ -16,7 +16,21 @@ namespace Btr
         public Market(string name)
         {
             Name = name;
+            var from = (DateTime.Now - MultiPeriodGrad.MaxPeriod).Date;
+            var delta = DateTime.Now - from;
+            delta = new TimeSpan(delta.Ticks / TradeMan.Interval.Ticks);
+            LoadHistory(new DatePeriod(from, from + delta));
         }
+
+        public DateTime MaxDate
+        {
+            get
+            {
+                if (CourseData == null || CourseData.Length == 0) return new DateTime();
+                return CourseData[CourseData.Length-1].date;
+            }
+        }
+
         [DataMember] public string Name { get; set; }
         public PlnCouse.CouseItem[] CourseData;
         public IEnumerable<PlnCouse.CouseItem> GetData(DatePeriod period)
