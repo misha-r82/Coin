@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Lib;
 
 namespace Btr
 {
@@ -27,7 +28,9 @@ namespace Btr
         private void BtnAdd_OnClick(object sender, RoutedEventArgs e)
         {
             string name = txtMarketName.Text;
-            Markets.MarketList.Add(name, new Market(name));
+            var market = new Market(name);
+            market.LoadHistory(new DatePeriod(DateTime.Now - MultiPeriodGrad.MaxPeriod, DateTime.Now));
+            Markets.MarketList.Add(name, market);
             lvMarkets.Items.Refresh();
         }
 

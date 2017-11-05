@@ -12,6 +12,12 @@ namespace Btr.History
     public class PlnCouse
     {
         public TimeSpan LoadSize = new TimeSpan(0, 1, 0, 0);
+        public static TimeSpan Interval { get; private set; }
+
+        public PlnCouse(TimeSpan interval)
+        {
+            Interval = interval;
+        }
         public struct CouseItem
         {
             public CouseItem(DateTime date, double course, double delta)
@@ -34,37 +40,54 @@ namespace Btr.History
             period.From += delta;
             period.To += delta;
         }
-        private IEnumerable<KVPair<DateTime, PlnHistoryItem[]>> GetData(
-            string market, DatePeriod period, TimeSpan dlit)
+        protected static DateTime GetTo(DateTime from, DateTime to)
         {
-            var chunkEnd = period.From + LoadSize > period.To ?
-                period.To : period.From + LoadSize;
+            var delta = to - from;
+            delta = new TimeSpan(Interval.Ticks * (delta.Ticks / Interval.Ticks));
+            return from + delta;
+        }
+        // за время принято From
+        private IEnumerable<KVPair<DateTime, PlnHistoryItem[]>> GetData(
+            string market, DatePeriod period)
+        {
+            var to = GetTo(period.From, period.To);
+            var chunkEnd = period.From + LoadSize > to ?
+                to : period.From + LoadSize;
             var loadPeriod = new DatePeriod(period.From, chunkEnd);
-            var chunkPeriod = new DatePeriod(period.From, period.From + dlit);
+
+            var chunkPeriod = new DatePeriod(period.From, period.From + Interval);
             var chunk = new List<PlnHistoryItem>();
             do
             {
                 PlnHistoryItem[] data = BtrHistory.GetHitoryPln(market, loadPeriod)
                     .OrderBy(d => d.date).ToArray();
+                Debug.WriteLine("*{0}",loadPeriod);
                 if (data.Length == 0) yield break;
-                foreach (var item in data)
+                int pos = 0;
+                do
                 {
-                    if (chunkPeriod.IsConteins(item.date))
-                        chunk.Add(item);
-                    else
+                    var item = data[pos];
+                    while (!chunkPeriod.IsConteins(item.date) || pos < data.Length - 1)
                     {
+                        Debug.WriteLine("{0}", chunkPeriod);
                         yield return new KVPair<DateTime, PlnHistoryItem[]>(chunkPeriod.From, chunk.ToArray());
                         chunk.Clear();
-                        ShiftPeriod(chunkPeriod, dlit);
+                        ShiftPeriod(chunkPeriod, Interval);     
+                        if (chunkPeriod.To > loadPeriod.To) break;                  
                     }
-
-                }
+                    while (chunkPeriod.IsConteins(item.date) && pos < data.Length - 1)
+                    {
+                        chunk.Add(item);
+                        item = data[++pos];
+                    }
+                } while (chunkPeriod.To <= loadPeriod.To);
                 ShiftPeriod(loadPeriod, LoadSize);
-            } while (chunkPeriod.To < period.To);// неполные не возвращаем
+            } while (chunkPeriod.To <= to);
         }
-        public IEnumerable<CouseItem> GetHistory(string market, DatePeriod period, TimeSpan dlit)
+        public IEnumerable<CouseItem> GetHistory(string market, DatePeriod period)
         {
-            foreach (var pair in GetData(market, period, dlit))
+            var data = GetData(market, period).ToArray();
+            foreach (var pair in data)
             {
                 var chunk = pair.Val;
                 var time = pair.Key;

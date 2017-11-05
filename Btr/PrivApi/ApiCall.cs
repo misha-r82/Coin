@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Btr;
 
 namespace Bittrex
 {
@@ -26,8 +27,8 @@ namespace Bittrex
                 Debug.WriteLine("(simulated)" + GetCallDetails(uri));
                 return default(T);
             }
-
-            Debug.WriteLine(GetCallDetails(uri));
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowUri))
+                Debug.WriteLine(GetCallDetails(uri));
             var request = HttpWebRequest.CreateHttp(uri);
             foreach (var header in headers)
             {
@@ -62,7 +63,8 @@ namespace Bittrex
         }
         public T CallWithJsonResponse<T>(string uri)
         {
-            Debug.WriteLine(GetCallDetails(uri));
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowUri))
+                Debug.WriteLine(GetCallDetails(uri));
             var request = HttpWebRequest.CreateHttp(uri);
             using (var response = (HttpWebResponse)request.GetResponse())
             {

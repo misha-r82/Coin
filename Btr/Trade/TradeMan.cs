@@ -16,7 +16,7 @@ namespace Btr
     public class TradeMan : List<Treader>, INotifyCollectionChanged
     {
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
-        private static TimeSpan _tickInterval { get { return new TimeSpan(0, 0, 10); } }
+        private static TimeSpan _tickInterval { get { return new TimeSpan(0, 0, 1); } }
         [DataMember] private ApiParser _apiParser;
         private DateTime _lastTreaded;
         public TradeMan()
@@ -36,10 +36,11 @@ namespace Btr
         }
         private void TimerOnElapsed(object sender, ElapsedEventArgs elapsedEventArgs)
         {
-            Debug.WriteLine("Timer {0}", DateTime.Now);
+            
             _timer.Enabled = false;
+            Debug.WriteLine("Timer {0}", DateTime.Now);
             DateTime loadedDate = Markets.MarketList.Values.Min(m => m.LastPt.Date);
-            while (loadedDate < DateTime.Now)
+            while (loadedDate <= DateTime.Now - Interval - Interval) // т.к. время соотв началу интервала
             {
                 Markets.ReloadNew();
                 loadedDate = Markets.MarketList.Values.Min(m => m.LastPt.Date);

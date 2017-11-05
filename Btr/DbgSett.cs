@@ -19,8 +19,8 @@ namespace Btr
             ShowCourse,
             ShowBuy,
             ShowSell,
-            ShowMGrad
-
+            ShowMGrad,
+            ShowUri
         } 
 
     }

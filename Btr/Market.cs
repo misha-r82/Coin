@@ -12,20 +12,12 @@ namespace Btr
     [DataContract]
     public class Market
     {
-        public TimeSpan Tmin = new TimeSpan(0,0,5);
         public Market(string name)
         {
             Name = name;
-            var from = (DateTime.Now - MultiPeriodGrad.MaxPeriod).Date;
-            LoadHistory(new DatePeriod(from, GetTo(from, DateTime.Now)));
         }
 
-        protected static DateTime GetTo(DateTime from, DateTime to)
-        {
-            var delta = to - from;
-            delta = new TimeSpan(TradeMan.Interval.Ticks * (delta.Ticks / TradeMan.Interval.Ticks));
-            return from + delta;
-        }
+
         public CoursePoint LastPt
         {
             get
@@ -64,19 +56,19 @@ namespace Btr
         }
         public void ReloadNew()
         {
-            var course = new PlnCouse();
+            var course = new PlnCouse(TradeMan.Interval);
             var last = CourseData[CourseData.Length -1].date;
-            DateTime from = last.AddSeconds(1);
-            var period = new DatePeriod(from, GetTo(from, DateTime.Now));
-            var newData = course.GetHistory(Name, period, TradeMan.Interval).ToArray();
+            var period = new DatePeriod(last, DateTime.Now);
+            var newData = course.GetHistory(Name, period).ToArray();
             var joined = new PlnCouse.CouseItem[newData.Length + CourseData.Length];
             Array.Copy(CourseData, joined, CourseData.Length);
             Array.Copy(newData, 0, joined, CourseData.Length, newData.Length);
+            CourseData = joined;
         }
         public void LoadHistory(DatePeriod period)
         {
-            var course = new PlnCouse();
-            CourseData = course.GetHistory(Name, period, TradeMan.Interval).ToArray();
+            var course = new PlnCouse(TradeMan.Interval);
+            CourseData = course.GetHistory(Name, period).ToArray();
         }
     }
 }
