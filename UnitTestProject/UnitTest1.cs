@@ -36,7 +36,7 @@ namespace UnitTestProject
             var treader = new Treader(tacker, apiParcer);
             var period = new DatePeriod(new DateTime(2017,10,1), new DateTime(2017,10,30));
             var courseData = m.GetData(period);
-            foreach (PlnCouse.CouseItem item in courseData)
+            foreach (CourseItem item in courseData)
             {
                 if (item.date == new DateTime(2017,10,19,19,50,0))
                 { }

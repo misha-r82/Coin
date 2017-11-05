@@ -23,7 +23,7 @@ namespace Btr
                 GNeg = gneg;
                 G = g;
             }
-            public Grad(PlnCouse.CouseItem[] data)
+            public Grad(CourseItem[] data)
             {
                 if (SmallDataConstructor(data)) return;
                 var deltaArr = new DeltaArr(data);
@@ -32,7 +32,7 @@ namespace Btr
                 G = GPos + GNeg;
             }
 
-            protected bool SmallDataConstructor(PlnCouse.CouseItem[] data)
+            protected bool SmallDataConstructor(CourseItem[] data)
             {
                 int count = data.Length;
                 if (count == 0)
@@ -59,7 +59,7 @@ namespace Btr
 
         public class GradSkv : Grad
         {
-            public GradSkv(PlnCouse.CouseItem[] data)
+            public GradSkv(CourseItem[] data)
             {
                 if (SmallDataConstructor(data)) return;
                 var deltaArr = new DeltaArr(data);
@@ -76,7 +76,7 @@ namespace Btr
 
         public class Deltas : Gradient.Grad
         {
-            public Deltas(PlnCouse.CouseItem[] data)
+            public Deltas(CourseItem[] data)
             {
                 var deltaArr = new DeltaArr(data);
                 GPos = deltaArr.positive.Length ==0 ? 0 : deltaArr.positive.Sum() / deltaArr.positive.Length;
@@ -86,7 +86,7 @@ namespace Btr
         }
 
 
-        public static double WndGrad(PlnCouse.CouseItem[] data, double wSlope = 0.6)
+        public static double WndGrad(CourseItem[] data, double wSlope = 0.6)
         {
             int count = data.Length;
             if (count == 0) return double.NaN;
@@ -110,7 +110,7 @@ namespace Btr
          public double[] negative;
          public double[]  positive;
          public double[] all;
-         public DeltaArr(PlnCouse.CouseItem[] data)
+         public DeltaArr(CourseItem[] data)
          {
              int count = data.Length;
              var pos = new List<double>();

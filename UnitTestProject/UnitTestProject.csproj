@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="apiTest.cs" />
     <Compile Include="FrmsTest.cs" />
+    <Compile Include="HistoryTest.cs" />
     <Compile Include="TradeManTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

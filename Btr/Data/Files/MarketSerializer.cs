@@ -19,7 +19,7 @@ namespace Btr.Files
                 {
                     writer.Write(VER);
                     writer.Write(market.Name);
-                    foreach (PlnCouse.CouseItem item in market.CourseData)
+                    foreach (CourseItem item in market.CourseData)
                     {
                         writer.Write(item.date.Ticks);
                         writer.Write(item.course);
@@ -33,7 +33,7 @@ namespace Btr.Files
         public static Market DeserializeMarket(string file)
         {
             string name = "";
-            var data = new List<PlnCouse.CouseItem>();
+            var data = new List<CourseItem>();
             using (FileStream stream = new FileStream(file, FileMode.Open))
             {
                 try
@@ -47,7 +47,7 @@ namespace Btr.Files
                             var ticks = reader.ReadInt64();
                             var course = reader.ReadDouble();
                             double delta = reader.ReadDouble();
-                            var item = new PlnCouse.CouseItem(new DateTime(ticks), course, delta);
+                            var item = new CourseItem(new DateTime(ticks), course, delta);
                             data.Add(item);
                         }
                     }

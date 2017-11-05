@@ -9,53 +9,26 @@ using System.Threading.Tasks;
 
 namespace Btr.History
 {
-    public class PlnCouse
+    public partial class PlnCouse
     {
         public TimeSpan LoadSize = new TimeSpan(0, 1, 0, 0);
-        public static TimeSpan Interval { get; private set; }
-
-        public PlnCouse(TimeSpan interval)
-        {
-            Interval = interval;
-        }
-        public struct CouseItem
-        {
-            public CouseItem(DateTime date, double course, double delta)
-            {
-                this.date = date;
-                this.course = course;
-                this.delta = delta;
-            }
-            public DateTime date;
-            public double course;
-            public double delta;
-            public override string ToString()
-            {
-                return string.Format("{0} {1} d={2}", date, course, delta);
-            }
-        }
 
         private void ShiftPeriod(DatePeriod period, TimeSpan delta)
         {
             period.From += delta;
             period.To += delta;
         }
-        protected static DateTime GetTo(DateTime from, DateTime to)
-        {
-            var delta = to - from;
-            delta = new TimeSpan(Interval.Ticks * (delta.Ticks / Interval.Ticks));
-            return from + delta;
-        }
+
         // за время принято From
         private IEnumerable<KVPair<DateTime, PlnHistoryItem[]>> GetData(
-            string market, DatePeriod period)
+            string market, DatePeriod period, TimeSpan interval)
         {
-            var to = GetTo(period.From, period.To);
-            var chunkEnd = period.From + LoadSize > to ?
-                to : period.From + LoadSize;
+            
+            var chunkEnd = period.From + LoadSize > period.To ?
+                period.To : period.From + LoadSize;
             var loadPeriod = new DatePeriod(period.From, chunkEnd);
 
-            var chunkPeriod = new DatePeriod(period.From, period.From + Interval);
+            var chunkPeriod = new DatePeriod(period.From, period.From + interval);
             var chunk = new List<PlnHistoryItem>();
             do
             {
@@ -72,7 +45,7 @@ namespace Btr.History
                         Debug.WriteLine("{0}", chunkPeriod);
                         yield return new KVPair<DateTime, PlnHistoryItem[]>(chunkPeriod.From, chunk.ToArray());
                         chunk.Clear();
-                        ShiftPeriod(chunkPeriod, Interval);     
+                        ShiftPeriod(chunkPeriod, interval);     
                         if (chunkPeriod.To > loadPeriod.To) break;                  
                     }
                     while (chunkPeriod.IsConteins(item.date) && pos < data.Length - 1)
@@ -82,18 +55,21 @@ namespace Btr.History
                     }
                 } while (chunkPeriod.To <= loadPeriod.To);
                 ShiftPeriod(loadPeriod, LoadSize);
-            } while (chunkPeriod.To <= to);
+
+                if (loadPeriod.To + interval > period.To && loadPeriod.From < period.To) // последний
+                    loadPeriod.To = period.To;
+            } while (chunkPeriod.To <= period.To);
         }
-        public IEnumerable<CouseItem> GetHistory(string market, DatePeriod period)
+        public IEnumerable<CourseItem> GetHistory(string market, DatePeriod period, TimeSpan interval)
         {
-            var data = GetData(market, period).ToArray();
+            var data = GetData(market, period, interval).ToArray();
             foreach (var pair in data)
             {
                 var chunk = pair.Val;
                 var time = pair.Key;
                 if (chunk.Length == 0)
                 {
-                    yield return new CouseItem(time, 0, 0);
+                    yield return new CourseItem(time, 0, 0);
                     continue;
                 }
                 double delta = 0;
@@ -120,15 +96,15 @@ namespace Btr.History
                     sred = (sred1 + sred2) / 2;
                     delta = sred2 - sred1;
                 }
-                yield return new CouseItem(time, sred, delta * 2);   
+                yield return new CourseItem(time, sred, delta * 2);   
             }
 
 
         }
         
-        public class DateComparer : IComparer<CouseItem>
+        public class DateComparer : IComparer<CourseItem>
         {
-            public int Compare(CouseItem x, CouseItem y)
+            public int Compare(CourseItem x, CourseItem y)
             {
                 return x.date.CompareTo(y.date);
             }

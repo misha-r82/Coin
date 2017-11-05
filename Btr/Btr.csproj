@@ -65,6 +65,8 @@
     <Compile Include="FrmTreaderEditor.xaml.cs">
       <DependentUpon>FrmTreaderEditor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="History\CourseItem.cs" />
+    <Compile Include="History\cryptocompare.cs" />
     <Compile Include="PrivApi\ApiBase.cs" />
     <Compile Include="PrivApi\ApiCall.cs" />
     <Compile Include="PrivApi\ApiCallResponse.cs" />
@@ -101,7 +103,7 @@
     <Compile Include="BtrHistory.cs" />
     <Compile Include="Data\BtrHistoryItem.cs" />
     <Compile Include="Data\PlnHistoryItem.cs" />
-    <Compile Include="Files\MarketSerializer.cs" />
+    <Compile Include="Data\Files\MarketSerializer.cs" />
     <Compile Include="FrmAddMarket.xaml.cs">
       <DependentUpon>FrmAddMarket.xaml</DependentUpon>
     </Compile>

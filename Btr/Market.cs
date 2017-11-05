@@ -15,8 +15,9 @@ namespace Btr
         public Market(string name)
         {
             Name = name;
+            Interval = TradeMan.Interval;
         }
-
+        private TimeSpan Interval { get; }
 
         public CoursePoint LastPt
         {
@@ -29,10 +30,10 @@ namespace Btr
         }
 
         [DataMember] public string Name { get; set; }
-        public PlnCouse.CouseItem[] CourseData;
-        public IEnumerable<PlnCouse.CouseItem> GetData(DatePeriod period)
+        public CourseItem[] CourseData;
+        public IEnumerable<CourseItem> GetData(DatePeriod period)
         {
-            int pos = Array.BinarySearch(CourseData, new PlnCouse.CouseItem(period.From, 0, 0),
+            int pos = Array.BinarySearch(CourseData, new CourseItem(period.From, 0, 0),
                 new PlnCouse.DateComparer());
             if (pos < 0) pos = ~pos;
             if (pos < 0) yield break; 
@@ -54,21 +55,32 @@ namespace Btr
             }
             return -1;
         }
+        protected DateTime GetTo(DateTime from, DateTime to)
+        {
+            var delta = to - from;
+            delta = new TimeSpan(Interval.Ticks * (delta.Ticks / Interval.Ticks));
+            return from + delta;
+        }
         public void ReloadNew()
         {
-            var course = new PlnCouse(TradeMan.Interval);
+            if (CourseData == null || CourseData.Length == 0)
+                throw new Exception("Course Data is not initialized!");
+
+            var course = new PlnCouse();
             var last = CourseData[CourseData.Length -1].date;
-            var period = new DatePeriod(last, DateTime.Now);
-            var newData = course.GetHistory(Name, period).ToArray();
-            var joined = new PlnCouse.CouseItem[newData.Length + CourseData.Length];
+            var period = new DatePeriod(last, GetTo(last, DateTime.Now));
+            var newData = course.GetHistory(Name, period, Interval).ToArray();
+            var joined = new CourseItem[newData.Length + CourseData.Length];
             Array.Copy(CourseData, joined, CourseData.Length);
             Array.Copy(newData, 0, joined, CourseData.Length, newData.Length);
             CourseData = joined;
         }
         public void LoadHistory(DatePeriod period)
         {
-            var course = new PlnCouse(TradeMan.Interval);
-            CourseData = course.GetHistory(Name, period).ToArray();
+            var from = period.From.Date;
+            var newPeriod = new DatePeriod(from, GetTo(from, period.To));
+            var course = new PlnCouse();
+            CourseData = course.GetHistory(Name, newPeriod, Interval).ToArray();
         }
     }
 }
