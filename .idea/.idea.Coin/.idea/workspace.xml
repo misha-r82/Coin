@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1e58542-1ed6-4045-9b1e-1396a9213372" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml___jb_tmp___" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/contentModel.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="c1e58542-1ed6-4045-9b1e-1396a9213372" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,155 +11,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Trader.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Btr/Trade/Trader.cs">
+      <file leaf-file-name="PlnCouse.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Btr/History/PlnCouse.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+            <state relative-caret-position="405">
+              <caret line="34" column="43" lean-forward="false" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
               <folding>
-                <marker date="1509269670431" expanded="false" signature="6:320" ph="..." />
-                <marker date="1509269670431" expanded="true" signature="335:4286" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="452:3890" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="920:1139" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="983:1129" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="1207:1450" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="1498:1758" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="1804:2234" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="1907:2125" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="1971:2111" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="2280:2406" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="2461:2998" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="2589:2988" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="3044:3572" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="3279:3475" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="3341:3461" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="3777:3884" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="3921:4284" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="4061:4135" ph="{...}" />
-                <marker date="1509269670431" expanded="true" signature="4178:4278" ph="{...}" />
+                <marker date="1510062356847" expanded="false" signature="6:168" ph="..." />
+                <marker date="1510062356847" expanded="true" signature="191:4178" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="227:4176" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="363:449" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="621:2372" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="1429:1835" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="1922:2051" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="2475:3947" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="2592:3935" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="2720:2847" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="2964:3850" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="3165:3365" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="3484:3684" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="4014:4170" ph="{...}" />
+                <marker date="1510062356847" expanded="true" signature="4083:4160" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.xaml.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Btr/MainWindow.xaml.cs">
+      <file leaf-file-name="HistoryTest.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UnitTestProject/HistoryTest.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="61" column="47" lean-forward="false" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="47" />
+            <state relative-caret-position="345">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
-                <marker date="1509033147554" expanded="false" signature="6:623" ph="..." />
-                <marker date="1509033147554" expanded="true" signature="638:3757" ph="{...}" />
-                <marker date="1509033147554" expanded="true" signature="645:723" ph="/// Interaction logic for MainWindow.xaml ... " />
-                <marker date="1509033147554" expanded="true" signature="792:3755" ph="{...}" />
-                <marker date="1509033147554" expanded="true" signature="826:946" ph="{...}" />
-                <marker date="1509033147554" expanded="true" signature="1106:1645" ph="{...}" />
-                <marker date="1509033147554" expanded="true" signature="1129:1210" ph="/* var t = Ex.GetBalances(); ... */" />
-                <marker date="1509033147554" expanded="true" signature="1368:1488" ph="/* var t0 = BtrHistory.GetHitoryBtr(&quot;BTC-ETH&quot;, from); ... */" />
-                <marker date="1509033147554" expanded="true" signature="1714:1924" ph="{...}" />
-                <marker date="1509033147554" expanded="true" signature="1737:1904" ph="/* Ex = new Exchange(); ... */" />
-                <marker date="1509033147554" expanded="true" signature="1999:2325" ph="{...}" />
-                <marker date="1509033147554" expanded="true" signature="2400:2707" ph="{...}" />
-                <marker date="1509033147554" expanded="true" signature="2779:2865" ph="{...}" />
-                <marker date="1509033147554" expanded="true" signature="2944:3184" ph="{...}" />
-                <marker date="1509033147554" expanded="true" signature="3263:3435" ph="{...}" />
-                <marker date="1509033147554" expanded="true" signature="3640:3747" ph="{...}" />
+                <marker date="1510062620146" expanded="false" signature="6:125" ph="..." />
+                <marker date="1510062620146" expanded="true" signature="152:888" ph="{...}" />
+                <marker date="1510062620146" expanded="true" signature="199:886" ph="{...}" />
+                <marker date="1510062620146" expanded="true" signature="260:529" ph="{...}" />
+                <marker date="1510062620146" expanded="true" signature="587:880" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UnitTest1.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/UnitTestProject/UnitTest1.cs">
+      <file leaf-file-name="PlnHistory.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Btr/PlnHistory.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+            <state relative-caret-position="60">
+              <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
               <folding>
-                <marker date="1509269670432" expanded="false" signature="6:204" ph="..." />
-                <marker date="1509269670432" expanded="true" signature="231:2958" ph="{...}" />
-                <marker date="1509269670432" expanded="true" signature="276:2956" ph="{...}" />
-                <marker date="1509269670432" expanded="true" signature="343:778" ph="{...}" />
-                <marker date="1509269670432" expanded="true" signature="836:2226" ph="{...}" />
-                <marker date="1509269670432" expanded="true" signature="1331:1569" ph="{...}" />
-                <marker date="1509269670432" expanded="true" signature="1362:1436" ph="/* if (item.date == new DateTime(2017,07,19,19,50,0)) ... */" />
-                <marker date="1509269670432" expanded="true" signature="1987:2216" ph="{...}" />
-                <marker date="1509269670432" expanded="true" signature="2283:2570" ph="{...}" />
-                <marker date="1509269670432" expanded="true" signature="2625:2949" ph="{...}" />
-                <marker date="1509269670432" expanded="true" signature="2701:2938" ph="{...}" />
-                <marker date="1509269670432" expanded="true" signature="2781:2892" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileIO.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lib/Files/FileIO.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
-              <folding>
-                <marker date="1508254854661" expanded="false" signature="6:270" ph="..." />
-                <marker date="1508254854661" expanded="true" signature="284:6595" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="318:6593" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="549:902" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="575:760" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="793:892" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="974:1569" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="1147:1533" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="1181:1371" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="1408:1519" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="1743:2055" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="2118:2308" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="2370:2792" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="2517:2620" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="2653:2726" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="2860:3243" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="2886:3120" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="3153:3208" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="3298:3859" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="3392:3593" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="3626:3725" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="3745:3824" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="3977:4761" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="4137:4451" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="4484:4583" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="4603:4727" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="4838:5462" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="4891:4979" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="5012:5067" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="5167:5339" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="5514:5770" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="5834:6252" ph="{...}" />
-                <marker date="1508254854661" expanded="true" signature="6309:6587" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainWindow.xaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Btr/MainWindow.xaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="43" column="34" lean-forward="false" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
-              <folding>
-                <marker date="1509039350263" expanded="true" signature="0:3699" ph="&lt;&lt;Grid&gt;&#10;        &lt;Grid.RowDefinitions&gt;&#10;            &lt;RowDefinition/&gt;&#10;            &lt;RowDefinition/&gt;&#10;&#10;            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;&#10;        &lt;/Grid.RowDefinitions&gt;&#10;        &lt;TextBlock Name=&quot;txtResult&quot;/&gt;&#10;        &lt;DataGrid Name=&quot;dgTraders&quot; ItemsSource=&quot;{Binding TM}&quot; AutoGenerateColumns=&quot;False&quot;&gt;&#10;            &lt;DataGrid.Columns&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;&#10;            &lt;/DataGrid.Columns&gt;&#10;        &lt;/DataGrid&gt;&#10;        &lt;Grid Grid.Row=&quot;1&quot; DataContext=&quot;{Binding ElementName=dgTraders, Path=SelectedItem}&quot;&gt;&#10;            &lt;Grid.ColumnDefinitions&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;            &lt;/Grid.ColumnDefinitions&gt;&#10;            &lt;DataGrid Name=&quot;dgOrders&quot; AutoGenerateColumns=&quot;False&quot;  ItemsSource=&quot;{Binding Sellers}&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;            &lt;DataGrid Name=&quot;dgComplited&quot; AutoGenerateColumns=&quot;True&quot; ItemsSource=&quot;{Binding Complited}&quot; Grid.ColumnSpan=&quot;2&quot; Margin=&quot;259,0,0.282,0.194&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;        &lt;/Grid&gt;&#10;        &lt;StackPanel Orientation=&quot;Horizontal&quot; Grid.Row=&quot;2&quot; &gt;&#10;            &lt;Button Name=&quot;btnRun&quot; Content=&quot;start&quot; Click=&quot;btnRun_Click&quot;/&gt;&#10;            &lt;Button Name=&quot;EditMarkets&quot; Content=&quot;Add&quot; Click=&quot;EditMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnLoadMarkets&quot; Content=&quot;Load&quot; Click=&quot;BtnLoadMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnSaveMarkets&quot; Content=&quot;Save&quot; Click=&quot;BtnSaveMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnStart&quot; Content=&quot;RunTrade&quot; Click=&quot;BtnStart_OnClick&quot;/&gt;&#10;        &lt;/StackPanel&gt;&#10;&#10;    &lt;/Grid&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="463:3689" ph="&lt;&lt;Grid.RowDefinitions&gt;&#10;            &lt;RowDefinition/&gt;&#10;            &lt;RowDefinition/&gt;&#10;&#10;            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;&#10;        &lt;/Grid.RowDefinitions&gt; &lt;TextBlock Name=&quot;txtResult&quot;/&gt; &lt;DataGrid Name=&quot;dgTraders&quot; ItemsSource=&quot;{Binding TM}&quot; AutoGenerateColumns=&quot;False&quot;&gt;&#10;            &lt;DataGrid.Columns&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;&#10;            &lt;/DataGrid.Columns&gt;&#10;        &lt;/DataGrid&gt; &lt;Grid Grid.Row=&quot;1&quot; DataContext=&quot;{Binding ElementName=dgTraders, Path=SelectedItem}&quot;&gt;&#10;            &lt;Grid.ColumnDefinitions&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;            &lt;/Grid.ColumnDefinitions&gt;&#10;            &lt;DataGrid Name=&quot;dgOrders&quot; AutoGenerateColumns=&quot;False&quot;  ItemsSource=&quot;{Binding Sellers}&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;            &lt;DataGrid Name=&quot;dgComplited&quot; AutoGenerateColumns=&quot;True&quot; ItemsSource=&quot;{Binding Complited}&quot; Grid.ColumnSpan=&quot;2&quot; Margin=&quot;259,0,0.282,0.194&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;        &lt;/Grid&gt; &lt;StackPanel Orientation=&quot;Horizontal&quot; Grid.Row=&quot;2&quot; &gt;&#10;            &lt;Button Name=&quot;btnRun&quot; Content=&quot;start&quot; Click=&quot;btnRun_Click&quot;/&gt;&#10;            &lt;Button Name=&quot;EditMarkets&quot; Content=&quot;Add&quot; Click=&quot;EditMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnLoadMarkets&quot; Content=&quot;Load&quot; Click=&quot;BtnLoadMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnSaveMarkets&quot; Content=&quot;Save&quot; Click=&quot;BtnSaveMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnStart&quot; Content=&quot;RunTrade&quot; Click=&quot;BtnStart_OnClick&quot;/&gt;&#10;        &lt;/StackPanel&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="478:632" ph="&lt;&lt;RowDefinition/&gt; &lt;RowDefinition/&gt; &lt;RowDefinition Height=&quot;Auto&quot;/&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="679:1734" ph="&lt;&lt;DataGrid.Columns&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;&#10;            &lt;/DataGrid.Columns&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="774:1714" ph="&lt;&lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt; &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt; &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="809:1141" ph="&lt;&lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="854:1099" ph="&lt;&lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="916:1040" ph="&lt;&lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="1341:1681" ph="&lt;&lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="1386:1639" ph="&lt;&lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="1448:1580" ph="&lt;&lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="1743:3176" ph="&lt;&lt;Grid.ColumnDefinitions&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;            &lt;/Grid.ColumnDefinitions&gt; &lt;DataGrid Name=&quot;dgOrders&quot; AutoGenerateColumns=&quot;False&quot;  ItemsSource=&quot;{Binding Sellers}&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt; &lt;DataGrid Name=&quot;dgComplited&quot; AutoGenerateColumns=&quot;True&quot; ItemsSource=&quot;{Binding Complited}&quot; Grid.ColumnSpan=&quot;2&quot; Margin=&quot;259,0,0.282,0.194&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="1840:1974" ph="&lt;&lt;ColumnDefinition/&gt; &lt;ColumnDefinition/&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="1987:2540" ph="&lt;&lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="2091:2516" ph="&lt;&lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="2553:3160" ph="&lt;&lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="2707:3136" ph="&lt;&lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;.../&gt;" />
-                <marker date="1509039350263" expanded="true" signature="3185:3676" ph="&lt;&lt;Button Name=&quot;btnRun&quot; Content=&quot;start&quot; Click=&quot;btnRun_Click&quot;/&gt; &lt;Button Name=&quot;EditMarkets&quot; Content=&quot;Add&quot; Click=&quot;EditMarkets_OnClick&quot;/&gt; &lt;Button Name=&quot;btnLoadMarkets&quot; Content=&quot;Load&quot; Click=&quot;BtnLoadMarkets_OnClick&quot;/&gt; &lt;Button Name=&quot;btnSaveMarkets&quot; Content=&quot;Save&quot; Click=&quot;BtnSaveMarkets_OnClick&quot;/&gt; &lt;Button Name=&quot;btnStart&quot; Content=&quot;RunTrade&quot; Click=&quot;BtnStart_OnClick&quot;/&gt;.../&gt;" />
+                <marker date="1510062356707" expanded="false" signature="6:181" ph="..." />
+                <marker date="1510062356707" expanded="true" signature="196:1950" ph="{...}" />
+                <marker date="1510062356707" expanded="true" signature="226:1948" ph="{...}" />
+                <marker date="1510062356707" expanded="true" signature="241:427" ph="/* '60' =&gt; 'oneMin', ... */" />
+                <marker date="1510062356707" expanded="true" signature="771:833" ph="{...}" />
+                <marker date="1510062356707" expanded="true" signature="1090:1942" ph="{...}" />
+                <marker date="1510062356707" expanded="true" signature="1464:1569" ph="{...}" />
+                <marker date="1510062356707" expanded="true" signature="1601:1823" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -172,39 +75,21 @@
       <file leaf-file-name="TradeMan.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Btr/Trade/TradeMan.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="105">
+              <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
               <folding>
-                <marker date="1509033147632" expanded="false" signature="6:244" ph="..." />
-                <marker date="1509033147632" expanded="true" signature="259:1822" ph="{...}" />
-                <marker date="1509033147632" expanded="true" signature="358:1820" ph="{...}" />
-                <marker date="1509033147632" expanded="true" signature="520:907" ph="{...}" />
-                <marker date="1509033147632" expanded="true" signature="948:1034" ph="{...}" />
-                <marker date="1509033147632" expanded="true" signature="1120:1244" ph="{...}" />
-                <marker date="1509033147632" expanded="true" signature="1308:1363" ph="{...}" />
-                <marker date="1509033147632" expanded="true" signature="1483:1682" ph="{...}" />
-                <marker date="1509033147632" expanded="true" signature="1691:1814" ph="/* [OnDeserializing] ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseTracker.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Btr/Trade/CourseTracker.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-              <folding>
-                <marker date="1509269670429" expanded="false" signature="6:231" ph="..." />
-                <marker date="1509269670429" expanded="true" signature="246:2015" ph="{...}" />
-                <marker date="1509269670429" expanded="true" signature="298:2013" ph="{...}" />
-                <marker date="1509269670429" expanded="true" signature="463:574" ph="{...}" />
-                <marker date="1509269670429" expanded="true" signature="704:758" ph="{...}" />
-                <marker date="1509269670429" expanded="true" signature="788:844" ph="{...}" />
-                <marker date="1509269670429" expanded="true" signature="895:2007" ph="{...}" />
-                <marker date="1509269670429" expanded="true" signature="974:1019" ph="{...}" />
-                <marker date="1509269670429" expanded="true" signature="1473:1650" ph="/* Debug.WriteLine(&quot;g={0} m={1} {2}&quot;, g, MulGradient, Leap.Mode); ... */" />
-                <marker date="1509269670429" expanded="true" signature="1663:1765" ph="/* if (Math.Abs((gNow.G - _lastGrad)/  _lastGrad) &lt; _sett.GGap) ... */" />
+                <marker date="1510062357519" expanded="false" signature="6:263" ph="..." />
+                <marker date="1510062357519" expanded="true" signature="278:2743" ph="{...}" />
+                <marker date="1510062357519" expanded="true" signature="377:2741" ph="{...}" />
+                <marker date="1510062357519" expanded="true" signature="675:1067" ph="{...}" />
+                <marker date="1510062357519" expanded="true" signature="1108:1194" ph="{...}" />
+                <marker date="1510062357519" expanded="true" signature="1280:2165" ph="{...}" />
+                <marker date="1510062357519" expanded="true" signature="1586:1731" ph="{...}" />
+                <marker date="1510062357519" expanded="true" signature="1868:2119" ph="{...}" />
+                <marker date="1510062357519" expanded="true" signature="1943:2044" ph="/* foreach (var treader in this) ... */" />
+                <marker date="1510062357519" expanded="true" signature="2229:2284" ph="{...}" />
+                <marker date="1510062357519" expanded="true" signature="2404:2603" ph="{...}" />
+                <marker date="1510062357519" expanded="true" signature="2612:2735" ph="/* [OnDeserializing] ... */" />
               </folding>
             </state>
           </provider>
@@ -221,26 +106,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Btr/BtrHistory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UnitTestProject/apiTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/MainWindow.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Trade/Buyer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Btr/History/PlnCouse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Trade/Order.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Bittrex/ApiCall.cs" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Btr/Trade/TradeMan.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Bittrex/packages.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Btr/PrivApi/ApiParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Trade/Seller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Trade/Trader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Lib/Files/FileIO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Btr/MainWindow.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Trade/LeapInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/UnitTestProject/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/UnitTestProject/apiTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Bittrex/packages.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Btr/Trade/TradeMan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Btr/MainWindow.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Bittrex/ApiCall.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Btr/History/CourseItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lib/Files/FileIO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Market.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Btr/FrmTreaderEditor.xaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Btr/History/PlnCouse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Btr/PrivApi/ApiParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Btr/History/cryptocompare.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UnitTestProject/HistoryTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Markets.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Btr/PlnHistory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UnitTestProject/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Btr/FrmTreaderEditor.xaml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -254,11 +142,14 @@
         <option value="$PROJECT_DIR$/Btr/Trade/Seller.cs" />
         <option value="$PROJECT_DIR$/Btr/Trade/Order.cs" />
         <option value="$PROJECT_DIR$/Btr/Trade/Buyer.cs" />
-        <option value="$PROJECT_DIR$/Btr/Trade/TradeMan.cs" />
         <option value="$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" />
         <option value="$PROJECT_DIR$/Btr/MainWindow.xaml.cs" />
         <option value="$PROJECT_DIR$/Btr/MainWindow.xaml" />
         <option value="$PROJECT_DIR$/Btr/Trade/Trader.cs" />
+        <option value="$PROJECT_DIR$/UnitTestProject/UnitTest1.cs" />
+        <option value="$PROJECT_DIR$/Btr/Trade/TradeMan.cs" />
+        <option value="$PROJECT_DIR$/Btr/PlnHistory.cs" />
+        <option value="$PROJECT_DIR$/UnitTestProject/HistoryTest.cs" />
       </list>
     </option>
   </component>
@@ -292,6 +183,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -307,6 +199,12 @@
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="Coin (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Btr" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="History" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Coin (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="UnitTestProject" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
@@ -315,7 +213,6 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,6 +267,7 @@
       <workItem from="1509005349258" duration="8511000" />
       <workItem from="1509025669293" duration="508000" />
       <workItem from="1509273363258" duration="2281000" />
+      <workItem from="1510046981440" duration="3277000" />
     </task>
     <task id="LOCAL-00001" summary="Убрал лишние проекты исправил ошибку NET1">
       <created>1508263127919</created>
@@ -410,7 +308,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35179000" />
+    <option name="totallyTimeSpent" value="38456000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,19 +320,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1574" extended-state="6" />
+    <frame x="-8" y="-8" width="1216" height="1576" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943603" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Unit Tests" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287858" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13157895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943603" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12578125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17916666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287858" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946795" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -443,7 +342,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -462,44 +360,39 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="29" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Btr/History/PlnCouse.cs</url>
+          <line>34</line>
+          <properties documentPath="$PROJECT_DIR$/Btr/History/PlnCouse.cs">
+            <startOffsets>
+              <startOffset value="1010" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="1130" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/UnitTestProject/HistoryTest.cs</url>
+          <line>28</line>
+          <properties documentPath="$PROJECT_DIR$/UnitTestProject/HistoryTest.cs">
+            <startOffsets>
+              <startOffset value="879" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="880" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Btr/Market.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Btr/Trade/TradeMan.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1509033147632" expanded="false" signature="6:244" ph="..." />
-            <marker date="1509033147632" expanded="true" signature="259:1822" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="358:1820" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="520:907" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="948:1034" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1120:1244" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1308:1363" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1483:1682" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1691:1814" ph="/* [OnDeserializing] ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTestProject/apiTest.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Btr/PrivApi/ApiParser.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -511,28 +404,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding>
-            <marker date="1509269670431" expanded="false" signature="6:320" ph="..." />
-            <marker date="1509269670431" expanded="true" signature="335:4286" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="452:3890" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="920:1139" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="983:1129" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1207:1450" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1498:1758" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1804:2234" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1907:2125" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1971:2111" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="2280:2406" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="2461:2998" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="2589:2988" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3044:3572" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3279:3475" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3341:3461" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3777:3884" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3921:4284" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="4061:4135" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="4178:4278" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -547,7 +419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="940">
           <caret line="53" column="76" lean-forward="false" selection-start-line="53" selection-start-column="76" selection-end-line="53" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -571,15 +442,18 @@
         <state relative-caret-position="620">
           <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
-            <marker date="1509033147632" expanded="false" signature="6:244" ph="..." />
-            <marker date="1509033147632" expanded="true" signature="259:1822" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="358:1820" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="520:907" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="948:1034" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1120:1244" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1308:1363" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1483:1682" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1691:1814" ph="/* [OnDeserializing] ... */" />
+            <marker date="1510062357519" expanded="false" signature="6:263" ph="..." />
+            <marker date="1510062357519" expanded="true" signature="278:2743" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="377:2741" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="675:1067" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1108:1194" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1280:2165" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1586:1731" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1868:2119" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1943:2044" ph="/* foreach (var treader in this) ... */" />
+            <marker date="1510062357519" expanded="true" signature="2229:2284" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="2404:2603" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="2612:2735" ph="/* [OnDeserializing] ... */" />
           </folding>
         </state>
       </provider>
@@ -602,28 +476,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="24" />
-          <folding>
-            <marker date="1509269670431" expanded="false" signature="6:320" ph="..." />
-            <marker date="1509269670431" expanded="true" signature="335:4286" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="452:3890" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="920:1139" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="983:1129" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1207:1450" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1498:1758" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1804:2234" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1907:2125" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1971:2111" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="2280:2406" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="2461:2998" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="2589:2988" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3044:3572" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3279:3475" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3341:3461" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3777:3884" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3921:4284" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="4061:4135" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="4178:4278" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -638,7 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="48" column="74" lean-forward="false" selection-start-line="48" selection-start-column="74" selection-end-line="48" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -661,15 +513,18 @@
         <state relative-caret-position="240">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="20" selection-end-column="36" />
           <folding>
-            <marker date="1509033147632" expanded="false" signature="6:244" ph="..." />
-            <marker date="1509033147632" expanded="true" signature="259:1822" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="358:1820" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="520:907" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="948:1034" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1120:1244" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1308:1363" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1483:1682" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1691:1814" ph="/* [OnDeserializing] ... */" />
+            <marker date="1510062357519" expanded="false" signature="6:263" ph="..." />
+            <marker date="1510062357519" expanded="true" signature="278:2743" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="377:2741" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="675:1067" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1108:1194" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1280:2165" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1586:1731" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1868:2119" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1943:2044" ph="/* foreach (var treader in this) ... */" />
+            <marker date="1510062357519" expanded="true" signature="2229:2284" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="2404:2603" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="2612:2735" ph="/* [OnDeserializing] ... */" />
           </folding>
         </state>
       </provider>
@@ -689,7 +544,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Btr/BtrHistory.cs">
+    <entry file="file://$PROJECT_DIR$/Btr/PlnHistory.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
@@ -753,20 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Btr/BtrHistory.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Btr/History/PlnCouse.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="64" column="38" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UnitTestProject/TradeManTest.cs" />
     <entry file="file://$PROJECT_DIR$/Btr/Markets.cs">
       <provider selected="true" editor-type-id="text-editor">
@@ -786,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,122 +658,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Btr/Trade/CourseTracker.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <marker date="1509269670429" expanded="false" signature="6:231" ph="..." />
-            <marker date="1509269670429" expanded="true" signature="246:2015" ph="{...}" />
-            <marker date="1509269670429" expanded="true" signature="298:2013" ph="{...}" />
-            <marker date="1509269670429" expanded="true" signature="463:574" ph="{...}" />
-            <marker date="1509269670429" expanded="true" signature="704:758" ph="{...}" />
-            <marker date="1509269670429" expanded="true" signature="788:844" ph="{...}" />
-            <marker date="1509269670429" expanded="true" signature="895:2007" ph="{...}" />
-            <marker date="1509269670429" expanded="true" signature="974:1019" ph="{...}" />
-            <marker date="1509269670429" expanded="true" signature="1473:1650" ph="/* Debug.WriteLine(&quot;g={0} m={1} {2}&quot;, g, MulGradient, Leap.Mode); ... */" />
-            <marker date="1509269670429" expanded="true" signature="1663:1765" ph="/* if (Math.Abs((gNow.G - _lastGrad)/  _lastGrad) &lt; _sett.GGap) ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Btr/Trade/TradeMan.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <marker date="1509033147632" expanded="false" signature="6:244" ph="..." />
-            <marker date="1509033147632" expanded="true" signature="259:1822" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="358:1820" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="520:907" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="948:1034" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1120:1244" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1308:1363" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1483:1682" ph="{...}" />
-            <marker date="1509033147632" expanded="true" signature="1691:1814" ph="/* [OnDeserializing] ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Btr/MainWindow.xaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="43" column="34" lean-forward="false" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
-          <folding>
-            <marker date="1509039350263" expanded="true" signature="0:3699" ph="&lt;&lt;Grid&gt;&#10;        &lt;Grid.RowDefinitions&gt;&#10;            &lt;RowDefinition/&gt;&#10;            &lt;RowDefinition/&gt;&#10;&#10;            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;&#10;        &lt;/Grid.RowDefinitions&gt;&#10;        &lt;TextBlock Name=&quot;txtResult&quot;/&gt;&#10;        &lt;DataGrid Name=&quot;dgTraders&quot; ItemsSource=&quot;{Binding TM}&quot; AutoGenerateColumns=&quot;False&quot;&gt;&#10;            &lt;DataGrid.Columns&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;&#10;            &lt;/DataGrid.Columns&gt;&#10;        &lt;/DataGrid&gt;&#10;        &lt;Grid Grid.Row=&quot;1&quot; DataContext=&quot;{Binding ElementName=dgTraders, Path=SelectedItem}&quot;&gt;&#10;            &lt;Grid.ColumnDefinitions&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;            &lt;/Grid.ColumnDefinitions&gt;&#10;            &lt;DataGrid Name=&quot;dgOrders&quot; AutoGenerateColumns=&quot;False&quot;  ItemsSource=&quot;{Binding Sellers}&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;            &lt;DataGrid Name=&quot;dgComplited&quot; AutoGenerateColumns=&quot;True&quot; ItemsSource=&quot;{Binding Complited}&quot; Grid.ColumnSpan=&quot;2&quot; Margin=&quot;259,0,0.282,0.194&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;        &lt;/Grid&gt;&#10;        &lt;StackPanel Orientation=&quot;Horizontal&quot; Grid.Row=&quot;2&quot; &gt;&#10;            &lt;Button Name=&quot;btnRun&quot; Content=&quot;start&quot; Click=&quot;btnRun_Click&quot;/&gt;&#10;            &lt;Button Name=&quot;EditMarkets&quot; Content=&quot;Add&quot; Click=&quot;EditMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnLoadMarkets&quot; Content=&quot;Load&quot; Click=&quot;BtnLoadMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnSaveMarkets&quot; Content=&quot;Save&quot; Click=&quot;BtnSaveMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnStart&quot; Content=&quot;RunTrade&quot; Click=&quot;BtnStart_OnClick&quot;/&gt;&#10;        &lt;/StackPanel&gt;&#10;&#10;    &lt;/Grid&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="463:3689" ph="&lt;&lt;Grid.RowDefinitions&gt;&#10;            &lt;RowDefinition/&gt;&#10;            &lt;RowDefinition/&gt;&#10;&#10;            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;&#10;        &lt;/Grid.RowDefinitions&gt; &lt;TextBlock Name=&quot;txtResult&quot;/&gt; &lt;DataGrid Name=&quot;dgTraders&quot; ItemsSource=&quot;{Binding TM}&quot; AutoGenerateColumns=&quot;False&quot;&gt;&#10;            &lt;DataGrid.Columns&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;&#10;            &lt;/DataGrid.Columns&gt;&#10;        &lt;/DataGrid&gt; &lt;Grid Grid.Row=&quot;1&quot; DataContext=&quot;{Binding ElementName=dgTraders, Path=SelectedItem}&quot;&gt;&#10;            &lt;Grid.ColumnDefinitions&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;            &lt;/Grid.ColumnDefinitions&gt;&#10;            &lt;DataGrid Name=&quot;dgOrders&quot; AutoGenerateColumns=&quot;False&quot;  ItemsSource=&quot;{Binding Sellers}&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;            &lt;DataGrid Name=&quot;dgComplited&quot; AutoGenerateColumns=&quot;True&quot; ItemsSource=&quot;{Binding Complited}&quot; Grid.ColumnSpan=&quot;2&quot; Margin=&quot;259,0,0.282,0.194&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;        &lt;/Grid&gt; &lt;StackPanel Orientation=&quot;Horizontal&quot; Grid.Row=&quot;2&quot; &gt;&#10;            &lt;Button Name=&quot;btnRun&quot; Content=&quot;start&quot; Click=&quot;btnRun_Click&quot;/&gt;&#10;            &lt;Button Name=&quot;EditMarkets&quot; Content=&quot;Add&quot; Click=&quot;EditMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnLoadMarkets&quot; Content=&quot;Load&quot; Click=&quot;BtnLoadMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnSaveMarkets&quot; Content=&quot;Save&quot; Click=&quot;BtnSaveMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnStart&quot; Content=&quot;RunTrade&quot; Click=&quot;BtnStart_OnClick&quot;/&gt;&#10;        &lt;/StackPanel&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="478:632" ph="&lt;&lt;RowDefinition/&gt; &lt;RowDefinition/&gt; &lt;RowDefinition Height=&quot;Auto&quot;/&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="679:1734" ph="&lt;&lt;DataGrid.Columns&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;&#10;            &lt;/DataGrid.Columns&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="774:1714" ph="&lt;&lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt; &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt; &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="809:1141" ph="&lt;&lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="854:1099" ph="&lt;&lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="916:1040" ph="&lt;&lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="1341:1681" ph="&lt;&lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="1386:1639" ph="&lt;&lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="1448:1580" ph="&lt;&lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="1743:3176" ph="&lt;&lt;Grid.ColumnDefinitions&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;            &lt;/Grid.ColumnDefinitions&gt; &lt;DataGrid Name=&quot;dgOrders&quot; AutoGenerateColumns=&quot;False&quot;  ItemsSource=&quot;{Binding Sellers}&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt; &lt;DataGrid Name=&quot;dgComplited&quot; AutoGenerateColumns=&quot;True&quot; ItemsSource=&quot;{Binding Complited}&quot; Grid.ColumnSpan=&quot;2&quot; Margin=&quot;259,0,0.282,0.194&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="1840:1974" ph="&lt;&lt;ColumnDefinition/&gt; &lt;ColumnDefinition/&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="1987:2540" ph="&lt;&lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="2091:2516" ph="&lt;&lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="2553:3160" ph="&lt;&lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="2707:3136" ph="&lt;&lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;.../&gt;" />
-            <marker date="1509039350263" expanded="true" signature="3185:3676" ph="&lt;&lt;Button Name=&quot;btnRun&quot; Content=&quot;start&quot; Click=&quot;btnRun_Click&quot;/&gt; &lt;Button Name=&quot;EditMarkets&quot; Content=&quot;Add&quot; Click=&quot;EditMarkets_OnClick&quot;/&gt; &lt;Button Name=&quot;btnLoadMarkets&quot; Content=&quot;Load&quot; Click=&quot;BtnLoadMarkets_OnClick&quot;/&gt; &lt;Button Name=&quot;btnSaveMarkets&quot; Content=&quot;Save&quot; Click=&quot;BtnSaveMarkets_OnClick&quot;/&gt; &lt;Button Name=&quot;btnStart&quot; Content=&quot;RunTrade&quot; Click=&quot;BtnStart_OnClick&quot;/&gt;.../&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lib/Files/FileIO.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
-          <folding>
-            <marker date="1508254854661" expanded="false" signature="6:270" ph="..." />
-            <marker date="1508254854661" expanded="true" signature="284:6595" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="318:6593" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="549:902" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="575:760" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="793:892" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="974:1569" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="1147:1533" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="1181:1371" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="1408:1519" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="1743:2055" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="2118:2308" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="2370:2792" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="2517:2620" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="2653:2726" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="2860:3243" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="2886:3120" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="3153:3208" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="3298:3859" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="3392:3593" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="3626:3725" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="3745:3824" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="3977:4761" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="4137:4451" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="4484:4583" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="4603:4727" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="4838:5462" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="4891:4979" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="5012:5067" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="5167:5339" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="5514:5770" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="5834:6252" ph="{...}" />
-            <marker date="1508254854661" expanded="true" signature="6309:6587" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Btr/Trade/Order.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding>
-            <marker date="1509033147610" expanded="false" signature="6:151" ph="..." />
-            <marker date="1509033147610" expanded="true" signature="166:899" ph="{...}" />
-            <marker date="1509033147610" expanded="true" signature="210:897" ph="{...}" />
-            <marker date="1509033147610" expanded="true" signature="279:380" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -941,89 +669,206 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <marker date="1509269670397" expanded="false" signature="6:226" ph="..." />
-            <marker date="1509269670397" expanded="true" signature="241:1738" ph="{...}" />
-            <marker date="1509269670397" expanded="true" signature="285:1736" ph="{...}" />
-            <marker date="1509269670397" expanded="true" signature="333:389" ph="{...}" />
-            <marker date="1509269670397" expanded="true" signature="686:1360" ph="{...}" />
-            <marker date="1509269670397" expanded="true" signature="1407:1530" ph="{...}" />
-            <marker date="1509269670397" expanded="true" signature="1566:1730" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Btr/Trade/Trader.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
-          <folding>
-            <marker date="1509269670431" expanded="false" signature="6:320" ph="..." />
-            <marker date="1509269670431" expanded="true" signature="335:4286" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="452:3890" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="920:1139" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="983:1129" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1207:1450" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1498:1758" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1804:2234" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1907:2125" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="1971:2111" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="2280:2406" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="2461:2998" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="2589:2988" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3044:3572" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3279:3475" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3341:3461" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3777:3884" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="3921:4284" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="4061:4135" ph="{...}" />
-            <marker date="1509269670431" expanded="true" signature="4178:4278" ph="{...}" />
-          </folding>
+        <state relative-caret-position="1095">
+          <caret line="73" column="33" lean-forward="false" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Btr/MainWindow.xaml.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="61" column="47" lean-forward="false" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="47" />
-          <folding>
-            <marker date="1509033147554" expanded="false" signature="6:623" ph="..." />
-            <marker date="1509033147554" expanded="true" signature="638:3757" ph="{...}" />
-            <marker date="1509033147554" expanded="true" signature="645:723" ph="/// Interaction logic for MainWindow.xaml ... " />
-            <marker date="1509033147554" expanded="true" signature="792:3755" ph="{...}" />
-            <marker date="1509033147554" expanded="true" signature="826:946" ph="{...}" />
-            <marker date="1509033147554" expanded="true" signature="1106:1645" ph="{...}" />
-            <marker date="1509033147554" expanded="true" signature="1129:1210" ph="/* var t = Ex.GetBalances(); ... */" />
-            <marker date="1509033147554" expanded="true" signature="1368:1488" ph="/* var t0 = BtrHistory.GetHitoryBtr(&quot;BTC-ETH&quot;, from); ... */" />
-            <marker date="1509033147554" expanded="true" signature="1714:1924" ph="{...}" />
-            <marker date="1509033147554" expanded="true" signature="1737:1904" ph="/* Ex = new Exchange(); ... */" />
-            <marker date="1509033147554" expanded="true" signature="1999:2325" ph="{...}" />
-            <marker date="1509033147554" expanded="true" signature="2400:2707" ph="{...}" />
-            <marker date="1509033147554" expanded="true" signature="2779:2865" ph="{...}" />
-            <marker date="1509033147554" expanded="true" signature="2944:3184" ph="{...}" />
-            <marker date="1509033147554" expanded="true" signature="3263:3435" ph="{...}" />
-            <marker date="1509033147554" expanded="true" signature="3640:3747" ph="{...}" />
-          </folding>
+        <state relative-caret-position="750">
+          <caret line="50" column="47" lean-forward="false" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UnitTestProject/UnitTest1.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+        <state relative-caret-position="630">
+          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
           <folding>
-            <marker date="1509269670432" expanded="false" signature="6:204" ph="..." />
-            <marker date="1509269670432" expanded="true" signature="231:2958" ph="{...}" />
-            <marker date="1509269670432" expanded="true" signature="276:2956" ph="{...}" />
-            <marker date="1509269670432" expanded="true" signature="343:778" ph="{...}" />
-            <marker date="1509269670432" expanded="true" signature="836:2226" ph="{...}" />
-            <marker date="1509269670432" expanded="true" signature="1331:1569" ph="{...}" />
-            <marker date="1509269670432" expanded="true" signature="1362:1436" ph="/* if (item.date == new DateTime(2017,07,19,19,50,0)) ... */" />
-            <marker date="1509269670432" expanded="true" signature="1987:2216" ph="{...}" />
-            <marker date="1509269670432" expanded="true" signature="2283:2570" ph="{...}" />
-            <marker date="1509269670432" expanded="true" signature="2625:2949" ph="{...}" />
-            <marker date="1509269670432" expanded="true" signature="2701:2938" ph="{...}" />
-            <marker date="1509269670432" expanded="true" signature="2781:2892" ph="{...}" />
+            <marker date="1510036092279" expanded="false" signature="6:204" ph="..." />
+            <marker date="1510036092279" expanded="true" signature="231:3039" ph="{...}" />
+            <marker date="1510036092279" expanded="true" signature="276:3037" ph="{...}" />
+            <marker date="1510036092279" expanded="true" signature="343:777" ph="{...}" />
+            <marker date="1510036092279" expanded="true" signature="835:2303" ph="{...}" />
+            <marker date="1510036092279" expanded="true" signature="1321:1626" ph="{...}" />
+            <marker date="1510036092279" expanded="true" signature="1402:1422" ph="{...}" />
+            <marker date="1510036092279" expanded="true" signature="2064:2293" ph="{...}" />
+            <marker date="1510036092279" expanded="true" signature="2360:2651" ph="{...}" />
+            <marker date="1510036092279" expanded="true" signature="2706:3030" ph="{...}" />
+            <marker date="1510036092279" expanded="true" signature="2782:3019" ph="{...}" />
+            <marker date="1510036092279" expanded="true" signature="2862:2973" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/Files/FileIO.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="883">
+          <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Btr/History/cryptocompare.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1510060747485" expanded="false" signature="6:210" ph="..." />
+            <marker date="1510060747485" expanded="true" signature="233:3058" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="266:3056" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="520:1386" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="771:1376" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="847:1194" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="949:1176" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="1215:1362" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="1483:2393" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="1608:2383" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="2165:2309" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="2435:2525" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="2554:3050" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="2791:3040" ph="{...}" />
+            <marker date="1510060747485" expanded="true" signature="2825:3026" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Btr/History/CourseItem.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1510036091935" expanded="true" signature="28:483" ph="{...}" />
+            <marker date="1510036091935" expanded="true" signature="59:480" ph="{...}" />
+            <marker date="1510036091935" expanded="true" signature="135:251" ph="{...}" />
+            <marker date="1510036091935" expanded="true" signature="382:474" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Btr/MainWindow.xaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+          <folding>
+            <marker date="1509699613726" expanded="true" signature="0:3932" ph="&lt;&lt;Grid&gt;&#10;        &lt;Grid.RowDefinitions&gt;&#10;            &lt;RowDefinition/&gt;&#10;            &lt;RowDefinition/&gt;&#10;&#10;            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;&#10;        &lt;/Grid.RowDefinitions&gt;&#10;        &lt;TextBlock Name=&quot;txtResult&quot;/&gt;&#10;        &lt;DataGrid Name=&quot;dgTraders&quot; ItemsSource=&quot;{Binding TM}&quot; AutoGenerateColumns=&quot;False&quot;&gt;&#10;            &lt;DataGrid.Columns&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;&#10;            &lt;/DataGrid.Columns&gt;&#10;        &lt;/DataGrid&gt;&#10;        &lt;Grid Grid.Row=&quot;1&quot; DataContext=&quot;{Binding ElementName=dgTraders, Path=SelectedItem}&quot;&gt;&#10;            &lt;Grid.ColumnDefinitions&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;            &lt;/Grid.ColumnDefinitions&gt;&#10;            &lt;DataGrid Name=&quot;dgOrders&quot; AutoGenerateColumns=&quot;False&quot;  ItemsSource=&quot;{Binding Sellers}&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;            &lt;DataGrid Name=&quot;dgComplited&quot; AutoGenerateColumns=&quot;True&quot; ItemsSource=&quot;{Binding Complited}&quot; Grid.ColumnSpan=&quot;2&quot; Margin=&quot;259,0,0.282,0.194&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;        &lt;/Grid&gt;&#10;        &lt;StackPanel Orientation=&quot;Horizontal&quot; Grid.Row=&quot;2&quot; &gt;&#10;            &lt;Button Name=&quot;BtnMarkets&quot; Content=&quot;Markets&quot; Click=&quot;EditMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnLoadMarkets&quot; Content=&quot;Load&quot; Click=&quot;BtnLoadMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnSaveMarkets&quot; Content=&quot;Save&quot; Click=&quot;BtnSaveMarkets_OnClick&quot;/&gt;&#10;            &lt;ComboBox Name=&quot;cbMarket&quot; SelectedItem=&quot;{Binding Tracker.Market}&quot; DisplayMemberPath=&quot;Name&quot;&#10;                      ItemsSource=&quot;{Binding Source={x:Static local:Markets.MarketList}, Path=Values}&quot;/&gt;&#10;            &lt;Button Name=&quot;btnAddTreader&quot; Content=&quot;+&quot; Width=&quot;20&quot; Click=&quot;BtnAddTreader_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnStart&quot; Content=&quot;RunTrade&quot; Click=&quot;BtnStart_OnClick&quot;/&gt;&#10;        &lt;/StackPanel&gt;&#10;&#10;    &lt;/Grid&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="463:3922" ph="&lt;&lt;Grid.RowDefinitions&gt;&#10;            &lt;RowDefinition/&gt;&#10;            &lt;RowDefinition/&gt;&#10;&#10;            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;&#10;        &lt;/Grid.RowDefinitions&gt; &lt;TextBlock Name=&quot;txtResult&quot;/&gt; &lt;DataGrid Name=&quot;dgTraders&quot; ItemsSource=&quot;{Binding TM}&quot; AutoGenerateColumns=&quot;False&quot;&gt;&#10;            &lt;DataGrid.Columns&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;&#10;            &lt;/DataGrid.Columns&gt;&#10;        &lt;/DataGrid&gt; &lt;Grid Grid.Row=&quot;1&quot; DataContext=&quot;{Binding ElementName=dgTraders, Path=SelectedItem}&quot;&gt;&#10;            &lt;Grid.ColumnDefinitions&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;            &lt;/Grid.ColumnDefinitions&gt;&#10;            &lt;DataGrid Name=&quot;dgOrders&quot; AutoGenerateColumns=&quot;False&quot;  ItemsSource=&quot;{Binding Sellers}&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;            &lt;DataGrid Name=&quot;dgComplited&quot; AutoGenerateColumns=&quot;True&quot; ItemsSource=&quot;{Binding Complited}&quot; Grid.ColumnSpan=&quot;2&quot; Margin=&quot;259,0,0.282,0.194&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;&#10;        &lt;/Grid&gt; &lt;StackPanel Orientation=&quot;Horizontal&quot; Grid.Row=&quot;2&quot; &gt;&#10;            &lt;Button Name=&quot;BtnMarkets&quot; Content=&quot;Markets&quot; Click=&quot;EditMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnLoadMarkets&quot; Content=&quot;Load&quot; Click=&quot;BtnLoadMarkets_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnSaveMarkets&quot; Content=&quot;Save&quot; Click=&quot;BtnSaveMarkets_OnClick&quot;/&gt;&#10;            &lt;ComboBox Name=&quot;cbMarket&quot; SelectedItem=&quot;{Binding Tracker.Market}&quot; DisplayMemberPath=&quot;Name&quot;&#10;                      ItemsSource=&quot;{Binding Source={x:Static local:Markets.MarketList}, Path=Values}&quot;/&gt;&#10;            &lt;Button Name=&quot;btnAddTreader&quot; Content=&quot;+&quot; Width=&quot;20&quot; Click=&quot;BtnAddTreader_OnClick&quot;/&gt;&#10;            &lt;Button Name=&quot;btnStart&quot; Content=&quot;RunTrade&quot; Click=&quot;BtnStart_OnClick&quot;/&gt;&#10;        &lt;/StackPanel&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="478:632" ph="&lt;&lt;RowDefinition/&gt; &lt;RowDefinition/&gt; &lt;RowDefinition Height=&quot;Auto&quot;/&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="679:1734" ph="&lt;&lt;DataGrid.Columns&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt;&#10;                &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt;&#10;                &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;&#10;&#10;            &lt;/DataGrid.Columns&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="774:1714" ph="&lt;&lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt; &lt;DataGridTextColumn Header=&quot;Market&quot; Binding=&quot;{Binding Tracker.Market.Name}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Balance&quot; Binding=&quot;{Binding Buyer.Balance}&quot;/&gt; &lt;DataGridTemplateColumn&gt;&#10;                    &lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;&#10;                &lt;/DataGridTemplateColumn&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="809:1141" ph="&lt;&lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="854:1099" ph="&lt;&lt;DataTemplate&gt;&#10;                            &lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="916:1040" ph="&lt;&lt;CheckBox IsChecked=&quot;{Binding Enabled}&quot;/&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="1341:1681" ph="&lt;&lt;DataGridTemplateColumn.CellTemplate&gt;&#10;                        &lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;&#10;                    &lt;/DataGridTemplateColumn.CellTemplate&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="1386:1639" ph="&lt;&lt;DataTemplate&gt;&#10;                            &lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;&#10;                        &lt;/DataTemplate&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="1448:1580" ph="&lt;&lt;Button Content=&quot;*&quot; Click=&quot;btnEditTreaderClick&quot;/&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="1743:3176" ph="&lt;&lt;Grid.ColumnDefinitions&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;                &lt;ColumnDefinition/&gt;&#10;            &lt;/Grid.ColumnDefinitions&gt; &lt;DataGrid Name=&quot;dgOrders&quot; AutoGenerateColumns=&quot;False&quot;  ItemsSource=&quot;{Binding Sellers}&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt; &lt;DataGrid Name=&quot;dgComplited&quot; AutoGenerateColumns=&quot;True&quot; ItemsSource=&quot;{Binding Complited}&quot; Grid.ColumnSpan=&quot;2&quot; Margin=&quot;259,0,0.282,0.194&quot;&gt;&#10;                &lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;&#10;            &lt;/DataGrid&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="1840:1974" ph="&lt;&lt;ColumnDefinition/&gt; &lt;ColumnDefinition/&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="1987:2540" ph="&lt;&lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="2091:2516" ph="&lt;&lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding BuyOrder.Id}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding BuyOrder.ComplitedDate}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding BuyOrder.Price}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding BuyOrder.Amount}&quot;/&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="2553:3160" ph="&lt;&lt;DataGrid.Columns&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt;&#10;                    &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;&#10;                &lt;/DataGrid.Columns&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="2707:3136" ph="&lt;&lt;DataGridTextColumn Header=&quot;Id&quot; Binding=&quot;{Binding SellOrder.Id}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Date&quot; Binding=&quot;{Binding SellOrder.ComplitedDate}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Price&quot; Binding=&quot;{Binding SellOrder.Price}&quot;/&gt; &lt;DataGridTextColumn Header=&quot;Amount&quot; Binding=&quot;{Binding SellOrder.Amount}&quot;/&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="3185:3909" ph="&lt;&lt;Button Name=&quot;BtnMarkets&quot; Content=&quot;Markets&quot; Click=&quot;EditMarkets_OnClick&quot;/&gt; &lt;Button Name=&quot;btnLoadMarkets&quot; Content=&quot;Load&quot; Click=&quot;BtnLoadMarkets_OnClick&quot;/&gt; &lt;Button Name=&quot;btnSaveMarkets&quot; Content=&quot;Save&quot; Click=&quot;BtnSaveMarkets_OnClick&quot;/&gt; &lt;ComboBox Name=&quot;cbMarket&quot; SelectedItem=&quot;{Binding Tracker.Market}&quot; DisplayMemberPath=&quot;Name&quot;&#10;                      ItemsSource=&quot;{Binding Source={x:Static local:Markets.MarketList}, Path=Values}&quot;/&gt; &lt;Button Name=&quot;btnAddTreader&quot; Content=&quot;+&quot; Width=&quot;20&quot; Click=&quot;BtnAddTreader_OnClick&quot;/&gt; &lt;Button Name=&quot;btnStart&quot; Content=&quot;RunTrade&quot; Click=&quot;BtnStart_OnClick&quot;/&gt;.../&gt;" />
+            <marker date="1509699613726" expanded="true" signature="3515:3709" ph="&lt;.../&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Btr/Trade/CourseTracker.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <marker date="1509631924297" expanded="false" signature="6:231" ph="..." />
+            <marker date="1509631924297" expanded="true" signature="246:1889" ph="{...}" />
+            <marker date="1509631924297" expanded="true" signature="298:1887" ph="{...}" />
+            <marker date="1509631924297" expanded="true" signature="513:624" ph="{...}" />
+            <marker date="1509631924297" expanded="true" signature="888:1881" ph="{...}" />
+            <marker date="1509631924297" expanded="true" signature="1033:1048" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Btr/Trade/TradeMan.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding>
+            <marker date="1510062357519" expanded="false" signature="6:263" ph="..." />
+            <marker date="1510062357519" expanded="true" signature="278:2743" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="377:2741" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="675:1067" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1108:1194" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1280:2165" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1586:1731" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1868:2119" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="1943:2044" ph="/* foreach (var treader in this) ... */" />
+            <marker date="1510062357519" expanded="true" signature="2229:2284" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="2404:2603" ph="{...}" />
+            <marker date="1510062357519" expanded="true" signature="2612:2735" ph="/* [OnDeserializing] ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Btr/History/PlnCouse.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="34" column="43" lean-forward="false" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+          <folding>
+            <marker date="1510062356847" expanded="false" signature="6:168" ph="..." />
+            <marker date="1510062356847" expanded="true" signature="191:4178" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="227:4176" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="363:449" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="621:2372" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="1429:1835" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="1922:2051" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="2475:3947" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="2592:3935" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="2720:2847" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="2964:3850" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="3165:3365" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="3484:3684" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="4014:4170" ph="{...}" />
+            <marker date="1510062356847" expanded="true" signature="4083:4160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Btr/PlnHistory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <marker date="1510062356707" expanded="false" signature="6:181" ph="..." />
+            <marker date="1510062356707" expanded="true" signature="196:1950" ph="{...}" />
+            <marker date="1510062356707" expanded="true" signature="226:1948" ph="{...}" />
+            <marker date="1510062356707" expanded="true" signature="241:427" ph="/* '60' =&gt; 'oneMin', ... */" />
+            <marker date="1510062356707" expanded="true" signature="771:833" ph="{...}" />
+            <marker date="1510062356707" expanded="true" signature="1090:1942" ph="{...}" />
+            <marker date="1510062356707" expanded="true" signature="1464:1569" ph="{...}" />
+            <marker date="1510062356707" expanded="true" signature="1601:1823" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTestProject/HistoryTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <marker date="1510062620146" expanded="false" signature="6:125" ph="..." />
+            <marker date="1510062620146" expanded="true" signature="152:888" ph="{...}" />
+            <marker date="1510062620146" expanded="true" signature="199:886" ph="{...}" />
+            <marker date="1510062620146" expanded="true" signature="260:529" ph="{...}" />
+            <marker date="1510062620146" expanded="true" signature="587:880" ph="{...}" />
           </folding>
         </state>
       </provider>

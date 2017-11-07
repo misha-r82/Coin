@@ -15,6 +15,7 @@ namespace Btr
     [CollectionDataContract]
     public class TradeMan : List<Treader>, INotifyCollectionChanged
     {
+        
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
         private static TimeSpan _tickInterval { get { return new TimeSpan(0, 0, 3); } }
         [DataMember] private ApiParser _apiParser;

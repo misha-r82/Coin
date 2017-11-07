@@ -13,8 +13,8 @@ namespace Btr.History
 {
     public class Cryptocompare
     {
-        private const string URI_PATT = "https://min-api.cryptocompare.com/data/histominute?fsym={0}&tsym={1}&limit={2}&aggregate=1&e=CCCAGG&toTs={3}";
-        private const int LOAD_LIMIT = 3;
+        private const string URI_PATT = "https://min-api.cryptocompare.com/data/histominute?fsym={0}&tsym={1}&aggregate=1&e=CCCAGG&toTs={2}&limit={3}";
+        private TimeSpan _wnd = new TimeSpan(0,1,0);
         public T CallPublic<T>(string uri)
         {
 
@@ -42,17 +42,23 @@ namespace Btr.History
         public IEnumerable<CourseItem> GetCourse(string coin1, string coin2, DatePeriod period)
         {
             DateTime from = period.From;
+            DateTime to = period.To;
             while (from < period.To)
             {
-                var fromStamp = Utils.DateTimeToUnixTimeStamp(from);
-                string uri = string.Format(URI_PATT, coin1, coin2, LOAD_LIMIT, fromStamp);
+                to = from + _wnd;
+                if (to > period.To) to = period.To;
+                int remainMin = (period.To - from).Minutes;
+                int limit = remainMin < _wnd.Minutes ? _wnd.Minutes : remainMin;
+                to = new DateTime(2017, 11, 7, 12, 38, 00);
+                var toStamp = Utils.DateTimeToUnixTimeStamp(to);
+                string uri = string.Format(URI_PATT, coin1, coin2, toStamp, limit);
                 var data = CallPublic<CCResponse>(uri).Data;
                 foreach (CCItem item in data)
                 {
                     if (period.IsConteins(item.Date))
                         yield return item.CourseItem;
                 }
-                from = data[data.Length - 1].Date.AddMinutes(1);                
+                from.AddMinutes(limit + 1);                
             }
         }
         

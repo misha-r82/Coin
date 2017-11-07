@@ -10,12 +10,12 @@ namespace Btr
     {
         public static DateTime UnixTimeStampToDateTime(ulong unixTimeStamp)
         {
-            return BtrHistory.DateTimeUnixEpochStart.AddSeconds(unixTimeStamp);
+            return PlnHistory.DateTimeUnixEpochStart.AddSeconds(unixTimeStamp);
         }
 
         public static ulong DateTimeToUnixTimeStamp(DateTime dateTime)
         {
-            return (ulong)Math.Floor(dateTime.Subtract(BtrHistory.DateTimeUnixEpochStart).TotalSeconds);
+            return (ulong)Math.Floor(dateTime.Subtract(PlnHistory.DateTimeUnixEpochStart).TotalSeconds);
         }
     }
 }

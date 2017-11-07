@@ -100,7 +100,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TrackSettings.cs" />
-    <Compile Include="BtrHistory.cs" />
+    <Compile Include="PlnHistory.cs" />
     <Compile Include="Data\BtrHistoryItem.cs" />
     <Compile Include="Data\PlnHistoryItem.cs" />
     <Compile Include="Data\Files\MarketSerializer.cs" />

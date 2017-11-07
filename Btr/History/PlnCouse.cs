@@ -32,7 +32,7 @@ namespace Btr.History
             var chunk = new List<PlnHistoryItem>();
             do
             {
-                PlnHistoryItem[] data = BtrHistory.GetHitoryPln(market, loadPeriod)
+                PlnHistoryItem[] data = PlnHistory.GetHitoryPln(market, loadPeriod)
                     .OrderBy(d => d.date).ToArray();
                 Debug.WriteLine("*{0}",loadPeriod);
                 if (data.Length == 0) yield break;
