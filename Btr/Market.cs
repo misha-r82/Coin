@@ -55,32 +55,32 @@ namespace Btr
             }
             return -1;
         }
-        protected DateTime GetTo(DateTime from, DateTime to)
+        /// <summary>
+        /// Загружаем до текущей даты. последний элемент с неполными данными не добавляем
+        /// true если добавлен элемент
+        /// </summary>
+        /// <returns></returns>
+        public bool LoadHistory(DatePeriod period = null)
         {
-            var delta = to - from;
-            delta = new TimeSpan(Interval.Ticks * (delta.Ticks / Interval.Ticks));
-            return from + delta;
-        }
-        public void ReloadNew()
-        {
-            if (CourseData == null || CourseData.Length == 0)
-                throw new Exception("Course Data is not initialized!");
+            if (CourseData == null) CourseData = new CourseItem[0];
+            var course = new PlnCouse();
+            if (period == null)
+            {
+                var last = CourseData[CourseData.Length -1].date;
+                period = new DatePeriod(last,DateTime.Now);
+            }
 
-            var course = new PlnCouse();
-            var last = CourseData[CourseData.Length -1].date;
-            var period = new DatePeriod(last, GetTo(last, DateTime.Now));
             var newData = course.GetHistory(Name, period, Interval).ToArray();
-            var joined = new CourseItem[newData.Length + CourseData.Length];
-            Array.Copy(CourseData, joined, CourseData.Length);
-            Array.Copy(newData, 0, joined, CourseData.Length, newData.Length);
+            int lastNotNul = -1;
+            int pos = 0;
+            foreach (CourseItem item in newData)
+                if (item.course != 0) lastNotNul = pos++;
+            if (lastNotNul < 2) return false;
+            var joined = new CourseItem[newData.Length + lastNotNul + 1];
+            Array.Copy(CourseData, joined, lastNotNul + 1);
+            Array.Copy(newData, 0, joined, CourseData.Length, lastNotNul + 1);
             CourseData = joined;
-        }
-        public void LoadHistory(DatePeriod period)
-        {
-            var from = period.From.Date;
-            var newPeriod = new DatePeriod(from, GetTo(from, period.To));
-            var course = new PlnCouse();
-            CourseData = course.GetHistory(Name, newPeriod, Interval).ToArray();
+            return true;
         }
     }
 }

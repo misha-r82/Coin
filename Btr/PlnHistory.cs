@@ -20,6 +20,7 @@ namespace Btr
             '86400' => 'day',*/
         const string URI_BTR_PATT = "https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName={0}&tickInterval=fiveMin&_={1}";
         const string URI_PLN_PATT = "https://poloniex.com/public?command=returnTradeHistory&currencyPair={0}&start={1}&end={2}";
+
         static PlnHistory()
         {
             ApiCall = new ApiCall(false);

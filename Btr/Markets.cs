@@ -45,7 +45,7 @@ namespace Btr
         {
             var actions = new List<Action>();
             foreach (var pair in MarketList)
-                actions.Add(pair.Value.ReloadNew);
+                actions.Add(() => pair.Value.LoadHistory());
             var pOpt = new ParallelOptions() {MaxDegreeOfParallelism = 16};
             Parallel.Invoke(pOpt, actions.ToArray());
         }
