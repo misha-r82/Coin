@@ -40,7 +40,12 @@ namespace Btr.History
                 do
                 {
                     var item = data[pos];
-                    while (!chunkPeriod.IsConteins(item.date) || pos < data.Length - 1)
+                    while (chunkPeriod.IsConteins(item.date) && pos < data.Length - 1)
+                    {
+                        chunk.Add(item);
+                        item = data[++pos];
+                    }
+                    while (!chunkPeriod.IsConteins(item.date) || !(pos < data.Length - 1))
                     {
                         Debug.WriteLine("{0}", chunkPeriod);
                         yield return new KVPair<DateTime, PlnHistoryItem[]>(chunkPeriod.From, chunk.ToArray());
@@ -48,11 +53,7 @@ namespace Btr.History
                         ShiftPeriod(chunkPeriod, interval);     
                         if (chunkPeriod.To > loadPeriod.To) break;                  
                     }
-                    while (chunkPeriod.IsConteins(item.date) && pos < data.Length - 1)
-                    {
-                        chunk.Add(item);
-                        item = data[++pos];
-                    }
+
                 } while (chunkPeriod.To <= loadPeriod.To);
                 ShiftPeriod(loadPeriod, LoadSize);
 

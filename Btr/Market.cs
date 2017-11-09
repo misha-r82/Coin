@@ -67,17 +67,21 @@ namespace Btr
             if (period == null)
             {
                 var last = CourseData[CourseData.Length -1].date;
-                period = new DatePeriod(last,DateTime.Now);
+                period = new DatePeriod(last + Interval,DateTime.Now);
             }
-
             var newData = course.GetHistory(Name, period, Interval).ToArray();
             int lastNotNul = -1;
             int pos = 0;
             foreach (CourseItem item in newData)
                 if (item.course != 0) lastNotNul = pos++;
-            if (lastNotNul < 2) return false;
-            var joined = new CourseItem[newData.Length + lastNotNul + 1];
-            Array.Copy(CourseData, joined, lastNotNul + 1);
+            if (lastNotNul < 1) return false;
+            if (CourseData.Length == 0)
+            {
+                CourseData = newData;
+                return true;
+            }
+            var joined = new CourseItem[CourseData.Length + lastNotNul + 1];
+            Array.Copy(CourseData, joined, CourseData.Length);
             Array.Copy(newData, 0, joined, CourseData.Length, lastNotNul + 1);
             CourseData = joined;
             return true;

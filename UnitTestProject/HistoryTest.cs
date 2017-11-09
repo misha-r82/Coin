@@ -43,8 +43,8 @@ namespace UnitTestProject
         [TestMethod]
         public void TestPlnCourse()
         {
-            DateTime to = DateTime.Now - new TimeSpan(3,20,0);
-            DateTime from = to - new TimeSpan(0, 3, 0);
+            DateTime to = DateTime.Now - new TimeSpan(3,40,0);
+            DateTime from = to - new TimeSpan(0, 20, 0);
             var market = new Market("USDT_ZEC");
             market.LoadHistory(new DatePeriod(from, to));
             var max = market.CourseData.Max(d => d.date);

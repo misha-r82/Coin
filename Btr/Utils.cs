@@ -8,14 +8,15 @@ namespace Btr
 {
     public class Utils
     {
+        private static readonly DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         public static DateTime UnixTimeStampToDateTime(ulong unixTimeStamp)
         {
-            return PlnHistory.DateTimeUnixEpochStart.AddSeconds(unixTimeStamp);
+            return epoch.AddSeconds(unixTimeStamp);
         }
 
         public static ulong DateTimeToUnixTimeStamp(DateTime dateTime)
         {
-            return (ulong)Math.Floor(dateTime.Subtract(PlnHistory.DateTimeUnixEpochStart).TotalSeconds);
+            return (ulong)Math.Floor(dateTime.Subtract(epoch).TotalSeconds);
         }
     }
 }
