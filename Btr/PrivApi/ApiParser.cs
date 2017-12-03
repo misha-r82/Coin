@@ -15,17 +15,17 @@ namespace Btr.PrivApi
     public class ApiParser
     {
         private readonly TimeSpan TIME_GAP = new TimeSpan(0,0,1);
-        public ApiParser(ApiBase api, bool testMode = false)
+        public ApiParser(ApiBase api)
         {
-            Api = api;
-            _testMode = testMode;
+            Api = api;        
         }
         private ApiBase Api { get; }
-        private bool _testMode;
+        
+
         private int _testId = 0;
         public async Task Buy(Order order)
         {
-            if (_testMode)
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ApiEmulate))
             {
                 order.Id = _testId++;
                 return;
@@ -36,7 +36,7 @@ namespace Btr.PrivApi
         }
         public async Task Sell(Order order)
         {
-            if (_testMode)
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ApiEmulate))
             {
                 order.ComplitedDate = order.PlaceDate;
                 order.Id = _testId++;
@@ -63,7 +63,7 @@ namespace Btr.PrivApi
         public async Task<bool> IsComplited(Order order)
         {
             if (order == null || order.Id < 1) return false;
-            if (_testMode)
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ApiEmulate))
             {
                 order.ComplitedDate = order.PlaceDate;
                 return true;

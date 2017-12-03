@@ -32,7 +32,7 @@ namespace UnitTestProject
             var m = Markets.MarketList["USDT_BTC"];
             var tacker = new CourseTracker(m, new TrackSettings()
             { Delta = delta, GGap = gap });
-            var apiParcer = new ApiParser(new ApiBase(), true);
+            var apiParcer = new ApiParser(new ApiBase());
             var treader = new Treader(tacker, apiParcer);
             var period = new DatePeriod(new DateTime(2017,10,1), new DateTime(2017,10,30));
             var courseData = m.GetData(period);
@@ -62,6 +62,7 @@ namespace UnitTestProject
             DbgSett.Options.Clear();
             DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
             DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
+            DbgSett.Options.Add(DbgSett.DbgOption.ApiEmulate);
             //DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
             TradeTest(0.007, 0.7);
             

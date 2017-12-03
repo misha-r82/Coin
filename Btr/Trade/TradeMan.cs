@@ -17,9 +17,8 @@ namespace Btr
     {
         
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
-        private static TimeSpan _tickInterval { get { return new TimeSpan(0, 0, 3); } }
+        private static TimeSpan _tickInterval { get { return new TimeSpan(0, 0, 20); } }
         [DataMember] private ApiParser _apiParser;
-        private DateTime _lastTreaded;
         public TradeMan()
         {
             _apiParser = new ApiParser(new ApiBase());
@@ -39,25 +38,17 @@ namespace Btr
         {
             
             _timer.Enabled = false;
-            Debug.WriteLine("Timer {0}", DateTime.Now);
+            //Debug.WriteLine("Timer {0}", DateTime.Now);
             DateTime loadedDate = Markets.MarketList.Values.Min(m => m.LastPt.Date);
-            while (loadedDate <= DateTime.Now - Interval - Interval) // т.к. время соотв началу интервала
+            if (loadedDate <= DateTime.Now - Interval) // т.к. время соотв началу интервала
             {
                 Markets.ReloadNew();
                 loadedDate = Markets.MarketList.Values.Min(m => m.LastPt.Date);
+                Debug.WriteLine("Loaded {0}", loadedDate);
             }
-            
-            
-            Debug.WriteLine("Loaded {0}", loadedDate);
-            if (_lastTreaded < DateTime.Now - Interval)
-            {
-                _lastTreaded = loadedDate;
-                 /*foreach (var treader in this)
-                    treader.Trade(treader.Tracker.Market.LastPt);  */
-                 Debug.WriteLine("Trade {0}", _lastTreaded);
-            }
+            foreach (var treader in this)
+                treader.Trade(treader.Tracker.Market.LastPt);
             _timer.Enabled = true;
-
         }
 
         private Timer _timer;

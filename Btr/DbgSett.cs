@@ -20,7 +20,8 @@ namespace Btr
             ShowBuy,
             ShowSell,
             ShowMGrad,
-            ShowUri
+            ShowUri,
+            ApiEmulate
         } 
 
     }

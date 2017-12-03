@@ -24,8 +24,9 @@ namespace Btr
         [DataMember] public List<Seller> Complited { get; private set; }
         [DataMember] public double KSellDist { get; set; }
         [DataMember] private bool _enabled;
-
+        private bool _isBusy;
         [DataMember] private ApiParser _apiParser;
+        private DateTime _lastTreaded;
 
         public bool Enabled
         {
@@ -46,6 +47,7 @@ namespace Btr
             Complited = new List<Seller>();
             Sellers = new List<Seller>();
             Enabled = true;
+            _isBusy = false;
         }
 
 
@@ -64,7 +66,11 @@ namespace Btr
         }
         public async Task Trade(CoursePoint curCourse)
         {
-            if (!Enabled) return;
+            if (!Enabled || _isBusy) return;
+            if (curCourse.Date < _lastTreaded + TradeMan.Interval) return;
+            Debug.WriteLine("Trade {0}", _lastTreaded);
+            _lastTreaded = curCourse.Date;
+            _isBusy = true;
             await CheckComplOrders();
             var trackResult = Tracker.Track(curCourse);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
@@ -80,6 +86,7 @@ namespace Btr
                     if (AllowBuy(curCourse))
                         Buyer.Buy(curCourse, Tracker); break;
             }
+            _isBusy = false;
         }
 
         public async Task CheckComplOrders()

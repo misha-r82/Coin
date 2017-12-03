@@ -66,8 +66,11 @@ namespace Btr
         }
         private void BtnStart_OnClick(object sender, RoutedEventArgs e)
         {
-            var tm = new TradeMan();
-            tm.StartTrade();
+            DbgSett.Options.Clear();
+            DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
+            DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
+            DbgSett.Options.Add(DbgSett.DbgOption.ApiEmulate);
+            TM.StartTrade();
         }
 
         private void BtnLoadMarkets_OnClick(object sender, RoutedEventArgs e)

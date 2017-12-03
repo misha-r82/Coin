@@ -34,7 +34,7 @@ namespace Btr.History
             {
                 PlnHistoryItem[] data = PlnHistory.GetHitoryPln(market, loadPeriod)
                     .OrderBy(d => d.date).ToArray();
-                Debug.WriteLine("*{0}",loadPeriod);
+                //Debug.WriteLine("*{0}",loadPeriod);
                 if (data.Length == 0) yield break;
                 int pos = 0;
                 do
@@ -47,7 +47,7 @@ namespace Btr.History
                     }
                     while (!chunkPeriod.IsConteins(item.date) || !(pos < data.Length - 1))
                     {
-                        Debug.WriteLine("{0}", chunkPeriod);
+                        //Debug.WriteLine("{0}", chunkPeriod);
                         yield return new KVPair<DateTime, PlnHistoryItem[]>(chunkPeriod.From, chunk.ToArray());
                         chunk.Clear();
                         ShiftPeriod(chunkPeriod, interval);     
