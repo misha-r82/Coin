@@ -43,7 +43,7 @@ namespace Btr
                 if (attempts++ > max_attempt) throw new Exception("не удалось получить данные курса", e);
                 return GetHitoryPln(market, period);
             }
-            return result;
+            return result.Where(i=> period.IsConteins(i.date)).ToArray(); // из за погрешностей преобразования времени могут быть выходящие за исходный период
         }
     }
 }
