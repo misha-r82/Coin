@@ -8,10 +8,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
-using Btr.Annotations;
-using Btr.PrivApi;
+using Coin.Annotations;
+using Coin.Polon;
 
-namespace Btr
+namespace Coin
 {
     public enum TradeMode { Wait, Buy, Sell }
     [DataContract]
@@ -25,7 +25,7 @@ namespace Btr
         [DataMember] public double KSellDist { get; set; }
         [DataMember] private bool _enabled;
         private bool _isBusy;
-        [DataMember] private ApiParser _apiParser;
+        [DataMember] private ApiDriver _apiDriver;
         private DateTime _lastTreaded;
 
         public bool Enabled
@@ -39,11 +39,11 @@ namespace Btr
             }
         }
 
-        public Treader(CourseTracker tracker, ApiParser apiParser)
+        public Treader(CourseTracker tracker, ApiDriver apiDriver)
         {
             Tracker = tracker;
-            _apiParser = apiParser;
-            Buyer = new Buyer(apiParser);
+            _apiDriver = apiDriver;
+            Buyer = new Buyer(apiDriver);
             Complited = new List<Seller>();
             Sellers = new List<Seller>();
             Enabled = true;
@@ -92,7 +92,7 @@ namespace Btr
         public async Task CheckComplOrders()
         {
             if (await Buyer.IsCpmplited())
-                Sellers.Add(new Seller(Buyer.PopComplited(), Tracker.Sett, _apiParser));
+                Sellers.Add(new Seller(Buyer.PopComplited(), Tracker.Sett, _apiDriver));
             var deleted = new List<Seller>();
             foreach (Seller seller in Sellers)
             {

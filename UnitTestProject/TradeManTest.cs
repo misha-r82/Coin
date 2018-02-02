@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Windows;
-using Btr;
-using Btr.PrivApi;
+using Coin;
+using Coin.PrivApi;
 using Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

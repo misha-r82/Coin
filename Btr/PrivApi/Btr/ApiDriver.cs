@@ -5,21 +5,21 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using Btr.Polon;
+using Coin.Polon;
 using Lib;
 using Newtonsoft.Json;
 
-namespace Btr.PrivApi
+namespace Coin.Btr
 {
     [DataContract]
-    public class ApiParser
+    public class ApiDriver
     {
         private readonly TimeSpan TIME_GAP = new TimeSpan(0,0,1);
-        public ApiParser(ApiBase api)
+        public ApiDriver(ApiWeb api)
         {
             Api = api;        
         }
-        private ApiBase Api { get; }
+        private ApiWeb Api { get; }
         
 
         private int _testId = 0;

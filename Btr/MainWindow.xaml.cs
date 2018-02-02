@@ -17,14 +17,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Bittrex;
-using Btr.Annotations;
-using Btr.History;
-using Btr.Polon;
-using Btr.PrivApi;
+using Coin.History;
+using Coin.Polon;
+using Coin.Annotations;
 using Lib;
 using Microsoft.Win32;
 
-namespace Btr
+namespace Coin
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -99,13 +98,14 @@ namespace Btr
 
         private void BtnAddTreader_OnClick(object sender, RoutedEventArgs e)
         {
+            /*
             var market = cbMarket.SelectedValue as Market;
             if (market == null) return;
             var tracker = new CourseTracker(market, new TrackSettings());
-            var treader = new Treader(tracker, new ApiParser(new ApiBase()));
+            var treader = new Treader(tracker, new ApiDriver(new ApiBase()));
             var f = new FrmTreaderEditor(treader);
             if (f.ShowDialog() != true) return;
-            TM.Add(treader);
+            TM.Add(treader);*/
         }
     }
 }

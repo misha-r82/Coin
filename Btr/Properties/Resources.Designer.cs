@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Btr.Properties
+namespace Coin.Properties
 {
 
 

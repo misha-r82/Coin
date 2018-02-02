@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Btr.History;
+using Coin.History;
 
-namespace Btr.Files
+namespace Coin.Files
 {
     public class MarketSerializer
     {

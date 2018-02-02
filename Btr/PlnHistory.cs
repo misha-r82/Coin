@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Bittrex;
-using Btr.Data;
+using Coin.Data;
 using Lib;
 
-namespace Btr
+namespace Coin
 {
     public class PlnHistory
     {

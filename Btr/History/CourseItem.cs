@@ -1,6 +1,6 @@
 using System;
 
-namespace Btr
+namespace Coin
 {
     public struct CourseItem
     {

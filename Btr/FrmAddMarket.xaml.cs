@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Lib;
 
-namespace Btr
+namespace Coin
 {
     /// <summary>
     /// Interaction logic for FrmAddMarket.xaml

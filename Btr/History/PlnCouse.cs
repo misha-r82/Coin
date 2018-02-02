@@ -1,13 +1,13 @@
-﻿using Btr.Data;
-using Lib;
+﻿using Lib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Coin.Data;
 
-namespace Btr.History
+namespace Coin.History
 {
     public partial class PlnCouse
     {

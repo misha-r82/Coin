@@ -1,4 +1,4 @@
-﻿using Btr.History;
+﻿using Coin.History;
 using Lib;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Test.Annotations;
 
-namespace Btr
+namespace Coin
 {
     [DataContract]
     public class CourseTracker

@@ -2,10 +2,10 @@ using System;
 using System.Diagnostics;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
-using Btr.PrivApi;
+using Coin.Polon;
 using Lib.Annotations;
 
-namespace Btr
+namespace Coin
 {
     [DataContract]
     public class Seller
@@ -13,16 +13,16 @@ namespace Btr
         [DataMember] public Order BuyOrder { get;}
         [DataMember] public Order SellOrder { get; private set; }
         [DataMember] private TrackSettings _sett;
-        [DataMember] private ApiParser _apiParser;
-        public Seller(Order buyOrder, TrackSettings sett, ApiParser apiParser)
+        [DataMember] private ApiDriver _apiDriver;
+        public Seller(Order buyOrder, TrackSettings sett, ApiDriver apiDriver)
         {
             BuyOrder = buyOrder;
             _sett = sett;
-            _apiParser = apiParser;
+            _apiDriver = apiDriver;
         }
         public async Task<bool> IsCpmplited()
         {
-            return await _apiParser.IsComplited(SellOrder);
+            return await _apiDriver.IsComplited(SellOrder);
         }
         public async Task TrySell(CoursePoint point, Gradient.Grad grad)
         {
@@ -31,7 +31,7 @@ namespace Btr
             if (minDelta < _sett.Delta) minDelta = _sett.Delta;
             if (point.Course < BuyOrder.Price *(1 + minDelta)) return;
             SellOrder = new Order(BuyOrder.Pair, point.Course, BuyOrder.Amount);
-            await _apiParser.Sell(SellOrder);
+            await _apiDriver.Sell(SellOrder);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowSell))
             {
                 var mrg = point.Course - BuyOrder.Price * (1 + _sett.Delta);

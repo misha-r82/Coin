@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Btr
+namespace Coin
 {
     /// <summary>
     /// Interaction logic for FrmTreaderEditor.xaml

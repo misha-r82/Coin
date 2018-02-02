@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Lib;
 using Newtonsoft.Json;
 
-namespace Btr.History
+namespace Coin.History
 {
     public class Cryptocompare
     {

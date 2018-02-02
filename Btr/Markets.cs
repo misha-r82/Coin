@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
-using Btr.Files;
+using Coin.Files;
 using Lib;
 using Newtonsoft.Json;
 
-namespace Btr
+namespace Coin
 {
     public class Markets
     {

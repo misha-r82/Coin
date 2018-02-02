@@ -1,6 +1,6 @@
 ﻿using System;
-using Btr;
-using Btr.PrivApi;
+using Coin;
+using Coin.PrivApi;
 using Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -12,14 +12,14 @@ namespace UnitTestProject
         [TestMethod]
         public void TestMethod1()
         {
-            var api = new Btr.Polon.ApiBase();
+            var api = new Coin.Polon.ApiBase();
             var t = api.MyFunc();
             t.Wait();
         }
         [TestMethod]
         public void TestSell()
         {
-            var api = new Btr.Polon.ApiBase();
+            var api = new Coin.Polon.ApiBase();
             var order = new Order("BTC_LBC", 1, 1);
             var parser = new ApiParser(api);
             var t = parser.Sell(order);
@@ -30,7 +30,7 @@ namespace UnitTestProject
         [TestMethod]
         public void TestHistory()
         {
-            var api = new Btr.Polon.ApiBase();
+            var api = new Coin.Polon.ApiBase();
             var parser = new ApiParser(api);
             var period = new DatePeriod(
                 new DateTime(2017, 10, 5, 20, 30, 0), 

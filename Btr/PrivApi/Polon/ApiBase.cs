@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Lib;
 
-namespace Btr.Polon
+namespace Coin.Polon
 {
     public class ApiBase
     {

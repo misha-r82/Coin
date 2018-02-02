@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using Btr;
-using Btr.History;
+using Coin;
+using Coin.History;
 using Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
-using Btr.History;
+using Coin.History;
 using Lib;
 
-namespace Btr
+namespace Coin
 {
     public class Gradient
     {

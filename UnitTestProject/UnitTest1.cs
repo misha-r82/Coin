@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
-using Btr;
-using Btr.Files;
-using Btr.History;
-using Btr.Polon;
-using Btr.PrivApi;
+using Coin;
+using Coin.Files;
+using Coin.History;
+using Coin.Polon;
+using Coin.PrivApi;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Lib;
 
@@ -32,7 +32,7 @@ namespace UnitTestProject
             var m = Markets.MarketList["USDT_BTC"];
             var tacker = new CourseTracker(m, new TrackSettings()
             { Delta = delta, GGap = gap });
-            var apiParcer = new ApiParser(new ApiBase());
+            var apiParcer = new ApiDriver(new ApiBase());
             var treader = new Treader(tacker, apiParcer);
             var period = new DatePeriod(new DateTime(2017,10,1), new DateTime(2017,10,30));
             var courseData = m.GetData(period);

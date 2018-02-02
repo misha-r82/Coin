@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Resources;
 
-namespace Btr
+namespace Coin
 {
     public enum TrackMode { Neutral, Down, Up, Error }
     public enum EndPoint { None, DownEnd, UpEnd}

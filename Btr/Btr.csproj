@@ -67,10 +67,14 @@
     </Compile>
     <Compile Include="History\CourseItem.cs" />
     <Compile Include="History\cryptocompare.cs" />
-    <Compile Include="PrivApi\ApiBase.cs" />
     <Compile Include="PrivApi\ApiCall.cs" />
     <Compile Include="PrivApi\ApiCallResponse.cs" />
-    <Compile Include="PrivApi\ApiParser.cs" />
+    <Compile Include="PrivApi\ApiWebBase.cs" />
+    <Compile Include="PrivApi\Btr\ApiWeb.cs" />
+    <Compile Include="PrivApi\Btr\ApiDriver.cs" />
+    <Compile Include="PrivApi\IApiDriver.cs" />
+    <Compile Include="PrivApi\Polon\ApiDriver.cs" />
+    <Compile Include="PrivApi\Polon\ApiWeb.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Trade\Buyer.cs" />
     <Compile Include="Trade\CourseTracker.cs" />

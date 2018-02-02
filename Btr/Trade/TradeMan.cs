@@ -6,11 +6,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Timers;
-using Btr.Polon;
-using Btr.PrivApi;
+using Coin.Polon;
 using Lib;
 
-namespace Btr
+namespace Coin
 {
     [CollectionDataContract]
     public class TradeMan : List<Treader>, INotifyCollectionChanged
@@ -18,10 +17,10 @@ namespace Btr
         
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
         private static TimeSpan _tickInterval { get { return new TimeSpan(0, 0, 20); } }
-        [DataMember] private ApiParser _apiParser;
+        [DataMember] private ApiDriver _apiDriver;
         public TradeMan()
         {
-            _apiParser = new ApiParser(new ApiBase());
+            _apiDriver = new ApiDriver(new ApiWeb());
             _timer = new Timer(_tickInterval.TotalMilliseconds);
             _timer.Elapsed += TimerOnElapsed;
             _timer.AutoReset = true;
