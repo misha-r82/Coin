@@ -13,8 +13,8 @@ namespace Coin
         [DataMember] public Order BuyOrder { get;}
         [DataMember] public Order SellOrder { get; private set; }
         [DataMember] private TrackSettings _sett;
-        [DataMember] private ApiDriver _apiDriver;
-        public Seller(Order buyOrder, TrackSettings sett, ApiDriver apiDriver)
+        [DataMember] private IApiDriver _apiDriver;
+        public Seller(Order buyOrder, TrackSettings sett, IApiDriver apiDriver)
         {
             BuyOrder = buyOrder;
             _sett = sett;

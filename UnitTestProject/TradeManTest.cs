@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Windows;
 using Coin;
-using Coin.PrivApi;
+
 using Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

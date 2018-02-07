@@ -13,14 +13,14 @@ namespace Coin
     [DataContract]
     public class Buyer
     {
-        public Buyer(ApiDriver apiDriver)
+        public Buyer(IApiDriver apiDriver)
         {
             _apiDriver = apiDriver;
         }
 
         [DataMember] public double Balance { get; set; }
         [DataMember] public double PartsInvest { get; set; }
-        [DataMember] private ApiDriver _apiDriver;
+        [DataMember] private IApiDriver _apiDriver;
         [DataMember] private Order _Order { get; set; }
 
 

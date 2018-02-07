@@ -5,7 +5,6 @@ using Coin;
 using Coin.Files;
 using Coin.History;
 using Coin.Polon;
-using Coin.PrivApi;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Lib;
 
@@ -14,6 +13,7 @@ namespace UnitTestProject
     [TestClass]
     public class UnitTest1
     {
+        private IApiDriver Api => new Coin.Polon.ApiDriver(new Coin.Polon.ApiWeb());
         [TestMethod]
         public void MarketLoadAndSave()
         {
@@ -32,8 +32,7 @@ namespace UnitTestProject
             var m = Markets.MarketList["USDT_BTC"];
             var tacker = new CourseTracker(m, new TrackSettings()
             { Delta = delta, GGap = gap });
-            var apiParcer = new ApiDriver(new ApiBase());
-            var treader = new Treader(tacker, apiParcer);
+            var treader = new Treader(tacker, Api);
             var period = new DatePeriod(new DateTime(2017,10,1), new DateTime(2017,10,30));
             var courseData = m.GetData(period);
             foreach (CourseItem item in courseData)

@@ -159,7 +159,9 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="UnitTestProject" t="IncludeRecursive">
-        <e p="apiTest.cs" t="Include" />
+        <e p="ApiTest" t="Include">
+          <e p="apiTest.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="FrmsTest.cs" t="Include" />
         <e p="HistoryTest.cs" t="Include" />

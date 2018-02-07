@@ -25,7 +25,7 @@ namespace Coin
         [DataMember] public double KSellDist { get; set; }
         [DataMember] private bool _enabled;
         private bool _isBusy;
-        [DataMember] private ApiDriver _apiDriver;
+        [DataMember] private IApiDriver _apiDriver;
         private DateTime _lastTreaded;
 
         public bool Enabled
@@ -39,7 +39,7 @@ namespace Coin
             }
         }
 
-        public Treader(CourseTracker tracker, ApiDriver apiDriver)
+        public Treader(CourseTracker tracker, IApiDriver apiDriver)
         {
             Tracker = tracker;
             _apiDriver = apiDriver;
