@@ -27,7 +27,11 @@ namespace Coin
         public LeapInfo Leap { get; }
         public Gradient.Grad GPrew { get; private set; }
         public TrackSettings Sett { get { return _sett; } }
-        public Market Market { get { return _market; } }
+        public Market Market
+        {
+            get { return _market; }
+            set => _market = value;
+        }
 
         public EndPoint Track(CoursePoint course)
         {

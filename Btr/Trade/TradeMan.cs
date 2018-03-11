@@ -3,30 +3,46 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Serialization;
+using System.Threading.Tasks;
 using System.Timers;
-using Coin.Polon;
+using System.Windows;
+using Coin.Files;
 using Lib;
 
 namespace Coin
 {
     [CollectionDataContract]
+    [KnownType(typeof(Polon.ApiDriver))]
     public class TradeMan : List<Treader>, INotifyCollectionChanged
     {
-        
+
+        public static TimeSpan MinInterval { get { return new TimeSpan(7,0,0,0);} }
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
-        private static TimeSpan _tickInterval { get { return new TimeSpan(0, 0, 20); } }
-        [DataMember] private ApiDriver _apiDriver;
+        public static TimeSpan TickInterval { get { return new TimeSpan(0, 0, 20); } }
+        [DataMember] private IApiDriver _apiDriver;
+        [DataMember] public string DataDir { get; set; }
         public TradeMan()
         {
-            _apiDriver = new ApiDriver(new ApiWeb());
-            _timer = new Timer(_tickInterval.TotalMilliseconds);
+            _apiDriver = new Polon.ApiDriver();
+            _timer = new Timer(TickInterval.TotalMilliseconds);
             _timer.Elapsed += TimerOnElapsed;
             _timer.AutoReset = true;
             var from = DateTime.Now - MultiPeriodGrad.MaxPeriod;
             var period = new DatePeriod(from, DateTime.Now);
             //Markets.LoadMarkets(period);
+        }
+
+        private void ReloadNew()
+        {
+            var actions = new List<Action>();
+            foreach (var treader in this)
+                actions.Add(() => treader.Tracker.Market.LoadHistory());
+            var pOpt = new ParallelOptions() { MaxDegreeOfParallelism = 16 };
+            Parallel.Invoke(pOpt, actions.ToArray());
         }
         public void Add(Treader treader)
         {
@@ -37,16 +53,8 @@ namespace Coin
         {
             
             _timer.Enabled = false;
-            //Debug.WriteLine("Timer {0}", DateTime.Now);
-            DateTime loadedDate = Markets.MarketList.Values.Min(m => m.LastPt.Date);
-            if (loadedDate <= DateTime.Now - Interval) // т.к. время соотв началу интервала
-            {
-                Markets.ReloadNew();
-                loadedDate = Markets.MarketList.Values.Min(m => m.LastPt.Date);
-                Debug.WriteLine("Loaded {0}", loadedDate);
-            }
             foreach (var treader in this)
-                treader.Trade(treader.Tracker.Market.LastPt);
+                treader.OnTick();
             _timer.Enabled = true;
         }
 
@@ -64,10 +72,10 @@ namespace Coin
                 CollectionChanged(this,
                     new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
-        /*[OnDeserializing]
-        private void OnDeserializing(StreamingContext c)
-        {
-            OnCreated();
-        }*/
+//        [OnDeserializing]
+//        private void OnDeserializing(StreamingContext c)
+//        {
+//            LoadMarkets();
+//        }
     }
 }

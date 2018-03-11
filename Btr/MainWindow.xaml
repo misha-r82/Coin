@@ -61,8 +61,8 @@
             <Button Name="BtnMarkets" Content="Markets" Click="EditMarkets_OnClick"/>
             <Button Name="btnLoadMarkets" Content="Load" Click="BtnLoadMarkets_OnClick"/>
             <Button Name="btnSaveMarkets" Content="Save" Click="BtnSaveMarkets_OnClick"/>
-            <ComboBox Name="cbMarket" SelectedItem="{Binding Tracker.Market}" DisplayMemberPath="Name"
-                      ItemsSource="{Binding Source={x:Static local:Markets.MarketList}, Path=Values}"/>
+            <!--<ComboBox Name="cbMarket" SelectedItem="{Binding Tracker.Market}" DisplayMemberPath="Name"
+                      ItemsSource="{Binding Source={x:Static local:Markets.MarketList}, Path=Values}"/>-->
             <Button Name="btnAddTreader" Content="+" Width="20" Click="BtnAddTreader_OnClick"/>
             <Button Name="btnStart" Content="RunTrade" Click="BtnStart_OnClick"/>
         </StackPanel>

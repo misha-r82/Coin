@@ -16,7 +16,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Bittrex;
 using Coin.History;
 using Coin.Polon;
 using Coin.Annotations;
@@ -51,8 +50,6 @@ namespace Coin
         {
             var f= new FrmAddMarket();
             f.ShowDialog();
-
-
         }
         private void btnEditTreaderClick(object sender, RoutedEventArgs e)
         {

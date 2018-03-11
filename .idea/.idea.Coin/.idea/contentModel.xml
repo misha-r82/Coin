@@ -9,36 +9,7 @@
         <e p="NuGet.targets" t="Include" />
       </e>
       <e p="Btr" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="App.xaml" t="Include" />
-        <e p="App.xaml.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Btr.csproj" t="IncludeRecursive" />
-        <e p="Data" t="Include">
-          <e p="BtrHistoryItem.cs" t="Include" />
-          <e p="Files" t="Include">
-            <e p="MarketSerializer.cs" t="Include" />
-          </e>
-          <e p="PlnHistoryItem.cs" t="Include" />
-        </e>
-        <e p="DbgSett.cs" t="Include" />
-        <e p="FrmAddMarket.xaml" t="Include" />
-        <e p="FrmAddMarket.xaml.cs" t="Include" />
-        <e p="FrmTreaderEditor.xaml" t="Include" />
-        <e p="FrmTreaderEditor.xaml.cs" t="Include" />
-        <e p="History" t="Include">
-          <e p="CourseItem.cs" t="Include" />
-          <e p="cryptocompare.cs" t="Include" />
-          <e p="PlnCouse.cs" t="Include" />
-        </e>
-        <e p="MainWindow.xaml" t="Include" />
-        <e p="MainWindow.xaml.cs" t="Include" />
-        <e p="Market.cs" t="Include" />
-        <e p="Markets.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="PlnHistory.cs" t="Include" />
-        <e p="Polon" t="Include" />
-        <e p="PrivApi" t="Include">
+        <e p="Api" t="Include">
           <e p="ApiCall.cs" t="Include" />
           <e p="ApiCallResponse.cs" t="Include" />
           <e p="ApiWebBase.cs" t="Include" />
@@ -52,6 +23,32 @@
             <e p="ApiWeb.cs" t="Include" />
           </e>
         </e>
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Btr.csproj" t="IncludeRecursive" />
+        <e p="Data" t="Include">
+          <e p="BtrHistoryItem.cs" t="Include" />
+          <e p="Files" t="Include">
+            <e p="MarketSerializer.cs" t="Include" />
+          </e>
+          <e p="HistoryItem.cs" t="Include" />
+        </e>
+        <e p="DbgSett.cs" t="Include" />
+        <e p="FrmAddMarket.xaml" t="Include" />
+        <e p="FrmAddMarket.xaml.cs" t="Include" />
+        <e p="FrmTreaderEditor.xaml" t="Include" />
+        <e p="FrmTreaderEditor.xaml.cs" t="Include" />
+        <e p="History" t="Include">
+          <e p="CourseItem.cs" t="Include" />
+          <e p="Couse.cs" t="Include" />
+          <e p="cryptocompare.cs" t="Include" />
+        </e>
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="Market.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
         <e p="Properties" t="Include">
           <e p="Annotations.cs" t="Include" />
           <e p="AssemblyInfo.cs" t="Include" />
@@ -72,6 +69,7 @@
           <e p="Seller.cs" t="Include" />
           <e p="TradeMan.cs" t="Include" />
           <e p="Trader.cs" t="Include" />
+          <e p="TreaderFactory.cs" t="Include" />
         </e>
         <e p="Utils.cs" t="Include" />
       </e>
@@ -169,6 +167,7 @@
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
+        <e p="SerializeTest.cs" t="Include" />
         <e p="TradeManTest.cs" t="Include" />
         <e p="UnitTest1.cs" t="Include" />
         <e p="UnitTestProject.csproj" t="IncludeRecursive" />

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
 using Coin.Annotations;
+using Coin.Files;
 using Coin.Polon;
 
 namespace Coin
@@ -25,9 +26,13 @@ namespace Coin
         [DataMember] public double KSellDist { get; set; }
         [DataMember] private bool _enabled;
         private bool _isBusy;
-        [DataMember] private IApiDriver _apiDriver;
+        [DataMember] private Market _market;
         private DateTime _lastTreaded;
 
+        public Market Market
+        {
+            get { return _market; }
+        }
         public bool Enabled
         {
             get { return _enabled; }
@@ -39,17 +44,25 @@ namespace Coin
             }
         }
 
-        public Treader(CourseTracker tracker, IApiDriver apiDriver)
+        public Treader()
         {
-            Tracker = tracker;
-            _apiDriver = apiDriver;
-            Buyer = new Buyer(apiDriver);
+
             Complited = new List<Seller>();
             Sellers = new List<Seller>();
             Enabled = true;
             _isBusy = false;
         }
-
+        [OnSerialized]
+        public void OnSerialize(StreamingContext sc)
+        {
+            MarketSerializer.SerializeMarket(Market);
+        }
+        public Treader(Market market, TrackSettings trackSett) : base()
+        {
+            _market = market;
+            Tracker = new CourseTracker(market, trackSett);
+            Buyer = new Buyer(market.Api);
+        }
 
         private bool AllowBuy(CoursePoint pt)
         {
@@ -64,13 +77,21 @@ namespace Coin
             foreach(var seller in Sellers)
                 seller.TrySell(pt, Tracker.GPrew);            
         }
-        public async Task Trade(CoursePoint curCourse)
+
+        public async Task OnTick()
         {
             if (!Enabled || _isBusy) return;
+            _isBusy = true;
+            if (Tracker.Market.LoadHistory())
+                Trade(Tracker.Market.LastPt);
+        }
+        private async Task Trade(CoursePoint curCourse)
+        {
+
             if (curCourse.Date < _lastTreaded + TradeMan.Interval) return;
             Debug.WriteLine("Trade {0}", _lastTreaded);
             _lastTreaded = curCourse.Date;
-            _isBusy = true;
+
             await CheckComplOrders();
             var trackResult = Tracker.Track(curCourse);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
@@ -92,7 +113,7 @@ namespace Coin
         public async Task CheckComplOrders()
         {
             if (await Buyer.IsCpmplited())
-                Sellers.Add(new Seller(Buyer.PopComplited(), Tracker.Sett, _apiDriver));
+                Sellers.Add(new Seller(Buyer.PopComplited(), Tracker.Sett, _market.Api));
             var deleted = new List<Seller>();
             foreach (Seller seller in Sellers)
             {

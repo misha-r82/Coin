@@ -19,9 +19,9 @@
                 <Button Name="btnRemove" Content="-" Click="BtnRemove_OnClick" Width="20"/>
             </StackPanel>
             
-            <ListView Name="lvMarkets" ItemsSource="{Binding Source={x:Static local:Markets.MarketList}, Path=Values}" DisplayMemberPath="Name">
+            <!--<ListView Name="lvMarkets" ItemsSource="{Binding Source={x:Static local:Markets.MarketList}, Path=Values}" DisplayMemberPath="Name">
                 
-            </ListView>
+            </ListView>-->
             <Button Name="btnSave" Content="Сохранить" Click="BtnSave_OnClick"/>
         </StackPanel>
         

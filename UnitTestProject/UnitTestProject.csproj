@@ -58,6 +58,7 @@
     <Compile Include="ApiTest\apiTest.cs" />
     <Compile Include="FrmsTest.cs" />
     <Compile Include="HistoryTest.cs" />
+    <Compile Include="SerializeTest.cs" />
     <Compile Include="TradeManTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

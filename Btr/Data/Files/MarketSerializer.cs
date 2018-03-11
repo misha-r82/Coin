@@ -11,9 +11,17 @@ namespace Coin.Files
     public class MarketSerializer
     {
         public const int VER = 0;
-        public static void SerializeMarket(Market market, string file)
+        private const char SEPARATOR = '_';
+        private const string FILE_EXT = "mar";
+        public static string MarDataDir { get; set; } = "c:\\Markt\\";
+
+        private static string GetFileName(Market market)
         {
-            using (FileStream stream = new FileStream(file, FileMode.Create))
+            return MarDataDir + market.Api.Name + SEPARATOR + market.Name + '.' + FILE_EXT;
+        }
+        public static void SerializeMarket(Market market)
+        {
+            using (FileStream stream = new FileStream(GetFileName(market), FileMode.Create))
             {
                 using (BinaryWriter writer = new BinaryWriter(stream))
                 {
@@ -30,32 +38,40 @@ namespace Coin.Files
             }
         }
 
-        public static Market DeserializeMarket(string file)
+        public static Market DeserializeMarket(Market market)
         {
             string name = "";
             var data = new List<CourseItem>();
-            using (FileStream stream = new FileStream(file, FileMode.Open))
+            try
             {
-                try
+                using (FileStream stream = new FileStream(GetFileName(market), FileMode.Open))
                 {
-                    using (BinaryReader reader = new BinaryReader(stream))
+                    try
                     {
-                        int ver = reader.ReadInt32();
-                        name = reader.ReadString();
-                        while (true)
+                        using (BinaryReader reader = new BinaryReader(stream))
                         {
-                            var ticks = reader.ReadInt64();
-                            var course = reader.ReadDouble();
-                            double delta = reader.ReadDouble();
-                            var item = new CourseItem(new DateTime(ticks), course, delta);
-                            data.Add(item);
+                            int ver = reader.ReadInt32();
+                            name = reader.ReadString();
+                            while (true)
+                            {
+                                var ticks = reader.ReadInt64();
+                                var course = reader.ReadDouble();
+                                double delta = reader.ReadDouble();
+                                var item = new CourseItem(new DateTime(ticks), course, delta);
+                                data.Add(item);
+                            }
                         }
                     }
+                    catch (EndOfStreamException e) { }
                 }
-                catch (EndOfStreamException e) { }
+                market.CourseData = data.ToArray();
             }
-            var market = new Market(name);
-            market.CourseData = data.ToArray();
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
             return market;
 
         }

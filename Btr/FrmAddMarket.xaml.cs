@@ -28,23 +28,23 @@ namespace Coin
         private void BtnAdd_OnClick(object sender, RoutedEventArgs e)
         {
             string name = txtMarketName.Text;
-            var market = new Market(name);
+            var market = new Market(name, new Polon.ApiDriver());
             market.LoadHistory(new DatePeriod(DateTime.Now - MultiPeriodGrad.MaxPeriod, DateTime.Now));
-            Markets.MarketList.Add(name, market);
-            lvMarkets.Items.Refresh();
+            //Markets.MarketList.Add(market);
+            //lvMarkets.Items.Refresh();
         }
 
         private void BtnSave_OnClick(object sender, RoutedEventArgs e)
         {
-            Markets.SaveMarkets();
+            //Markets.SaveMarkets();
         }
 
         private void BtnRemove_OnClick(object sender, RoutedEventArgs e)
         {
-            var markets = lvMarkets.SelectedItems.OfType<Market>();
-            foreach (var market in markets)
-                Markets.MarketList.Remove(market.Name);
-            lvMarkets.Items.Refresh();
+            //var markets = lvMarkets.SelectedItems.OfType<Market>();
+            //foreach (var market in markets)
+                //Markets.MarketList.Remove(market);
+            //lvMarkets.Items.Refresh();
         }
     }
 }

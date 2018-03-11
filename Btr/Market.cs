@@ -12,13 +12,22 @@ namespace Coin
     [DataContract]
     public class Market
     {
-        public Market(string name)
+        public Market(string name, IApiDriver api)
         {
             Name = name;
             Interval = TradeMan.Interval;
+            CourseData = new CourseItem[0];
+            _api = api;
         }
-        private TimeSpan Interval { get; }
-
+        [DataMember] public string Name { get; set; }
+        [DataMember] private IApiDriver _api;
+        [DataMember] private TimeSpan Interval { get; set; }
+        private TimeSpan LoadDepth { get { return new TimeSpan(7,0,0,0);} }
+        public CourseItem[] CourseData;
+        public IApiDriver Api
+        {
+            get { return _api; }
+        }
         public CoursePoint LastPt
         {
             get
@@ -28,13 +37,10 @@ namespace Coin
                 return new CoursePoint(course.course, course.date);
             }
         }
-
-        [DataMember] public string Name { get; set; }
-        public CourseItem[] CourseData;
         public IEnumerable<CourseItem> GetData(DatePeriod period)
         {
             int pos = Array.BinarySearch(CourseData, new CourseItem(period.From, 0, 0),
-                new PlnCouse.DateComparer());
+                new Course.DateComparer());
             if (pos < 0) pos = ~pos;
             if (pos < 0) yield break; 
             while (pos < CourseData.Length && period.IsConteins(CourseData[pos].date))
@@ -62,12 +68,20 @@ namespace Coin
         /// <returns></returns>
         public bool LoadHistory(DatePeriod period = null)
         {
-            if (CourseData == null) CourseData = new CourseItem[0];
-            var course = new PlnCouse();
-            if (period == null)
+            var course = new Course(_api);
+            if (CourseData == null)// нет истории
             {
-                var last = CourseData[CourseData.Length -1].date;
-                period = new DatePeriod(last + Interval,DateTime.Now);
+                if (CourseData.Length == 0)
+                {
+                    CourseData = new CourseItem[0];
+                    var nowDate = DateTime.Now;
+                    period = new DatePeriod(nowDate - LoadDepth, DateTime.Now);
+                }
+                else
+                {
+                    var last = CourseData[CourseData.Length -1].date;
+                    period = new DatePeriod(last + Interval,DateTime.Now);                    
+                }
             }
             var newData = course.GetHistory(Name, period, Interval).ToArray();
             int lastNotNul = -1;

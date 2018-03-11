@@ -10,7 +10,7 @@ namespace UnitTestProject
     [TestClass]
     public class HistoryTest
     {
-        private TimeSpan _interval = new TimeSpan(0, 0, 5);
+        /*private TimeSpan _interval = new TimeSpan(0, 0, 5);
         [TestMethod]
         public void TestMethod1()
         {
@@ -34,7 +34,7 @@ namespace UnitTestProject
         {
             DateTime to = DateTime.Now;
             DateTime from = to - new TimeSpan(3, 0, 0);
-            var course = new PlnCouse();
+            var course = new Course();
             var data = course.GetHistory("USDT_ZEC", new DatePeriod(from, to), _interval).ToArray();
             var max = data.Max(d => d.date);
             var min = data.Min(d => d.date);
@@ -53,6 +53,6 @@ namespace UnitTestProject
             max = market.CourseData.Max(d => d.date);
             min = market.CourseData.Min(d => d.date);
 
-        }
+        }*/
     }
 }

@@ -13,7 +13,7 @@ namespace UnitTestProject
     [TestClass]
     public class UnitTest1
     {
-        private IApiDriver Api => new Coin.Polon.ApiDriver(new Coin.Polon.ApiWeb());
+        /*private IApiDriver Market => new Coin.Polon.ApiDriver(new Coin.Polon.ApiWeb());
         [TestMethod]
         public void MarketLoadAndSave()
         {
@@ -32,7 +32,7 @@ namespace UnitTestProject
             var m = Markets.MarketList["USDT_BTC"];
             var tacker = new CourseTracker(m, new TrackSettings()
             { Delta = delta, GGap = gap });
-            var treader = new Treader(tacker, Api);
+            var treader = new Treader(tacker, Market);
             var period = new DatePeriod(new DateTime(2017,10,1), new DateTime(2017,10,30));
             var courseData = m.GetData(period);
             foreach (CourseItem item in courseData)
@@ -81,7 +81,7 @@ namespace UnitTestProject
                 delta += 0.005;
             }
 
-        }
+        }*/
 
     }
 }

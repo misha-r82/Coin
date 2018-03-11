@@ -67,14 +67,14 @@
     </Compile>
     <Compile Include="History\CourseItem.cs" />
     <Compile Include="History\cryptocompare.cs" />
-    <Compile Include="PrivApi\ApiCall.cs" />
-    <Compile Include="PrivApi\ApiCallResponse.cs" />
-    <Compile Include="PrivApi\ApiWebBase.cs" />
-    <Compile Include="PrivApi\Btr\ApiWeb.cs" />
-    <Compile Include="PrivApi\Btr\ApiDriver.cs" />
-    <Compile Include="PrivApi\IApiDriver.cs" />
-    <Compile Include="PrivApi\Polon\ApiDriver.cs" />
-    <Compile Include="PrivApi\Polon\ApiWeb.cs" />
+    <Compile Include="Api\ApiCall.cs" />
+    <Compile Include="Api\ApiCallResponse.cs" />
+    <Compile Include="Api\ApiWebBase.cs" />
+    <Compile Include="Api\Btr\ApiWeb.cs" />
+    <Compile Include="Api\Btr\ApiDriver.cs" />
+    <Compile Include="Api\IApiDriver.cs" />
+    <Compile Include="Api\Polon\ApiDriver.cs" />
+    <Compile Include="Api\Polon\ApiWeb.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Trade\Buyer.cs" />
     <Compile Include="Trade\CourseTracker.cs" />
@@ -86,6 +86,7 @@
     <Compile Include="Trade\Seller.cs" />
     <Compile Include="Trade\TradeMan.cs" />
     <Compile Include="Trade\Trader.cs" />
+    <Compile Include="Trade\TreaderFactory.cs" />
     <Compile Include="Utils.cs" />
     <Page Include="FrmAddMarket.xaml">
       <SubType>Designer</SubType>
@@ -104,14 +105,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TrackSettings.cs" />
-    <Compile Include="PlnHistory.cs" />
     <Compile Include="Data\BtrHistoryItem.cs" />
-    <Compile Include="Data\PlnHistoryItem.cs" />
+    <Compile Include="Data\HistoryItem.cs" />
     <Compile Include="Data\Files\MarketSerializer.cs" />
     <Compile Include="FrmAddMarket.xaml.cs">
       <DependentUpon>FrmAddMarket.xaml</DependentUpon>
     </Compile>
-    <Compile Include="History\PlnCouse.cs" />
+    <Compile Include="History\Couse.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -119,7 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Market.cs" />
-    <Compile Include="Markets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -152,9 +151,7 @@
       <Name>Lib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Polon\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
