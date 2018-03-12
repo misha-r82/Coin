@@ -22,7 +22,7 @@ namespace Coin
         [DataMember] public string Name { get; set; }
         [DataMember] private IApiDriver _api;
         [DataMember] private TimeSpan Interval { get; set; }
-        private TimeSpan LoadDepth { get { return new TimeSpan(7,0,0,0);} }
+        private TimeSpan LoadDepth { get { return new TimeSpan(0,0,0,0);} }
         public CourseItem[] CourseData;
         public IApiDriver Api
         {
@@ -69,36 +69,33 @@ namespace Coin
         public bool LoadHistory(DatePeriod period = null)
         {
             var course = new Course(_api);
-            if (CourseData == null)// нет истории
+            if (CourseData.Length == 0)// нет истории
+            {               
+                CourseData = new CourseItem[0];
+                var to = DateTime.Now;
+                var from = (to - LoadDepth).Date;
+                period = new DatePeriod(from, to);
+            }
+            else
             {
-                if (CourseData.Length == 0)
-                {
-                    CourseData = new CourseItem[0];
-                    var nowDate = DateTime.Now;
-                    period = new DatePeriod(nowDate - LoadDepth, DateTime.Now);
-                }
-                else
-                {
-                    var last = CourseData[CourseData.Length -1].date;
-                    period = new DatePeriod(last + Interval,DateTime.Now);                    
-                }
+                var last = CourseData[CourseData.Length -1].date;
+                period = new DatePeriod(last + Interval,DateTime.Now);                    
             }
             var newData = course.GetHistory(Name, period, Interval).ToArray();
             int lastNotNul = -1;
-            int pos = 0;
-            foreach (CourseItem item in newData)
-                if (item.course != 0) lastNotNul = pos++;
+            for (int i = newData.Length - 1; i>-1; i--)
+                if (newData[i].course != 0)
+                {
+                    lastNotNul = i;
+                    break;
+                }
             if (lastNotNul < 1) return false;
-            if (CourseData.Length == 0)
-            {
-                CourseData = newData;
-                return true;
-            }
             var joined = new CourseItem[CourseData.Length + lastNotNul + 1];
             Array.Copy(CourseData, joined, CourseData.Length);
             Array.Copy(newData, 0, joined, CourseData.Length, lastNotNul + 1);
             CourseData = joined;
             return true;
         }
+
     }
 }
