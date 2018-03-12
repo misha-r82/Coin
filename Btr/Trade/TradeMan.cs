@@ -20,7 +20,7 @@ namespace Coin
     public class TradeMan : List<Treader>, INotifyCollectionChanged
     {
 
-        public static TimeSpan MinInterval { get { return new TimeSpan(7,0,0,0);} }
+        public static TimeSpan MinInterval { get { return new TimeSpan(1,0,0,0);} }
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
         public static TimeSpan TickInterval { get { return new TimeSpan(0, 0, 20); } }
         [DataMember] private IApiDriver _apiDriver;

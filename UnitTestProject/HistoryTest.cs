@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Net.NetworkInformation;
 using Coin;
+using Coin.Api;
+using Coin.Data;
 using Coin.History;
 using Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -10,6 +13,13 @@ namespace UnitTestProject
     [TestClass]
     public class HistoryTest
     {
+        [TestMethod]
+        public void TestMethod1()
+        {
+            var apiCall = new ApiCall(false);
+            apiCall.CallWithJsonResponse<HistoryItem[]>(
+                @"https://poloniex.com/exchange#btc_eth");
+        }
         /*private TimeSpan _interval = new TimeSpan(0, 0, 5);
         [TestMethod]
         public void TestMethod1()

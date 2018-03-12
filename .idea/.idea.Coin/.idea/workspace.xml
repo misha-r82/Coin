@@ -1,36 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1e58542-1ed6-4045-9b1e-1396a9213372" name="Default" comment="">
+    <list default="true" id="c1e58542-1ed6-4045-9b1e-1396a9213372" name="Default" comment="Глобальная переделка, сохранение tradeMan">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Btr/Btr.csproj" afterPath="$PROJECT_DIR$/Btr/Btr.csproj" />
-      <change beforePath="$PROJECT_DIR$/Btr/Data/Files/MarketSerializer.cs" afterPath="$PROJECT_DIR$/Btr/Data/Files/MarketSerializer.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/Data/PlnHistoryItem.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/FrmAddMarket.xaml" afterPath="$PROJECT_DIR$/Btr/FrmAddMarket.xaml" />
-      <change beforePath="$PROJECT_DIR$/Btr/FrmAddMarket.xaml.cs" afterPath="$PROJECT_DIR$/Btr/FrmAddMarket.xaml.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/History/PlnCouse.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/MainWindow.xaml" afterPath="$PROJECT_DIR$/Btr/MainWindow.xaml" />
-      <change beforePath="$PROJECT_DIR$/Btr/MainWindow.xaml.cs" afterPath="$PROJECT_DIR$/Btr/MainWindow.xaml.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/Market.cs" afterPath="$PROJECT_DIR$/Btr/Market.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/Markets.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PlnHistory.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PrivApi/ApiCall.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PrivApi/ApiCallResponse.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PrivApi/ApiWebBase.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PrivApi/Btr/ApiDriver.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PrivApi/Btr/ApiWeb.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PrivApi/IApiDriver.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PrivApi/Polon/ApiBase.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PrivApi/Polon/ApiCallResponse.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PrivApi/Polon/ApiDriver.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/PrivApi/Polon/ApiWeb.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" afterPath="$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" />
       <change beforePath="$PROJECT_DIR$/Btr/Trade/TradeMan.cs" afterPath="$PROJECT_DIR$/Btr/Trade/TradeMan.cs" />
       <change beforePath="$PROJECT_DIR$/Btr/Trade/Trader.cs" afterPath="$PROJECT_DIR$/Btr/Trade/Trader.cs" />
-      <change beforePath="$PROJECT_DIR$/UnitTestProject/FrmsTest.cs" afterPath="$PROJECT_DIR$/UnitTestProject/FrmsTest.cs" />
       <change beforePath="$PROJECT_DIR$/UnitTestProject/HistoryTest.cs" afterPath="$PROJECT_DIR$/UnitTestProject/HistoryTest.cs" />
-      <change beforePath="$PROJECT_DIR$/UnitTestProject/UnitTest1.cs" afterPath="$PROJECT_DIR$/UnitTestProject/UnitTest1.cs" />
-      <change beforePath="$PROJECT_DIR$/UnitTestProject/UnitTestProject.csproj" afterPath="$PROJECT_DIR$/UnitTestProject/UnitTestProject.csproj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,22 +16,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TradeMan.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TradeMan.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Btr/Trade/TradeMan.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="22" column="53" lean-forward="false" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+            <state relative-caret-position="748">
+              <caret line="57" column="34" lean-forward="false" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
               <folding>
-                <marker date="1520767287674" expanded="false" signature="6:361" ph="..." />
-                <marker date="1520767287674" expanded="true" signature="377:2619" ph="{...}" />
-                <marker date="1520767287674" expanded="true" signature="517:2617" ph="{...}" />
-                <marker date="1520767287674" expanded="true" signature="909:1293" ph="{...}" />
-                <marker date="1520767287674" expanded="true" signature="1327:1640" ph="{...}" />
-                <marker date="1520767287674" expanded="true" signature="1681:1767" ph="{...}" />
-                <marker date="1520767287674" expanded="true" signature="1853:2033" ph="{...}" />
-                <marker date="1520767287674" expanded="true" signature="2097:2152" ph="{...}" />
-                <marker date="1520767287674" expanded="true" signature="2272:2471" ph="{...}" />
-                <marker date="1520767287674" expanded="true" signature="2472:2611" ph="/* [OnDeserializing] ... */" />
+                <marker date="1520881683599" expanded="false" signature="6:361" ph="..." />
+                <marker date="1520881683599" expanded="true" signature="377:2619" ph="{...}" />
+                <marker date="1520881683599" expanded="true" signature="517:2617" ph="{...}" />
+                <marker date="1520881683599" expanded="true" signature="909:1293" ph="{...}" />
+                <marker date="1520881683599" expanded="true" signature="1327:1640" ph="{...}" />
+                <marker date="1520881683599" expanded="true" signature="1681:1767" ph="{...}" />
+                <marker date="1520881683599" expanded="true" signature="1853:2033" ph="{...}" />
+                <marker date="1520881683599" expanded="true" signature="2097:2152" ph="{...}" />
+                <marker date="1520881683599" expanded="true" signature="2272:2471" ph="{...}" />
+                <marker date="1520881683599" expanded="true" signature="2472:2611" ph="/* [OnDeserializing] ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Market.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Btr/Market.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="929">
+              <caret line="77" column="13" lean-forward="false" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+              <folding>
+                <marker date="1520884657768" expanded="false" signature="6:182" ph="..." />
+                <marker date="1520884657768" expanded="true" signature="198:3815" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="243:3813" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="300:455" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="762:815" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="849:1137" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="875:1127" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="1203:1566" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="1612:2358" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="2087:2325" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="2367:2564" ph="/// Загружаем до текущей даты. последний элемент с неполными данными не добавляем ... " />
+                <marker date="1520884657768" expanded="true" signature="2622:3806" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="2729:2960" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="2977:3162" ph="{...}" />
+                <marker date="1520884657768" expanded="true" signature="3374:3473" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -177,6 +178,11 @@
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="Coin (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Coin (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Btr" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -247,7 +253,10 @@
       <workItem from="1517557679619" duration="1813000" />
       <workItem from="1517583264330" duration="3983000" />
       <workItem from="1518038382297" duration="185000" />
-      <workItem from="1520767701426" duration="24000" />
+      <workItem from="1520767701426" duration="655000" />
+      <workItem from="1520795406850" duration="656000" />
+      <workItem from="1520797934022" duration="17000" />
+      <workItem from="1520884558675" duration="175000" />
     </task>
     <task id="LOCAL-00001" summary="Убрал лишние проекты исправил ошибку NET1">
       <created>1508263127919</created>
@@ -298,11 +307,25 @@
       <option name="project" value="LOCAL" />
       <updated>1518038433807</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Глобальная переделка, сохранение tradeMan">
+      <created>1520767757744</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1520767757744</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Market загрузка истории при отсутствии элементов курса">
+      <created>1520884727239</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1520884727239</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47354000" />
+    <option name="totallyTimeSpent" value="48833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -321,16 +344,16 @@
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13157895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13157895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -354,20 +377,22 @@
     <MESSAGE value="Начало работы над классом Buyer" />
     <MESSAGE value="Вынес классы ApiWeb и ApiDriver для полоникса и бтрикса" />
     <MESSAGE value="Продолжение отвязки от полоникса" />
-    <option name="LAST_COMMIT_MESSAGE" value="Продолжение отвязки от полоникса" />
+    <MESSAGE value="Глобальная переделка, сохранение tradeMan" />
+    <MESSAGE value="Market загрузка истории при отсутствии элементов курса" />
+    <option name="LAST_COMMIT_MESSAGE" value="Market загрузка истории при отсутствии элементов курса" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/UnitTestProject/HistoryTest.cs</url>
-          <line>27</line>
+          <line>29</line>
           <properties documentPath="$PROJECT_DIR$/UnitTestProject/HistoryTest.cs">
             <startOffsets>
-              <startOffset value="881" />
+              <startOffset value="872" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="882" />
+              <endOffset value="873" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="30" />
@@ -407,16 +432,16 @@
         <state relative-caret-position="240">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="20" selection-end-column="36" />
           <folding>
-            <marker date="1520767287674" expanded="false" signature="6:361" ph="..." />
-            <marker date="1520767287674" expanded="true" signature="377:2619" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="517:2617" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="909:1293" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="1327:1640" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="1681:1767" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="1853:2033" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="2097:2152" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="2272:2471" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="2472:2611" ph="/* [OnDeserializing] ... */" />
+            <marker date="1520881683599" expanded="false" signature="6:361" ph="..." />
+            <marker date="1520881683599" expanded="true" signature="377:2619" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="517:2617" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="909:1293" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="1327:1640" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="1681:1767" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="1853:2033" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="2097:2152" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="2272:2471" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="2472:2611" ph="/* [OnDeserializing] ... */" />
           </folding>
         </state>
       </provider>
@@ -549,13 +574,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Btr/PlnHistory.cs" />
-    <entry file="file://$PROJECT_DIR$/Btr/Market.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="65" column="32" lean-forward="false" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Btr/History/PlnCouse.cs" />
     <entry file="file://$PROJECT_DIR$/Btr/Trade/Trader.cs">
       <provider selected="true" editor-type-id="text-editor">
@@ -597,19 +615,19 @@
     <entry file="file://$PROJECT_DIR$/Btr/PrivApi/Polon/ApiWeb.cs" />
     <entry file="file://$PROJECT_DIR$/Btr/Trade/TradeMan.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="22" column="53" lean-forward="false" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+        <state relative-caret-position="748">
+          <caret line="57" column="34" lean-forward="false" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
           <folding>
-            <marker date="1520767287674" expanded="false" signature="6:361" ph="..." />
-            <marker date="1520767287674" expanded="true" signature="377:2619" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="517:2617" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="909:1293" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="1327:1640" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="1681:1767" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="1853:2033" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="2097:2152" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="2272:2471" ph="{...}" />
-            <marker date="1520767287674" expanded="true" signature="2472:2611" ph="/* [OnDeserializing] ... */" />
+            <marker date="1520881683599" expanded="false" signature="6:361" ph="..." />
+            <marker date="1520881683599" expanded="true" signature="377:2619" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="517:2617" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="909:1293" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="1327:1640" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="1681:1767" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="1853:2033" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="2097:2152" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="2272:2471" ph="{...}" />
+            <marker date="1520881683599" expanded="true" signature="2472:2611" ph="/* [OnDeserializing] ... */" />
           </folding>
         </state>
       </provider>
@@ -623,5 +641,29 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UnitTestProject/apiTest.cs" />
+    <entry file="file://$PROJECT_DIR$/Btr/Market.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="929">
+          <caret line="77" column="13" lean-forward="false" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+          <folding>
+            <marker date="1520884657768" expanded="false" signature="6:182" ph="..." />
+            <marker date="1520884657768" expanded="true" signature="198:3815" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="243:3813" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="300:455" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="762:815" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="849:1137" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="875:1127" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="1203:1566" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="1612:2358" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="2087:2325" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="2367:2564" ph="/// Загружаем до текущей даты. последний элемент с неполными данными не добавляем ... " />
+            <marker date="1520884657768" expanded="true" signature="2622:3806" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="2729:2960" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="2977:3162" ph="{...}" />
+            <marker date="1520884657768" expanded="true" signature="3374:3473" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

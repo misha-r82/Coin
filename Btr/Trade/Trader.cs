@@ -52,11 +52,6 @@ namespace Coin
             Enabled = true;
             _isBusy = false;
         }
-        [OnSerialized]
-        public void OnSerialize(StreamingContext sc)
-        {
-            MarketSerializer.SerializeMarket(Market);
-        }
         public Treader(Market market, TrackSettings trackSett) : base()
         {
             _market = market;
@@ -126,7 +121,17 @@ namespace Coin
             foreach (Seller seller in deleted)
                 Sellers.Remove(seller);
         }
-
+        [OnSerialized]
+        public void OnSerialize(StreamingContext sc)
+        {
+            MarketSerializer.SerializeMarket(Market);
+        }
+        [OnDeserialized]
+        public void OnDeserialized(StreamingContext sc)
+        {
+            var tmpMar = MarketSerializer.DeserializeMarket(Market);
+            Market.CourseData = tmpMar.CourseData;
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
