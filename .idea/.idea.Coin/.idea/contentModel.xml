@@ -36,8 +36,6 @@
           <e p="HistoryItem.cs" t="Include" />
         </e>
         <e p="DbgSett.cs" t="Include" />
-        <e p="FrmAddMarket.xaml" t="Include" />
-        <e p="FrmAddMarket.xaml.cs" t="Include" />
         <e p="FrmTreaderEditor.xaml" t="Include" />
         <e p="FrmTreaderEditor.xaml.cs" t="Include" />
         <e p="History" t="Include">

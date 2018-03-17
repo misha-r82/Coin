@@ -20,9 +20,9 @@ namespace Coin
     public class TradeMan : List<Treader>, INotifyCollectionChanged
     {
 
-        public static TimeSpan MinInterval { get { return new TimeSpan(1,0,0,0);} }
-        public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
-        public static TimeSpan TickInterval { get { return new TimeSpan(0, 0, 20); } }
+        public static TimeSpan MinInterval { get { return new TimeSpan(7,0,0,0);} }
+        public static TimeSpan Interval{get { return new TimeSpan(0, 0, 20); }}
+        public static TimeSpan TickInterval { get { return new TimeSpan(0, 0, 2); } }
         [DataMember] private IApiDriver _apiDriver;
         [DataMember] public string DataDir { get; set; }
         public TradeMan()
@@ -34,15 +34,6 @@ namespace Coin
             var from = DateTime.Now - MultiPeriodGrad.MaxPeriod;
             var period = new DatePeriod(from, DateTime.Now);
             //Markets.LoadMarkets(period);
-        }
-
-        private void ReloadNew()
-        {
-            var actions = new List<Action>();
-            foreach (var treader in this)
-                actions.Add(() => treader.Tracker.Market.LoadHistory());
-            var pOpt = new ParallelOptions() { MaxDegreeOfParallelism = 16 };
-            Parallel.Invoke(pOpt, actions.ToArray());
         }
         public void Add(Treader treader)
         {
@@ -64,6 +55,10 @@ namespace Coin
             _timer.Enabled = true;
         }
 
+        public void StopTreading()
+        {
+            _timer.Enabled = false;
+        }
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         public void OnCollectionChanged()

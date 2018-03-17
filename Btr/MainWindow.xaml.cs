@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -16,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Btr.Trade;
 using Coin.History;
 using Coin.Polon;
 using Coin.Annotations;
@@ -48,8 +50,8 @@ namespace Coin
         }
         private void EditMarkets_OnClick(object sender, RoutedEventArgs e)
         {
-            var f= new FrmAddMarket();
-            f.ShowDialog();
+            /*var f= new FrmAddMarket();
+            f.ShowDialog();*/
         }
         private void btnEditTreaderClick(object sender, RoutedEventArgs e)
         {
@@ -62,11 +64,22 @@ namespace Coin
         }
         private void BtnStart_OnClick(object sender, RoutedEventArgs e)
         {
-            DbgSett.Options.Clear();
-            DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
-            DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
-            DbgSett.Options.Add(DbgSett.DbgOption.ApiEmulate);
-            TM.StartTrade();
+            var btn = (Button)sender;
+            if (btn.Content.ToString() == "Start")
+            {
+                DbgSett.Options.Clear();
+                DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
+                DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
+                DbgSett.Options.Add(DbgSett.DbgOption.ApiEmulate);
+                TM.StartTrade();
+                btn.Content = "Stop";
+            }
+            else
+            {
+                TM.StopTreading();
+                btn.Content = "Start";
+            }
+
         }
 
         private void BtnLoadMarkets_OnClick(object sender, RoutedEventArgs e)
@@ -81,7 +94,7 @@ namespace Coin
         {
             var f = new SaveFileDialog();
             if (f.ShowDialog(this) != true) return;
-            FileIO.serializeDataContract(TM, f.FileName);
+            FileIO.serializeDataContract(TM, f.FileName, new DataContractSerializerSettings(){PreserveObjectReferences = true});
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -95,14 +108,10 @@ namespace Coin
 
         private void BtnAddTreader_OnClick(object sender, RoutedEventArgs e)
         {
-            /*
-            var market = cbMarket.SelectedValue as Market;
-            if (market == null) return;
-            var tracker = new CourseTracker(market, new TrackSettings());
-            var treader = new Treader(tracker, new ApiDriver(new ApiBase()));
+            Treader treader = TreaderFactory.CreateTreader;
             var f = new FrmTreaderEditor(treader);
             if (f.ShowDialog() != true) return;
-            TM.Add(treader);*/
+            TM.Add(treader);
         }
     }
 }

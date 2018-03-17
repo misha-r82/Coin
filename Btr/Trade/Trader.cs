@@ -75,18 +75,17 @@ namespace Coin
 
         public async Task OnTick()
         {
+            Debug.WriteLine("Tick {0:h:mm:ss}", DateTime.Now);
             if (!Enabled || _isBusy) return;
-            _isBusy = true;
             if (Tracker.Market.LoadHistory())
                 Trade(Tracker.Market.LastPt);
         }
         private async Task Trade(CoursePoint curCourse)
         {
-
             if (curCourse.Date < _lastTreaded + TradeMan.Interval) return;
-            Debug.WriteLine("Trade {0}", _lastTreaded);
+            Debug.WriteLine("Trade {0:h:mm:ss}", DateTime.Now);
             _lastTreaded = curCourse.Date;
-
+            _isBusy = true;
             await CheckComplOrders();
             var trackResult = Tracker.Track(curCourse);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))

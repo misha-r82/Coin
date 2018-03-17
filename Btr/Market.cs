@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -81,6 +82,7 @@ namespace Coin
                 var last = CourseData[CourseData.Length -1].date;
                 period = new DatePeriod(last + Interval,DateTime.Now);                    
             }
+            Debug.WriteLine("Load History {0}", period);
             var newData = course.GetHistory(Name, period, Interval).ToArray();
             int lastNotNul = -1;
             for (int i = newData.Length - 1; i>-1; i--)

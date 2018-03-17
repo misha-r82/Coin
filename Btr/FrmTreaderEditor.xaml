@@ -22,8 +22,9 @@
     
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Market"/>
+            <TextBox Text="{Binding Market.Name}"/>
     </StackPanel>
-        <TextBlock Text="{Binding Tracker.Market.Name}"></TextBlock>
+
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Balance"/>
         <TextBox Text="{Binding Buyer.Balance}"/>

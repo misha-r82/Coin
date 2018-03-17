@@ -88,10 +88,6 @@
     <Compile Include="Trade\Trader.cs" />
     <Compile Include="Trade\TreaderFactory.cs" />
     <Compile Include="Utils.cs" />
-    <Page Include="FrmAddMarket.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="FrmTreaderEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,9 +104,6 @@
     <Compile Include="Data\BtrHistoryItem.cs" />
     <Compile Include="Data\HistoryItem.cs" />
     <Compile Include="Data\Files\MarketSerializer.cs" />
-    <Compile Include="FrmAddMarket.xaml.cs">
-      <DependentUpon>FrmAddMarket.xaml</DependentUpon>
-    </Compile>
     <Compile Include="History\Couse.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
