@@ -9,10 +9,10 @@
 <StackPanel>
     <StackPanel.Resources>
         <Style TargetType="TextBlock">
-            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Margin" Value="3"/>
             </Style>
         <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Margin" Value="3"/>
             <Setter Property="MinWidth" Value="40"></Setter>
         </Style>
         <Style TargetType="ComboBox">
@@ -39,7 +39,15 @@
     </StackPanel>
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="Gap"/>
-            <TextBox Text="{Binding Tracker.Sett.GGap}"/>
+        <TextBox Text="{Binding Tracker.Sett.GGap}"/>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+        <TextBlock Text="MaxBuy"/>
+        <TextBox Text="{Binding MaxBuy}"/>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+        <TextBlock Text="MinSell"/>
+        <TextBox Text="{Binding MinSell}"/>
     </StackPanel>
     <Button IsDefault="True" Content="OK" Margin="10" Width="80" Click="Button_Click"/>
     </StackPanel>

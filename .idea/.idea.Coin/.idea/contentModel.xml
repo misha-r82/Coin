@@ -30,10 +30,8 @@
         <e p="Btr.csproj" t="IncludeRecursive" />
         <e p="Data" t="Include">
           <e p="BtrHistoryItem.cs" t="Include" />
-          <e p="Files" t="Include">
-            <e p="MarketSerializer.cs" t="Include" />
-          </e>
           <e p="HistoryItem.cs" t="Include" />
+          <e p="MarketSerializer.cs" t="Include" />
         </e>
         <e p="DbgSett.cs" t="Include" />
         <e p="FrmTreaderEditor.xaml" t="Include" />

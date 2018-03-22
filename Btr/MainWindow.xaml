@@ -26,6 +26,8 @@
                 
                 <DataGridTextColumn Header="Market" Binding="{Binding Tracker.Market.Name}"/>
                 <DataGridTextColumn Header="Balance" Binding="{Binding Buyer.Balance}"/>
+                <DataGridTextColumn Header="MaxBuy" Binding="{Binding MaxBuy}"/>
+                <DataGridTextColumn Header="MinSell" Binding="{Binding MinSell}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

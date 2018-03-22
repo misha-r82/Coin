@@ -24,7 +24,7 @@ namespace Coin
             Leap = new LeapInfo();
         }
 
-        public LeapInfo Leap { get; }
+        [DataMember] public LeapInfo Leap { get; private set; }
         public Gradient.Grad GPrew { get; private set; }
         public TrackSettings Sett { get { return _sett; } }
         public Market Market

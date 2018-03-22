@@ -21,8 +21,8 @@ namespace Coin
     {
 
         public static TimeSpan MinInterval { get { return new TimeSpan(7,0,0,0);} }
-        public static TimeSpan Interval{get { return new TimeSpan(0, 0, 20); }}
-        public static TimeSpan TickInterval { get { return new TimeSpan(0, 0, 2); } }
+        public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
+        public static TimeSpan TickInterval { get { return new TimeSpan(0, 0, 5); } }
         [DataMember] private IApiDriver _apiDriver;
         [DataMember] public string DataDir { get; set; }
         public TradeMan()

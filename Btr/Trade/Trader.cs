@@ -24,10 +24,11 @@ namespace Coin
         [DataMember] public List<Seller> Sellers { get; private set; }
         [DataMember] public List<Seller> Complited { get; private set; }
         [DataMember] public double KSellDist { get; set; }
+        [DataMember] public double MaxBuy { get; set; }
+        [DataMember] public double MinSell { get; set; }
         [DataMember] private bool _enabled;
         private bool _isBusy;
         [DataMember] private Market _market;
-        private DateTime _lastTreaded;
 
         public Market Market
         {
@@ -52,7 +53,7 @@ namespace Coin
             Enabled = true;
             _isBusy = false;
         }
-        public Treader(Market market, TrackSettings trackSett) : base()
+        public Treader(Market market, TrackSettings trackSett) : this()
         {
             _market = market;
             Tracker = new CourseTracker(market, trackSett);
@@ -61,6 +62,7 @@ namespace Coin
 
         private bool AllowBuy(CoursePoint pt)
         {
+            if (pt.Course > MaxBuy) return false;
             if (!Sellers.Any()) return true;
             double minPrice = Sellers.Min(s=>s.BuyOrder.Price);
             double gap = KSellDist * Tracker.Sett.Delta * Math.Sqrt(Sellers.Count);
@@ -69,6 +71,7 @@ namespace Coin
 
         private void TrySell(CoursePoint pt)
         {
+            if (pt.Course < MinSell) return;
             foreach(var seller in Sellers)
                 seller.TrySell(pt, Tracker.GPrew);            
         }
@@ -78,13 +81,11 @@ namespace Coin
             Debug.WriteLine("Tick {0:h:mm:ss}", DateTime.Now);
             if (!Enabled || _isBusy) return;
             if (Tracker.Market.LoadHistory())
-                Trade(Tracker.Market.LastPt);
+                  Trade(Tracker.Market.LastPt);
         }
         private async Task Trade(CoursePoint curCourse)
         {
-            if (curCourse.Date < _lastTreaded + TradeMan.Interval) return;
             Debug.WriteLine("Trade {0:h:mm:ss}", DateTime.Now);
-            _lastTreaded = curCourse.Date;
             _isBusy = true;
             await CheckComplOrders();
             var trackResult = Tracker.Track(curCourse);

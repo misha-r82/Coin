@@ -17,13 +17,14 @@ namespace Coin
         {
             Name = name;
             Interval = TradeMan.Interval;
+            From = DateTime.Now.Date - TradeMan.MinInterval;
             CourseData = new CourseItem[0];
             _api = api;
         }
         [DataMember] public string Name { get; set; }
         [DataMember] private IApiDriver _api;
         [DataMember] private TimeSpan Interval { get; set; }
-        private TimeSpan LoadDepth { get { return new TimeSpan(0,0,0,0);} }
+        [DataMember] private DateTime From { get; set; }
         public CourseItem[] CourseData;
         public IApiDriver Api
         {
@@ -70,17 +71,16 @@ namespace Coin
         public bool LoadHistory(DatePeriod period = null)
         {
             var course = new Course(_api);
-            if (CourseData.Length == 0)// нет истории
-            {               
-                CourseData = new CourseItem[0];
-                var to = DateTime.Now;
-                var from = (to - LoadDepth).Date;
-                period = new DatePeriod(from, to);
-            }
-            else
+            if (period == null)
             {
-                var last = CourseData[CourseData.Length -1].date;
-                period = new DatePeriod(last + Interval,DateTime.Now);                    
+                var to = new DateTime( DateTime.Now.Ticks / Interval.Ticks * Interval.Ticks);
+                if (CourseData.Length == 0) // нет истории
+                    period = new DatePeriod(From, to);
+                else
+                {
+                    var last = CourseData[CourseData.Length - 1].date;
+                    period = new DatePeriod(last + Interval, to);
+                }
             }
             Debug.WriteLine("Load History {0}", period);
             var newData = course.GetHistory(Name, period, Interval).ToArray();

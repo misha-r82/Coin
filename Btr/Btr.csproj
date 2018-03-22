@@ -103,7 +103,7 @@
     <Compile Include="TrackSettings.cs" />
     <Compile Include="Data\BtrHistoryItem.cs" />
     <Compile Include="Data\HistoryItem.cs" />
-    <Compile Include="Data\Files\MarketSerializer.cs" />
+    <Compile Include="Data\MarketSerializer.cs" />
     <Compile Include="History\Couse.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
