@@ -26,12 +26,6 @@ namespace Coin
 
         public void Buy(CoursePoint buyPoint, CourseTracker tracker)
         {
-            Gradient.Grad grad = tracker.GPrew;
-            LeapInfo leap = tracker.Leap;
-            double minDelta = Math.Abs(grad.GPos / grad.GNeg) * tracker.Sett.Delta;
-
-            if (minDelta < tracker.Sett.Delta) minDelta = tracker.Sett.Delta;
-            if (buyPoint.Course > leap.DownBegin.Course * (1 - minDelta)) return;
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowBuy))
                 Debug.WriteLine("Buy={0} {1}", buyPoint, tracker.Leap.Mode);
             _Order = new Order(tracker.Market.Name,  buyPoint.Course, Balance / PartsInvest);

@@ -38,8 +38,8 @@
             <TextBox Text="{Binding Tracker.Sett.Delta}"/>
     </StackPanel>
     <StackPanel Orientation="Horizontal">
-        <TextBlock Text="Gap"/>
-        <TextBox Text="{Binding Tracker.Sett.GGap}"/>
+        <TextBlock Text="KGrad"/>
+        <TextBox Text="{Binding Tracker.Sett.KGrad}"/>
     </StackPanel>
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="MaxBuy"/>

@@ -22,7 +22,7 @@ namespace Coin
 
         public static TimeSpan MinInterval { get { return new TimeSpan(7,0,0,0);} }
         public static TimeSpan Interval{get { return new TimeSpan(0, 5, 0); }}
-        public static TimeSpan TickInterval { get { return new TimeSpan(0, 0, 5); } }
+        public static TimeSpan TickInterval { get { return new TimeSpan(0, 1, 0); } }
         [DataMember] private IApiDriver _apiDriver;
         [DataMember] public string DataDir { get; set; }
         public TradeMan()
@@ -52,7 +52,7 @@ namespace Coin
         private Timer _timer;
         public void StartTrade()
         {
-            _timer.Enabled = true;
+            TimerOnElapsed(null, null);
         }
 
         public void StopTreading()
@@ -66,6 +66,11 @@ namespace Coin
             if (CollectionChanged != null)
                 CollectionChanged(this,
                     new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+        }
+
+        public Treader this[string platform, string market]
+        {
+            get { return this.First(t => t.Tracker.Market.Api.Name == platform && t.Market.Name == market); }
         }
 //        [OnDeserializing]
 //        private void OnDeserializing(StreamingContext c)

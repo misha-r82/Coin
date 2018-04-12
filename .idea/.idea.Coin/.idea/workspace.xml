@@ -4,13 +4,19 @@
     <list default="true" id="c1e58542-1ed6-4045-9b1e-1396a9213372" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Btr/Btr.csproj" afterPath="$PROJECT_DIR$/Btr/Btr.csproj" />
-      <change beforePath="$PROJECT_DIR$/Btr/Data/Files/MarketSerializer.cs" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Btr/FrmTreaderEditor.xaml" afterPath="$PROJECT_DIR$/Btr/FrmTreaderEditor.xaml" />
-      <change beforePath="$PROJECT_DIR$/Btr/MainWindow.xaml" afterPath="$PROJECT_DIR$/Btr/MainWindow.xaml" />
-      <change beforePath="$PROJECT_DIR$/Btr/Market.cs" afterPath="$PROJECT_DIR$/Btr/Market.cs" />
+      <change beforePath="$PROJECT_DIR$/Btr/MainWindow.xaml.cs" afterPath="$PROJECT_DIR$/Btr/MainWindow.xaml.cs" />
+      <change beforePath="$PROJECT_DIR$/Btr/TrackSettings.cs" afterPath="$PROJECT_DIR$/Btr/TrackSettings.cs" />
+      <change beforePath="$PROJECT_DIR$/Btr/Trade/Buyer.cs" afterPath="$PROJECT_DIR$/Btr/Trade/Buyer.cs" />
       <change beforePath="$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" afterPath="$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" />
+      <change beforePath="$PROJECT_DIR$/Btr/Trade/Gradient.cs" afterPath="$PROJECT_DIR$/Btr/Trade/Gradient.cs" />
+      <change beforePath="$PROJECT_DIR$/Btr/Trade/LeapInfo.cs" afterPath="$PROJECT_DIR$/Btr/Trade/LeapInfo.cs" />
+      <change beforePath="$PROJECT_DIR$/Btr/Trade/MultiPeriodGrad.cs" afterPath="$PROJECT_DIR$/Btr/Trade/MultiPeriodGrad.cs" />
+      <change beforePath="$PROJECT_DIR$/Btr/Trade/Seller.cs" afterPath="$PROJECT_DIR$/Btr/Trade/Seller.cs" />
       <change beforePath="$PROJECT_DIR$/Btr/Trade/TradeMan.cs" afterPath="$PROJECT_DIR$/Btr/Trade/TradeMan.cs" />
       <change beforePath="$PROJECT_DIR$/Btr/Trade/Trader.cs" afterPath="$PROJECT_DIR$/Btr/Trade/Trader.cs" />
+      <change beforePath="$PROJECT_DIR$/UnitTestProject/UnitTest1.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/UnitTestProject/UnitTestProject.csproj" afterPath="$PROJECT_DIR$/UnitTestProject/UnitTestProject.csproj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,10 +33,10 @@
             <state relative-caret-position="595">
               <caret line="48" column="34" lean-forward="false" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
               <folding>
-                <marker date="1521663874039" expanded="false" signature="6:361" ph="..." />
-                <marker date="1521663874039" expanded="true" signature="517:2360" ph="{...}" />
-                <marker date="1521663874039" expanded="true" signature="2015:2214" ph="{...}" />
-                <marker date="1521663874039" expanded="true" signature="2215:2354" ph="/* [OnDeserializing] ... */" />
+                <marker date="1522832787999" expanded="false" signature="6:361" ph="..." />
+                <marker date="1522832787999" expanded="true" signature="517:2556" ph="{...}" />
+                <marker date="1522832787999" expanded="true" signature="2400:2410" ph="{...}" />
+                <marker date="1522832787999" expanded="true" signature="2411:2550" ph="/* [OnDeserializing] ... */" />
               </folding>
             </state>
           </provider>
@@ -39,8 +45,8 @@
       <file leaf-file-name="Market.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Btr/Market.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1014">
-              <caret line="83" column="13" lean-forward="false" selection-start-line="83" selection-start-column="13" selection-end-line="84" selection-end-column="56" />
+            <state relative-caret-position="1286">
+              <caret line="99" column="9" lean-forward="false" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
               <folding>
                 <marker date="1521663614862" expanded="false" signature="6:208" ph="..." />
                 <marker date="1521663614862" expanded="true" signature="224:3915" ph="{...}" />
@@ -65,26 +71,26 @@
       <file leaf-file-name="MainWindow.xaml.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Btr/MainWindow.xaml.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="111" column="39" lean-forward="false" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
+            <state relative-caret-position="1496">
+              <caret line="112" column="39" lean-forward="false" selection-start-line="112" selection-start-column="39" selection-end-line="112" selection-end-column="39" />
               <folding>
-                <marker date="1521314883576" expanded="false" signature="6:645" ph="..." />
-                <marker date="1521314883576" expanded="true" signature="661:3774" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="668:746" ph="/// Interaction logic for MainWindow.xaml ... " />
-                <marker date="1521314883576" expanded="true" signature="815:3772" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="849:969" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="1131:1341" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="1154:1321" ph="/* Ex = new Exchange(); ... */" />
-                <marker date="1521314883576" expanded="true" signature="1416:1507" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="1439:1497" ph="/* var f= new FrmAddMarket(); ... */" />
-                <marker date="1521314883576" expanded="true" signature="1582:1889" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="1961:2526" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="2060:2396" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="2413:2515" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="2605:2845" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="2924:3167" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="3372:3479" ph="{...}" />
-                <marker date="1521314883576" expanded="true" signature="3558:3766" ph="{...}" />
+                <marker date="1521747496443" expanded="false" signature="6:645" ph="..." />
+                <marker date="1521747496443" expanded="true" signature="661:3837" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="668:746" ph="/// Interaction logic for MainWindow.xaml ... " />
+                <marker date="1521747496443" expanded="true" signature="815:3835" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="849:969" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="1131:1341" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="1154:1321" ph="/* Ex = new Exchange(); ... */" />
+                <marker date="1521747496443" expanded="true" signature="1416:1507" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="1439:1497" ph="/* var f= new FrmAddMarket(); ... */" />
+                <marker date="1521747496443" expanded="true" signature="1582:1889" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="1961:2526" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="2060:2396" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="2413:2515" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="2605:2845" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="2924:3167" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="3372:3479" ph="{...}" />
+                <marker date="1521747496443" expanded="true" signature="3558:3829" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -103,7 +109,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Btr/MainWindow.xaml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/UnitTestProject/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UnitTestProject/HistoryTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Market.cs" root0="FORCE_HIGHLIGHTING" />
@@ -270,7 +275,8 @@
       <workItem from="1520797934022" duration="17000" />
       <workItem from="1520884558675" duration="225000" />
       <workItem from="1521315173168" duration="754000" />
-      <workItem from="1521747253136" duration="6000" />
+      <workItem from="1521747253136" duration="636000" />
+      <workItem from="1523567006123" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="Убрал лишние проекты исправил ошибку NET1">
       <created>1508263127919</created>
@@ -349,11 +355,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521315304706</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="MaxBuy MinSell">
+      <created>1521747289908</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1521747289908</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49643000" />
+    <option name="totallyTimeSpent" value="50277000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -372,16 +385,16 @@
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13157895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -409,7 +422,8 @@
     <MESSAGE value="Market загрузка истории при отсутствии элементов курса" />
     <MESSAGE value="Сериализация/Десериализация с загрузкой рынков" />
     <MESSAGE value="DВывод отадочной информации исправление сериализации (сохряютссылки на макеты)" />
-    <option name="LAST_COMMIT_MESSAGE" value="DВывод отадочной информации исправление сериализации (сохряютссылки на макеты)" />
+    <MESSAGE value="MaxBuy MinSell" />
+    <option name="LAST_COMMIT_MESSAGE" value="MaxBuy MinSell" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -462,10 +476,10 @@
         <state relative-caret-position="240">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="20" selection-end-column="36" />
           <folding>
-            <marker date="1521663874039" expanded="false" signature="6:361" ph="..." />
-            <marker date="1521663874039" expanded="true" signature="517:2360" ph="{...}" />
-            <marker date="1521663874039" expanded="true" signature="2015:2214" ph="{...}" />
-            <marker date="1521663874039" expanded="true" signature="2215:2354" ph="/* [OnDeserializing] ... */" />
+            <marker date="1522832787999" expanded="false" signature="6:361" ph="..." />
+            <marker date="1522832787999" expanded="true" signature="517:2556" ph="{...}" />
+            <marker date="1522832787999" expanded="true" signature="2400:2410" ph="{...}" />
+            <marker date="1522832787999" expanded="true" signature="2411:2550" ph="/* [OnDeserializing] ... */" />
           </folding>
         </state>
       </provider>
@@ -554,13 +568,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTestProject/UnitTest1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTestProject/UnitTest1.cs" />
     <entry file="file://$PROJECT_DIR$/Lib/Files/FileIO.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="883">
@@ -642,36 +650,36 @@
         <state relative-caret-position="595">
           <caret line="48" column="34" lean-forward="false" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
           <folding>
-            <marker date="1521663874039" expanded="false" signature="6:361" ph="..." />
-            <marker date="1521663874039" expanded="true" signature="517:2360" ph="{...}" />
-            <marker date="1521663874039" expanded="true" signature="2015:2214" ph="{...}" />
-            <marker date="1521663874039" expanded="true" signature="2215:2354" ph="/* [OnDeserializing] ... */" />
+            <marker date="1522832787999" expanded="false" signature="6:361" ph="..." />
+            <marker date="1522832787999" expanded="true" signature="517:2556" ph="{...}" />
+            <marker date="1522832787999" expanded="true" signature="2400:2410" ph="{...}" />
+            <marker date="1522832787999" expanded="true" signature="2411:2550" ph="/* [OnDeserializing] ... */" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Btr/MainWindow.xaml.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="111" column="39" lean-forward="false" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
+        <state relative-caret-position="1496">
+          <caret line="112" column="39" lean-forward="false" selection-start-line="112" selection-start-column="39" selection-end-line="112" selection-end-column="39" />
           <folding>
-            <marker date="1521314883576" expanded="false" signature="6:645" ph="..." />
-            <marker date="1521314883576" expanded="true" signature="661:3774" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="668:746" ph="/// Interaction logic for MainWindow.xaml ... " />
-            <marker date="1521314883576" expanded="true" signature="815:3772" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="849:969" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="1131:1341" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="1154:1321" ph="/* Ex = new Exchange(); ... */" />
-            <marker date="1521314883576" expanded="true" signature="1416:1507" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="1439:1497" ph="/* var f= new FrmAddMarket(); ... */" />
-            <marker date="1521314883576" expanded="true" signature="1582:1889" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="1961:2526" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="2060:2396" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="2413:2515" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="2605:2845" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="2924:3167" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="3372:3479" ph="{...}" />
-            <marker date="1521314883576" expanded="true" signature="3558:3766" ph="{...}" />
+            <marker date="1521747496443" expanded="false" signature="6:645" ph="..." />
+            <marker date="1521747496443" expanded="true" signature="661:3837" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="668:746" ph="/// Interaction logic for MainWindow.xaml ... " />
+            <marker date="1521747496443" expanded="true" signature="815:3835" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="849:969" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="1131:1341" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="1154:1321" ph="/* Ex = new Exchange(); ... */" />
+            <marker date="1521747496443" expanded="true" signature="1416:1507" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="1439:1497" ph="/* var f= new FrmAddMarket(); ... */" />
+            <marker date="1521747496443" expanded="true" signature="1582:1889" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="1961:2526" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="2060:2396" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="2413:2515" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="2605:2845" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="2924:3167" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="3372:3479" ph="{...}" />
+            <marker date="1521747496443" expanded="true" signature="3558:3829" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -679,8 +687,8 @@
     <entry file="file://$PROJECT_DIR$/UnitTestProject/apiTest.cs" />
     <entry file="file://$PROJECT_DIR$/Btr/Market.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1014">
-          <caret line="83" column="13" lean-forward="false" selection-start-line="83" selection-start-column="13" selection-end-line="84" selection-end-column="56" />
+        <state relative-caret-position="1286">
+          <caret line="99" column="9" lean-forward="false" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
           <folding>
             <marker date="1521663614862" expanded="false" signature="6:208" ph="..." />
             <marker date="1521663614862" expanded="true" signature="224:3915" ph="{...}" />

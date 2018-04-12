@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Resources;
 
 namespace Coin
@@ -13,6 +14,16 @@ namespace Coin
         public CoursePoint DownEnd { get; private set; }
 
         public TrackMode Mode { get; private set; }
+
+        public CoursePoint LastPt
+        {
+            get
+            {
+                var points = new  []{ UpBegin, UpEnd, DownBegin, DownEnd };
+                var maxTime = points.Max(pt => pt.Date);
+                return points.First(pt => pt.Date == maxTime);
+            }
+        }
 
         public LeapInfo()
         {

@@ -84,6 +84,8 @@
     <Compile Include="Trade\MultiPeriodGrad.cs" />
     <Compile Include="Trade\Order.cs" />
     <Compile Include="Trade\Seller.cs" />
+    <Compile Include="Trade\SmartDelta.cs" />
+    <Compile Include="Trade\SygnalGenerator.cs" />
     <Compile Include="Trade\TradeMan.cs" />
     <Compile Include="Trade\Trader.cs" />
     <Compile Include="Trade\TreaderFactory.cs" />

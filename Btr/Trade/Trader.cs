@@ -73,7 +73,7 @@ namespace Coin
         {
             if (pt.Course < MinSell) return;
             foreach(var seller in Sellers)
-                seller.TrySell(pt, Tracker.GPrew);            
+                seller.TrySell(pt, Tracker.G1);            
         }
 
         public async Task OnTick()
@@ -83,9 +83,10 @@ namespace Coin
             if (Tracker.Market.LoadHistory())
                   Trade(Tracker.Market.LastPt);
         }
-        private async Task Trade(CoursePoint curCourse)
+
+        public async Task Trade(CoursePoint curCourse)
         {
-            Debug.WriteLine("Trade {0:h:mm:ss}", DateTime.Now);
+            //Debug.WriteLine("Trade {0:h:mm:ss}", DateTime.Now);
             _isBusy = true;
             await CheckComplOrders();
             var trackResult = Tracker.Track(curCourse);

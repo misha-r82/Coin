@@ -63,6 +63,8 @@
           <e p="MultiPeriodGrad.cs" t="Include" />
           <e p="Order.cs" t="Include" />
           <e p="Seller.cs" t="Include" />
+          <e p="SmartDelta.cs" t="Include" />
+          <e p="SygnalGenerator.cs" t="Include" />
           <e p="TradeMan.cs" t="Include" />
           <e p="Trader.cs" t="Include" />
           <e p="TreaderFactory.cs" t="Include" />
@@ -165,7 +167,7 @@
         </e>
         <e p="SerializeTest.cs" t="Include" />
         <e p="TradeManTest.cs" t="Include" />
-        <e p="UnitTest1.cs" t="Include" />
+        <e p="TradeTest.cs" t="Include" />
         <e p="UnitTestProject.csproj" t="IncludeRecursive" />
       </e>
     </e>

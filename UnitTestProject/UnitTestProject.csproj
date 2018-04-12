@@ -60,7 +60,7 @@
     <Compile Include="HistoryTest.cs" />
     <Compile Include="SerializeTest.cs" />
     <Compile Include="TradeManTest.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TradeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

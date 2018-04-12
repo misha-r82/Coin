@@ -27,9 +27,6 @@ namespace Coin
         public async Task TrySell(CoursePoint point, Gradient.Grad grad)
         {
             if (SellOrder != null) return;
-            double minDelta = Math.Abs(grad.GPos / grad.GNeg) * _sett.Delta;
-            if (minDelta < _sett.Delta) minDelta = _sett.Delta;
-            if (point.Course < BuyOrder.Price *(1 + minDelta)) return;
             SellOrder = new Order(BuyOrder.Pair, point.Course, BuyOrder.Amount);
             await _apiDriver.Sell(SellOrder);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowSell))

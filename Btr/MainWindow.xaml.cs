@@ -108,6 +108,7 @@ namespace Coin
 
         private void BtnAddTreader_OnClick(object sender, RoutedEventArgs e)
         {
+            DbgSett.Options.Add(DbgSett.DbgOption.ApiEmulate);
             Treader treader = TreaderFactory.CreateTreader;
             var f = new FrmTreaderEditor(treader);
             if (f.ShowDialog() != true) return;

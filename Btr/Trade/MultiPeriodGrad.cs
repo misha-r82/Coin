@@ -39,7 +39,7 @@ namespace Coin
 
         static MultiPeriodGrad()
         {
-            Sett = new MultiPeriodSettings(new TimeSpan(0,0,5,0,1), 2, 7);
+            Sett = new MultiPeriodSettings(new TimeSpan(0,0,5,0,1), 5, 5);
         }
         private static DatePeriod[] GetPeriods(DateTime t0)
         {
