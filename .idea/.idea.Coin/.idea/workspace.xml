@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1e58542-1ed6-4045-9b1e-1396a9213372" name="Default" comment="">
+    <list default="true" id="c1e58542-1ed6-4045-9b1e-1396a9213372" name="Default" comment="Работа над трекингом">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Btr/Btr.csproj" afterPath="$PROJECT_DIR$/Btr/Btr.csproj" />
-      <change beforePath="$PROJECT_DIR$/Btr/FrmTreaderEditor.xaml" afterPath="$PROJECT_DIR$/Btr/FrmTreaderEditor.xaml" />
-      <change beforePath="$PROJECT_DIR$/Btr/MainWindow.xaml.cs" afterPath="$PROJECT_DIR$/Btr/MainWindow.xaml.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/TrackSettings.cs" afterPath="$PROJECT_DIR$/Btr/TrackSettings.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/Trade/Buyer.cs" afterPath="$PROJECT_DIR$/Btr/Trade/Buyer.cs" />
       <change beforePath="$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" afterPath="$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/Trade/Gradient.cs" afterPath="$PROJECT_DIR$/Btr/Trade/Gradient.cs" />
       <change beforePath="$PROJECT_DIR$/Btr/Trade/LeapInfo.cs" afterPath="$PROJECT_DIR$/Btr/Trade/LeapInfo.cs" />
       <change beforePath="$PROJECT_DIR$/Btr/Trade/MultiPeriodGrad.cs" afterPath="$PROJECT_DIR$/Btr/Trade/MultiPeriodGrad.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/Trade/Seller.cs" afterPath="$PROJECT_DIR$/Btr/Trade/Seller.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/Trade/TradeMan.cs" afterPath="$PROJECT_DIR$/Btr/Trade/TradeMan.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/Trade/Trader.cs" afterPath="$PROJECT_DIR$/Btr/Trade/Trader.cs" />
-      <change beforePath="$PROJECT_DIR$/UnitTestProject/UnitTest1.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/UnitTestProject/UnitTestProject.csproj" afterPath="$PROJECT_DIR$/UnitTestProject/UnitTestProject.csproj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,8 +34,8 @@
       <file leaf-file-name="Market.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Btr/Market.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1286">
-              <caret line="99" column="9" lean-forward="false" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+            <state relative-caret-position="640">
+              <caret line="61" column="52" lean-forward="true" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
               <folding>
                 <marker date="1521663614862" expanded="false" signature="6:208" ph="..." />
                 <marker date="1521663614862" expanded="true" signature="224:3915" ph="{...}" />
@@ -109,6 +98,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Btr/MainWindow.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Btr/Api/Btr/ApiDriver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UnitTestProject/HistoryTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Btr/Market.cs" root0="FORCE_HIGHLIGHTING" />
@@ -192,6 +182,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -205,7 +196,6 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,7 +266,8 @@
       <workItem from="1520884558675" duration="225000" />
       <workItem from="1521315173168" duration="754000" />
       <workItem from="1521747253136" duration="636000" />
-      <workItem from="1523567006123" duration="4000" />
+      <workItem from="1523567006123" duration="55000" />
+      <workItem from="1524071351736" duration="45000" />
     </task>
     <task id="LOCAL-00001" summary="Убрал лишние проекты исправил ошибку NET1">
       <created>1508263127919</created>
@@ -362,11 +353,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521747289908</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Работа над трекингом">
+      <created>1523567024551</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1523567024552</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50277000" />
+    <option name="totallyTimeSpent" value="50373000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -385,16 +383,16 @@
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13157895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13157895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -423,7 +421,8 @@
     <MESSAGE value="Сериализация/Десериализация с загрузкой рынков" />
     <MESSAGE value="DВывод отадочной информации исправление сериализации (сохряютссылки на макеты)" />
     <MESSAGE value="MaxBuy MinSell" />
-    <option name="LAST_COMMIT_MESSAGE" value="MaxBuy MinSell" />
+    <MESSAGE value="Работа над трекингом" />
+    <option name="LAST_COMMIT_MESSAGE" value="Работа над трекингом" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -687,8 +686,8 @@
     <entry file="file://$PROJECT_DIR$/UnitTestProject/apiTest.cs" />
     <entry file="file://$PROJECT_DIR$/Btr/Market.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1286">
-          <caret line="99" column="9" lean-forward="false" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+        <state relative-caret-position="640">
+          <caret line="61" column="52" lean-forward="true" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
           <folding>
             <marker date="1521663614862" expanded="false" signature="6:208" ph="..." />
             <marker date="1521663614862" expanded="true" signature="224:3915" ph="{...}" />

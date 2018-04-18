@@ -41,24 +41,26 @@ namespace Coin
         public EndPoint Track(CoursePoint course)
         {
             if (_prewPt.Date == new DateTime()) _prewPt = course;
-            if (course.Date == new DateTime(2018, 04, 10, 08, 50, 0))
+            if (course.Date == new DateTime(2018, 04, 13, 07, 50, 0))
             {}           
             if (course.Course == 0) return EndPoint.None;
-            //var gTest = MultiPeriodGrad.GetGradSkv(_market, course.Date, 0, MultiPeriodGrad.Sett.PeriodCount);
-            Gradient.Grad G0 = MultiPeriodGrad.GetGradSkv(_market, course.Date, 1, 2);
-            var G1 = MultiPeriodGrad.GetGradSkv(_market, course.Date, 3, MultiPeriodGrad.Sett.PeriodCount);
-            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
-                Debug.Write(string.Format("{0} {1} {2} ", course, G0, /*G0.G / G1.G*/G1));
+            //var gTest = MultiPeriodGrad.GetGrad(_market, course.Date, 0, MultiPeriodGrad.Sett.PeriodCount);
+            Gradient.Grad G0 = new MultiPeriodGrad(_market, course.Date, 1, 2).GetGrad();
+            var G1 = new MultiPeriodGrad(_market, course.Date, 3, MultiPeriodGrad.Sett.PeriodCount).GetGradAbs();
             var prewCopy = _prewPt;
             _prewPt = course;
+            double Gbase = G1.G;
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
+                Debug.Write(string.Format("{0} {1} {2} ", course, G0.G, Gbase));
             double smartK = G0.G > 0 ? Math.Abs(G1.GPos / G1.GNeg) : Math.Abs(G1.GNeg / G1.GPos);
             smartK = 1;
-            if (Math.Abs(G0.G) < _sett.Delta * smartK * course.Course / 10) return Leap.SetNeutral(course);
-            if (Math.Abs(G0.G / G1.G) < _sett.KGrad * smartK) return Leap.SetNeutral(course);
+            double delta = smartK * _sett.Delta * course.Course;
+            if (Math.Abs(G0.G) < _sett.Delta * smartK * course.Course / 10) return Leap.SetNeutral(course, delta);
+            if (Math.Abs(G0.G / Gbase) < _sett.KGrad * smartK) return Leap.SetNeutral(course, delta);
             //if (Math.Abs(G0.G / G2.G) < _sett.KGrad * 2) return Leap.SetNeutral(course);
-            if (G0.G > 0/* && (course.Course - Leap.LastPt.Course > _sett.Delta * smartK || Leap.LastPt.Date > new DateTime(0))*/) return Leap.SetUp(prewCopy);
-            if (G0.G < 0/* && (course.Course - Leap.LastPt.Course > _sett.Delta * smartK || Leap.LastPt.Date > new DateTime(0))*/) return Leap.SetDown(prewCopy);
-            return Leap.SetNeutral(course);
+            if (G0.G > 0/* && (course.Course - Leap.LastPt.Course > _sett.Delta * smartK || Leap.LastPt.Date > new DateTime(0))*/) return Leap.SetUp(prewCopy, delta);
+            if (G0.G < 0/* && (course.Course - Leap.LastPt.Course > _sett.Delta * smartK || Leap.LastPt.Date > new DateTime(0))*/) return Leap.SetDown(prewCopy, delta);
+            return Leap.SetNeutral(course, delta);
         }
     }
 }
