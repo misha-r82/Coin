@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1e58542-1ed6-4045-9b1e-1396a9213372" name="Default" comment="Работа над трекингом">
+    <list default="true" id="c1e58542-1ed6-4045-9b1e-1396a9213372" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Coin/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" afterPath="$PROJECT_DIR$/Btr/Trade/CourseTracker.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/Trade/LeapInfo.cs" afterPath="$PROJECT_DIR$/Btr/Trade/LeapInfo.cs" />
-      <change beforePath="$PROJECT_DIR$/Btr/Trade/MultiPeriodGrad.cs" afterPath="$PROJECT_DIR$/Btr/Trade/MultiPeriodGrad.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,8 +31,8 @@
       <file leaf-file-name="Market.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Btr/Market.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="61" column="52" lean-forward="true" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
+            <state relative-caret-position="385">
+              <caret line="46" column="38" lean-forward="true" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
               <folding>
                 <marker date="1521663614862" expanded="false" signature="6:208" ph="..." />
                 <marker date="1521663614862" expanded="true" signature="224:3915" ph="{...}" />
@@ -267,7 +264,7 @@
       <workItem from="1521315173168" duration="754000" />
       <workItem from="1521747253136" duration="636000" />
       <workItem from="1523567006123" duration="55000" />
-      <workItem from="1524071351736" duration="45000" />
+      <workItem from="1524071351736" duration="666000" />
     </task>
     <task id="LOCAL-00001" summary="Убрал лишние проекты исправил ошибку NET1">
       <created>1508263127919</created>
@@ -360,11 +357,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523567024552</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Трекиншг работает">
+      <created>1524071415692</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1524071415692</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50373000" />
+    <option name="totallyTimeSpent" value="50994000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,7 +426,8 @@
     <MESSAGE value="DВывод отадочной информации исправление сериализации (сохряютссылки на макеты)" />
     <MESSAGE value="MaxBuy MinSell" />
     <MESSAGE value="Работа над трекингом" />
-    <option name="LAST_COMMIT_MESSAGE" value="Работа над трекингом" />
+    <MESSAGE value="Трекиншг работает" />
+    <option name="LAST_COMMIT_MESSAGE" value="Трекиншг работает" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -686,8 +691,8 @@
     <entry file="file://$PROJECT_DIR$/UnitTestProject/apiTest.cs" />
     <entry file="file://$PROJECT_DIR$/Btr/Market.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="61" column="52" lean-forward="true" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
+        <state relative-caret-position="385">
+          <caret line="46" column="38" lean-forward="true" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
           <folding>
             <marker date="1521663614862" expanded="false" signature="6:208" ph="..." />
             <marker date="1521663614862" expanded="true" signature="224:3915" ph="{...}" />
