@@ -116,8 +116,24 @@ namespace Coin.Polon
         {
             public long orderNumber;
             public Trade[] resultingTrades;
-            public DateTime Date { get { return resultingTrades.Max(t => t.date); } }
-            public double Amount { get { return resultingTrades.Sum(t => t.amount); } }
+
+            public DateTime Date
+            {
+                get
+                {
+                    if (resultingTrades == null) return new DateTime();
+                    return resultingTrades.Max(t => t.date);
+                }
+            }
+
+            public double Amount
+            {
+                get
+                {
+                    if (resultingTrades == null) return 0;
+                    return resultingTrades.Sum(t => t.amount);
+                }
+            }
 
             public void SetOrder(Order order)
             {
