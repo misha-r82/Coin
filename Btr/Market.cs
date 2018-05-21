@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using Btr.Log;
 using Coin.History;
 using Lib;
 
@@ -82,7 +83,8 @@ namespace Coin
                     period = new DatePeriod(last + Interval, to);
                 }
             }
-            Debug.WriteLine("Load History {0}", period);
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowLoadingHistory))
+                Log.CreateLog("LoadHistory", period.ToString());
             var newData = course.GetHistory(Name, period, Interval).ToArray();
             int lastNotNul = -1;
             for (int i = newData.Length - 1; i>-1; i--)
@@ -91,10 +93,11 @@ namespace Coin
                     lastNotNul = i;
                     break;
                 }
-            if (lastNotNul < 1) return false;
-            var joined = new CourseItem[CourseData.Length + lastNotNul + 1];
+            if (lastNotNul < 1)
+                return false;
+            var joined = new CourseItem[CourseData.Length + lastNotNul];
             Array.Copy(CourseData, joined, CourseData.Length);
-            Array.Copy(newData, 0, joined, CourseData.Length, lastNotNul + 1);
+            Array.Copy(newData, 0, joined, CourseData.Length, lastNotNul);
             CourseData = joined;
             return true;
         }
