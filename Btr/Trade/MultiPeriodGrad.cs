@@ -54,8 +54,7 @@ namespace Coin
             {
                 data = market.GetData(periods[i -1]).ToArray();
                 if (skv) grads.Add(new  Gradient.GradSkv(data));
-                else grads.Add(new Gradient.Grad(data));
-                //Debug.WriteLine("[{0}]={1}", i,grads[i]);
+                else grads.Add(new Gradient.Grad(data));                
             }
         }
         private static DatePeriod[] GetPeriods(DateTime t0)

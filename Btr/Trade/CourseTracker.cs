@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using Btr.Log;
 using Btr.Trade;
 using Test.Annotations;
 
@@ -51,7 +52,7 @@ namespace Coin
             _prewPt = course;
             double Gbase = G1.G;
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
-                Debug.Write(string.Format("{0} {1} {2} ", course, G0.G, Gbase));
+                Log.CreateLog("Track", string.Format("{0} {1} {2} ", course, G0.G, Gbase));
             double smartK = G0.G > 0 ? Math.Abs(G1.GPos / G1.GNeg) : Math.Abs(G1.GNeg / G1.GPos);
             smartK = 1;
             double delta = smartK * _sett.Delta * course.Course;

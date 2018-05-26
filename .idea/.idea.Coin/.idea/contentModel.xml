@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\misha\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Coin.1193401577.00" t="ExcludeRecursive" />
+    <e p="C:\Users\misha\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Coin.1193401577.00" t="ExcludeRecursive" />
     <e p="C:\Users\misha\RiderProjects\Coin" t="IncludeFlat">
       <e p=".nuget" t="Include">
         <e p="NuGet.Config" t="Include" />
@@ -34,12 +34,17 @@
           <e p="MarketSerializer.cs" t="Include" />
         </e>
         <e p="DbgSett.cs" t="Include" />
+        <e p="FrmNewOrder.xaml" t="Include" />
+        <e p="FrmNewOrder.xaml.cs" t="Include" />
         <e p="FrmTreaderEditor.xaml" t="Include" />
         <e p="FrmTreaderEditor.xaml.cs" t="Include" />
         <e p="History" t="Include">
           <e p="CourseItem.cs" t="Include" />
           <e p="Couse.cs" t="Include" />
           <e p="cryptocompare.cs" t="Include" />
+        </e>
+        <e p="Log" t="Include">
+          <e p="Log.cs" t="Include" />
         </e>
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
@@ -64,7 +69,6 @@
           <e p="Order.cs" t="Include" />
           <e p="Seller.cs" t="Include" />
           <e p="SmartDelta.cs" t="Include" />
-          <e p="SygnalGenerator.cs" t="Include" />
           <e p="TradeMan.cs" t="Include" />
           <e p="Trader.cs" t="Include" />
           <e p="TreaderFactory.cs" t="Include" />

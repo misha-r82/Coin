@@ -16,12 +16,15 @@ namespace Coin
         public static SortedSet<DbgOption> Options;
         public enum DbgOption
         {
+            ShowLoadingHistory,
             ShowCourse,
             ShowBuy,
             ShowSell,
             ShowMGrad,
             ShowUri,
-            ApiEmulate
+            ApiEmulate,
+            ShowTick
+            
         } 
 
     }

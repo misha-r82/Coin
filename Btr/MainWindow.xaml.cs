@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Btr;
 using Btr.Trade;
 using Coin.History;
 using Coin.Polon;
@@ -36,22 +37,21 @@ namespace Coin
             InitializeComponent();
             TM = new TradeMan();
             DataContext = this;
+            DbgSett.Options.Add(DbgSett.DbgOption.ApiEmulate);
+            DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
+            DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
+            DbgSett.Options.Add(DbgSett.DbgOption.ShowCourse);
         }
         public TradeMan TM { get; private set; }
-        //public Exchange Ex { get; set; }
 
+        public Treader SelectedTreader
+        {
+            get { return dgTraders.SelectedItem as Treader;}
+        }
+        
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            /*Ex = new Exchange();
-            ExchangeContext ec = new ExchangeContext();
-            ec.ApiKey = "";
-            ec.Secret = "";
-            Ex.Initialise(ec);*/          
-        }
-        private void EditMarkets_OnClick(object sender, RoutedEventArgs e)
-        {
-            /*var f= new FrmAddMarket();
-            f.ShowDialog();*/
+
         }
         private void btnEditTreaderClick(object sender, RoutedEventArgs e)
         {
@@ -67,10 +67,6 @@ namespace Coin
             var btn = (Button)sender;
             if (btn.Content.ToString() == "Start")
             {
-                DbgSett.Options.Clear();
-                DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
-                DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
-                DbgSett.Options.Add(DbgSett.DbgOption.ApiEmulate);
                 TM.StartTrade();
                 btn.Content = "Stop";
             }
@@ -108,11 +104,20 @@ namespace Coin
 
         private void BtnAddTreader_OnClick(object sender, RoutedEventArgs e)
         {
-            DbgSett.Options.Add(DbgSett.DbgOption.ApiEmulate);
+
             Treader treader = TreaderFactory.CreateTreader;
             var f = new FrmTreaderEditor(treader);
             if (f.ShowDialog() != true) return;
             TM.Add(treader);
+        }
+
+        private void BtnBewOrder_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (SelectedTreader == null) return;
+            var seller = new Seller(SelectedTreader, 0);
+            var f = new FrmNewOrder(seller);
+            if (f.ShowDialog()==true) SelectedTreader.Sellers.Add(f.Seller);
+            
         }
     }
 }

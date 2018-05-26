@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Btr.Log;
 using Coin;
 using Coin.Api;
 
@@ -25,11 +26,11 @@ namespace Coin.Api
         {
             if (simulate && hasEffects)
             {
-                Debug.WriteLine("(simulated)" + GetCallDetails(uri));
+                Log.CreateLog("CallWithJsonResponse", "(simulated)" + GetCallDetails(uri));
                 return default(T);
             }
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowUri))
-                Debug.WriteLine(GetCallDetails(uri));
+                Log.CreateLog("CallWithJsonResponse", GetCallDetails(uri));
             var request = HttpWebRequest.CreateHttp(uri);
             foreach (var header in headers)
             {
@@ -65,7 +66,7 @@ namespace Coin.Api
         public T CallWithJsonResponse<T>(string uri)
         {
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowUri))
-                Debug.WriteLine(GetCallDetails(uri));
+                Log.CreateLog("CallWithJsonResponse", GetCallDetails(uri));
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var request = HttpWebRequest.CreateHttp(uri);
             using (var response = (HttpWebResponse)request.GetResponse())

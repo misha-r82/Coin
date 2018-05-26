@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
+using Btr.Log;
 using Coin.Annotations;
 using Coin.Files;
 using Coin.Polon;
@@ -21,8 +23,8 @@ namespace Coin
 
         [DataMember]public CourseTracker Tracker { get; private set; }
         [DataMember] public Buyer Buyer { get; private set; }
-        [DataMember] public List<Seller> Sellers { get; private set; }
-        [DataMember] public List<Seller> Complited { get; private set; }
+        [DataMember] public ObservableCollection<Seller> Sellers { get; private set; }
+        [DataMember] public ObservableCollection<Seller> Complited { get; private set; }
         [DataMember] public double KSellDist { get; set; }
         [DataMember] public double MaxBuy { get; set; }
         [DataMember] public double MinSell { get; set; }
@@ -47,9 +49,8 @@ namespace Coin
 
         public Treader()
         {
-
-            Complited = new List<Seller>();
-            Sellers = new List<Seller>();
+            Complited = new ObservableCollection<Seller>();
+            Sellers = new ObservableCollection<Seller>();
             Enabled = true;
             _isBusy = false;
         }
@@ -73,12 +74,13 @@ namespace Coin
         {
             if (pt.Course < MinSell) return;
             foreach(var seller in Sellers)
-                seller.TrySell(pt, Tracker.G1);            
+                seller.TrySell(pt);            
         }
 
         public async Task OnTick()
         {
-            Debug.WriteLine("Tick {0:h:mm:ss}", DateTime.Now);
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowTick))
+                Log.CreateLog("Ontick", string.Format("Tick {0:HH:mm:ss}", DateTime.Now));
             if (!Enabled || _isBusy) return;
             if (Tracker.Market.LoadHistory())
                   Trade(Tracker.Market.LastPt);
@@ -86,12 +88,11 @@ namespace Coin
 
         public async Task Trade(CoursePoint curCourse)
         {
-            //Debug.WriteLine("Trade {0:h:mm:ss}", DateTime.Now);
             _isBusy = true;
             await CheckComplOrders();
             var trackResult = Tracker.Track(curCourse);
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowCourse))
-                Debug.WriteLine("Mode={0} Pt{1}", Tracker.Leap.Mode, trackResult);
+                Log.CreateLog("Trade", string.Format("Mode={0} Pt{1}", Tracker.Leap.Mode, trackResult));
             switch (trackResult)
             {
                 case EndPoint.None:
@@ -108,8 +109,6 @@ namespace Coin
 
         public async Task CheckComplOrders()
         {
-            if (await Buyer.IsCpmplited())
-                Sellers.Add(new Seller(Buyer.PopComplited(), Tracker.Sett, _market.Api));
             var deleted = new List<Seller>();
             foreach (Seller seller in Sellers)
             {
@@ -121,6 +120,12 @@ namespace Coin
             }
             foreach (Seller seller in deleted)
                 Sellers.Remove(seller);
+            if (await Buyer.IsComplited())
+            {
+                var complitedOrder = Buyer.PopComplited();
+                if (complitedOrder != null)
+                    Sellers.Add(new Seller(complitedOrder, Tracker.Sett.Delta, _market.Api));
+            }
         }
         [OnSerialized]
         public void OnSerialize(StreamingContext sc)

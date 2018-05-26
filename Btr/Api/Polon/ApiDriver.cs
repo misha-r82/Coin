@@ -17,7 +17,7 @@ namespace Coin.Polon
     public class ApiDriver : IApiDriver
     {
         const string URI_PLN_PATT = "https://poloniex.com/public?command=returnTradeHistory&currencyPair={0}&start={1}&end={2}";
-        private readonly TimeSpan TIME_GAP = new TimeSpan(0,0,1);
+        private readonly TimeSpan TIME_GAP = new TimeSpan(12,0,0);
         public ApiDriver()
         {
             Api = new ApiWeb();        
@@ -38,8 +38,8 @@ namespace Coin.Polon
                 return;
             }
             string res = await Api.Buy(order);
-            var resp = JsonConvert.DeserializeObject<BuyResponce>(res);
-            resp.SetOrder(order);
+            var resp = JsonConvert.DeserializeObject<TradeResponce>(res);
+            resp.SetOrder(order);            
         }
         public async Task Sell(Order order)
         {
@@ -50,7 +50,7 @@ namespace Coin.Polon
                 return;
             }
             string res = await Api.Sell(order);
-            var resp = JsonConvert.DeserializeObject<BuyResponce>(res);
+            var resp = JsonConvert.DeserializeObject<TradeResponce>(res);
             resp.SetOrder(order);
         }
         public async Task CanselOrder(Order order)
@@ -112,33 +112,26 @@ namespace Coin.Polon
         }
 
 
-        private class BuyResponce
+        private class TradeResponce
         {
             public long orderNumber;
             public Trade[] resultingTrades;
 
-            public DateTime Date
-            {
-                get
-                {
-                    if (resultingTrades == null) return new DateTime();
-                    return resultingTrades.Max(t => t.date);
-                }
-            }
+
 
             public double Amount
             {
                 get
                 {
-                    if (resultingTrades == null) return 0;
+                    if (resultingTrades == null || !resultingTrades.Any()) return 0;
                     return resultingTrades.Sum(t => t.amount);
                 }
             }
 
             public void SetOrder(Order order)
             {
+                order.PlaceDate = DateTime.Now;
                 order.Id = orderNumber;
-                order.PlaceDate = Date;
                 order.Price = Amount / order.Amount;
                 order.Amount = Amount;
             }

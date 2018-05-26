@@ -19,6 +19,7 @@ namespace Coin.History
         {
 
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowUri))
+
                 Debug.WriteLine(uri);
             var request = HttpWebRequest.CreateHttp(uri);
             using (var response = (HttpWebResponse) request.GetResponse())

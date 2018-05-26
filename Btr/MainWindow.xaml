@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Coin"
+        xmlns:lib="clr-namespace:Lib;assembly=Lib"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
+        <Grid.Resources>
+            <lib:TestConverter x:Key="TestConverter"/>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -51,7 +55,7 @@
                     <DataGridTextColumn Header="Amount" Binding="{Binding BuyOrder.Amount}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <DataGrid Name="dgComplited" AutoGenerateColumns="True" ItemsSource="{Binding Complited}" Grid.ColumnSpan="2">
+            <DataGrid Name="dgComplited" AutoGenerateColumns="False" ItemsSource="{Binding Complited}" Grid.Column="2">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding SellOrder.Id}"/>
                     <DataGridTextColumn Header="Date" Binding="{Binding SellOrder.ComplitedDate}"/>
@@ -65,7 +69,9 @@
             <Button Name="btnSaveMarkets" Content="Save" Click="BtnSaveMarkets_OnClick"/>
             <Button Name="btnAddTreader" Content="+" Width="20" Click="BtnAddTreader_OnClick"/>
             <Button Name="btnStart" Content="Start" Click="BtnStart_OnClick"/>
+            <Button Content="New Order" Margin="5,0,2,0" Click="BtnBewOrder_OnClick"/>
         </StackPanel>
+
 
     </Grid>
 </Window>
