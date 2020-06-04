@@ -17,7 +17,7 @@ namespace Coin.Polon
     public class ApiDriver : IApiDriver
     {
         const string URI_PLN_PATT = "https://poloniex.com/public?command=returnTradeHistory&currencyPair={0}&start={1}&end={2}";
-        private readonly TimeSpan TIME_GAP = new TimeSpan(12,0,0);
+        private readonly TimeSpan TIME_GAP = new TimeSpan(120,0,0);
         public ApiDriver()
         {
             Api = new ApiWeb();        

@@ -14,7 +14,7 @@ namespace Coin
     public abstract class ApiWebBase
     {
         public string ApiKey { get; set; } = "EKAYYJYA-4FTPMKE9-ZVWKRJWY-BX0ZB7NG";
-        public string ApiSecret { get; set; } = "";//"07746e0623fa03a6b5ee81b773c3b3bd8c8285e4c36f5dcb6a08b8b2abae810c292e6fdef29f109989dc943e3e58e4adcd97dd25d2941b2ae2e86df34efe9892";
+        public string ApiSecret { get; set; } = "07746e0623fa03a6b5ee81b773c3b3bd8c8285e4c36f5dcb6a08b8b2abae810c292e6fdef29f109989dc943e3e58e4adcd97dd25d2941b2ae2e86df34efe9892";
 
         protected string KeyPar = "Key";
         protected string SecretPar = "Sign";
