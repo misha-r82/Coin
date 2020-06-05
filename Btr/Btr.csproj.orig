@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE6B6492-51C6-4B24-B891-3E6F82C09FB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Btr</RootNamespace>
+    <AssemblyName>Btr</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DbgSett.cs" />
+    <Compile Include="FrmNewOrder.xaml.cs">
+      <DependentUpon>FrmNewOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTreaderEditor.xaml.cs">
+      <DependentUpon>FrmTreaderEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="History\CourseItem.cs" />
+    <Compile Include="History\cryptocompare.cs" />
+<<<<<<< HEAD
+    <Compile Include="MarketsView.cs" />
+    <Compile Include="MarStat\MarStatLevels.cs" />
+    <Compile Include="MarStat\MStatBase.cs" />
+    <Compile Include="PrivApi\ApiCall.cs" />
+    <Compile Include="PrivApi\ApiCallResponse.cs" />
+    <Compile Include="PrivApi\ApiWebBase.cs" />
+    <Compile Include="PrivApi\Btr\ApiWeb.cs" />
+    <Compile Include="PrivApi\Btr\ApiDriver.cs" />
+    <Compile Include="PrivApi\IApiDriver.cs" />
+    <Compile Include="PrivApi\Polon\ApiDriver.cs" />
+    <Compile Include="PrivApi\Polon\ApiWeb.cs" />
+=======
+    <Compile Include="Api\ApiCall.cs" />
+    <Compile Include="Api\ApiCallResponse.cs" />
+    <Compile Include="Api\ApiWebBase.cs" />
+    <Compile Include="Api\Btr\ApiWeb.cs" />
+    <Compile Include="Api\Btr\ApiDriver.cs" />
+    <Compile Include="Api\IApiDriver.cs" />
+    <Compile Include="Api\Polon\ApiDriver.cs" />
+    <Compile Include="Api\Polon\ApiWeb.cs" />
+    <Compile Include="Log\Log.cs" />
+>>>>>>> 37cd2ffbb188ba10f312c1c0c26bc40384e2aab8
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Trade\Buyer.cs" />
+    <Compile Include="Trade\CourseTracker.cs" />
+    <Compile Include="Trade\Gradient.cs" />
+    <Compile Include="Trade\Leap.cs" />
+    <Compile Include="Trade\LeapInfo.cs" />
+    <Compile Include="Trade\MultiPeriodGrad.cs" />
+    <Compile Include="Trade\Order.cs" />
+    <Compile Include="Trade\Seller.cs" />
+    <Compile Include="Trade\SmartDelta.cs" />
+    <Compile Include="Trade\TradeMan.cs" />
+    <Compile Include="Trade\Trader.cs" />
+    <Compile Include="Trade\TreaderFactory.cs" />
+    <Compile Include="Utils.cs" />
+<<<<<<< HEAD
+    <Page Include="FrmMarketList.xaml">
+=======
+    <Page Include="FrmNewOrder.xaml">
+>>>>>>> 37cd2ffbb188ba10f312c1c0c26bc40384e2aab8
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrmTreaderEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrackSettings.cs" />
+    <Compile Include="Data\BtrHistoryItem.cs" />
+<<<<<<< HEAD
+    <Compile Include="Data\PlnHistoryItem.cs" />
+    <Compile Include="Data\Files\MarketSerializer.cs" />
+    <Compile Include="FrmMarketList.xaml.cs">
+      <DependentUpon>FrmMarketList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="History\PlnCouse.cs" />
+=======
+    <Compile Include="Data\HistoryItem.cs" />
+    <Compile Include="Data\MarketSerializer.cs" />
+    <Compile Include="History\Couse.cs" />
+>>>>>>> 37cd2ffbb188ba10f312c1c0c26bc40384e2aab8
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Market.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lib\Lib.csproj">
+      <Project>{7b5fdddd-33c1-4211-b321-f3e588beb6fa}</Project>
+      <Name>Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
