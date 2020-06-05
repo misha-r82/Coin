@@ -15,9 +15,7 @@ namespace Coin
         public Market(string name)
         {
             Name = name;
-            Interval = TradeMan.Interval;
         }
-        private TimeSpan Interval { get; }
 
         public CoursePoint LastPt
         {
@@ -67,9 +65,9 @@ namespace Coin
             if (period == null)
             {
                 var last = CourseData[CourseData.Length -1].date;
-                period = new DatePeriod(last + Interval,DateTime.Now);
+                period = new DatePeriod(last + TradeMan.Interval,DateTime.Now);
             }
-            var newData = course.GetHistory(Name, period, Interval).ToArray();
+            var newData = course.GetHistory(Name, period, TradeMan.Interval).ToArray();
             int lastNotNul = -1;
             int pos = 0;
             foreach (CourseItem item in newData)

@@ -49,7 +49,7 @@ namespace Coin
         }
         private void EditMarkets_OnClick(object sender, RoutedEventArgs e)
         {
-            var f= new FrmAddMarket();
+            var f= new FrmMarketList();
             f.ShowDialog();
 
 

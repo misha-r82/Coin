@@ -23,6 +23,7 @@ namespace Coin
         static PlnHistory()
         {
             ApiCall = new ApiCall(false);
+
         }
         public static ApiCall ApiCall { get; }       
         public static PlnHistoryItem[] GetHitoryPln(string market, DatePeriod period)

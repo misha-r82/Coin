@@ -19,6 +19,9 @@ namespace Bittrex
         public ApiCall(bool simulate)
         {
             this.simulate = simulate;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            // Skip validation of SSL/TLS certificate
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
         }
 
         public T CallWithJsonResponse<T>(string uri, bool hasEffects, params Tuple<string, string>[] headers)
@@ -66,7 +69,7 @@ namespace Bittrex
         {
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowUri))
                 Debug.WriteLine(GetCallDetails(uri));
-            var request = HttpWebRequest.CreateHttp(uri);
+            var request = HttpWebRequest.CreateHttp(uri);            
             using (var response = (HttpWebResponse)request.GetResponse())
             {
                 if (response.StatusCode == HttpStatusCode.OK)

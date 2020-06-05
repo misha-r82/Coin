@@ -55,7 +55,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ApiTest\apiTest.cs" />
     <Compile Include="FrmsTest.cs" />
     <Compile Include="HistoryTest.cs" />
     <Compile Include="TradeManTest.cs" />
@@ -71,6 +70,9 @@
       <Project>{7B5FDDDD-33C1-4211-B321-F3E588BEB6FA}</Project>
       <Name>Lib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApiTest\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

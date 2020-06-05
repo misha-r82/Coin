@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Btr.MarStat;
 using Lib;
 
 namespace Coin
@@ -18,9 +19,9 @@ namespace Coin
     /// <summary>
     /// Interaction logic for FrmAddMarket.xaml
     /// </summary>
-    public partial class FrmAddMarket : Window
+    public partial class FrmMarketList : Window
     {
-        public FrmAddMarket()
+        public FrmMarketList()
         {
             InitializeComponent();
         }
@@ -46,5 +47,14 @@ namespace Coin
                 Markets.MarketList.Remove(market.Name);
             lvMarkets.Items.Refresh();
         }
+
+        private void btnLoad_OnClick(object sender, RoutedEventArgs e)
+        {
+            var mStat = ((FrameworkElement) sender).DataContext as MStatBase;
+            if (mStat == null) return;
+            mStat.Market.LoadHistory();
+            lvMarkets.Items.Refresh();
+        }
+
     }
 }

@@ -54,5 +54,16 @@ namespace UnitTestProject
             min = market.CourseData.Min(d => d.date);
 
         }
+        [TestMethod]
+        public void LoadHistoryPln()
+        {
+            string marName = "USDT_ETH";
+            var market = Markets.MarketList[marName];
+            DateTime to = market.CourseData[0].date;
+            DateTime from = DateTime.Now - new TimeSpan(350, 0, 0,0);
+            market.LoadHistory(new DatePeriod(from, to));
+            Markets.SaveMarkets();
+
+        }
     }
 }
