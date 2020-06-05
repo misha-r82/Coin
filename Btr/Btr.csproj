@@ -71,7 +71,7 @@
     </Compile>
     <Compile Include="History\CourseItem.cs" />
     <Compile Include="History\cryptocompare.cs" />
-<<<<<<< HEAD
+
     <Compile Include="MarketsView.cs" />
     <Compile Include="MarStat\MarStatLevels.cs" />
     <Compile Include="MarStat\MStatBase.cs" />
@@ -83,7 +83,7 @@
     <Compile Include="PrivApi\IApiDriver.cs" />
     <Compile Include="PrivApi\Polon\ApiDriver.cs" />
     <Compile Include="PrivApi\Polon\ApiWeb.cs" />
-=======
+
     <Compile Include="Api\ApiCall.cs" />
     <Compile Include="Api\ApiCallResponse.cs" />
     <Compile Include="Api\ApiWebBase.cs" />
@@ -93,7 +93,7 @@
     <Compile Include="Api\Polon\ApiDriver.cs" />
     <Compile Include="Api\Polon\ApiWeb.cs" />
     <Compile Include="Log\Log.cs" />
->>>>>>> 37cd2ffbb188ba10f312c1c0c26bc40384e2aab8
+
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Trade\Buyer.cs" />
     <Compile Include="Trade\CourseTracker.cs" />
@@ -108,14 +108,7 @@
     <Compile Include="Trade\Trader.cs" />
     <Compile Include="Trade\TreaderFactory.cs" />
     <Compile Include="Utils.cs" />
-<<<<<<< HEAD
-    <Page Include="FrmMarketList.xaml">
-=======
-    <Page Include="FrmNewOrder.xaml">
->>>>>>> 37cd2ffbb188ba10f312c1c0c26bc40384e2aab8
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+
     <Page Include="FrmTreaderEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,18 +123,18 @@
     </Compile>
     <Compile Include="TrackSettings.cs" />
     <Compile Include="Data\BtrHistoryItem.cs" />
-<<<<<<< HEAD
+
     <Compile Include="Data\PlnHistoryItem.cs" />
     <Compile Include="Data\Files\MarketSerializer.cs" />
     <Compile Include="FrmMarketList.xaml.cs">
       <DependentUpon>FrmMarketList.xaml</DependentUpon>
     </Compile>
     <Compile Include="History\PlnCouse.cs" />
-=======
+
     <Compile Include="Data\HistoryItem.cs" />
     <Compile Include="Data\MarketSerializer.cs" />
     <Compile Include="History\Couse.cs" />
->>>>>>> 37cd2ffbb188ba10f312c1c0c26bc40384e2aab8
+
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
