@@ -143,7 +143,7 @@ namespace Lib
             }
             return rez;
         }
-        public static Exception serializeDataContract<T>(T obj, string path)
+        public static Exception serializeDataContract<T>(T obj, string path, DataContractSerializerSettings sett = null)
         {
             FileStream fs;
             try
@@ -158,7 +158,8 @@ namespace Lib
             XmlDictionaryWriter writer = XmlDictionaryWriter.CreateTextWriter(fs);
             try
             {
-                DataContractSerializer serializer = new DataContractSerializer(typeof(T));
+                DataContractSerializer serializer = sett == null ? 
+                    new DataContractSerializer(typeof(T)) : new DataContractSerializer(typeof(T), sett);
                 serializer.WriteObject(writer, obj);
             }
             catch (Exception ex) { return ex; }

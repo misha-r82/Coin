@@ -11,12 +11,12 @@ namespace UnitTestProject
     [TestClass]
     public class FrmsTest
     {
-        private IApiDriver Api => new Coin.Polon.ApiDriver(new Coin.Polon.ApiWeb());
+        /*private IApiDriver Market => new Coin.Polon.ApiDriver(new Coin.Polon.ApiWeb());
         [TestMethod]
         public void FrmTreaderEditorTest()
         {
             var tracker = new CourseTracker(Markets.MarketList.First().Value, new TrackSettings());
-            var treader = new Treader(tracker, Api);
+            var treader = new Treader(tracker, Market);
             var f = new FrmTreaderEditor(treader);
             f.ShowDialog();
         }
@@ -24,13 +24,13 @@ namespace UnitTestProject
         public void FrmMainTest()
         {
             var tracker = new CourseTracker(Markets.MarketList.First().Value, new TrackSettings());
-            var treader = new Treader(tracker, Api);
-            treader.Sellers.Add(new Seller(new Order("test_pair1",2,3), new TrackSettings() ,Api));
-            var complSeller = new Seller(new Order("test_pair2", 1, 5), new TrackSettings(), Api);
+            var treader = new Treader(tracker, Market);
+            treader.Sellers.Add(new Seller(new Order("test_pair1",2,3), new TrackSettings() ,Market));
+            var complSeller = new Seller(new Order("test_pair2", 1, 5), new TrackSettings(), Market);
             treader.Complited.Add(complSeller);
             var f = new MainWindow();
             f.TM.Add(treader);
             f.ShowDialog();
-        }        
+        } */       
     }
 }

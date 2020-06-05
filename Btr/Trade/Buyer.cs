@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
+using Btr.Log;
 using Coin.Polon;
 using Lib;
 
@@ -26,20 +27,14 @@ namespace Coin
 
         public void Buy(CoursePoint buyPoint, CourseTracker tracker)
         {
-            Gradient.Grad grad = tracker.GPrew;
-            LeapInfo leap = tracker.Leap;
-            double minDelta = Math.Abs(grad.GPos / grad.GNeg) * tracker.Sett.Delta;
-
-            if (minDelta < tracker.Sett.Delta) minDelta = tracker.Sett.Delta;
-            if (buyPoint.Course > leap.DownBegin.Course * (1 - minDelta)) return;
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowBuy))
-                Debug.WriteLine("Buy={0} {1}", buyPoint, tracker.Leap.Mode);
+                Log.CreateLog("Buy", string.Format("{0} {1}", buyPoint, tracker.Leap.Mode));
             _Order = new Order(tracker.Market.Name,  buyPoint.Course, Balance / PartsInvest);
             _Order.PlaceDate = buyPoint.Date; // для отладки по истории, в реальном случае поле затрется
             _apiDriver.Buy(_Order);
         }
 
-        public async Task<bool> IsCpmplited()
+        public async Task<bool> IsComplited()
         {
             if (_Order == null) return false;
             return await _apiDriver.IsComplited(_Order);

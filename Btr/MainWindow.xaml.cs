@@ -65,11 +65,18 @@ namespace Coin
         }
         private void BtnStart_OnClick(object sender, RoutedEventArgs e)
         {
-            DbgSett.Options.Clear();
-            DbgSett.Options.Add(DbgSett.DbgOption.ShowBuy);
-            DbgSett.Options.Add(DbgSett.DbgOption.ShowSell);
-            DbgSett.Options.Add(DbgSett.DbgOption.ApiEmulate);
-            TM.StartTrade();
+            var btn = (Button)sender;
+            if (btn.Content.ToString() == "Start")
+            {
+                TM.StartTrade();
+                btn.Content = "Stop";
+            }
+            else
+            {
+                TM.StopTreading();
+                btn.Content = "Start";
+            }
+
         }
 
         private void BtnLoadMarkets_OnClick(object sender, RoutedEventArgs e)
@@ -84,7 +91,7 @@ namespace Coin
         {
             var f = new SaveFileDialog();
             if (f.ShowDialog(this) != true) return;
-            FileIO.serializeDataContract(TM, f.FileName);
+            FileIO.serializeDataContract(TM, f.FileName, new DataContractSerializerSettings(){PreserveObjectReferences = true});
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -98,14 +105,20 @@ namespace Coin
 
         private void BtnAddTreader_OnClick(object sender, RoutedEventArgs e)
         {
-            /*
-            var market = cbMarket.SelectedValue as Market;
-            if (market == null) return;
-            var tracker = new CourseTracker(market, new TrackSettings());
-            var treader = new Treader(tracker, new ApiDriver(new ApiBase()));
+
+            Treader treader = TreaderFactory.CreateTreader;
             var f = new FrmTreaderEditor(treader);
             if (f.ShowDialog() != true) return;
-            TM.Add(treader);*/
+            TM.Add(treader);
+        }
+
+        private void BtnBewOrder_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (SelectedTreader == null) return;
+            var seller = new Seller(SelectedTreader, 0);
+            var f = new FrmNewOrder(seller);
+            if (f.ShowDialog()==true) SelectedTreader.Sellers.Add(f.Seller);
+            
         }
     }
 }

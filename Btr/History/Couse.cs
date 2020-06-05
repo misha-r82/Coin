@@ -4,15 +4,21 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Coin.Data;
 
 namespace Coin.History
 {
-    public partial class PlnCouse
+    public partial class Course
     {
+        
         public TimeSpan LoadSize = new TimeSpan(0, 1, 0, 0);
-
+        public Course(IApiDriver api)
+        {
+            _api = api;
+        }
+        private IApiDriver _api;
         private void ShiftPeriod(DatePeriod period, TimeSpan delta)
         {
             period.From += delta;
@@ -20,7 +26,7 @@ namespace Coin.History
         }
 
         // за время принято From
-        private IEnumerable<KVPair<DateTime, PlnHistoryItem[]>> GetData(
+        private IEnumerable<KVPair<DateTime, HistoryItem[]>> GetData(
             string market, DatePeriod period, TimeSpan interval)
         {
             
@@ -29,12 +35,13 @@ namespace Coin.History
             var loadPeriod = new DatePeriod(period.From, chunkEnd);
 
             var chunkPeriod = new DatePeriod(period.From, period.From + interval);
-            var chunk = new List<PlnHistoryItem>();
+            var chunk = new List<HistoryItem>();
             do
             {
-                PlnHistoryItem[] data = PlnHistory.GetHitoryPln(market, loadPeriod)
+                HistoryItem[] data = _api.GetHitory(market, loadPeriod)
                     .OrderBy(d => d.date).ToArray();
-                //Debug.WriteLine("*{0}",loadPeriod);
+                Thread.Sleep(200);
+                Debug.WriteLine("*{0}",loadPeriod);
                 if (data.Length == 0) yield break;
                 int pos = 0;
                 do
@@ -48,7 +55,7 @@ namespace Coin.History
                     while (!chunkPeriod.IsConteins(item.date) || !(pos < data.Length - 1))
                     {
                         //Debug.WriteLine("{0}", chunkPeriod);
-                        yield return new KVPair<DateTime, PlnHistoryItem[]>(chunkPeriod.From, chunk.ToArray());
+                        yield return new KVPair<DateTime, HistoryItem[]>(chunkPeriod.From, chunk.ToArray());
                         chunk.Clear();
                         ShiftPeriod(chunkPeriod, interval);     
                         if (chunkPeriod.To > loadPeriod.To) break;                  

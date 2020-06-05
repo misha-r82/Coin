@@ -25,6 +25,8 @@ namespace Coin
     public class MultiPeriodGrad
     {
         public static MultiPeriodSettings Sett;
+        public DatePeriod[] periods;
+        public List<Gradient.Grad> grads = new List<Gradient.Grad>();
 
         public static TimeSpan MaxPeriod
         {
@@ -37,9 +39,23 @@ namespace Coin
             }
         }
 
-        static MultiPeriodGrad()
+        public MultiPeriodGrad(Market market, DateTime date, int n1, int n2, bool skv = false)
         {
-            Sett = new MultiPeriodSettings(new TimeSpan(0,0,5,0,1), 2, 7);
+            Sett = new MultiPeriodSettings(new TimeSpan(0,0,5,0,1), 5, 5);
+            periods = GetPeriods(date);
+            var data = market.GetData(periods[0]).ToArray();
+            int first = n1;
+            if (n1 == 0)
+            {
+                grads.Add(new Gradient.Grad(new[] {data.Last()}));
+                first = 1;
+            }                
+            for (int i = first; i < n2 + 1; i++)
+            {
+                data = market.GetData(periods[i -1]).ToArray();
+                if (skv) grads.Add(new  Gradient.GradSkv(data));
+                else grads.Add(new Gradient.Grad(data));                
+            }
         }
         private static DatePeriod[] GetPeriods(DateTime t0)
         {
@@ -54,37 +70,20 @@ namespace Coin
             }
             return periods;
         }
-        public static Gradient.Grad GetGradSkv(Market market, DateTime date, int n1, int n2)
+        public Gradient.Grad GetGrad()
         {
-            var periods = GetPeriods(date);
-            var grads = new List<Gradient.Grad>();
-            var data = market.GetData(periods[0]).ToArray();
-            int first = n1;
-            if (n1 == 0)
-            {
-                grads.Add(new Gradient.Grad(new[] {data.Last()}));
-                first = 1;
-            }                
-            for (int i = first; i < n2 + 1; i++)
-            {
-                data = market.GetData(periods[i -1]).ToArray();
-                grads.Add(new  Gradient.GradSkv(data));
-                //Debug.WriteLine("[{0}]={1}", i,grads[i]);
-            }
-            try
-            {
-                var p = grads.Sum(g => g.GPos) / grads.Count;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
             double positive = grads.Sum(g => g.GPos)/grads.Count;
             double negative = grads.Sum(g => g.GNeg) / grads.Count;
             double neutral = grads.Sum(g => g.G) / grads.Count;
             return new Gradient.Grad(positive, negative, neutral);
-
+        }
+        //при усреднении гралинтов за периоды берется модуль
+        public Gradient.Grad GetGradAbs()
+        {
+            double positive = grads.Sum(g => g.GPos) / grads.Count;
+            double negative = grads.Sum(g => g.GNeg) / grads.Count;
+            double neutral = grads.Sum(g => Math.Abs(g.G)) / grads.Count;
+            return new Gradient.Grad(positive, negative, neutral);
         }
 
     }

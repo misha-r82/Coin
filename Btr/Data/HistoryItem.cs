@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Coin.Data
 {
-    public class PlnHistoryItem
+    public class HistoryItem
     {
         //public int tradeId, globalTradeID;
         public DateTime date;

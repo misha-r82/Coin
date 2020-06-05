@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
@@ -12,8 +13,8 @@ namespace Coin
 {
     public abstract class ApiWebBase
     {
-        public string ApiKey { get; set; } = "JEKJKAP9-R1TMMAPW-U5AYF3DD-X9FU4PMD";
-        public string ApiSecret { get; set; } = "03e596a58ac67bd06e7fc84d3da69c7665722fd7b94c509b390afb1e792e440c86f281f3e2294b281c120537fe294f567130ffef95fc4bb6a5c72f268cf8f7ed";
+        public string ApiKey { get; set; } = "EKAYYJYA-4FTPMKE9-ZVWKRJWY-BX0ZB7NG";
+        public string ApiSecret { get; set; } = "07746e0623fa03a6b5ee81b773c3b3bd8c8285e4c36f5dcb6a08b8b2abae810c292e6fdef29f109989dc943e3e58e4adcd97dd25d2941b2ae2e86df34efe9892";
 
         protected string KeyPar = "Key";
         protected string SecretPar = "Sign";
@@ -37,6 +38,7 @@ namespace Coin
         {
             using (var client = new HttpClient())
             {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 client.BaseAddress = new Uri(privUrl);
                 var parsStr = GetParsStr(postPars);
                 var strContent = new StringContent(parsStr);

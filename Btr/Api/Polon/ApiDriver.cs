@@ -4,7 +4,9 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Coin.Data;
 using Coin.Polon;
 using Lib;
 using Newtonsoft.Json;
@@ -14,12 +16,16 @@ namespace Coin.Polon
     [DataContract]
     public class ApiDriver : IApiDriver
     {
-        private readonly TimeSpan TIME_GAP = new TimeSpan(0,0,1);
-        public ApiDriver(ApiWebBase api)
+        const string URI_PLN_PATT = "https://poloniex.com/public?command=returnTradeHistory&currencyPair={0}&start={1}&end={2}";
+        private readonly TimeSpan TIME_GAP = new TimeSpan(120,0,0);
+        public ApiDriver()
         {
-            Api = api;        
+            Api = new ApiWeb();        
         }
-
+        public string Name
+        {
+            get { return "PLN"; }
+        }
         public ApiWebBase Api { get; }
         
 
@@ -32,8 +38,8 @@ namespace Coin.Polon
                 return;
             }
             string res = await Api.Buy(order);
-            var resp = JsonConvert.DeserializeObject<BuyResponce>(res);
-            resp.SetOrder(order);
+            var resp = JsonConvert.DeserializeObject<TradeResponce>(res);
+            resp.SetOrder(order);            
         }
         public async Task Sell(Order order)
         {
@@ -44,7 +50,7 @@ namespace Coin.Polon
                 return;
             }
             string res = await Api.Sell(order);
-            var resp = JsonConvert.DeserializeObject<BuyResponce>(res);
+            var resp = JsonConvert.DeserializeObject<TradeResponce>(res);
             resp.SetOrder(order);
         }
         public async Task CanselOrder(Order order)
@@ -78,17 +84,54 @@ namespace Coin.Polon
             order.Price = complOrder.Price;
             return true;
         }
-        private class BuyResponce
+        public HistoryItem[] GetHitory(string market, DatePeriod period)
+        {
+            ulong fromStamp = Utils.DateTimeToUnixTimeStamp(period.From);
+            ulong toStamp = Utils.DateTimeToUnixTimeStamp(period.To);
+            var uri = string.Format(URI_PLN_PATT, market, fromStamp, toStamp);
+            HistoryItem[] result = new HistoryItem[0];
+            int max_attempt = 20;
+            int attempts = 0;
+            var apiCall = new Api.ApiCall(false);
+            bool isErr = false;
+            do
+            {
+                try
+                {
+                    result = apiCall.CallWithJsonResponse<HistoryItem[]>(uri);
+                    isErr = false;
+                }
+                catch (Exception e)
+                {
+                    isErr = true;
+                    Thread.Sleep(500);
+                    if (attempts++ > max_attempt) throw new Exception("не удалось получить данные курса", e);                    
+                }
+            } while (isErr);
+            return result.Where(i => period.IsConteins(i.date)).ToArray(); // из за погрешностей преобразования времени могут быть выходящие за исходный период
+        }
+
+
+        private class TradeResponce
         {
             public long orderNumber;
             public Trade[] resultingTrades;
-            public DateTime Date { get { return resultingTrades.Max(t => t.date); } }
-            public double Amount { get { return resultingTrades.Sum(t => t.amount); } }
+
+
+
+            public double Amount
+            {
+                get
+                {
+                    if (resultingTrades == null || !resultingTrades.Any()) return 0;
+                    return resultingTrades.Sum(t => t.amount);
+                }
+            }
 
             public void SetOrder(Order order)
             {
+                order.PlaceDate = DateTime.Now;
                 order.Id = orderNumber;
-                order.PlaceDate = Date;
                 order.Price = Amount / order.Amount;
                 order.Amount = Amount;
             }

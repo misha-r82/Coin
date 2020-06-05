@@ -9,7 +9,7 @@ namespace Coin
     public class TrackSettings
     {
         public double Delta { get; set;}
-        public double GGap { get; set; } // 
+        public double KGrad { get; set; } // 
 
     }
 }

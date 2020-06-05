@@ -53,7 +53,8 @@ namespace Coin
 
             public override string ToString()
             {
-                return string.Format("g:{0:0.00000} g+:{1:0.00000} g-:{2:0.00000}", G, GPos, GNeg);
+                return string.Format("g:{0:0.00000}", G * 1000);
+                //return string.Format("g:{0:0.00000} g+:{1:0.00000} g-:{2:0.00000}", G * 1000, GPos * 1000, GNeg * 1000);
             }
         }
 

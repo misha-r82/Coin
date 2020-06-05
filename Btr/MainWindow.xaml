@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Coin"
+        xmlns:lib="clr-namespace:Lib;assembly=Lib"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
+        <Grid.Resources>
+            <lib:TestConverter x:Key="TestConverter"/>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -14,17 +18,20 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Name="txtResult"/>
-        <DataGrid Name="dgTraders" ItemsSource="{Binding TM}" AutoGenerateColumns="False">
+        <DataGrid Name="dgTraders" ItemsSource="{Binding TM}" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <CheckBox IsChecked="{Binding Enabled}"/>
+                                <CheckBox IsChecked="{Binding Enabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                
                 <DataGridTextColumn Header="Market" Binding="{Binding Tracker.Market.Name}"/>
                 <DataGridTextColumn Header="Balance" Binding="{Binding Buyer.Balance}"/>
+                <DataGridTextColumn Header="MaxBuy" Binding="{Binding MaxBuy}"/>
+                <DataGridTextColumn Header="MinSell" Binding="{Binding MinSell}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -48,7 +55,7 @@
                     <DataGridTextColumn Header="Amount" Binding="{Binding BuyOrder.Amount}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <DataGrid Name="dgComplited" AutoGenerateColumns="True" ItemsSource="{Binding Complited}" Grid.ColumnSpan="2" Margin="259,0,0.282,0.194">
+            <DataGrid Name="dgComplited" AutoGenerateColumns="False" ItemsSource="{Binding Complited}" Grid.Column="2">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding SellOrder.Id}"/>
                     <DataGridTextColumn Header="Date" Binding="{Binding SellOrder.ComplitedDate}"/>
@@ -58,14 +65,13 @@
             </DataGrid>
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="2" >
-            <Button Name="BtnMarkets" Content="Markets" Click="EditMarkets_OnClick"/>
             <Button Name="btnLoadMarkets" Content="Load" Click="BtnLoadMarkets_OnClick"/>
             <Button Name="btnSaveMarkets" Content="Save" Click="BtnSaveMarkets_OnClick"/>
-            <ComboBox Name="cbMarket" SelectedItem="{Binding Tracker.Market}" DisplayMemberPath="Name"
-                      ItemsSource="{Binding Source={x:Static local:Markets.MarketList}, Path=Values}"/>
             <Button Name="btnAddTreader" Content="+" Width="20" Click="BtnAddTreader_OnClick"/>
-            <Button Name="btnStart" Content="RunTrade" Click="BtnStart_OnClick"/>
+            <Button Name="btnStart" Content="Start" Click="BtnStart_OnClick"/>
+            <Button Content="New Order" Margin="5,0,2,0" Click="BtnBewOrder_OnClick"/>
         </StackPanel>
+
 
     </Grid>
 </Window>

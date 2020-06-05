@@ -14,6 +14,7 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <LangVersion>7</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -62,11 +63,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DbgSett.cs" />
+    <Compile Include="FrmNewOrder.xaml.cs">
+      <DependentUpon>FrmNewOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FrmTreaderEditor.xaml.cs">
       <DependentUpon>FrmTreaderEditor.xaml</DependentUpon>
     </Compile>
     <Compile Include="History\CourseItem.cs" />
     <Compile Include="History\cryptocompare.cs" />
+<<<<<<< HEAD
     <Compile Include="MarketsView.cs" />
     <Compile Include="MarStat\MarStatLevels.cs" />
     <Compile Include="MarStat\MStatBase.cs" />
@@ -78,6 +83,17 @@
     <Compile Include="PrivApi\IApiDriver.cs" />
     <Compile Include="PrivApi\Polon\ApiDriver.cs" />
     <Compile Include="PrivApi\Polon\ApiWeb.cs" />
+=======
+    <Compile Include="Api\ApiCall.cs" />
+    <Compile Include="Api\ApiCallResponse.cs" />
+    <Compile Include="Api\ApiWebBase.cs" />
+    <Compile Include="Api\Btr\ApiWeb.cs" />
+    <Compile Include="Api\Btr\ApiDriver.cs" />
+    <Compile Include="Api\IApiDriver.cs" />
+    <Compile Include="Api\Polon\ApiDriver.cs" />
+    <Compile Include="Api\Polon\ApiWeb.cs" />
+    <Compile Include="Log\Log.cs" />
+>>>>>>> 37cd2ffbb188ba10f312c1c0c26bc40384e2aab8
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Trade\Buyer.cs" />
     <Compile Include="Trade\CourseTracker.cs" />
@@ -87,10 +103,16 @@
     <Compile Include="Trade\MultiPeriodGrad.cs" />
     <Compile Include="Trade\Order.cs" />
     <Compile Include="Trade\Seller.cs" />
+    <Compile Include="Trade\SmartDelta.cs" />
     <Compile Include="Trade\TradeMan.cs" />
     <Compile Include="Trade\Trader.cs" />
+    <Compile Include="Trade\TreaderFactory.cs" />
     <Compile Include="Utils.cs" />
+<<<<<<< HEAD
     <Page Include="FrmMarketList.xaml">
+=======
+    <Page Include="FrmNewOrder.xaml">
+>>>>>>> 37cd2ffbb188ba10f312c1c0c26bc40384e2aab8
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,14 +129,19 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TrackSettings.cs" />
-    <Compile Include="PlnHistory.cs" />
     <Compile Include="Data\BtrHistoryItem.cs" />
+<<<<<<< HEAD
     <Compile Include="Data\PlnHistoryItem.cs" />
     <Compile Include="Data\Files\MarketSerializer.cs" />
     <Compile Include="FrmMarketList.xaml.cs">
       <DependentUpon>FrmMarketList.xaml</DependentUpon>
     </Compile>
     <Compile Include="History\PlnCouse.cs" />
+=======
+    <Compile Include="Data\HistoryItem.cs" />
+    <Compile Include="Data\MarketSerializer.cs" />
+    <Compile Include="History\Couse.cs" />
+>>>>>>> 37cd2ffbb188ba10f312c1c0c26bc40384e2aab8
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -122,7 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Market.cs" />
-    <Compile Include="Markets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -155,9 +181,7 @@
       <Name>Lib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Polon\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

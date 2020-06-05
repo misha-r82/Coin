@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using Btr.Log;
 using Coin.History;
 using Lib;
 
@@ -12,11 +14,23 @@ namespace Coin
     [DataContract]
     public class Market
     {
-        public Market(string name)
+        public Market(string name, IApiDriver api)
         {
             Name = name;
+            Interval = TradeMan.Interval;
+            From = DateTime.Now.Date - TradeMan.MinInterval;
+            CourseData = new CourseItem[0];
+            _api = api;
         }
-
+        [DataMember] public string Name { get; set; }
+        [DataMember] private IApiDriver _api;
+        [DataMember] private TimeSpan Interval { get; set; }
+        [DataMember] private DateTime From { get; set; }
+        public CourseItem[] CourseData;
+        public IApiDriver Api
+        {
+            get { return _api; }
+        }
         public CoursePoint LastPt
         {
             get
@@ -26,13 +40,10 @@ namespace Coin
                 return new CoursePoint(course.course, course.date);
             }
         }
-
-        [DataMember] public string Name { get; set; }
-        public CourseItem[] CourseData;
         public IEnumerable<CourseItem> GetData(DatePeriod period)
         {
             int pos = Array.BinarySearch(CourseData, new CourseItem(period.From, 0, 0),
-                new PlnCouse.DateComparer());
+                new Course.DateComparer());
             if (pos < 0) pos = ~pos;
             if (pos < 0) yield break; 
             while (pos < CourseData.Length && period.IsConteins(CourseData[pos].date))
@@ -60,29 +71,36 @@ namespace Coin
         /// <returns></returns>
         public bool LoadHistory(DatePeriod period = null)
         {
-            if (CourseData == null) CourseData = new CourseItem[0];
-            var course = new PlnCouse();
+            var course = new Course(_api);
             if (period == null)
             {
-                var last = CourseData[CourseData.Length -1].date;
-                period = new DatePeriod(last + TradeMan.Interval,DateTime.Now);
+                var to = new DateTime( DateTime.Now.Ticks / Interval.Ticks * Interval.Ticks);
+                if (CourseData.Length == 0) // нет истории
+                    period = new DatePeriod(From, to);
+                else
+                {
+                    var last = CourseData[CourseData.Length - 1].date;
+                    period = new DatePeriod(last + Interval, to);
+                }
             }
-            var newData = course.GetHistory(Name, period, TradeMan.Interval).ToArray();
+            if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowLoadingHistory))
+                Log.CreateLog("LoadHistory", period.ToString());
+            var newData = course.GetHistory(Name, period, Interval).ToArray();
             int lastNotNul = -1;
-            int pos = 0;
-            foreach (CourseItem item in newData)
-                if (item.course != 0) lastNotNul = pos++;
-            if (lastNotNul < 1) return false;
-            if (CourseData.Length == 0)
-            {
-                CourseData = newData;
-                return true;
-            }
-            var joined = new CourseItem[CourseData.Length + lastNotNul + 1];
+            for (int i = newData.Length - 1; i>-1; i--)
+                if (newData[i].course != 0)
+                {
+                    lastNotNul = i;
+                    break;
+                }
+            if (lastNotNul < 1)
+                return false;
+            var joined = new CourseItem[CourseData.Length + lastNotNul];
             Array.Copy(CourseData, joined, CourseData.Length);
-            Array.Copy(newData, 0, joined, CourseData.Length, lastNotNul + 1);
+            Array.Copy(newData, 0, joined, CourseData.Length, lastNotNul);
             CourseData = joined;
             return true;
         }
+
     }
 }
