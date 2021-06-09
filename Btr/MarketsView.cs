@@ -13,8 +13,8 @@ namespace Btr
         public static List<MarStatLevels> MarketList { get
             {
                 var res = new List<MarStatLevels>();
-                foreach (var market in Markets.MarketList)
-                    res.Add(new MarStatLevels(market.Value));
+                /*foreach (var market in Markets.MarketList)
+                    res.Add(new MarStatLevels(market.Value));*/
                 var tmp = res[0].LevelStat;
                 return res;
             }

@@ -18,14 +18,14 @@ namespace Coin
         {
             Name = name;
             Interval = TradeMan.Interval;
-            From = DateTime.Now.Date - TradeMan.MinInterval;
+            //From = DateTime.Now.Date - TradeMan.MinInterval;
             CourseData = new CourseItem[0];
             _api = api;
         }
         [DataMember] public string Name { get; set; }
         [DataMember] private IApiDriver _api;
         [DataMember] private TimeSpan Interval { get; set; }
-        [DataMember] private DateTime From { get; set; }
+        //[DataMember] private DateTime From { get; set; }
         public CourseItem[] CourseData;
         public IApiDriver Api
         {

@@ -16,7 +16,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Bittrex;
 using Coin.History;
 using Coin.Polon;
 using Coin.Annotations;
@@ -49,8 +48,8 @@ namespace Coin
         }
         private void EditMarkets_OnClick(object sender, RoutedEventArgs e)
         {
-            var f= new FrmMarketList();
-            f.ShowDialog();
+            /*var f= new FrmMarketList();
+            f.ShowDialog();*/
 
 
         }
@@ -89,9 +88,9 @@ namespace Coin
 
         private void BtnSaveMarkets_OnClick(object sender, RoutedEventArgs e)
         {
-            var f = new SaveFileDialog();
+            /*var f = new SaveFileDialog();
             if (f.ShowDialog(this) != true) return;
-            FileIO.serializeDataContract(TM, f.FileName, new DataContractSerializerSettings(){PreserveObjectReferences = true});
+            FileIO.serializeDataContract(TM, f.FileName, new DataContractSerializerSettings(){PreserveObjectReferences = true});*/
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -114,10 +113,10 @@ namespace Coin
 
         private void BtnBewOrder_OnClick(object sender, RoutedEventArgs e)
         {
-            if (SelectedTreader == null) return;
+            /*if (SelectedTreader == null) return;
             var seller = new Seller(SelectedTreader, 0);
             var f = new FrmNewOrder(seller);
-            if (f.ShowDialog()==true) SelectedTreader.Sellers.Add(f.Seller);
+            if (f.ShowDialog()==true) SelectedTreader.Sellers.Add(f.Seller);*/
             
         }
     }

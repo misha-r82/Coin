@@ -18,7 +18,7 @@ namespace Btr
     /// <summary>
     /// Логика взаимодействия для FrmNewOrder.xaml
     /// </summary>
-    public partial class FrmNewOrder : Window
+   /* public partial class FrmNewOrder : Window
     {
         public Seller Seller { get; }
         public FrmNewOrder(Seller seller)
@@ -32,5 +32,5 @@ namespace Btr
         {
             DialogResult = true; 
         }
-    }
+    }*/
 }

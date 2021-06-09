@@ -68,7 +68,7 @@ namespace Coin.Api
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowUri))
                 Log.CreateLog("CallWithJsonResponse", GetCallDetails(uri));
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            var request* = HttpWebRequest.CreateHttp(uri);
+            var request = HttpWebRequest.CreateHttp(uri);
             using (var response = (HttpWebResponse)request.GetResponse())
             {
                 if (response.StatusCode == HttpStatusCode.OK)
