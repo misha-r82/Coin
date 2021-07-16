@@ -81,7 +81,7 @@ namespace Coin.History
                 {
                     double delta = close - open;
                     double sred = (close + open) / 2;
-                    return new CourseItem(Date, sred, delta);
+                    return new CourseItem(Date, sred, delta, 0);
                 }
             }
         }

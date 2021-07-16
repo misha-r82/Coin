@@ -71,7 +71,11 @@
     </Compile>
     <Compile Include="History\CourseItem.cs" />
     <Compile Include="History\cryptocompare.cs" />
-    <Compile Include="MarketsView.cs" />
+    <Compile Include="Markets\FrmMarkets.xaml.cs">
+      <DependentUpon>FrmMarkets.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Markets\MarketRepo.cs" />
+    <Compile Include="Markets\MarketsView.cs" />
     <Compile Include="MarStat\MarStatLevels.cs" />
     <Compile Include="MarStat\MStatBase.cs" />
     <Compile Include="Api\ApiCall.cs" />
@@ -118,9 +122,13 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Markets\FrmMarkets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Market.cs" />
+    <Compile Include="Markets\Market.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

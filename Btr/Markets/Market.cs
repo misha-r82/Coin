@@ -25,7 +25,8 @@ namespace Coin
         [DataMember] public string Name { get; set; }
         [DataMember] private IApiDriver _api;
         [DataMember] private TimeSpan Interval { get; set; }
-        //[DataMember] private DateTime From { get; set; }
+        public DateTime From { get { return !CourseData.Any() ? new DateTime() : CourseData[0].date; } }
+        public DateTime To { get { return !CourseData.Any() ? new DateTime() : CourseData[CourseData.Length -1].date; } } 
         public CourseItem[] CourseData;
         public IApiDriver Api
         {
@@ -42,7 +43,7 @@ namespace Coin
         }
         public IEnumerable<CourseItem> GetData(DatePeriod period)
         {
-            int pos = Array.BinarySearch(CourseData, new CourseItem(period.From, 0, 0),
+            int pos = Array.BinarySearch(CourseData, new CourseItem(period.From, 0, 0, 0),
                 new Course.DateComparer());
             if (pos < 0) pos = ~pos;
             if (pos < 0) yield break; 
@@ -79,8 +80,7 @@ namespace Coin
                     period = new DatePeriod(From, to);
                 else
                 {
-                    var last = CourseData[CourseData.Length - 1].date;
-                    period = new DatePeriod(last + Interval, to);
+                    period = new DatePeriod(To + Interval, to);
                 }
             }
             if (DbgSett.Options.Contains(DbgSett.DbgOption.ShowLoadingHistory))

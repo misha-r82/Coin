@@ -32,6 +32,7 @@ namespace Coin.Files
                         writer.Write(item.date.Ticks);
                         writer.Write(item.course);
                         writer.Write(item.delta);
+                        writer.Write(item.vol);
                     }
                 }
                 
@@ -57,7 +58,8 @@ namespace Coin.Files
                                 var ticks = reader.ReadInt64();
                                 var course = reader.ReadDouble();
                                 double delta = reader.ReadDouble();
-                                var item = new CourseItem(new DateTime(ticks), course, delta);
+                                double vol = reader.ReadDouble();
+                                var item = new CourseItem(new DateTime(ticks), course, delta, vol);
                                 data.Add(item);
                             }
                         }

@@ -73,19 +73,19 @@ namespace Coin.History
             var data = GetData(market, period, interval).ToArray();
             foreach (var pair in data)
             {
+                double sumAmount = 0;
+                double sumValue = 0;
                 var chunk = pair.Val;
                 var time = pair.Key;
                 if (chunk.Length == 0)
                 {
-                    yield return new CourseItem(time, 0, 0);
+                    yield return new CourseItem(time, 0, 0,0);
                     continue;
                 }
                 double delta = 0;
                 double sred = chunk[0].rate;
                 if (chunk.Length > 1)
                 {
-                    double sumAmount = 0;
-                    double sumValue = 0;
                     int half = chunk.Length / 2;
                     for (int i = 0; i < half; i++)
                     {
@@ -104,7 +104,7 @@ namespace Coin.History
                     sred = (sred1 + sred2) / 2;
                     delta = sred2 - sred1;
                 }
-                yield return new CourseItem(time, sred, delta * 2);   
+                yield return new CourseItem(time, sred, delta * 2, sumAmount);   
             }
 
 

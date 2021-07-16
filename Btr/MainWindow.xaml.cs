@@ -21,6 +21,7 @@ using Coin.Polon;
 using Coin.Annotations;
 using Lib;
 using Microsoft.Win32;
+using Btr;
 
 namespace Coin
 {
@@ -105,14 +106,16 @@ namespace Coin
         private void BtnAddTreader_OnClick(object sender, RoutedEventArgs e)
         {
 
-            Treader treader = TreaderFactory.CreateTreader;
+            /*Treader treader = TreaderFactory.CreateTreader;
             var f = new FrmTreaderEditor(treader);
             if (f.ShowDialog() != true) return;
-            TM.Add(treader);
+            TM.Add(treader);*/
         }
 
         private void BtnBewOrder_OnClick(object sender, RoutedEventArgs e)
         {
+            var f = new FrmMarkets();
+            f.Show();
             /*if (SelectedTreader == null) return;
             var seller = new Seller(SelectedTreader, 0);
             var f = new FrmNewOrder(seller);
